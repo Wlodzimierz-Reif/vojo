@@ -18,7 +18,3 @@ before_deploy:
 branches:
   only:
     - master
-deploy:
-  provider: firebase
-  cleanup: false
-  local_dir: build
