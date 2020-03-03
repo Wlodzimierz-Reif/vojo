@@ -17,5 +17,5 @@ branches:
     - master
 deploy:
   provider: firebase
-  skip_cleanup: true
+  cleanup: false
   local_dir: build
