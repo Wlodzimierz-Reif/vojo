@@ -1,5 +1,5 @@
 $primary-color: #b44370;
-$secondary-color: #55678e;
+$secondary-color: #5567ae;
 
 $standard-text: #000;
 
@@ -8,17 +8,20 @@ $secondary-background: #ffffff;
 
 $vojo-brown: #cc9a63;
 $vojo-orange: #ef7d40;
+
 //border-outlines and used for some subheadings
 $warning: #e94842;
 $sucessful: #82a44d;
 $neutral: #efbd3f;
+
 //box fillers
 $warning-shade: #f9d1cf;
 $sucessful-shade: #dfe8d2;
 $neutral-shade: #fbeecf;
+
 //shades 80%
 $primary-color-80: #b44370cc;
-$secondary-color-80: #55678ecc;
+$secondary-color-80: #5567aecc;
 
 $standard-text-80: #000000cc;
 
@@ -31,9 +34,10 @@ $vojo-brown-80: #cc9a63cc;
 $warning-80: #e94842cc;
 $sucessful-80: #82a44dcc;
 $neutral-80: #efbd3fcc;
+
 //shades 60%
-$primary-color-60: #b3426f99;
-$secondary-color-60: #55678e99;
+$primary-color-60: #b4437099;
+$secondary-color-60: #5567ae99;
 
 $standard-text-60: #00000099;
 
@@ -50,9 +54,10 @@ $neutral-60: #efbd3f99;
 $warning-shade-60: #f9d1cf99;
 $sucessful-shade-60: #dfe8d299;
 $neutral-shade-60: #fbeecf99;
+
 //shades 40%
-$primary-color-40: #b3426f66;
-$secondary-color-40: #55678e66;
+$primary-color-40: #b4437066;
+$secondary-color-40: #5567ae66;
 
 $standard-text-40: #00000066;
 
@@ -71,11 +76,3 @@ $sucessful-shade: #dfe8d266;
 $neutral-shade: #fbeecf66;
 
 $base-spacing: 8px;
-
-@mixin standard-setup {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  
