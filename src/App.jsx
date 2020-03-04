@@ -1,15 +1,14 @@
-import React from 'react';
-import './App.css';
-import NavBar from "./components/NavBar"
+import React from "react";
+// import styles from "./App.module.scss";
+import NavBar from "./components/NavBar";
 
 const App = () => {
   return (
-    <div className="App">
-      <div className = "NavBar">
-        <NavBar />
-      </div>
-    </div>
+    <>
+      <p>Vojo under construction!</p>
+      <NavBar />
+    </>
   );
-}
+};
 
 export default App;

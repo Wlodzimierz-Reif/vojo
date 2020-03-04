@@ -3,19 +3,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 100px;
-  padding: 50px;
+  // padding: 50px;
 
   .navBarLogo {
     width: 70px;
     // height: 100px;
+    padding-left: 50px;
   }
 
   .links {
     display: flex;
     justify-content: space-evenly;
     color: white;
+    padding-right: 50px;
 
     p {
       padding: 0 15px;
