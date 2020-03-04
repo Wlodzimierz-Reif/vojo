@@ -1,10 +1,8 @@
 import React from "react";
-import InfoCard from "./InfoCard";
-
-describe("InfoCard tests", () => {
-  let component;
-
-  beforeEach(() => {
-    // component =
-  })
+import TestComp from "./TestComp";
+import { render } from "@testing-library/react";
+describe("TestComp tests", () => {
+  it("should render", () => {
+    expect(render(<TestComp />)).toBeTruthy();
+  });
 });
