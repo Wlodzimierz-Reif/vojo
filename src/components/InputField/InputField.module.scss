@@ -1,25 +1,18 @@
-$primary: #cc9a63;
-$secondary: #d64bdb;
+@import "..//../variables.scss";
 
 .inputField {
   font-family: inherit;
-  border: 1px solid $primary;
+  border: 1px solid $vojo-brown;
   border-radius: 5px;
   outline: none;
   width: 100%;
   height: 100%;
-  padding: 0 10px;
+  padding-left: 10px;
   font-size: 1rem;
   background: transparent;
-  margin-top: 5px;
 
   &:focus {
     font-weight: 500;
-    border-color: $secondary;
+    border-color: $vojo-orange;
   }
-}
-
-.inputLabel {
-  font-family: inherit;
-  color: $primary;
 }

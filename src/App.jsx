@@ -1,14 +1,8 @@
 import React from "react";
-import "./App.css";
-
-import InputField from "./components/InputField";
+// import styles from "./App.module.scss";
 
 const App = () => {
-  return (
-    <div className="inputField">
-      <InputField />
-    </div>
-  );
+  return <p>Vojo under construction!</p>;
 };
 
 export default App;

@@ -1,12 +1,14 @@
 import React from "react";
 import styles from "./InputField.module.scss";
 
-const InputField = () => {
+const InputField = props => {
   return (
-    <>
-      <label className={styles.inputLabel}>Name</label>
-      <input className={styles.inputField} type="text" name="name" required />
-    </>
+    <input
+      className={styles.inputField}
+      type={props.type}
+      name={props.name}
+      required
+    />
   );
 };
 
