@@ -1,10 +1,9 @@
 import React from "react";
 import MaintenancePage from "./MaintenancePage";
+import { render } from "@testing-library/react";
 
 describe("MaintenancePage tests", () => {
-  let component;
-
-  beforeEach(() => {
-    component =
+  it("should render", () => {
+    expect(render(<MaintenancePage />)).toBeTruthy();
   })
 });

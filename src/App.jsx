@@ -1,14 +1,13 @@
 import React from "react";
-import "./App.css";
-
+import styles from "./App.module.scss";
 import MaintenancePage from "./components/MaintenancePage";
 
-function App() {
+const App = () => {
   return (
-    <div className="maintenanceContainer">
+    <div className={styles.maintenanceContainer}>
       <MaintenancePage />
     </div>
   );
-}
+};
 
 export default App;
