@@ -1,17 +1,13 @@
 import React from "react";
-// import styles from "./App.module.scss";
-import CheckBox from "./components/CheckBox";
+import styles from "./App.module.scss";
+import MaintenancePage from "./components/MaintenancePage";
 
 const App = () => {
   return (
-    <>
-      <CheckBox text="Go vegan" />
-      <CheckBox text="Lose weight" />
-      <CheckBox text="adad" />
-    </>
+    <div className={styles.maintenanceContainer}>
+      <MaintenancePage />
+    </div>
   );
 };
 
 export default App;
-
-// <p>Vojo under construction!</p>;
