@@ -1,12 +1,13 @@
 import React from "react";
-// import styles from "./App.module.scss";
-import VegPersonBox from "./components/VegPersonBox"
+import styles from "./App.module.scss";
+import MaintenancePage from "./components/MaintenancePage";
 
 const App = () => {
   return (
-  <div>
-  <VegPersonBox />
-  </div>
-  )};
+    <div className={styles.maintenanceContainer}>
+      <MaintenancePage />
+    </div>
+  );
+};
 
 export default App;
