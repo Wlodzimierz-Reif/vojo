@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./NavBar.module.scss";
+import logos from "../../assets/logos/tofu-logo.png";
 
 const NavBar = () => {
   return (
     <section className={styles.navBar}>
-      <img src="prompt" alt="Logo"></img>
+      <img src={logos} alt="Logo" className={styles.navBarLogo}></img>
       <section className={styles.links}>
         <p>Priorities</p>
         <p>Nutrients</p>
@@ -13,7 +14,7 @@ const NavBar = () => {
         <p>Genetics</p>
         <p>Answers</p>
         <p>Settings</p>
-        <p className={styles.LogOut}>Log out</p>
+        <p className={styles.logOut}>Log out</p>
       </section>
     </section>
   );
