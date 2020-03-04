@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.css";
+import styles from "./App.module.scss";
+import InfoCard from "./components/InfoCard";
 
 const App = () => {
   return <p>Vojo under construction</p>;

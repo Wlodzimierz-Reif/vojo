@@ -1,8 +1,8 @@
 import React from "react";
-import TestComp from "./TestComp";
+import InfoCard from "./InfoCard";
 import { render } from "@testing-library/react";
-describe("TestComp tests", () => {
+describe("InfoCard tests", () => {
   it("should render", () => {
-    expect(render(<TestComp />)).toBeTruthy();
+    expect(render(<InfoCard />)).toBeTruthy();
   });
 });
