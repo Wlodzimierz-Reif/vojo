@@ -1,10 +1,9 @@
 import React from "react";
-import InputLabel from "./InputLabel";
+import InputLabel from "./InputField";
+import { render } from "@testing-library/react";
 
 describe("InputLabel tests", () => {
-  let component;
-
-  beforeEach(() => {
-    component =
-  })
+  it("should render", () => {
+    expect(render(<InputLabel />)).toBeTruthy();
+  });
 });
