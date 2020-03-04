@@ -1,11 +1,14 @@
-import React from 'react';
-import './App.css';
-import DisplaySlider from './components/DisplaySlider'
+import React from "react";
+import DisplaySlider from "./components/DisplaySlider";
+
+// import styles from "./App.module.scss";
 
 const App = () => {
-    return (
-    <DisplaySlider />
-    )
-}
+  return (
+    <>
+      <p>Vojo under construction!</p>
+    </>
+  );
+};
 
 export default App;
