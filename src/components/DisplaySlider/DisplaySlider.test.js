@@ -1,10 +1,9 @@
 import React from "react";
+import { render } from "@testing-library/react";
 import DisplaySlider from "./DisplaySlider";
 
 describe("DisplaySlider tests", () => {
-  let component;
-
-  beforeEach(() => {
-    component =
-  })
+  it("should render", () => {
+    expect(render(<DisplaySlider />)).toBeTruthy();
+  });
 });
