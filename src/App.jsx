@@ -1,5 +1,4 @@
 import React from "react";
-import DisplaySlider from "./components/DisplaySlider";
 
 // import styles from "./App.module.scss";
 
