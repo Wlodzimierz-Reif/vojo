@@ -1,8 +1,14 @@
 import React from "react";
 import "./App.css";
 
+import MaintenancePage from "./components/MaintenancePage";
+
 function App() {
-  return <p>Vojo under construction</p>;
+  return (
+    <div className="maintenanceContainer">
+      <MaintenancePage />
+    </div>
+  );
 }
 
 export default App;
