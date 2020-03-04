@@ -1,0 +1,33 @@
+// @import "../../variables.scss";
+    .greenToRed {
+        background: linear-gradient(90deg, #82A44D 0%, #EFBD3F 50%, #E94842 100%);
+    }
+
+    .redToGreen {
+        background: linear-gradient(90deg, #E94842 0%, #EFBD3F 50%,  #82A44D 100%);
+    }
+
+    .redGreenRed {
+        background: linear-gradient(90deg, #E94842 0%, #EFBD3F 25%,  #82A44D 50%, #EFBD3F 75%, #E94842 100%);
+    }
+
+    .slider {
+        position: relative;
+        width: 300px;
+        height: 10px;
+        border-radius: 5px;
+    
+
+        .sliderGauge {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            left: 50%;
+            top: -5px;
+            background: #FFFFFF;
+            border: 1px solid $vojo-orange;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+        }
+    }   
