@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./CheckBox.module.scss";
 
 const CheckBox = props => {
-  const { text } = props;
+  const { text, startChecked } = props;
+  const [isChecked, toggleChecked] = useState(startChecked);
+
   return (
     <label className={styles.container}>
-      <input type="checkbox" name="checkAddress" />
+      <input
+        type="checkbox"
+        onClick={() => toggleChecked(!isChecked)}
+        defaultChecked={startChecked}
+      />
       {text}
       <span className={styles.checkmark}></span>
     </label>
@@ -13,3 +19,6 @@ const CheckBox = props => {
 };
 
 export default CheckBox;
+
+//  in App.jsx, your jsx element should look like the below
+//  <CheckBox text="option 1" startChecked={false} />
