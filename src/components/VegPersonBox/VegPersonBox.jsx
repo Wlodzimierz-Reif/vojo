@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./VegPersonBox.module.scss";
-// import images from "../../assets/characters/bean-1.svg"
 
 const VegPersonBox = (props) => {
   

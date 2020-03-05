@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./VegPictureBox.module.scss";
-// import images from "../../assets/characters/carrot-1.svg"
 
 const VegPictureBox = (props) => {
 
