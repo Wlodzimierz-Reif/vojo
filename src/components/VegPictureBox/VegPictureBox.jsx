@@ -1,13 +1,14 @@
 import React from "react";
 import styles from "./VegPictureBox.module.scss";
-import images from "../../assets/characters/carrot-1.svg"
+// import images from "../../assets/characters/carrot-1.svg"
 
-const VegPictureBox = () => {
-  const pText = "insert text from prop"
-  const image = images
+const VegPictureBox = (props) => {
+
+  const { pText, image} = props;
+
   return (
     <section className={styles.card}>
-      <img src={image} alt="vegetable image"/>
+      <img src={image} alt={`${pText} image`}/>
       <p>{pText}</p>
     </section>
   );
