@@ -7,22 +7,20 @@
   align-items: center;
   width: 100vw;
   height: 100px;
-  // padding: 50px;
 
   .navBarLogo {
     width: 110px;
-    // height: 100px;
-    padding-left: 50px;
+    padding-left: $base-spacing * 6;
   }
 
   .links {
     display: flex;
     justify-content: space-evenly;
     color: white;
-    padding-right: 50px;
+    padding-right: $base-spacing * 6;
 
     p {
-      padding: 0 15px;
+      padding: 0 $base-spacing * 2;
     }
 
     .logOut {

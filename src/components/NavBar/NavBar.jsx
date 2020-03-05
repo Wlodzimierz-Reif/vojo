@@ -2,26 +2,29 @@ import React from "react";
 import styles from "./NavBar.module.scss";
 import logos from "../../assets/logos/tofu-logo.png";
 
-const navBarLinks = [
-  "Priorities",
-  "Nutrients",
-  "Diet",
-  "Health",
-  "Genetics",
-  "Answers",
-  "Settings"
-];
+// TO BE HANDED IN AS PROPS (SEE MATE AND DENNIS!!! )
+// const exampleLinks = [
+//   "Priorities",
+//   "Nutrients",
+//   "Diet",
+//   "Health",
+//   "Genetics",
+//   "Answers",
+//   "Settings"
+// ];
 
 const getLinks = link => {
   return <p> {link} </p>;
 };
 
-const NavBar = () => {
+const NavBar = props => {
+  const { links } = props;
+
   return (
     <section className={styles.navBar}>
       <img src={logos} alt="Logo" className={styles.navBarLogo}></img>
       <section className={styles.links}>
-        {navBarLinks.map(getLinks)}
+        {links.map(getLinks)}
         <p className={styles.logOut}>Log out</p>
       </section>
     </section>
