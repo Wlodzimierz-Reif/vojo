@@ -76,3 +76,8 @@ $sucessful-shade: #dfe8d266;
 $neutral-shade: #fbeecf66;
 
 $base-spacing: 8px;
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
