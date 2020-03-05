@@ -6,7 +6,7 @@ import styles from "./MaintenancePage.module.scss";
 const MaintenancePage = () => {
   return (
     <>
-      <img src={image} alt="website under construction" />;
+      <img src={image} alt="website under construction" />
       <img src={logo} alt="Logo" className={styles.logo} />
     </>
   );

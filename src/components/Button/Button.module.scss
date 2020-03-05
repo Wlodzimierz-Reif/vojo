@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+
+.button {
+  border: 2px solid $primary-color;
+  border-radius: 3px;
+  color: white;
+  background-color: $primary-color;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+}
