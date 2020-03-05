@@ -3,8 +3,8 @@ import styles from "./NavBar.module.scss";
 import logos from "../../assets/logos/tofu-logo.png";
 
 const navBarLinks = [
-  " Priorities",
-  " Nutrients",
+  "Priorities",
+  "Nutrients",
   "Diet",
   "Health",
   "Genetics",
