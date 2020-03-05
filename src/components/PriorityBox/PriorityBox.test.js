@@ -5,7 +5,8 @@ import { render } from "@testing-library/react";
 const testObj = {
   priorityBoxNum: 1,
   priorityBoxHeading: "hello",
-  priorityBoxLink: "hello"
+  priorityBoxLink: "https://github.com/",
+  priorityBoxLinkText: "hello"
 };
 
 describe("PriorityBox tests", () => {

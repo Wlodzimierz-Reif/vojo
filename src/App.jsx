@@ -7,7 +7,8 @@ const App = () => {
   const testObj = {
     priorityBoxNum: 1,
     priorityBoxHeading: "hello",
-    priorityBoxLink: "hello"
+    priorityBoxLink: "https://github.com/",
+    priorityBoxLinkText: "hello"
   };
   return (
     <div className={styles.maintenanceContainer}>

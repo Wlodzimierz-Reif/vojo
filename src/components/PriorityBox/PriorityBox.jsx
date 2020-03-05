@@ -2,7 +2,12 @@ import React from "react";
 import styles from "./PriorityBox.module.scss";
 
 const PriorityBox = ({ props }) => {
-  const { priorityBoxNum, priorityBoxHeading, priorityBoxLink } = props;
+  const {
+    priorityBoxNum,
+    priorityBoxHeading,
+    priorityBoxLink,
+    priorityBoxLinkText
+  } = props;
 
   return (
     <>
@@ -11,7 +16,7 @@ const PriorityBox = ({ props }) => {
           <p>{priorityBoxNum}</p>
         </div>
         <h4>{priorityBoxHeading}</h4>
-        <a href="#">{priorityBoxLink}</a>
+        <a href={priorityBoxLink}>{priorityBoxLinkText}</a>
       </div>
     </>
   );
