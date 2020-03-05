@@ -3,7 +3,6 @@ import styles from "./App.module.scss";
 // import MaintenancePage from "./components/MaintenancePage";
 import PriorityBox from "./components/PriorityBox";
 
-
 const App = () => {
   const testObj = {
     priorityBoxNum: 1,
