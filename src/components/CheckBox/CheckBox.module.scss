@@ -3,8 +3,8 @@
 .container {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
+  padding-left: $base-spacing * 5;
+  margin-bottom: $base-spacing;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -18,39 +18,32 @@
     cursor: pointer;
     height: 0;
     width: 0;
+
+    &:checked ~ .checkmark:after {
+      display: block;
+    }
   }
 
-  /* Create a custom checkbox */
   .checkmark {
     position: absolute;
-    top: 0;
+    top: 2px;
     left: 0;
     height: 25px;
     width: 25px;
     border: solid 2px $primary-color;
     border-radius: 5px;
+
+    &:after {
+      content: url(../../assets/graphic-devices/primary-color-straw.svg);
+      position: absolute;
+      display: none;
+      left: 10px;
+      bottom: 5px;
+      width: 15px;
+      height: 30px;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg) scaleY(-1);
+    }
   }
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: url(../../assets/graphic-devices/primary-color-straw.svg);
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 10px;
-  bottom: 5px;
-  width: 15px;
-  height: 30px;
-  -webkit-transform: rotate(145deg);
-  -ms-transform: rotate(145deg);
-  transform: rotate(45deg) scaleY(-1);
 }
