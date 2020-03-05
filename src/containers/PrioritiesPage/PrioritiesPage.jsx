@@ -1,24 +1,33 @@
 import React from "react";
 import styles from "./PrioritiesPage.module.scss";
+import NoSampleBox from "../../components/NoSampleBox"
 
-const PrioritiesPage = () => {
+const PrioritiesPage = props => {
+  const { image } = props;
+
   return (
-    <>
+    <section className={styles.prioritiesPage}>
       {/* <NavBar /> */}
       <h2>Priorities</h2>
-      <p>Your nutrients (arrow)</p>
-      <h2>Get Some Nutrients!</h2>
+      <NoSampleBox />
+      <div>
+        <div>
+          <p>Your nutrients</p>
+          <p>THE ARROW</p>
+        </div>
+        <h3>Get Some Nutrients!</h3>
+      </div>
       <p>
         Here's a detailed break down of exactly what you need to do to up your
         nutrient intake and improve your health!
       </p>
-      <section className={styles.priorityBoxes}>
+      <section className={styles.priorityBoxesSection}>
+        {/* <PriorityBox />
         <PriorityBox />
-        <PriorityBox />
-        <PriorityBox />
+        <PriorityBox /> */}
       </section>
-      <img src="" alt="" />
-    </>
+      <img src={image} alt="Vegetable person" />
+    </section>
   );
 };
 

@@ -1,10 +1,27 @@
 @import "../../variables.scss";
 
-.priorityBoxes {
+
+.prioritiesPage {
+    font-style: inherit;
+    padding: $base-spacing * 7;
+    width: 100%;
+    background-color: $vojo-brown;
+    // need to change as variable
+    
+    h2 {
+        color: black;
+        text-align: center;
+        
+    }
+}
+
+
+
+
+.priorityBoxesSection {
     @include flex-row;
     justify-content: space-evenly;
     border: 2px solid black;
-    width: 90vw;
+    width: 100%;
     height: 40vh;
-
 }
