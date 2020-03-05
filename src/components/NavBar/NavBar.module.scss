@@ -1,5 +1,7 @@
+@import "../../variables.scss";
+
 .navBar {
-  background-color: #b44370;
+  background-color: $primary-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,7 +10,7 @@
   // padding: 50px;
 
   .navBarLogo {
-    width: 70px;
+    width: 110px;
     // height: 100px;
     padding-left: 50px;
   }

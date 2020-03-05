@@ -1,13 +1,12 @@
 import React from "react";
-// import styles from "./App.module.scss";
-import NavBar from "./components/NavBar";
+import styles from "./App.module.scss";
+import MaintenancePage from "./components/MaintenancePage";
 
 const App = () => {
   return (
-    <>
-      <p>Vojo under construction!</p>
-      <NavBar />
-    </>
+    <div className={styles.maintenanceContainer}>
+      <MaintenancePage />
+    </div>
   );
 };
 
