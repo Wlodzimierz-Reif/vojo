@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import InfoCard from "./components/InfoCard";
 import InputLabel from "./components/InputLabel";
 import InputField from "./components/InputField";
+import PriorityBox from "./components/PriorityBox";
 
 const App = () => {
   const exampleLinks = [
@@ -19,6 +20,13 @@ const App = () => {
     "Answers",
     "Settings"
   ];
+
+  const testObj = {
+    priorityBoxNum: 1,
+    priorityBoxHeading: "Priority Box",
+    priorityBoxLink: "https://github.com/",
+    priorityBoxLinkText: "Here is a link"
+  };
 
   return (
     <>
@@ -77,10 +85,12 @@ const App = () => {
         </article>
       </section>
 
-      <section className="bottomFlex">
-        <article>
-          <h2></h2>
-          <div></div>
+      <section className={styles.bottomFlex}>
+        <article className={styles.priority}>
+          <h2>Priority Box Component</h2>
+          <div className={styles.priorityContainer}>
+            <PriorityBox props={testObj} />
+          </div>
         </article>
         <article>
           <h2></h2>
