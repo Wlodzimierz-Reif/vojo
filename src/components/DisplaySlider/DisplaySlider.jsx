@@ -6,8 +6,8 @@ const DisplaySlider = props => {
   let sliderClass;
 
   switch (sliderColor) {
-    case "redGreenRed":
-      sliderClass = styles.redGreenRed;
+    case "greenToRed":
+      sliderClass = styles.greenToRed;
       break;
     case "redGreenYellow":
       sliderClass = styles.redGreenYellow;
