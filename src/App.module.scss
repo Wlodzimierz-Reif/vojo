@@ -1,3 +1,8 @@
+@font-face {
+  font-family: gt-walsheim;
+  src: url(./assets/fonts/gt-walsheim-pro-medium.woff2);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,5 +15,10 @@
   justify-content: center;
   align-items: center;
   background-color: black;
+
+  p {
+    font-family: gt-walsheim;
+    color: white;
+}
 }
 
