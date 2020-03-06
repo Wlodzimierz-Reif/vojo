@@ -5,6 +5,9 @@ import Button from "./components/Button";
 import CheckBox from "./components/CheckBox";
 import DisplaySlider from "./components/DisplaySlider";
 import NavBar from "./components/NavBar";
+import InfoCard from "./components/InfoCard";
+import InputLabel from "./components/InputLabel";
+import InputField from "./components/InputField";
 
 const App = () => {
   const exampleLinks = [
@@ -49,6 +52,43 @@ const App = () => {
           <div className={styles.sliderContainer}>
             <DisplaySlider sliderColor="redToGreen" />
           </div>
+        </article>
+      </section>
+      <section className={styles.middleFlex}>
+        <article className={styles.infoCard}>
+          <h2>InfoCard Component</h2>
+          <div className={styles.infoCardContainer}>
+            <InfoCard />
+          </div>
+        </article>
+
+        <article className={styles.input}>
+          <h2>Input Box component</h2>
+          <div className={styles.inputContainer}>
+            <div className={styles.label}>
+              <InputLabel labelName="Input Text" isPrimary={true} />
+            </div>
+            <InputField type="text" name="text" />
+            <div className={styles.label}>
+              <InputLabel labelName="Input Password" isPrimary={false} />
+            </div>
+            <InputField type="password" name="password" />
+          </div>
+        </article>
+      </section>
+
+      <section className="bottomFlex">
+        <article>
+          <h2></h2>
+          <div></div>
+        </article>
+        <article>
+          <h2></h2>
+          <div></div>
+        </article>
+        <article>
+          <h2></h2>
+          <div></div>
         </article>
       </section>
     </>
