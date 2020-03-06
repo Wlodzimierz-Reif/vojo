@@ -8,7 +8,6 @@ const App = () => {
       <MaintenancePage />
     </div>
   );
-  return <MaintenancePage />;
 };
 
 export default App;
