@@ -11,14 +11,46 @@
 //   align-items: center;
 // }
 
-.buttonContainer {
-  margin: 20px;
-  height: 40px;
-  width: 80px;
-}
+.topFlex {
+  height: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 
-.checkBoxContainer {
-  margin: 20px;
-  height: 40px;
-  width: 200px;
+  .button {
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .buttonContainer {
+      margin: 20px;
+      height: 40px;
+      width: 80px;
+    }
+  }
+
+  .checkBox {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .checkBoxContainer {
+      margin: 20px;
+      height: 40px;
+      width: 150px;
+    }
+  }
+  .slider {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    .sliderContainer {
+      margin: 12px;
+      height: 10px;
+      width: 300px;
+    }
+  }
 }
