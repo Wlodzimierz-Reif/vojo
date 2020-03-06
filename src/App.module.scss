@@ -106,4 +106,18 @@
       width: 420px;
     }
   }
+  .vegPersonBox {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .vegPersonBoxContainer {
+      height: 300px;
+      width: 300px;
+    }
+    .vegPictureBoxContainer {
+      height: 300px;
+      width: 300px;
+    }
+  }
 }

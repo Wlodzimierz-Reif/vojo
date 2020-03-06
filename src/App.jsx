@@ -9,6 +9,10 @@ import InfoCard from "./components/InfoCard";
 import InputLabel from "./components/InputLabel";
 import InputField from "./components/InputField";
 import PriorityBox from "./components/PriorityBox";
+import VegPersonBox from "./components/VegPersonBox";
+import VegPictureBox from "./components/VegPictureBox";
+import Image from "./assets/characters/bean-1.svg";
+import Image2 from "./assets/characters/bean-2.svg";
 
 const App = () => {
   const exampleLinks = [
@@ -92,9 +96,24 @@ const App = () => {
             <PriorityBox props={testObj} />
           </div>
         </article>
-        <article>
-          <h2></h2>
-          <div></div>
+        <article className={styles.vegPersonBox}>
+          <h2>Veg Person Box Component</h2>
+          <div className={styles.vegPersonBoxContainer}>
+            <VegPersonBox
+              image={Image}
+              h3Text="This is the title"
+              pText="This is a long paragraph, this is a long paragraph, this is a long paragraph"
+            />
+            <VegPersonBox
+              isPrimary
+              image={Image2}
+              h3Text="This is the title"
+              pText="This is a long paragraph, this is a long paragraph, this is a long paragraph"
+            />
+            <div className={styles.vegPictureBoxContainer}>
+              <VegPictureBox image={Image} pText="Your text here" />
+            </div>
+          </div>
         </article>
         <article>
           <h2></h2>
