@@ -4,10 +4,24 @@ import styles from "./App.module.scss";
 import Button from "./components/Button";
 import CheckBox from "./components/CheckBox";
 import DisplaySlider from "./components/DisplaySlider";
+import NavBar from "./components/NavBar";
 
 const App = () => {
+  const exampleLinks = [
+    "Priorities",
+    "Nutrients",
+    "Diet",
+    "Health",
+    "Genetics",
+    "Answers",
+    "Settings"
+  ];
+
   return (
     <>
+      <div className={styles.nav}>
+        <NavBar links={exampleLinks} />
+      </div>
       <section className={styles.topFlex}>
         <article className={styles.button}>
           <h2>Button Component</h2>
