@@ -115,10 +115,6 @@ const App = () => {
             </div>
           </div>
         </article>
-        <article>
-          <h2></h2>
-          <div></div>
-        </article>
       </section>
     </>
     // <div className={styles.maintenanceContainer}>
