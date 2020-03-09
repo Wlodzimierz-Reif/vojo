@@ -5,6 +5,7 @@ import Image2 from "../../assets/characters/broccoli-1.svg";
 import Image from "../../assets/characters/bean-2.svg";
 
 const DietType = props => {
+  const foodArray = ["Beans", "Lentils", "Greens (peas, spinach, etc.)"];
   const { regionText, dietText } = props;
   return (
     <>
@@ -20,7 +21,8 @@ const DietType = props => {
             isPrimary
             image={Image2}
             h3Text="This is the title"
-            pText="This is a long paragraph, this is a long paragraph, this is a long paragraph"
+            pText="Your genotype suggests you have a high need for folate. Beans, lentils and green vegetables are high in folate. Go for 5+ portions per day of:"
+            food = {foodArray}
           />
         </div>
         <div className={styles.vegbox}>

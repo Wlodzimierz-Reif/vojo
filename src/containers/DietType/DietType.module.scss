@@ -14,9 +14,19 @@
         height: 100%;
         width: 30%;
         margin: 0 $base-spacing;
+        padding: $base-spacing*2;
 
         .header {
             color: $secondary-color;
+           
+        }
+
+        .region {
+            color: $primary-color;
+           
+        }
+        p {
+            padding: $base-spacing 0;
         }
     }
 
@@ -25,6 +35,5 @@
         width: 30%;
         margin: 0 $base-spacing;
         // border: 1px solid black;
-
     }
 }

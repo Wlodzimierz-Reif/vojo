@@ -2,9 +2,13 @@ import React from "react";
 import styles from "./VegPersonBox.module.scss";
 
 const VegPersonBox = props => {
-  const { pText, image, h3Text } = props;
+  const { pText, image, h3Text, food } = props;
 
   const boxType = props.isPrimary ? styles.primary : styles.secondary;
+
+  const getVeg = veg => {
+    return <li>{veg}</li>;
+  };
 
   return (
     <section className={`${styles.card} ${boxType}`}>
@@ -13,6 +17,7 @@ const VegPersonBox = props => {
         <img src={image} alt="vegetable" />
       </div>
       <p>{pText}</p>
+      {food.map(getVeg)}
     </section>
   );
 };
