@@ -1,3 +1,7 @@
+body {
+  background-color: #f2e4d0;
+}
+
 .infoCardHolder {
   width: 100%;
   height: 100%;
@@ -11,6 +15,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.topContainer {
+  height: 187px;
+  background-image: url(../../assets//graphic-devices//grey-wave-top.svg);
 }
 
 @media screen and (min-width: 768px) {

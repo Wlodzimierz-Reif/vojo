@@ -5,9 +5,9 @@ import InfoCard from "../../components/InfoCard";
 const NutrientsPage = () => {
   return (
     <>
-    <div></div>
+      <div className={styles.topContainer}></div>
       <section className={styles.infoCardHolder}>
-        <InfoCard
+        {/* <InfoCard
           displayStyle={"red"}
           nutrient={"B12"}
           nutrientNeed="High"
@@ -91,7 +91,7 @@ const NutrientsPage = () => {
           nutrientNeed="Lower"
           nutrientAdvice="Your recommended intake: 5 mg/day
           Great news – you are a good converter of beta-carotene to vitamin A!"
-        />
+        /> */}
       </section>
     </>
   );
