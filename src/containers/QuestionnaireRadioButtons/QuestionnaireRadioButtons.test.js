@@ -1,10 +1,9 @@
 import React from "react";
 import QuestionnaireRadioButtons from "./QuestionnaireRadioButtons";
+import { render } from "@testing-library/react";
 
 describe("QuestionnaireRadioButtons tests", () => {
-  let component;
-
-  beforeEach(() => {
-    component =
-  })
+  it("should render", () => {
+    expect(render(<QuestionnaireRadioButtons />)).toBeTruthy();
+  });
 });

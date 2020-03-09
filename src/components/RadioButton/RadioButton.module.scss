@@ -1,8 +1,8 @@
 @import "../../variables.scss";
 
 .radioButton {
-  font-size: 2em;
-  padding: 2px;
+  font-size: 1em;
+  padding: $base-spacing 0;
   input[type="radio"]:after {
     width: 25px;
     height: 25px;
