@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,eAAe,CAAC;EACd,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;CACvB;;AAED,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EACjC,AAAA,eAAe,CAAC;IACd,cAAc,EAAE,GAAG;IACnB,WAAW,EAAE,UAAU;GACxB",
+    "sources": [
+        "NutrientsPage.module.scss",
+        "../../variables.scss"
+    ],
+    "names": [],
+    "file": "NutrientsPage.module.css"
+}

@@ -1,19 +1,17 @@
 import React from "react";
 import styles from "./InfoCard.module.scss";
 
-const InfoCard = () => {
+const InfoCard = props => {
+  const { nutrient, nutrientNeed, nutrientAdvice, displayStyle } = props;
+
   return (
-    <section className={styles.card}>
+    <section className={`${styles.card} ${styles[displayStyle]}`}>
       <div>
-        <h3>Your magnesium needs:</h3>
-        <h2>High</h2>
+        <h3>Your {nutrient} needs:</h3>
+        <h2>{nutrientNeed}</h2>
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit debitis illum esse, fugiat
-        quasi magnam vitae placeat laudantium delectus nesciunt doloremque laboriosam totam nobis
-        aliquid. Quibusdam voluptatibus quas fugiat delectus!
-      </p>
-      <a href="https://vojo.health/">Learn more</a>
+      <p>{nutrientAdvice}</p>
+      <p className={styles.link}>Learn more</p>
     </section>
   );
 };
