@@ -1,7 +1,27 @@
+@font-face {
+  font-family: "gt-walsheim";
+  src: url(./assets/fonts/gt-walsheim-pro-light.woff2);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "gt-walsheim";
+  src: url(./assets/fonts/gt-walsheim-pro-medium.woff2);
+  font-weight: bold;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5 { 
+  font-weight: bold;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: gt-walsheim;
+  font-weight: normal;
 }
 
 // .maintenanceContainer {
