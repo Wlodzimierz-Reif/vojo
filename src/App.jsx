@@ -5,7 +5,6 @@ import MaintenancePage from "./components/MaintenancePage";
 const App = () => {
   return (
     <div className={styles.maintenanceContainer}>
-      <p>Hello world</p>
       <MaintenancePage />
     </div>
   );
