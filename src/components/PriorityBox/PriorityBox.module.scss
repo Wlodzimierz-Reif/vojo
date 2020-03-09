@@ -1,0 +1,49 @@
+@import "../../variables.scss";
+
+.priorityBoxCont {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #f2e4d0;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  a {
+    color: $sucessful;
+  }
+
+  h4 {
+    margin: 16px 0 0;
+  }
+
+  div {
+    background-image: url("../../assets/graphic-devices/light-green-circle-1.svg"),
+      linear-gradient($sucessful, $sucessful);
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    position: absolute;
+    top: -40px;
+    left: calc(50% - 40px);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    p {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      font-size: 32px;
+    }
+  }
+}

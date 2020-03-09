@@ -3,25 +3,75 @@
 
 .prioritiesPage {
     font-style: inherit;
-    padding: $base-spacing * 7;
+    padding: 6vh;
     width: 100%;
-    background-color: $vojo-brown;
+    height: 100vh;
+    background-color: $primary-background;
     // need to change as variable
-    
+
+    .yourNutrients {
+        @include flex-row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2vh;
+
+        h3 {
+            font-size: $base-spacing * 3;
+        }
+
+        div {
+            height: $base-spacing * 4;
+            width: $base-spacing *32;
+            margin-left: $base-spacing;
+            @include flex-row;
+
+            p {
+                width: 128px;
+            }
+
+            .arrow {
+                height: 100%;
+                width: 100%;
+                transform: rotate(90deg);
+            }
+        }
+    }
+
     h2 {
         color: black;
         text-align: center;
-        
+        font-size: $heading-2-size;
+        padding-bottom: 10vh;
+
     }
-}
 
 
 
+    .noSampleBox {
+        h3 {
+            font-size: $base-spacing * 3;
+            padding-bottom: $base-spacing;
+        }
+    }
 
-.priorityBoxesSection {
-    @include flex-row;
-    justify-content: space-evenly;
-    border: 2px solid black;
-    width: 100%;
-    height: 40vh;
+    .priorityBoxesSection {
+        @include flex-row;
+        justify-content: space-between;
+        width: 100%;
+        height: 20vh;
+        margin-top: 5vh;
+
+        .priorityCardContainer {
+            width: 30%;
+            height: 100%;
+        }
+    }
+
+
+    .vegPerson {
+        width: 20vh;
+        height: 20vh;
+        margin-left: 60vw;
+        margin-top: 4vh;
+    }
 }

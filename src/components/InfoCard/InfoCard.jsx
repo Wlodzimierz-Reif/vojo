@@ -13,7 +13,7 @@ const InfoCard = () => {
         quasi magnam vitae placeat laudantium delectus nesciunt doloremque laboriosam totam nobis
         aliquid. Quibusdam voluptatibus quas fugiat delectus!
       </p>
-      <a href="">Learn more</a>
+      <a href="https://vojo.health/">Learn more</a>
     </section>
   );
 };

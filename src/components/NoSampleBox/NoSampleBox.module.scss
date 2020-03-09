@@ -11,12 +11,12 @@
         justify-content: space-between;
         padding-right: $base-spacing;
 
-        h2 {
-            text-emphasis: 2rem;
-        }
-
-       p{
+       p {
            text-decoration: underline;
+
+           &:hover {
+               cursor: pointer;
+           }
        }
     }
 }

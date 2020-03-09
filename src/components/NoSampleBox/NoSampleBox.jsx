@@ -9,7 +9,7 @@ const NoSampleBox = () => {
     <>
       <section className={styles.warningMessage}>
         <div>
-          <h2>We don't have your genetic information yet</h2>
+          <h3>We don't have your genetic information yet</h3>
           <p>Close</p>
         </div>
         <p>
