@@ -16,6 +16,9 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   max-width: 320px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .card h2 {
