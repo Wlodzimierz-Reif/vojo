@@ -6,6 +6,7 @@ import Image from "../../assets/characters/bean-2.svg";
 
 const DietType = props => {
   const foodArray = ["Beans", "Lentils", "Greens (peas, spinach, etc.)"];
+  
   const { regionText, dietText } = props;
   return (
     <>
@@ -21,16 +22,16 @@ const DietType = props => {
             isPrimary
             image={Image2}
             h3Text="This is the title"
-            pText="Your genotype suggests you have a high need for folate. Beans, lentils and green vegetables are high in folate. Go for 5+ portions per day of:"
-            food = {foodArray}
+            pText="Your genotype suggests you have a high need for folate. Beans, lentils and green vegetables are high in folate. Go for 5+ portions per day of: Beans, Lentils, Greens (peas, spinach, etc.)"
+           
           />
         </div>
         <div className={styles.vegbox}>
           <VegPersonBox
-            isPrimary
             image={Image}
             h3Text="This is the title"
-            pText="This is a long paragraph, this is a long paragraph, this is a long paragraph"
+            pText="Your genotype may be associated with an increased risk of blood sugar dysregulation and type 2 diabetes when eating dinner later in the evening. Eat your main meal for breakfast or lunch, and a smaller evening meal at least 4 hours before you go to bed."
+            isPrimary={false}
           />
         </div>
       </section>

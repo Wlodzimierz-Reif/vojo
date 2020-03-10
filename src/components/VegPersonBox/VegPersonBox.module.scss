@@ -6,33 +6,38 @@
 }
 
 .card {
-  border: 2px $sucessful-60 solid;
   border-radius: $base-spacing;
-  background-color: $sucessful;
   width: 100%;
   height: 100%;
   padding: $base-spacing * 2;
+  display: flex;
+  flex-direction: column;
 
-  div {
-    height: 25%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  .vegChar {
+    height: 40%;
+    width: 25%;
+    margin: 0 auto;
+    position: relative;
 
     img {
-      height: 100%;
-      width: 100%;
+      position: absolute;
+      bottom: 0;
     }
+  }
+
+  p {
+    margin-top: $base-spacing * 3;
   }
 }
 
 .primary {
-  border: 2px $sucessful-60 solid;
-  background-color: $sucessful;
+  border: 1px $sucessful solid;
+  background-color: $sucessful-shade-60;
+  color: $dark-green-text;
 }
 
 .secondary {
-  border: 2px $warning-60 solid;
-  background-color: $warning;
+  border: 1px $warning solid;
+  background-color: $warning-shade-60;
+  color: $dark-red-text;
 }
