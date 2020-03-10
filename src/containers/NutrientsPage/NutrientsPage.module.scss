@@ -1,31 +1,55 @@
 @import "../../variables.scss";
 
-body {
-  background-color: $primary-background;
-}
-
-.infoCardHolder {
+.nutrientPage {
+  background-color: $secondary-background;
   width: 100%;
-  height: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
+  // height: 100vh;
+  position: relative;
 
-.topContainer {
-  // background-size: 100% auto;
-  height: 187px;
-  // background-repeat: no-repeat;
-  // background-size: fill;
-  background-image: url(../../assets//graphic-devices//grey-wave-top.svg);
+  .infoCardHolder {
+    padding: 0 $base-spacing * 6;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: none;
+  }
+
+  .topContainer {
+    height: 187px;
+    background-image: url(../../assets//graphic-devices/grey-wave-top.svg);
+    background-repeat: repeat-x;
+  }
+
+  .bottomContainer {
+    background-repeat: repeat-x;
+    background-position: bottom;
+    height: 187px;
+    width: 100%;
+    background-image: url(../../assets//graphic-devices/grey-wave-bottom.svg);
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    // position: fixed;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .infoCardHolder {
-    flex-direction: row;
-    align-items: flex-start;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+  .nutrientPage {
+    height: 100vh;
+    .infoCardHolder {
+      flex-direction: row;
+      align-items: flex-start;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      height: 50%;
+    }
+    .topContainer {
+      height: 25%;
+    }
+    .bottomContainer {
+      height: 25%;
+    }
   }
 }
