@@ -5,8 +5,7 @@ import Image2 from "../../assets/characters/broccoli-1.svg";
 import Image from "../../assets/characters/bean-2.svg";
 
 const DietType = props => {
-  const foodArray = ["Beans", "Lentils", "Greens (peas, spinach, etc.)"];
-  
+   
   const { regionText, dietText } = props;
   return (
     <>

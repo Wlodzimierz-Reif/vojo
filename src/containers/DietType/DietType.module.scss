@@ -1,39 +1,64 @@
 @import "../../variables.scss";
 
 .dietType {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100vw;
-    height: 50vh;
-    margin: 25vh auto;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 200vh;
+  margin: auto;
+  vertical-align: center;
 
-    .dietTextBox {
-        border: 1px solid black;
-        height: 100%;
-        width: 30%;
-        margin: 0 $base-spacing;
-        padding: $base-spacing*2;
+  .dietTextBox {
+    border: 1px solid black;
+    height: 100%;
+    margin: $base-spacing;
+    padding: $base-spacing * 2;
+    overflow-y: scroll;
 
-        .header {
-            color: $secondary-color;
-           
-        }
-
-        .region {
-            color: $primary-color;
-           
-        }
-        p {
-            padding: $base-spacing 0;
-        }
+    .header {
+      color: $secondary-color;
     }
 
-    .vegbox {
+    .region {
+      color: $primary-color;
+    }
+    p {
+      padding: $base-spacing 0;
+    }
+  }
+
+  .vegbox {
+    height: 50%;
+    overflow-y: scroll;
+    margin: $base-spacing;
+  }
+}
+@media only screen and (min-width: 600px) {
+    .dietType {
+      flex-direction: row;
+      height: 50vh;
+      margin: 25vh auto;
+  
+      .dietTextBox {
+        width: 30%;
+        margin: 0 $base-spacing;
+      
+      }
+  
+      .vegbox {
         height: 100%;
         width: 30%;
         margin: 0 $base-spacing;
-        // border: 1px solid black;
+        overflow-y: hidden;
+       
+        
+      }
+    }
+  }
+@media only screen and (min-width: 900px) {
+    .dietType, .vegbox {
+        overflow-y: hidden;
+       
     }
 }
