@@ -1,12 +1,22 @@
 import React from "react";
 import styles from "./App.module.scss";
-import MaintenancePage from "./components/MaintenancePage";
+import EverydayFoods from "./containers/EverydayFoods";
+import InfoList from "./components/InfoList";
 
 const App = () => {
   return (
-    <div className={styles.maintenanceContainer}>
-      <MaintenancePage />
-    </div>
+    <>
+      <div className="dietContainer">
+        <EverydayFoods />
+      </div>
+      <div className="infoList">
+        <InfoList />
+        <InfoList />
+        <InfoList />
+        <InfoList />
+        <InfoList />
+      </div>
+    </>
   );
 };
 
