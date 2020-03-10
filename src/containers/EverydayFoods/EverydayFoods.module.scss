@@ -1,6 +1,9 @@
-@import "../../variables.scss" .dietContainer {
-  width: 50vw;
-  height: 100vh;
+@import "../../variables.scss";
+
+.dietContainer {
+  width: 50%;
+  height: 50%;
+  position: absolute;
 }
 
 .title {
