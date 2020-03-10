@@ -78,8 +78,13 @@ $neutral-shade-40: #fbeecf66;
 $base-spacing: 8px;
 
 @mixin flex-row {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
 $heading-2-size: $base-spacing * 6;

@@ -1,123 +1,29 @@
+@font-face {
+  font-family: "gt-walsheim";
+  src: url(./assets/fonts/gt-walsheim-pro-light.woff2);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "gt-walsheim";
+  src: url(./assets/fonts/gt-walsheim-pro-medium.woff2);
+  font-weight: bold;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-// .maintenanceContainer {
-//   height: 100vh;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-.nav {
-  height: 80px;
-}
-
-.topFlex {
-  height: 300px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-
-  .button {
-    height: 150px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .buttonContainer {
-      margin: 20px;
-      height: 40px;
-      width: 80px;
-    }
-  }
-
-  .checkBox {
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .checkBoxContainer {
-      margin: 20px;
-      height: 40px;
-      width: 150px;
-    }
-  }
-  .slider {
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    .sliderContainer {
-      margin: 12px;
-      height: 10px;
-      width: 300px;
-    }
-  }
-}
-
-.middleFlex {
-  height: 500px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  .infoCard {
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .infoCardContainer {
-      height: 300px;
-      width: 400px;
-    }
-  }
-  .input {
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .label {
-      margin: 5px 0;
-    }
-    .inputContainer {
-      width: 400px;
-      height: 30px;
-    }
-  }
-}
-
-.bottomFlex {
-  height: 350px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  .priority {
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .priorityContainer {
-      margin-top: 50px;
-      height: 180px;
-      width: 420px;
-    }
-  }
-  .vegPersonBox {
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .vegPersonBoxContainer {
-      height: 300px;
-      width: 300px;
-    }
-    .vegPictureBoxContainer {
-      height: 300px;
-      width: 300px;
-    }
-  }
+  font-family: gt-walsheim;
+  font-weight: normal;
 }
