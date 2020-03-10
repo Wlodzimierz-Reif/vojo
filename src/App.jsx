@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./App.module.scss";
 import MaintenancePage from "./components/MaintenancePage";
-import PrioritiesPage from "./containers/PrioritiesPage"
-
+import PrioritiesPage from "./containers/PrioritiesPage";
 
 const App = () => {
   const exampleLinks = [
@@ -23,14 +22,14 @@ const App = () => {
   };
 
   return (
-  //   <div className={styles.maintenanceContainer}>
-  //     <MaintenancePage />
-  //   </div>
-  // 
+    //   <div className={styles.maintenanceContainer}>
+    //     <MaintenancePage />
+    //   </div>
+    //
 
-  <>
-  <PrioritiesPage />
-  </>
+    <>
+      <PrioritiesPage haveSample={false} />
+    </>
   );
 };
 

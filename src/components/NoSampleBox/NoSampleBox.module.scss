@@ -1,22 +1,25 @@
 @import "../../variables.scss";
 
+.hideNoSampleBox {
+  opacity: 0;
+}
+
 .warningMessage {
-    background-color: $neutral;
-    border-radius: $base-spacing;
-    padding: $base-spacing * 2;
+  background-color: $neutral;
+  border-radius: $base-spacing;
+  padding: $base-spacing * 2;
 
-    div {
+  div {
+    @include flex-row;
+    justify-content: space-between;
+    padding-right: $base-spacing;
 
-        @include flex-row;
-        justify-content: space-between;
-        padding-right: $base-spacing;
+    p {
+      text-decoration: underline;
 
-       p {
-           text-decoration: underline;
-
-           &:hover {
-               cursor: pointer;
-           }
-       }
+      &:hover {
+        cursor: pointer;
+      }
     }
+  }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./PrioritiesPage.module.scss";
 import NoSampleBox from "../../components/NoSampleBox";
 import PriorityBox from "../../components/PriorityBox";
@@ -7,7 +7,11 @@ import Image from "../../assets/characters/beetroot-2.svg";
 import Arrow from "../../assets/graphic-devices/primary-col-arrow-1.svg";
 
 const PrioritiesPage = props => {
-  const { image } = props;
+  const { image, haveSample } = props;
+
+  const [isPromptShown, togglePromptShown] = useState(haveSample);
+
+  const setSampleBoxVisibility = isPromptShown ? styles.hideNoSampleBox : "";
 
   // priorityBoxNum,
   // priorityBoxHeading,
@@ -19,18 +23,17 @@ const PrioritiesPage = props => {
       <NavBar links={["Food"]} />
       <section className={styles.prioritiesPage}>
         <h2>Priorities</h2>
-        <div className={styles.noSampleBox}>
-          <NoSampleBox />
+        <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
+          <NoSampleBox closeBox={() => togglePromptShown(!isPromptShown)} />
         </div>
         <div>
           <div className={styles.yourNutrients}>
-            <h3>Get Some Nutrients!</h3>            
+            <h3>Get Some Nutrients!</h3>
             <div>
               <p>Your nutrients</p>
               <img src={Arrow} alt="Right arrow" className={styles.arrow} />
             </div>
           </div>
-          
         </div>
         <p>
           Here's a detailed break down of exactly what you need to do to up your
