@@ -6,10 +6,6 @@ const QuestionnaireRadioButtons = props => {
   const [formValues, setFormValues] = useState({});
   const { question } = props;
 
-  // const oldState = {
-  //   test: gender
-  // };
-
   return (
     <section className={styles.questionnaireRadioButtons}>
       <h2>{question}</h2>
@@ -18,14 +14,14 @@ const QuestionnaireRadioButtons = props => {
         name="Gender"
         value="Male"
         startChecked={false}
-        selectRadio={input => setFormValues({ ...formValues, Gender: input })}
+        selectRadio={input => setFormValues({ ...formValues, gender: input })}
       />
       <RadioButton
         text="Female"
         name="Gender"
         value="Female"
         startChecked={false}
-        selectRadio={input => setFormValues({ ...formValues, Gender: input })}
+        selectRadio={input => setFormValues({ ...formValues, gender: input })}
       />
     </section>
   );

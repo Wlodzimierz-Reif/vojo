@@ -10,9 +10,9 @@ const App = () => {
 
   return (
     <>
-      <QuestionnaireRadioButtons question="Which of the following best describes your current diet?" />
+      <QuestionnaireRadioButtons question="What is your biological sex?" />
       {/* <QuestionnaireCheckBoxes question="Which of the following best describes your current diet?" /> */}
-      {/* <QuestionnaireInputField question="Which of the following best describes your current diet?" /> */}
+      <QuestionnaireInputField question="How tall are you?" />
     </>
     // <div className={styles.maintenanceContainer}>
     //   <MaintenancePage />
