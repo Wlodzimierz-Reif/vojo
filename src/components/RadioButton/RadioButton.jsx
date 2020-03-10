@@ -2,18 +2,20 @@ import React, { useState } from "react";
 import styles from "./RadioButton.module.scss";
 
 const RadioButton = props => {
-  const { text, question, value, startChecked, selectRadio } = props;
+  const { text, name, value, startChecked, selectRadio } = props;
+  const [isChecked, toggleCheckedState] = useState(startChecked);
 
   return (
     <section className={styles.radioButton}>
       <input
         type="radio"
-        name={question}
+        name={name}
         value={value}
         onInput={event => selectRadio(event.target.value)}
+        // onClick={() => toggleCheckedState(!isChecked)}
         defaultChecked={startChecked}
       />
-      <label for={question}>{text}</label>
+      <label for={name}>{text}</label>
     </section>
   );
 };

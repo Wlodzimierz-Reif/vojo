@@ -3,13 +3,13 @@ import styles from "./CheckBox.module.scss";
 
 const CheckBox = props => {
   const { text, startChecked } = props;
-  const [isChecked, toggleChecked] = useState(startChecked);
+  const [isChecked, toggleCheckedState] = useState(startChecked);
 
   return (
     <label className={styles.container}>
       <input
         type="checkbox"
-        onClick={() => toggleChecked(!isChecked)}
+        onClick={() => toggleCheckedState(!isChecked)}
         defaultChecked={startChecked}
       />
       {text}

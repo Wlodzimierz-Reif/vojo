@@ -11,8 +11,8 @@ const App = () => {
   return (
     <>
       <QuestionnaireRadioButtons question="Which of the following best describes your current diet?" />
-      <QuestionnaireCheckBoxes question="Which of the following best describes your current diet?" />
-      <QuestionnaireInputField question="Which of the following best describes your current diet?" />
+      {/* <QuestionnaireCheckBoxes question="Which of the following best describes your current diet?" /> */}
+      {/* <QuestionnaireInputField question="Which of the following best describes your current diet?" /> */}
     </>
     // <div className={styles.maintenanceContainer}>
     //   <MaintenancePage />
