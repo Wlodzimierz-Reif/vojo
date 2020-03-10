@@ -15,6 +15,10 @@ const QuestionnaireInputField = props => {
         name={"world"}
         selectInput={input => setFormValues({ ...formValues, height: input })}
       />
+      <InputField
+        name={"world"}
+        selectInput={input => setFormValues({ ...formValues, height: input })}
+      />
     </section>
   );
 };

@@ -12,7 +12,11 @@
   font-style: normal;
 }
 
-h1, h2, h3, h4, h5 { 
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-weight: bold;
 }
 
@@ -33,6 +37,13 @@ h1, h2, h3, h4, h5 {
 
 .nav {
   height: 80px;
+}
+
+.box {
+  height: 50%;
+  width: 50%;
+  border: solid red 2px;
+  margin: 0 auto;
 }
 
 .topFlex {
