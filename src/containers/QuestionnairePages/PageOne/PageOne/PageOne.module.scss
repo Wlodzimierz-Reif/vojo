@@ -13,11 +13,13 @@
     width: 30%;
     min-width: 300px;
 
+    & > section {
+      margin-bottom: $base-spacing * 3;
+    }
+
     h2 {
       color: $secondary-color;
-    }
-    & > * {
-      margin-bottom: $base-spacing;
+      margin-bottom: $base-spacing * 2;
     }
 
     .inputFieldContainer {
@@ -27,6 +29,7 @@
 }
 
 .questionPerson {
+  display: none;
   position: absolute;
   right: 20%;
   bottom: 30px;
@@ -35,17 +38,27 @@
 }
 
 .leftArrow {
+  display: none;
   transform: rotate(270deg);
   position: absolute;
-  left: 20px;
-  width: 40px;
-  height: 40px;
+  left: 60px;
+  width: 60px;
+  height: 60px;
 }
 
 .rightArrow {
+  display: none;
   transform: rotate(90deg);
   position: absolute;
-  width: 40px;
-  height: 40px;
-  right: 20px;
+  width: 60px;
+  height: 60px;
+  right: 60px;
+}
+
+@media only screen and (min-width: 900px) {
+  .rightArrow,
+  .leftArrow,
+  .questionPerson {
+    display: unset;
+  }
 }
