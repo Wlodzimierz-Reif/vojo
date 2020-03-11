@@ -6,7 +6,7 @@ import Router from "../src/containers/Routes";
 const App = () => {
   return (
     <>
-      {/* <Router /> */}
+      <Router />
     </>
   );
 };

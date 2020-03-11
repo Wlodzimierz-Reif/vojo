@@ -3,8 +3,7 @@
 .card {
   border: 2px solid $warning;
   border-radius: 8px;
-  padding: $base-spacing * 3;
-  width: 100%;
+  padding: $base-spacing * 2;
   background-color: $warning-shade;
   display: flex;
   flex-direction: column;
@@ -13,9 +12,14 @@
   flex: 0 0 auto;
   margin: $base-spacing;
 
+  h3 {
+    margin:  0;
+  }
+
   h2 {
     font-size: 28px;
-    padding: $base-spacing 0;
+    // padding: $base-spacing;
+    margin:  0;
   }
 
   p {

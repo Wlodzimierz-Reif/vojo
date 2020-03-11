@@ -1,23 +1,22 @@
 import React from "react";
 import styles from "./NutrientsPage.module.scss";
 import InfoCard from "../../components/InfoCard";
-import logo from "../../assets/logos/black-logo.png";
+import logo from "../../assets/logos/primary-logo.png";
 import topWave from "../../assets//graphic-devices/grey-wave-top.svg";
 import bottomWave from "../../assets//graphic-devices/grey-wave-bottom.svg";
-
-
+import blueBerry from "../../assets/characters/blueberry-2.svg";
 
 const NutrientsPage = () => {
   return (
     <>
       <section className={styles.nutrientPage}>
-        <img src={topWave} alt="" className={styles.wave}/>
+        <img src={topWave} alt="" className={styles.wave} />
         <div className={styles.topContainer}>
-          <img src={logo} alt="vojo logo"/>
+          <img src={logo} alt="vojo logo" />
           <p>menu</p>
         </div>
         <h1>Nutrients</h1>
-        <div className={styles.infoCardHolder}>
+        <div className={styles.infoCardHolder} data-simplebar>
           <InfoCard
             displayStyle={"red"}
             nutrient={"B12"}
@@ -104,7 +103,14 @@ const NutrientsPage = () => {
           Great news – you are a good converter of beta-carotene to vitamin A!"
           />
         </div>
-        <img src={bottomWave}  className={`${styles.wave} ${styles.waveBottom}`} alt=""/>
+        <div className={styles.bottomContainer}>
+          <img src={blueBerry} className={styles.blueBerry} alt="" />
+          <img
+            src={bottomWave}
+            className={`${styles.wave} ${styles.waveBottom}`}
+            alt=""
+          />
+        </div>
       </section>
     </>
   );
