@@ -1,0 +1,21 @@
+@import "../../variables.scss";
+
+.sidePanel {
+  width: 100%;
+  min-height: 100vh;
+
+  img {
+      width: 100%;
+  }
+
+
+  .closeButton {
+      position: absolute;
+      top: $base-spacing;
+      left: $base-spacing;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  
+}
