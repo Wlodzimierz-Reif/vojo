@@ -1,0 +1,9 @@
+@import "./variables.scss";
+
+.mealIdeas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 90vw;
+  margin: 0 auto;
+}

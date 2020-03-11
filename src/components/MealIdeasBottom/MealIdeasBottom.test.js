@@ -1,7 +1,7 @@
 import React from "react";
-import MealIdeas from "./MealIdeas";
+import MealIdeasBottom from "./MealIdeasBottom";
 
-describe("MealIdeas tests", () => {
+describe("MealIdeasBottom tests", () => {
   let component;
 
   beforeEach(() => {
