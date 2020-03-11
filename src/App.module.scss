@@ -1,3 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gt-walsheim;
+  font-weight: normal;
+}
+
 @font-face {
   font-family: "gt-walsheim";
   src: url(./assets/fonts/gt-walsheim-pro-light.woff2);
