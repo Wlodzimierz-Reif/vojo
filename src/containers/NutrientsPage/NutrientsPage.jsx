@@ -1,15 +1,22 @@
 import React from "react";
 import styles from "./NutrientsPage.module.scss";
 import InfoCard from "../../components/InfoCard";
+import logo from "../../assets/logos/black-logo.png";
+import topWave from "../../assets//graphic-devices/grey-wave-top.svg";
+import bottomWave from "../../assets//graphic-devices/grey-wave-bottom.svg";
+
+
 
 const NutrientsPage = () => {
   return (
     <>
       <section className={styles.nutrientPage}>
+        <img src={topWave} alt="" className={styles.wave}/>
         <div className={styles.topContainer}>
-          <img src="C:\Users\charlie.richardson\code\vojo\src\assets\logos\black-logo.png" alt=""/>
-          <h1>Nutrients</h1>
+          <img src={logo} alt="vojo logo"/>
+          <p>menu</p>
         </div>
+        <h1>Nutrients</h1>
         <div className={styles.infoCardHolder}>
           <InfoCard
             displayStyle={"red"}
@@ -97,7 +104,7 @@ const NutrientsPage = () => {
           Great news – you are a good converter of beta-carotene to vitamin A!"
           />
         </div>
-        <div className={styles.bottomContainer}></div>
+        <img src={bottomWave}  className={`${styles.wave} ${styles.waveBottom}`} alt=""/>
       </section>
     </>
   );

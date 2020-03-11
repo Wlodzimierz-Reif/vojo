@@ -1,15 +1,14 @@
 import React from "react";
-import styles from "./App.module.scss";
-// import MaintenancePage from "./components/MaintenancePage";
-import NutrientsPage from "./containers/NutrientsPage"
-import InfoCard from "./components/InfoCard"
+// import styles from "./App.module.scss";
+import Router from "../src/containers/Routes";
+// import NavBar from "./components/NavBar";
 
 const App = () => {
- return (
- <><NutrientsPage />
-
-  
-  </>)
+  return (
+    <>
+      {/* <Router /> */}
+    </>
+  );
 };
 
 export default App;

@@ -1,36 +1,46 @@
 @import "../../variables.scss";
 
 .nutrientPage {
-  background-color: $secondary-background;
   width: 100%;
-  // height: 100vh;
   position: relative;
 
+  .wave {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    height: 10vh;
+  }
+
+  .topContainer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    padding: $base-spacing $base-spacing * 2;
+    // height: 5%;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  h1 {
+    margin-top: $base-spacing * 4;
+    position: relative;
+    color: $secondary-color;
+    font-size: 2em;
+    text-align: center;
+    z-index: 1;
+  }
+
   .infoCardHolder {
-    padding: 0 $base-spacing * 6;
+    padding: $base-spacing * 6;
     width: 100%;
     align-items: center;
     display: flex;
     flex-direction: column;
     background: none;
-  }
-
-  .topContainer {
-    height: 187px;
-    background-image: url(../../assets//graphic-devices/grey-wave-top.svg);
-    background-repeat: repeat-x;
-  }
-
-  .bottomContainer {
-    background-repeat: repeat-x;
-    background-position: bottom;
-    height: 187px;
-    width: 100%;
-    background-image: url(../../assets//graphic-devices/grey-wave-bottom.svg);
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
-    // position: fixed;
   }
 }
 
@@ -43,13 +53,28 @@
       display: flex;
       flex-wrap: nowrap;
       overflow-x: auto;
-      height: 50%;
+      // height: 50%;
     }
+
     .topContainer {
-      height: 25%;
+      padding-bottom: 0;
     }
-    .bottomContainer {
-      height: 25%;
+
+    h1 {
+      margin: 0 0 $base-spacing * 5 0;
+    }
+
+    .wave {
+      width: 100%;
+      position: absolute;
+      z-index: 0;
+      height: 15vh;
+    }
+    .waveBottom {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 15vh;
     }
   }
 }
