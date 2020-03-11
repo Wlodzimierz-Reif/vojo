@@ -1,0 +1,19 @@
+@import "../../variables.scss";
+
+.supplementsPage {
+
+    .supplementsList {
+        @include flex-column;
+        width: 20vw;
+    }
+
+    .supplementsWarning {
+        @include flex-column;
+
+        .warningsContainer{
+            @include flex-row;
+        }
+    }
+
+
+}
