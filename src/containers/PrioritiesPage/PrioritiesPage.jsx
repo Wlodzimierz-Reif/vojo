@@ -7,7 +7,7 @@ import Image from "../../assets/characters/beetroot-2.svg";
 import Arrow from "../../assets/graphic-devices/primary-col-arrow-1.svg";
 
 const PrioritiesPage = props => {
-  const { image, haveSample } = props;
+  const { haveSample } = props;
 
   const [isPromptShown, togglePromptShown] = useState(haveSample);
 
