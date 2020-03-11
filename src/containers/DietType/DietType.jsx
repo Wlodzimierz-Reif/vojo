@@ -5,8 +5,8 @@ import Image2 from "../../assets/characters/broccoli-1.svg";
 import Image from "../../assets/characters/bean-2.svg";
 
 const DietType = props => {
-   
   const { regionText, dietText } = props;
+  
   return (
     <>
       {/* <h2>Diet</h2> */}
