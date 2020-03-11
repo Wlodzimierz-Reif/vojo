@@ -44,6 +44,7 @@ const PrioritiesPage = props => {
             <PriorityBox
               priorityBoxNum={"1"}
               priorityBoxHeading={"Food"}
+              priorityBoxText={"The box's text"}
               priorityBoxLink={"Linky"}
               priorityBoxLinkText={"The text for the link"}
             />
@@ -52,6 +53,7 @@ const PrioritiesPage = props => {
             <PriorityBox
               priorityBoxNum={"2"}
               priorityBoxHeading={"Food"}
+              priorityBoxText={"The box's text"}
               priorityBoxLink={"Linky"}
               priorityBoxLinkText={"The text for the link"}
             />
@@ -60,6 +62,7 @@ const PrioritiesPage = props => {
             <PriorityBox
               priorityBoxNum={"3"}
               priorityBoxHeading={"Food"}
+              priorityBoxText={"The box's text"}
               priorityBoxLink={"Linky"}
               priorityBoxLinkText={"The text for the link"}
             />

@@ -6,7 +6,6 @@ import { Link } from "@reach/router";
 const HomePage = () => {
   return (
     <div>
-      <Link to="supplements-page">Supplements Page</Link>
       <Link to="priorities-page">Priorities Page</Link>
 
       <div className={styles.maintenanceContainer}>
