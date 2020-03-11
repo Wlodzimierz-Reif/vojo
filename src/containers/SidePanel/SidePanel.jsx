@@ -7,8 +7,8 @@ import NutrientsInfo from "../../components/NutrientsInfo/NutrientsInfo";
 const SidePanel = () => {
   return (
     <>
-      <section className={styles.sidePanel}>
-        <div>
+      <section className={styles.sidePanelContainer}>
+        <div className={styles.sidePanel}>
           <img src={topWave} className={styles.topWave} alt="" />
           <p className={styles.closeButton}>Close</p>
           <NutrientsInfo />

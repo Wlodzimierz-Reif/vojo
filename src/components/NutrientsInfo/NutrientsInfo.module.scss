@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+
+.nutrientInfo {
+  width: 100%;
+  border: 2px solid red;
+}
+
+.red {
+    h2 {
+        color: $warning;
+      }
+}
+
+.orange {
+    h2 {
+      color: $vojo-orange;
+    }
+}
+
+.yellow {
+    h2 {
+        color: $neutral;
+      }
+}
+
+.green {
+    h2 {
+        color: $sucessful;
+    }
+}
