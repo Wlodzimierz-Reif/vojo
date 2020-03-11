@@ -9,7 +9,11 @@ const App = () => {
   return (
     <>
       <Router />
-      <DietBreakdown />
+      <DietBreakdown
+        brief={
+          "Focus on a variety of colours. Spinach, broccoli and salad leaves are especially high in folate. Have starchy veg like potatoes occassionally, but as you have some genes related to blood sugar dysregulation, these are more likely to raise your blood sugar."
+        }
+      />
     </>
   );
 };
