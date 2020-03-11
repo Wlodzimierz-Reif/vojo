@@ -1,29 +1,52 @@
 import React from "react";
 import styles from "./DietBreakdown.module.scss";
 import VegPictureBox from "../../components/VegPictureBox";
+import DietVeg from "../../components/DietVeg";
 import beet from "../../assets/characters/beetroot-1.svg";
 import broc from "../../assets/characters/broccoli-1.svg";
 import carrot from "../../assets/characters/carrot-1.svg";
 
+
 const DietBreakdown = props => {
-  const { brief, imagesForVegBx, txtForVegBx } = props;
+  const { brief, title } = props;
 
   return (
     <>
-      <section className={styles.secInfo}>
-        <section className={styles.imgs}>
-          <div className={styles.primary}>
-            <VegPictureBox pText={"Rainbow veg"} image={carrot} />
+      <div>
+        <section className={styles.secInfo}>
+          <p className={styles.title}>{title}</p>
+          <section className={styles.imgs}>
+            <div className={styles.primary}>
+              <VegPictureBox pText={"Rainbow veg"} image={carrot} />
+            </div>
+            <div className={styles.primary}>
+              <VegPictureBox pText={"Leafy greens"} image={broc} />
+            </div>
+            <div className={styles.primary}>
+              <VegPictureBox pText={"Root veg"} image={beet} />
+            </div>
+          </section>
+          <p>{brief}</p>
+        </section>
+
+        <section className={styles.secInfo}>
+          <div >
+            <DietVeg
+              imagesForVegBx={carrot}
+              txtForVegBx={"Root Veg"}
+              brief={"dfsugiardoeioiudragub"}
+            />
           </div>
-          <div className={styles.primary}>
-            <VegPictureBox pText={"Leafy greens"} image={broc} />
-          </div>
-          <div className={styles.primary}>
-            <VegPictureBox pText={"Root veg"} image={beet} />
+          <div >
+            <DietVeg
+              imagesForVegBx={carrot}
+              txtForVegBx={"Root Veg"}
+              brief={"dfsugiardoeioiudragub"}
+            />
           </div>
         </section>
-        <p>{brief}</p>
-      </section>
+        
+      </div>
     </>
   );
 };
