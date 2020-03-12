@@ -13,11 +13,6 @@ const PrioritiesPage = props => {
 
   const setSampleBoxVisibility = isPromptShown ? styles.hideNoSampleBox : "";
 
-  // priorityBoxNum,
-  // priorityBoxHeading,
-  // priorityBoxLink,
-  // priorityBoxLinkText
-
   return (
     <>
       <NavBar links={["Food"]} />

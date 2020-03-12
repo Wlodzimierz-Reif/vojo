@@ -8,7 +8,7 @@ import PrioritiesPage from "../PrioritiesPage";
 const Routes = () => {
   return (
     <Router>
-      <Redirect noThrow from="/" to="home-page" />
+      <Redirect noThrow from="/" to="priorities-page" />
       <HomePage path="home-page" />
       <PrioritiesPage path="priorities-page" />
       <NotFound default />
