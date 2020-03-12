@@ -7,7 +7,6 @@ import Image from "../../assets/characters/beetroot-2.svg";
 import Arrow from "../../assets/graphic-devices/primary-col-arrow-1.svg";
 import { Link } from "@reach/router";
 
-
 const PrioritiesPage = props => {
   const { haveSample } = props;
 
@@ -26,16 +25,18 @@ const PrioritiesPage = props => {
         <div>
           <div className={styles.yourNutrients}>
             <h3>Get Some Nutrients!</h3>
-            <div>
-              <p>Your nutrients</p>
-              
-              <Link to="../nutrients-page"><img src={Arrow} alt="Right arrow" className={styles.arrow} /></Link>
-            </div>
+            <Link to="../nutrients-page" className={styles.link}>
+              <div>
+                <p>Your nutrients</p>
+
+                <img src={Arrow} alt="Right arrow" className={styles.arrow} />
+              </div>
+            </Link>
           </div>
         </div>
         <p>
-          Here's a detailed break down of exactly what you need to do to up your
-          nutrient intake and improve your health!
+          Here's a detailed break down of exactly what you need to do to up your nutrient intake and
+          improve your health!
         </p>
         <section className={styles.priorityBoxesSection}>
           <div className={styles.priorityCardContainer}>
