@@ -1,0 +1,114 @@
+@import "../../variables.scss";
+
+.showPanel {
+  position: absolute;
+  z-index: 2;
+}
+
+.nutrientPage {
+  min-width: 100%;
+  min-height: 100vh;
+  position: relative;
+
+  .wave {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    height: 10vh;
+  }
+
+  .topContainer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: $base-spacing $base-spacing * 2;
+
+    p {
+      margin: 0;
+      color: $primary-color;
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+      width: 40px;
+      height: 30px;
+    }
+  }
+
+  h1 {
+    margin-top: $base-spacing * 4;
+    position: relative;
+    color: $secondary-color;
+    font-size: 2em;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .infoCardHolder {
+    padding: 0;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: none;
+  }
+
+  .bottomContainer {
+    height: 20vh;
+    position: relative;
+
+    .waveBottom {
+      bottom: 0;
+    }
+
+    .blueBerry {
+      height: 100%;
+      left: 25%;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nutrientPage {
+    .infoCardHolder {
+      padding: $base-spacing 0;
+      flex-direction: row;
+      align-items: flex-start;
+      display: flex;
+      overflow-x: auto;
+    }
+
+    .topContainer {
+      padding: $base-spacing $base-spacing * 8;
+    }
+
+    h1 {
+      margin: 0 0 $base-spacing * 5 0;
+    }
+
+    .wave {
+      position: absolute;
+      z-index: 0;
+      height: 15vh;
+    }
+
+    .bottomContainer {
+      height: 20vh;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      z-index: -1;
+
+      .blueBerry {
+        height: 100%;
+        left: 50%;
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-$primary-color: #b44370;
+$primary-color: rgb(180, 67, 112);
 $secondary-color: #5567ae;
 
 $standard-text: #000;
@@ -6,20 +6,22 @@ $dark-green-text: #202913;
 $dark-red-text: #3A1210;
 
 $primary-background: #f2e4d0;
-$secondary-background: #ffffff;
+$secondary-background: #fbf8f3;
 
-$vojo-brown: #cc9a63;
+$vojo-brown: #202020;
 $vojo-orange: #ef7d40;
 $vojo-cream: #f8f2e9;
 
 //border-outlines and used for some subheadings
 $warning: #e94842;
 $sucessful: #82a44d;
+$raised-warning: #ef7d40;
 $neutral: #efbd3f;
 
 //box fillers
 $warning-shade: #f9d1cf;
 $sucessful-shade: #dfe8d2;
+$raised-warning-shade: #fbdecf;
 $neutral-shade: #fbeecf;
 
 //shades 80%
