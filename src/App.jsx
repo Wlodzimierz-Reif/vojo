@@ -7,8 +7,8 @@ import DietType from "./containers/DietType";
 const App = () => {
   return (
     <>
-      {/* <Router /> */}
-      <DietType />
+      <Router />
+     
     </>
   );
 };
