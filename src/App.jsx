@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./App.module.scss";
-import QuestionnairePage from "./containers/QuestionnairePage";
+import Router from "../src/containers/Routes";
 
 const App = () => {
   return (
     <>
-      <QuestionnairePage />
+      <Router />
     </>
   );
 };

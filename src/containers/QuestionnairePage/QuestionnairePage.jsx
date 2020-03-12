@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./QuestionnairePage.module.scss";
+import { Router, Redirect } from "@reach/router";
 import PageOne from "./PageOne";
 import PageTwo from "./PageTwo";
 import PageThree from "./PageThree";
@@ -15,15 +16,19 @@ const QuestionnairePage = () => {
 
   return (
     <>
-      <PageOne />
-      <PageTwo />
-      <PageThree />
-      <PageFour />
-      <PageFive />
-      <PageSix />
-      <PageSeven />
-      <PageEight />
-      <PageNine />
+      <Router>
+        <Redirect noThrow from="/" to="pageone" />
+        <PageOne path="pageone" />
+        <PageTwo path="pagetwo" />
+        <PageThree path="pagethree" />
+        <PageFour path="pagefour" />
+        <PageFive path="pagefive" />
+        <PageSix path="pagesix" />
+        <PageSeven path="pageseven" />
+        <PageEight path="pageeight" />
+        <PageNine path="pagenine" />
+        {/* <NotFound default /> */}
+      </Router>
     </>
   );
 };
