@@ -6,12 +6,16 @@ import topWave from "../../assets//graphic-devices/grey-wave-top.svg";
 import bottomWave from "../../assets//graphic-devices/grey-wave-bottom.svg";
 import blueBerry from "../../assets/characters/blueberry-2.svg";
 import SidePanel from "../SidePanel";
+import { Link } from "@reach/router";
 
 const NutrientsPage = () => {
   const [currentState, updateState] = useState(false);
   const [currentColor, updateColor] = useState("red");
   const insertJsx = currentState ? (
-    <SidePanel  displayStyle={currentColor} handleClick={() => updateState(!currentState)} />
+    <SidePanel
+      displayStyle={currentColor}
+      handleClick={() => updateState(!currentState)}
+    />
   ) : null;
 
   return (
@@ -21,7 +25,9 @@ const NutrientsPage = () => {
         <img src={topWave} alt="" className={styles.wave} />
         <div className={styles.topContainer}>
           <img src={logo} alt="vojo logo" />
-          <p>menu</p>
+          <Link to="../priorities-page">
+            <p>menu</p>
+          </Link>
         </div>
         <h1>Nutrients</h1>
         <div className={styles.infoCardHolder} data-simplebar>
@@ -59,8 +65,8 @@ const NutrientsPage = () => {
             nutrientNeed="Normal"
             nutrientAdvice="Your recommended intake: 5 mg/day
               Great news – you are a good converter of beta-carotene to vitamin A!"
-              handleClick={() => updateState(!currentState)}
-              changeColor={color => updateColor(color)}
+            handleClick={() => updateState(!currentState)}
+            changeColor={color => updateColor(color)}
           />
           <InfoCard
             displayStyle={"yellow"}
@@ -68,8 +74,8 @@ const NutrientsPage = () => {
             nutrientNeed="Normal"
             nutrientAdvice="Your recommended intake: 5 mg/day
               Great news – you are a good converter of beta-carotene to vitamin A!"
-              handleClick={() => updateState(!currentState)}
-              changeColor={color => updateColor(color)}
+            handleClick={() => updateState(!currentState)}
+            changeColor={color => updateColor(color)}
           />
           <InfoCard
             displayStyle={"green"}
@@ -77,8 +83,8 @@ const NutrientsPage = () => {
             nutrientNeed="Lower"
             nutrientAdvice="Your recommended intake: 5 mg/day
               Great news – you are a good converter of beta-carotene to vitamin A!"
-              handleClick={() => updateState(!currentState)}
-              changeColor={color => updateColor(color)}
+            handleClick={() => updateState(!currentState)}
+            changeColor={color => updateColor(color)}
           />
           <InfoCard
             displayStyle={"green"}
@@ -86,8 +92,8 @@ const NutrientsPage = () => {
             nutrientNeed="Lower"
             nutrientAdvice="Your recommended intake: 5 mg/day
               Great news – you are a good converter of beta-carotene to vitamin A!"
-              handleClick={() => updateState(!currentState)}
-              changeColor={color => updateColor(color)}
+            handleClick={() => updateState(!currentState)}
+            changeColor={color => updateColor(color)}
           />
           <InfoCard
             displayStyle={"green"}
@@ -95,8 +101,8 @@ const NutrientsPage = () => {
             nutrientNeed="Lower"
             nutrientAdvice="Your recommended intake: 5 mg/day
               Great news – you are a good converter of beta-carotene to vitamin A!"
-              handleClick={() => updateState(!currentState)}
-              changeColor={color => updateColor(color)}
+            handleClick={() => updateState(!currentState)}
+            changeColor={color => updateColor(color)}
           />
           <InfoCard
             displayStyle={"green"}
@@ -104,8 +110,8 @@ const NutrientsPage = () => {
             nutrientNeed="Lower"
             nutrientAdvice="Your recommended intake: 5 mg/day
               Great news – you are a good converter of beta-carotene to vitamin A!"
-              handleClick={() => updateState(!currentState)}
-              changeColor={color => updateColor(color)}
+            handleClick={() => updateState(!currentState)}
+            changeColor={color => updateColor(color)}
           />
           <InfoCard
             displayStyle={"green"}
@@ -113,8 +119,8 @@ const NutrientsPage = () => {
             nutrientNeed="Lower"
             nutrientAdvice="Your recommended intake: 5 mg/day
               Great news – you are a good converter of beta-carotene to vitamin A!"
-              handleClick={() => updateState(!currentState)}
-              changeColor={color => updateColor(color)}
+            handleClick={() => updateState(!currentState)}
+            changeColor={color => updateColor(color)}
           />
         </div>
         <div className={styles.bottomContainer}>
