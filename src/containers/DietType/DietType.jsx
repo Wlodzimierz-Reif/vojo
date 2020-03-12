@@ -22,7 +22,6 @@ const DietType = props => {
             image={broccoli}
             h3Text="This is the title"
             pText="Your genotype suggests you have a high need for folate. Beans, lentils and green vegetables are high in folate. Go for 5+ portions per day of: Beans, Lentils, Greens (peas, spinach, etc.)"
-           
           />
         </div>
         <div className={styles.vegbox}>

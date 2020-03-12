@@ -10,7 +10,7 @@
   vertical-align: center;
 
   .dietTextBox {
-    height: 90%;
+    height: 100%;
     margin: $base-spacing*2;
     padding: $base-spacing * 2;
 
@@ -21,6 +21,7 @@
     .region {
       color: $primary-color;
     }
+    
     p {
       padding: $base-spacing 0;
     }
@@ -32,10 +33,10 @@
    
   }
 }
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 768px) {
   .dietType {
     flex-direction: row;
-    height: 50vh;
+    height: 60vh;
     margin: 25vh auto;
 
     .dietTextBox {
