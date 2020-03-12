@@ -4,17 +4,18 @@ import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
-import Image from "../../../assets/characters/beetroot-1.svg";
+import Image from "../../../assets/characters/apple-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
+import { Link } from "@reach/router";
 
 const PageNine = () => {
   const [formValues, setFormValues] = useState({});
 
   return (
     <div className={styles.page}>
-      <div className={styles.box}>      
-          <section>
+      <div className={styles.box}>
+        <section>
           <h2>How would you generally describe your mood?</h2>
           <RadioButton
             text="Always good - I don't even think about it"
@@ -25,7 +26,7 @@ const PageNine = () => {
               setFormValues({ ...formValues, moodRating: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="I'm generally in a good mood but have the occasional dip"
             name="moodRating"
             value="I'm generally in a good mood but have the occasional dip"
@@ -34,7 +35,7 @@ const PageNine = () => {
               setFormValues({ ...formValues, moodRating: input })
             }
           />
-            <RadioButton
+          <RadioButton
             text="I feel a bit low sometimes"
             name="moodRating"
             value="I feel a bit low sometimes"
@@ -43,7 +44,7 @@ const PageNine = () => {
               setFormValues({ ...formValues, moodRating: input })
             }
           />
-            <RadioButton
+          <RadioButton
             text="I feel very low / depressed quite a lot"
             name="moodRating"
             value="I feel very low / depressed quite a lot"
@@ -52,7 +53,7 @@ const PageNine = () => {
               setFormValues({ ...formValues, moodRating: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="I have had depression in the past but no longer"
             name="moodRating"
             value="I have had depression in the past but no longer"
@@ -62,9 +63,9 @@ const PageNine = () => {
             }
           />
         </section>
-         <section>
+        <section>
           <h2>How irritable do you tend to be?</h2>
-           <RadioButton
+          <RadioButton
             text="5 - not at all"
             name="irritabilityRating"
             value="5 - not at all"
@@ -73,7 +74,7 @@ const PageNine = () => {
               setFormValues({ ...formValues, irritabilityRating: input })
             }
           />
-            <RadioButton
+          <RadioButton
             text="4 - on the odd occasion"
             name="irritabilityRating"
             value="4 - on the odd occasion"
@@ -82,7 +83,7 @@ const PageNine = () => {
               setFormValues({ ...formValues, irritabilityRating: input })
             }
           />
-            <RadioButton
+          <RadioButton
             text="3 - sometimes I can lose my temper"
             name="irritabilityRating"
             value="3 - sometimes I can lose my temper"
@@ -91,7 +92,7 @@ const PageNine = () => {
               setFormValues({ ...formValues, irritabilityRating: input })
             }
           />
-            <RadioButton
+          <RadioButton
             text="2 - I lose my rag pretty easily"
             name="irritabilityRating"
             value="2 - I lose my rag pretty easily"
@@ -100,7 +101,7 @@ const PageNine = () => {
               setFormValues({ ...formValues, irritabilityRating: input })
             }
           />
-            <RadioButton
+          <RadioButton
             text="1 - everything gets to me!"
             name="irritabilityRating"
             value="1 - everything gets to me!"
@@ -110,11 +111,15 @@ const PageNine = () => {
             }
           />
         </section>
-       </div>
-      <img className={styles.leftArrow} src={Arrow} />
+      </div>
+      <Link to="../page-eight">
+        <img className={styles.leftArrow} src={Arrow} />
+      </Link>
+      <Link to="../page-ten">
+        <img className={styles.rightArrow} src={Arrow} />
+      </Link>
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
-      <img className={styles.rightArrow} src={Arrow} />
     </div>
   );
 };

@@ -10,6 +10,7 @@ import PageSix from "./PageSix";
 import PageSeven from "./PageSeven";
 import PageEight from "./PageEight";
 import PageNine from "./PageNine";
+import NotFound from "../NotFound";
 
 const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
@@ -17,17 +18,17 @@ const QuestionnairePage = () => {
   return (
     <>
       <Router>
-        <Redirect noThrow from="/" to="pageone" />
-        <PageOne path="pageone" />
-        <PageTwo path="pagetwo" />
-        <PageThree path="pagethree" />
-        <PageFour path="pagefour" />
-        <PageFive path="pagefive" />
-        <PageSix path="pagesix" />
-        <PageSeven path="pageseven" />
-        <PageEight path="pageeight" />
-        <PageNine path="pagenine" />
-        {/* <NotFound default /> */}
+        <Redirect noThrow from="/" to="page-one" />
+        <PageOne path="page-one" />
+        <PageTwo path="page-two" />
+        <PageThree path="page-three" />
+        <PageFour path="page-four" />
+        <PageFive path="page-five" />
+        <PageSix path="page-six" />
+        <PageSeven path="page-seven" />
+        <PageEight path="page-eight" />
+        <PageNine path="page-nine" />
+        <NotFound default />
       </Router>
     </>
   );

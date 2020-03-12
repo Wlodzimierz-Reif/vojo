@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import styles from "./CheckBox.module.scss";
 
 const CheckBox = props => {
-  const { text, startChecked } = props;
+  const { text, value, startChecked, selectRadio } = props;
+
+  // const { text, startChecked } = props;
   const [isChecked, toggleCheckedState] = useState(startChecked);
 
   return (
     <label className={styles.container}>
       <input
         type="checkbox"
-        onClick={() => toggleCheckedState(!isChecked)}
+        value={value}
+        // onClick={() => toggleCheckedState(!isChecked)}
+        onInput={event => selectRadio(event.target.value)}
         defaultChecked={startChecked}
       />
       {text}

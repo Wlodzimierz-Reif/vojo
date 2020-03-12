@@ -7,6 +7,7 @@ import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/peanut-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
+import { Link } from "@reach/router";
 
 const PageFive = () => {
   const [formValues, setFormValues] = useState({});
@@ -14,10 +15,9 @@ const PageFive = () => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
-       
         <section>
           <h2>Are you currently following a gluten-free diet?</h2>
-           <RadioButton
+          <RadioButton
             text="Yes"
             name="glutenFree"
             value="Yes"
@@ -26,7 +26,7 @@ const PageFive = () => {
               setFormValues({ ...formValues, glutenFree: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="No"
             name="glutenFree"
             value="No"
@@ -34,9 +34,9 @@ const PageFive = () => {
             selectRadio={input =>
               setFormValues({ ...formValues, glutenFree: input })
             }
-          />         
+          />
         </section>
-         <section>
+        <section>
           <h2>How much time do you spend outside on a typical day?</h2>
           <RadioButton
             text="A few hours per day or more"
@@ -47,7 +47,7 @@ const PageFive = () => {
               setFormValues({ ...formValues, timeOutside: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="Around 30 - 60 minutes per day"
             name="timeOutside"
             value="Around 30 - 60 minutes per day"
@@ -56,7 +56,7 @@ const PageFive = () => {
               setFormValues({ ...formValues, timeOutside: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="Probably less than 30 minutes per day"
             name="timeOutside"
             value="Probably less than 30 minutes per day"
@@ -65,7 +65,7 @@ const PageFive = () => {
               setFormValues({ ...formValues, timeOutside: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="I spend most of my time indoors"
             name="timeOutside"
             value="I spend most of my time indoors"
@@ -75,12 +75,15 @@ const PageFive = () => {
             }
           />
         </section>
-         
       </div>
-      <img className={styles.leftArrow} src={Arrow} />
+      <Link to="../page-four">
+        <img className={styles.leftArrow} src={Arrow} />
+      </Link>
+      <Link to="../page-six">
+        <img className={styles.rightArrow} src={Arrow} />
+      </Link>
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
-      <img className={styles.rightArrow} src={Arrow} />
     </div>
   );
 };

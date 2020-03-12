@@ -7,6 +7,7 @@ import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/butternut-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
+import { Link } from "@reach/router";
 
 const PageThree = () => {
   const [formValues, setFormValues] = useState({});
@@ -21,9 +22,10 @@ const PageThree = () => {
             <InputField
               name={"height"}
               selectInput={input =>
-                setFormValues({ ...formValues, height: input })}
+                setFormValues({ ...formValues, height: input })
+              }
             />
-            </div>
+          </div>
         </section>
         <section>
           <h2>How much do you weight?</h2>
@@ -32,16 +34,20 @@ const PageThree = () => {
             <InputField
               name={"weight"}
               selectInput={input =>
-                setFormValues({ ...formValues, weight: input })}
+                setFormValues({ ...formValues, weight: input })
+              }
             />
-            </div>
+          </div>
         </section>
-        
       </div>
-      <img className={styles.leftArrow} src={Arrow} />
+      <Link to="../page-two">
+        <img className={styles.leftArrow} src={Arrow} />
+      </Link>
+      <Link to="../page-four">
+        <img className={styles.rightArrow} src={Arrow} />
+      </Link>
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
-      <img className={styles.rightArrow} src={Arrow} />
     </div>
   );
 };

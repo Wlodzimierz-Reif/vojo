@@ -10,7 +10,7 @@ const Routes = () => {
     <Router>
       <Redirect noThrow from="/" to="home-page" />
       <HomePage path="home-page" />
-      <QuestionnairePage path="questionnaire-page" />
+      <QuestionnairePage path="questionnaire-page/*" />
       <NotFound default />
     </Router>
   );

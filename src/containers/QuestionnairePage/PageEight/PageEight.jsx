@@ -7,14 +7,15 @@ import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/beetroot-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
+import { Link } from "@reach/router";
 
 const PageEight = () => {
   const [formValues, setFormValues] = useState({});
 
   return (
     <div className={styles.page}>
-      <div className={styles.box}>      
-          <section>
+      <div className={styles.box}>
+        <section>
           <h2>How do you sleep?</h2>
           <RadioButton
             text="Like a baby"
@@ -25,7 +26,7 @@ const PageEight = () => {
               setFormValues({ ...formValues, sleepRating: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="I have mostly good nights"
             name="sleepRating"
             value="I have mostly good nights"
@@ -34,7 +35,7 @@ const PageEight = () => {
               setFormValues({ ...formValues, sleepRating: input })
             }
           />
-            <RadioButton
+          <RadioButton
             text="I have mostly bad nights"
             name="sleepRating"
             value="I have mostly bad nights"
@@ -43,7 +44,7 @@ const PageEight = () => {
               setFormValues({ ...formValues, sleepRating: input })
             }
           />
-            <RadioButton
+          <RadioButton
             text="Terribly pretty much all the time"
             name="sleepRating"
             value="Terribly pretty much all the time"
@@ -53,9 +54,9 @@ const PageEight = () => {
             }
           />
         </section>
-         <section>
+        <section>
           <h2>How many hours of sleep do you get per night on average?</h2>
-         <InputLabel isPrimary={true} labelName={"Enter between 1 - 10"} />
+          <InputLabel isPrimary={true} labelName={"Enter between 1 - 10"} />
           <div className={styles.inputFieldContainer}>
             <InputField
               name={"sleepHours"}
@@ -65,11 +66,15 @@ const PageEight = () => {
             />
           </div>
         </section>
-       </div>
-      <img className={styles.leftArrow} src={Arrow} />
+      </div>
+      <Link to="../page-seven">
+        <img className={styles.leftArrow} src={Arrow} />
+      </Link>
+      <Link to="../page-nine">
+        <img className={styles.rightArrow} src={Arrow} />
+      </Link>
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
-      <img className={styles.rightArrow} src={Arrow} />
     </div>
   );
 };

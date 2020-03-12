@@ -7,6 +7,7 @@ import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/bean-2.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
+import { Link } from "@reach/router";
 
 const PageFour = () => {
   const [formValues, setFormValues] = useState({});
@@ -15,56 +16,38 @@ const PageFour = () => {
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>Are you currently breastfeeding, pregnant or trying to conceive?</h2>
-         <CheckBox
+          <h2>
+            Are you currently breastfeeding, pregnant or trying to conceive?
+          </h2>
+          <CheckBox
             text="Breastfeeding"
             startChecked={false}
-            handleClick={() =>
-              setFormValues({
-                ...formValues,
-                diet: [...formValues.diet, "breastFeeding"]
-              })
-            }
+            value="Breastfeeding"
+            selectRadio={input => setFormValues({ ...formValues, input })}
           />
           <CheckBox
-            text="Cannibal"
+            text="Pregnant"
             startChecked={false}
-            handleClick={() =>
-              setFormValues({
-                ...formValues,
-                diet: [...formValues.diet, "Cannibal"]
-              })
-            }
+            value="Pregnant"
+            selectRadio={input => setFormValues({ ...formValues, input })}
           />
           <CheckBox
-            text="Cannibal"
+            text="Trying to conceive"
             startChecked={false}
-            handleClick={() =>
-              setFormValues({
-                ...formValues,
-                diet: [...formValues.diet, "Cannibal"]
-              })
-            }
+            value="Trying to conceive"
+            selectRadio={input => setFormValues({ ...formValues, input })}
           />
           <CheckBox
-            text="Cannibal"
+            text="Planning to have children in the next few years"
             startChecked={false}
-            handleClick={() =>
-              setFormValues({
-                ...formValues,
-                diet: [...formValues.diet, "Cannibal"]
-              })
-            }
+            value="Planning to have children in the next few years"
+            selectRadio={input => setFormValues({ ...formValues, input })}
           />
           <CheckBox
-            text="Cannibal"
+            text="No"
             startChecked={false}
-            handleClick={() =>
-              setFormValues({
-                ...formValues,
-                diet: [...formValues.diet, "Cannibal"]
-              })
-            }
+            value="No"
+            selectRadio={input => setFormValues({ ...formValues, input })}
           />
         </section>
         <section>
@@ -78,7 +61,7 @@ const PageFour = () => {
               setFormValues({ ...formValues, currentDietTime: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="1 - 3 years"
             name="currentDietTime"
             value="1 - 3 years"
@@ -87,7 +70,7 @@ const PageFour = () => {
               setFormValues({ ...formValues, currentDietTime: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="4 - 10 years"
             name="currentDietTime"
             value="4 - 10 years"
@@ -96,7 +79,7 @@ const PageFour = () => {
               setFormValues({ ...formValues, currentDietTime: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="More than 10 years"
             name="currentDietTime"
             value="More than 10 years"
@@ -105,12 +88,16 @@ const PageFour = () => {
               setFormValues({ ...formValues, currentDietTime: input })
             }
           />
-        </section>        
+        </section>
       </div>
-      <img className={styles.leftArrow} src={Arrow} />
+      <Link to="../page-three">
+        <img className={styles.leftArrow} src={Arrow} />
+      </Link>
+      <Link to="../page-five">
+        <img className={styles.rightArrow} src={Arrow} />
+      </Link>
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
-      <img className={styles.rightArrow} src={Arrow} />
     </div>
   );
 };

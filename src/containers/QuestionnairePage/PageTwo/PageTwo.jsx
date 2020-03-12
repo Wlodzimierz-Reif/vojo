@@ -7,6 +7,7 @@ import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/broccoli-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
+import { Link } from "@reach/router";
 
 const PageTwo = () => {
   const [formValues, setFormValues] = useState({});
@@ -16,7 +17,7 @@ const PageTwo = () => {
       <div className={styles.box}>
         <section>
           <h2>Which of the following best describes your current diet?</h2>
-         <RadioButton
+          <RadioButton
             text="Vegan"
             name="currentDiet"
             value="Vegan"
@@ -73,7 +74,7 @@ const PageTwo = () => {
               setFormValues({ ...formValues, mainGoal: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="Improve my vegan diet"
             name="mainGoal"
             value="Improve my vegan diet"
@@ -82,7 +83,7 @@ const PageTwo = () => {
               setFormValues({ ...formValues, mainGoal: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="Lose weight"
             name="mainGoal"
             value="Lose weight"
@@ -91,7 +92,7 @@ const PageTwo = () => {
               setFormValues({ ...formValues, mainGoalv: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="Go wholefood vegan"
             name="mainGoal"
             value="Go wholefood vegan"
@@ -100,7 +101,7 @@ const PageTwo = () => {
               setFormValues({ ...formValues, mainGoal: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="Improve my mood"
             name="mainGoal"
             value="Improve my mood"
@@ -109,7 +110,7 @@ const PageTwo = () => {
               setFormValues({ ...formValues, mainGoal: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="Improve sport performance"
             name="mainGoal"
             value="Improve sport performance"
@@ -127,19 +128,14 @@ const PageTwo = () => {
               setFormValues({ ...formValues, mainGoal: input })
             }
           />
-        <InputLabel isPrimary={true} labelName={"Other"} />
-          <div className={styles.inputFieldContainer}>
-            <InputField
-              name={"firstName"}
-              selectInput={input =>
-                setFormValues({ ...formValues, firstName: input })}
-            />
-            </div>
         </section>
-       
       </div>
-      <img className={styles.leftArrow} src={Arrow} />
-      <img className={styles.rightArrow} src={Arrow} />
+      <Link to="../page-one">
+        <img className={styles.leftArrow} src={Arrow} />
+      </Link>
+      <Link to="../page-three">
+        <img className={styles.rightArrow} src={Arrow} />
+      </Link>
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>

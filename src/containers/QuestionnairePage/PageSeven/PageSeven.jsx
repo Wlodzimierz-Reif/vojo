@@ -7,6 +7,7 @@ import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/blueberry-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
+import { Link } from "@reach/router";
 
 const PageSeven = () => {
   const [formValues, setFormValues] = useState({});
@@ -14,7 +15,7 @@ const PageSeven = () => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
-       <section>
+        <section>
           <h2>How often do you drink alcohol?</h2>
           <RadioButton
             text="Every day"
@@ -25,7 +26,7 @@ const PageSeven = () => {
               setFormValues({ ...formValues, alcoholFrequency: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="A few times a week"
             name="alcoholFrequency"
             value="A few times a week"
@@ -34,7 +35,7 @@ const PageSeven = () => {
               setFormValues({ ...formValues, alcoholFrequency: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="Once a week"
             name="alcoholFrequency"
             value="Once a week"
@@ -43,7 +44,7 @@ const PageSeven = () => {
               setFormValues({ ...formValues, alcoholFrequency: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="I never or rarely drink"
             name="alcoholFrequency"
             value="I never or rarely drink"
@@ -64,7 +65,7 @@ const PageSeven = () => {
               setFormValues({ ...formValues, energyLevels: input })
             }
           />
-            <RadioButton
+          <RadioButton
             text="4 - fine"
             name="energyLevels"
             value="4 - fine"
@@ -73,7 +74,7 @@ const PageSeven = () => {
               setFormValues({ ...formValues, energyLevels: input })
             }
           />
-            <RadioButton
+          <RadioButton
             text="3 - could be better"
             name="energyLevels"
             value="3 - could be better"
@@ -82,7 +83,7 @@ const PageSeven = () => {
               setFormValues({ ...formValues, energyLevels: input })
             }
           />
-            <RadioButton
+          <RadioButton
             text="2 - is not good"
             name="energyLevels"
             value="2 - is not good"
@@ -91,7 +92,7 @@ const PageSeven = () => {
               setFormValues({ ...formValues, energyLevels: input })
             }
           />
-            <RadioButton
+          <RadioButton
             text="1 - I have to drag myself through the day"
             name="energyLevels"
             value="1 - I have to drag myself through the day"
@@ -100,12 +101,16 @@ const PageSeven = () => {
               setFormValues({ ...formValues, energyLevels: input })
             }
           />
-        </section>          
-       </div>
-      <img className={styles.leftArrow} src={Arrow} />
+        </section>
+      </div>
+      <Link to="../page-six">
+        <img className={styles.leftArrow} src={Arrow} />
+      </Link>
+      <Link to="../page-eight">
+        <img className={styles.rightArrow} src={Arrow} />
+      </Link>
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
-      <img className={styles.rightArrow} src={Arrow} />
     </div>
   );
 };

@@ -7,6 +7,7 @@ import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/carrot-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
+import { Link } from "@reach/router";
 
 const PageSix = () => {
   const [formValues, setFormValues] = useState({});
@@ -14,9 +15,9 @@ const PageSix = () => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
-       <section>
+        <section>
           <h2>What is your skin tone?</h2>
-           <RadioButton
+          <RadioButton
             text="Light, pale white"
             name="skinTone"
             value="Light, pale white"
@@ -25,7 +26,7 @@ const PageSix = () => {
               setFormValues({ ...formValues, skinTone: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="White, fair"
             name="skinTone"
             value="White, fair"
@@ -34,7 +35,7 @@ const PageSix = () => {
               setFormValues({ ...formValues, skinTone: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="Medium, white to light brown"
             name="skinTone"
             value="Medium, white to light brown"
@@ -43,7 +44,7 @@ const PageSix = () => {
               setFormValues({ ...formValues, skinTone: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="Olive, moderate brown"
             name="skinTone"
             value="Olive, moderate brown"
@@ -52,7 +53,7 @@ const PageSix = () => {
               setFormValues({ ...formValues, skinTone: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="Brown, dark brown"
             name="skinTone"
             value="Brown, dark brown"
@@ -61,7 +62,7 @@ const PageSix = () => {
               setFormValues({ ...formValues, skinTone: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="Very dark brown to black"
             name="skinTone"
             value="Very dark brown to black"
@@ -69,9 +70,9 @@ const PageSix = () => {
             selectRadio={input =>
               setFormValues({ ...formValues, skinTone: input })
             }
-          />         
+          />
         </section>
-         <section>
+        <section>
           <h2>Do you smoke?</h2>
           <RadioButton
             text="Yes"
@@ -82,7 +83,7 @@ const PageSix = () => {
               setFormValues({ ...formValues, smoker: input })
             }
           />
-           <RadioButton
+          <RadioButton
             text="No"
             name="smoker"
             value="No"
@@ -93,10 +94,14 @@ const PageSix = () => {
           />
         </section>
       </div>
-      <img className={styles.leftArrow} src={Arrow} />
+      <Link to="../page-five">
+        <img className={styles.leftArrow} src={Arrow} />
+      </Link>
+      <Link to="../page-seven">
+        <img className={styles.rightArrow} src={Arrow} />
+      </Link>
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
-      <img className={styles.rightArrow} src={Arrow} />
     </div>
   );
 };

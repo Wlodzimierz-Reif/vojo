@@ -12,7 +12,6 @@ const RadioButton = props => {
         name={name}
         value={value}
         onInput={event => selectRadio(event.target.value)}
-        // onClick={() => toggleCheckedState(!isChecked)}
         defaultChecked={startChecked}
       />
       <label for={name}>{text}</label>
