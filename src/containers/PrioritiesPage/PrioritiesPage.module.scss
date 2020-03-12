@@ -6,7 +6,6 @@
   width: 100%;
   height: 100%;
   background-color: $primary-background;
-  // need to change as variable
 
   .yourNutrients {
     @include flex-row;
@@ -91,7 +90,6 @@
     width: 100%;
     height: 100%;
     background-color: $primary-background;
-    // need to change as variable
 
     .yourNutrients {
       @include flex-row;
