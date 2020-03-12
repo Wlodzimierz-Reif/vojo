@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./QuestionnairePage.module.scss";
 import { Router, Redirect } from "@reach/router";
+import NotFound from "../NotFound";
 import PageOne from "./PageOne";
 import PageTwo from "./PageTwo";
 import PageThree from "./PageThree";
@@ -10,7 +11,11 @@ import PageSix from "./PageSix";
 import PageSeven from "./PageSeven";
 import PageEight from "./PageEight";
 import PageNine from "./PageNine";
-import NotFound from "../NotFound";
+import PageTen from "./PageTen";
+import PageEleven from "./PageEleven";
+import PageTwelve from "./PageTwelve";
+import PageThirteen from "./PageThirteen";
+import PageFourteen from "./PageFourteen";
 
 const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
@@ -28,6 +33,11 @@ const QuestionnairePage = () => {
         <PageSeven path="page-seven" />
         <PageEight path="page-eight" />
         <PageNine path="page-nine" />
+        <PageTen path="page-ten" />
+        <PageEleven path="page-eleven" />
+        <PageTwelve path="page-twelve" />
+        <PageThirteen path="page-thirteen" />
+        <PageFourteen path="page-fourteen" />
         <NotFound default />
       </Router>
     </>
