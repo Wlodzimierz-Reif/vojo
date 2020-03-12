@@ -1,11 +1,28 @@
 @import "../../variables.scss";
 
-.dietContainer {
-  width: 50%;
-  height: 50%;
-  position: absolute;
-}
+.listImage {
+  width: 100%;
+  height: 100vh;
+  top: $base-spacing * 2;
+  margin-left: $base-spacing * 9.5;
+  // @include flex-row;
 
-.title {
-  color: #5567ae;
+  .dietContainer {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    display: inline-block;
+
+    .title {
+      color: $secondary-color;
+      font-weight: 500;
+      margin: $base-spacing * 3 0 $base-spacing * 3 0;
+      font-size: $base-spacing * 3.5;
+    }
+
+    img {
+      // bottom: 50%;
+      height: 200px;
+    }
+  }
 }

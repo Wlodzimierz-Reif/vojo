@@ -1,14 +1,23 @@
 @import "../../variables.scss";
 
 .infoList {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+
+  p {
+    margin: $base-spacing 0 $base-spacing * 4 0;
+    font-size: 12px;
+  }
+
+  h4 {
+    margin: $base-spacing * 2 0 $base-spacing 0;
+    font-weight: 500;
+  }
 
   .blackText {
-    color: black;
+    color: $standard-text;
   }
 
   .purpleText {
-    color: #b44370;
+    color: $primary-color;
   }
 }

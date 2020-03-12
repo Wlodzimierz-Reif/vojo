@@ -1,9 +1,24 @@
 @import "./variables.scss";
 
+* {
+  font-style: inherit;
+
+  p {
+    font-weight: 300;
+  }
+}
+
 .mealIdeas {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 90vw;
   margin: 0 auto;
+}
+.infoSection {
+  img {
+    height: 100%;
+    position: absolute;
+    right: $base-spacing * 20;
+  }
 }
