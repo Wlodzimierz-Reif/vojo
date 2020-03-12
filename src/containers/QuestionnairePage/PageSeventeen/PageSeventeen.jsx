@@ -4,7 +4,7 @@ import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
-import Image from "../../../assets/characters/beetroot-1.svg";
+import Image from "../../../assets/characters/broccoli-2.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
@@ -16,55 +16,43 @@ const PageSeventeen = () => {
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>How do you sleep?</h2>
+          <h2>How regular is your menstrual cycle?</h2>
           <RadioButton
-            text="Like a baby"
-            name="sleepRating"
-            value="Like a baby"
+            text="Like clockwork"
+            name="menstrualCycle"
+            value="Like clockwork"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, sleepRating: input })
+              setFormValues({ ...formValues, menstrualCycle: input })
             }
           />
           <RadioButton
-            text="I have mostly good nights"
-            name="sleepRating"
-            value="I have mostly good nights"
+            text="Irregular"
+            name="menstrualCycle"
+            value="Irregular"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, sleepRating: input })
+              setFormValues({ ...formValues, menstrualCycle: input })
             }
           />
           <RadioButton
-            text="I have mostly bad nights"
-            name="sleepRating"
-            value="I have mostly bad nights"
+            text="I'm pre/peri/postmenopausal"
+            name="menstrualCycle"
+            value="I'm pre/peri/postmenopausal"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, sleepRating: input })
+              setFormValues({ ...formValues, menstrualCycle: input })
             }
           />
           <RadioButton
-            text="Terribly pretty much all the time"
-            name="sleepRating"
-            value="Terribly pretty much all the time"
+            text="I have amenorrhea (no periods)"
+            name="menstrualCycle"
+            value="I have amenorrhea (no periods)"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, sleepRating: input })
+              setFormValues({ ...formValues, menstrualCycle: input })
             }
           />
-        </section>
-        <section>
-          <h2>How many hours of sleep do you get per night on average?</h2>
-          <InputLabel isPrimary={true} labelName={"Enter between 1 - 10"} />
-          <div className={styles.inputFieldContainer}>
-            <InputField
-              name={"sleepHours"}
-              selectInput={input =>
-                setFormValues({ ...formValues, sleepHours: input })
-              }
-            />
-          </div>
         </section>
       </div>
       <Link to="../page-sixteen">

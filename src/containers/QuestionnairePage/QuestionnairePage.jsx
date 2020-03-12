@@ -16,6 +16,12 @@ import PageEleven from "./PageEleven";
 import PageTwelve from "./PageTwelve";
 import PageThirteen from "./PageThirteen";
 import PageFourteen from "./PageFourteen";
+import PageFifteen from "./PageFifteen";
+import PageSixteen from "./PageSixteen";
+import PageSeventeen from "./PageSeventeen";
+import PageEighteen from "./PageEighteen";
+import PageNineteen from "./PageNineteen";
+import PageTwenty from "./PageTwenty/PageTwenty";
 
 const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
@@ -38,6 +44,13 @@ const QuestionnairePage = () => {
         <PageTwelve path="page-twelve" />
         <PageThirteen path="page-thirteen" />
         <PageFourteen path="page-fourteen" />
+        <PageFifteen path="page-fifteen" />
+        <PageSixteen path="page-sixteen" />
+        <PageSeventeen path="page-seventeen" />
+        <PageEighteen path="page-eighteen" />
+        <PageNineteen path="page-nineteen" />
+        <PageTwenty path="page-twenty" />
+
         <NotFound default />
       </Router>
     </>
