@@ -14,6 +14,7 @@ const Routes = () => {
       <NutrientsPage path="nutrients-page" />
       <PrioritiesPage path="priorities-page" />
       <NotFound default />
+      
     </Router>
   );
 };
