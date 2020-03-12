@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./DietVeg.module.scss";
-import VegPictureBox from "../VegPictureBox";
 
 const DietVeg = props => {
   const { brief, imagesForVegBx, txtForVegBx, title } = props;
