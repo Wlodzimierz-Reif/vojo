@@ -4,14 +4,15 @@ import topWave from "../../assets//graphic-devices/grey-wave-top.svg";
 import bottomWave from "../../assets//graphic-devices/grey-wave-bottom.svg";
 import NutrientsInfo from "../../components/NutrientsInfo/NutrientsInfo";
 
-const SidePanel = () => {
+const SidePanel = props => {
+  const { handleClick, displayStyle }= props;
   return (
     <>
       <section className={styles.sidePanelContainer}>
         <div className={styles.sidePanel}>
           <img src={topWave} className={styles.topWave} alt="" />
-          <p className={styles.closeButton}>Close</p>
-          <NutrientsInfo />
+          <p className={styles.closeButton} onClick={ event => handleClick(event.target.value)}>Close</p>
+          <NutrientsInfo displayStyle={displayStyle}/>
           <img src={bottomWave} className={styles.bottomWave} alt="" />
         </div>
       </section>

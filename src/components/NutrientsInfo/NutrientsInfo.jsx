@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./NutrientsInfo.module.scss";
 import List from "../List";
 
-const NutrientsInfo = () => {
+const NutrientsInfo = props => {
+  const { displayStyle } = props;
   const testObj = {
     title:"Magnesium ",
     information:
@@ -14,7 +15,7 @@ const NutrientsInfo = () => {
 
   return (
     <>
-      <section className={`${styles.nutrientInfo} ${styles.red}`}>
+      <section className={`${styles.nutrientInfo} ${styles[displayStyle]}`}>
         <h2>{testObj.title}</h2>
         <p>{testObj.information}</p>
         <List listItems={testObj.list}/>

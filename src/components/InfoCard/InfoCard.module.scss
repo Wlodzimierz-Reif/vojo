@@ -12,6 +12,10 @@
   flex: 0 0 auto;
   margin: $base-spacing;
 
+  :hover {
+    cursor: pointer;
+  }
+
   h3 {
     margin:  0;
   }

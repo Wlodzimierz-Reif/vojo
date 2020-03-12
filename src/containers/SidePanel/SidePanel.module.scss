@@ -4,13 +4,15 @@
   width: 100%;
   min-height: 100vh;
   
+
   .sidePanel {
+    background-color: $primary-background;
     position: relative;
     width: 100%;
     min-height: 100vh;
-    padding: $base-spacing*2;
+    padding-top: $base-spacing;
     box-sizing: border-box;
-    
+
     .topWave {
       height: 15vh;
       width: 100%;
@@ -22,13 +24,13 @@
     .bottomWave {
       height: 15vh;
       width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
     }
-    
 
     .closeButton {
+      cursor: pointer;
+      color: $primary-color;
+      text-decoration: underline;
+      position: absolute;
       margin: 0;
       top: $base-spacing;
       left: $base-spacing;
@@ -36,5 +38,29 @@
   }
 }
 
-// @media screen and (min-width: 768px) {
-// }
+@media screen and (min-width: 768px) {
+  .sidePanelContainer {
+    display: flex;
+    justify-content: flex-end;
+    background-color: $standard-text-80;
+    
+
+    .sidePanel {
+      width: 50%;
+
+      .bottomWave {
+        height: 15vh;
+        width: 100%;
+        position: flex;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .sidePanelContainer {
+    .sidePanel {
+      width: 40%;
+    }
+  }
+}
