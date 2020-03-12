@@ -12,6 +12,7 @@ const Routes = () => {
       <HomePage path="home-page" />
       <PrioritiesPage path="priorities-page" />
       <NotFound default />
+      
     </Router>
   );
 };
