@@ -1,24 +1,39 @@
 @import "./variables.scss";
 
 * {
-  font-style: inherit;
-
-  p {
-    font-weight: 300;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gt-walsheim;
+  font-weight: normal;
 }
 
-.mealIdeas {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 90vw;
-  margin: 0 auto;
+@font-face {
+  font-family: "gt-walsheim";
+  src: url(./assets/fonts/gt-walsheim-pro-light.woff2);
+  font-weight: normal;
+  font-style: normal;
 }
-.infoSection {
-  img {
-    height: 100%;
-    position: absolute;
-    right: $base-spacing * 20;
-  }
+
+@font-face {
+  font-family: "gt-walsheim";
+  src: url(./assets/fonts/gt-walsheim-pro-medium.woff2);
+  font-weight: bold;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gt-walsheim;
+  font-weight: normal;
 }

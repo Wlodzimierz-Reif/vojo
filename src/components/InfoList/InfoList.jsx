@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./InfoList.module.scss";
 
-const InfoList = props => {
+const InfoList = () => {
   return (
     <>
       <section className={styles.infoList}>

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./EverydayFoods.module.scss";
+import styles from "../EverydayFoods/EverydayFoods.module.scss";
 import InfoList from "../../components/InfoList";
 import Image from "../../assets/characters/characters-together.svg";
 

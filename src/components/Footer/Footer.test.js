@@ -1,9 +1,9 @@
 import React from "react";
-import InfoList from "./InfoList";
+import Footer from "./Footer";
 import { render } from "@testing-library/react";
 
-describe("InfoList tests", () => {
+describe("Footer tests", () => {
   it("should render", () => {
-    expect(render(<InfoList />)).toBeTruthy();
+    expect(render(<Footer />)).toBeTruthy();
   });
 });
