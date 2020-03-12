@@ -8,6 +8,7 @@ $secondary-background: #ffffff;
 
 $vojo-brown: #cc9a63;
 $vojo-orange: #ef7d40;
+$vojo-cream: #f8f2e9;
 
 //border-outlines and used for some subheadings
 $warning: #e94842;
@@ -76,3 +77,15 @@ $sucessful-shade-40: #dfe8d266;
 $neutral-shade-40: #fbeecf66;
 
 $base-spacing: 8px;
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+$heading-2-size: $base-spacing * 6;
