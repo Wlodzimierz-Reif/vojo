@@ -1,10 +1,11 @@
 import React from "react";
 import NutrientsPage from "./NutrientsPage";
+import { render } from "@testing-library/react";
 
 describe("NutrientsPage tests", () => {
-  let component;
-
-  beforeEach(() => {
-    component =
-  })
+  it("should render", () => {
+    expect(render(<NutrientsPage />)).toBeTruthy();
+  });
 });
+
+
