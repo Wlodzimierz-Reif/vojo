@@ -36,6 +36,16 @@ const NutrientsPage = () => {
             changeColor={color => updateColor(color)}
           />
           <InfoCard
+            displayStyle={"red"}
+            nutrientName={"B12"}
+            nutrientNeed="High"
+            nutrientAdvice="Your recommended intake: 5 mg/day
+      Great news – you are a good converter of beta-carotene to vitamin A!
+      Learn more"
+            handleClick={() => updateState(!currentState)}
+            changeColor={color => updateColor(color)}
+          />
+          <InfoCard
             displayStyle={"orange"}
             nutrientName={"B12"}
             nutrientNeed="Raised"
@@ -43,11 +53,37 @@ const NutrientsPage = () => {
             handleClick={() => updateState(!currentState)}
             changeColor={color => updateColor(color)}
           />
-
           <InfoCard
             displayStyle={"yellow"}
             nutrientName={"B12"}
             nutrientNeed="Normal"
+            nutrientAdvice="Your recommended intake: 5 mg/day
+              Great news – you are a good converter of beta-carotene to vitamin A!"
+              handleClick={() => updateState(!currentState)}
+              changeColor={color => updateColor(color)}
+          />
+          <InfoCard
+            displayStyle={"yellow"}
+            nutrientName={"B12"}
+            nutrientNeed="Normal"
+            nutrientAdvice="Your recommended intake: 5 mg/day
+              Great news – you are a good converter of beta-carotene to vitamin A!"
+              handleClick={() => updateState(!currentState)}
+              changeColor={color => updateColor(color)}
+          />
+          <InfoCard
+            displayStyle={"green"}
+            nutrientName={"B12"}
+            nutrientNeed="Lower"
+            nutrientAdvice="Your recommended intake: 5 mg/day
+              Great news – you are a good converter of beta-carotene to vitamin A!"
+              handleClick={() => updateState(!currentState)}
+              changeColor={color => updateColor(color)}
+          />
+          <InfoCard
+            displayStyle={"green"}
+            nutrientName={"B12"}
+            nutrientNeed="Lower"
             nutrientAdvice="Your recommended intake: 5 mg/day
               Great news – you are a good converter of beta-carotene to vitamin A!"
               handleClick={() => updateState(!currentState)}

@@ -1,12 +1,11 @@
 import React from "react";
-// import styles from "./App.module.scss";
-import Router from "../src/containers/Routes";
-// import NavBar from "./components/NavBar";
+import "./App.module.scss";
+import Routes from "../src/containers/Routes";
 
 const App = () => {
   return (
     <>
-      <Router />
+      <Routes />
     </>
   );
 };

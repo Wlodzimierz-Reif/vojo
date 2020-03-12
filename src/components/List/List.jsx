@@ -7,7 +7,7 @@ const List = props => {
   return (
     <>
       {listItems.slice(0,1).map(item =><h3>{item}</h3>)}
-      <ul>
+      <ul className={styles.list}>
         {listItems.slice(1, listItems.length).map(item =><li>{item}</li>)}
       </ul>
     </>
