@@ -1,22 +1,27 @@
-$primary-color: #b44370;
+$primary-color: rgb(180, 67, 112);
 $secondary-color: #5567ae;
 
 $standard-text: #000;
+$dark-green-text: #202913;
+$dark-red-text: #3A1210;
 
 $primary-background: #f2e4d0;
-$secondary-background: #ffffff;
+$secondary-background: #fbf8f3;
 
-$vojo-brown: #cc9a63;
+$vojo-brown: #202020;
 $vojo-orange: #ef7d40;
+$vojo-cream: #f8f2e9;
 
 //border-outlines and used for some subheadings
 $warning: #e94842;
 $sucessful: #82a44d;
+$raised-warning: #ef7d40;
 $neutral: #efbd3f;
 
 //box fillers
 $warning-shade: #f9d1cf;
 $sucessful-shade: #dfe8d2;
+$raised-warning-shade: #fbdecf;
 $neutral-shade: #fbeecf;
 
 //shades 80%
@@ -64,15 +69,27 @@ $standard-text-40: #00000066;
 $primary-background-40: #f2e4d066;
 $secondary-background-40: #ffffff66;
 
-$vojo-brown: #cc9a6366;
-$vojo-orange: #ef7d4066;
+$vojo-brown-40: #cc9a6366;
+$vojo-orange-40: #ef7d4066;
 
-$warning: #e9484266;
-$sucessful: #82a44d66;
-$neutral: #efbd3f66;
+$warning-40: #e9484266;
+$sucessful-40: #82a44d66;
+$neutral-40: #efbd3f66;
 
-$warning-shade: #f9d1cf66;
-$sucessful-shade: #dfe8d266;
-$neutral-shade: #fbeecf66;
+$warning-shade-40: #f9d1cf66;
+$sucessful-shade-40: #dfe8d266;
+$neutral-shade-40: #fbeecf66;
 
 $base-spacing: 8px;
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+$heading-2-size: $base-spacing * 6;
