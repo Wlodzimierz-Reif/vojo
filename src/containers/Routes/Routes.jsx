@@ -5,12 +5,13 @@ import HomePage from "../HomePage";
 import NotFound from "../NotFound";
 import DietType from "../DietType";
 
+
 const Routes = () => {
   return (
     <Router>
-      <Redirect noThrow from="/" to="home-page" />
+      {/* <Redirect noThrow from="/" to="home-page" />
       <HomePage path="home-page" />
-      <NotFound default />
+      <NotFound default /> */}
       <DietType
         path="diet-type"
         dietText={
@@ -18,6 +19,7 @@ const Routes = () => {
         }
         regionText={"South American"}
       />
+
     </Router>
   );
 };

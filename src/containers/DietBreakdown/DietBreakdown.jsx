@@ -6,7 +6,6 @@ import beet from "../../assets/characters/beetroot-1.svg";
 import broc from "../../assets/characters/broccoli-1.svg";
 import carrot from "../../assets/characters/carrot-1.svg";
 
-
 const DietBreakdown = props => {
   const { brief, title } = props;
 
@@ -14,7 +13,7 @@ const DietBreakdown = props => {
     <>
       <div>
         <section className={styles.secInfo}>
-          <p className={styles.title}>{title}</p>
+          <h2 className={styles.title}>Your diet breakdown</h2>
           <section className={styles.imgs}>
             <div className={styles.primary}>
               <VegPictureBox pText={"Rainbow veg"} image={carrot} />
@@ -30,14 +29,14 @@ const DietBreakdown = props => {
         </section>
 
         <section className={styles.secInfo}>
-          <div >
+          <div>
             <DietVeg
               imagesForVegBx={carrot}
               txtForVegBx={"Root Veg"}
               brief={"dfsugiardoeioiudragub"}
             />
           </div>
-          <div >
+          <div>
             <DietVeg
               imagesForVegBx={carrot}
               txtForVegBx={"Root Veg"}
@@ -45,7 +44,6 @@ const DietBreakdown = props => {
             />
           </div>
         </section>
-        
       </div>
     </>
   );
