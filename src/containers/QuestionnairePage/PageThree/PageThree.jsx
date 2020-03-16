@@ -28,7 +28,7 @@ const PageThree = () => {
           </div>
         </section>
         <section>
-          <h2>How much do you weight?</h2>
+          <h2>How much do you weigh?</h2>
           <InputLabel isPrimary={true} labelName={"Enter weight in kg's"} />
           <div className={styles.inputFieldContainer}>
             <InputField
