@@ -1,121 +1,121 @@
 import React, { useState } from "react";
-import styles from "./PageEighteen.module.scss";
+import styles from "./PageTwelve.module.scss";
 import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
-import Image from "../../../assets/characters/banana-1.svg";
+import Image from "../../../assets/characters/strawberry-2.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
 
-const PageEighteen = () => {
+const PageTwelve = () => {
   const [formValues, setFormValues] = useState({});
 
   return (
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>How do you eat your veggies?</h2>
+          <h2>Which of the following sounds like your skin?</h2>
           <RadioButton
-            text="Mostly cooked"
-            name="howVeggies"
-            value="Mostly cooked"
+            text="Normal"
+            name="skinIssues"
+            value="Normal"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, howVeggies: input })
+              setFormValues({ ...formValues, skinIssues: input })
             }
           />
           <RadioButton
-            text="Equal amounts raw and cooked"
-            name="howVeggies"
-            value="Equal amounts raw and cooked"
+            text="Dry"
+            name="skinIssues"
+            value="Dry"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, howVeggies: input })
+              setFormValues({ ...formValues, skinIssues: input })
             }
           />
           <RadioButton
-            text="Mostly raw"
-            name="howVeggies"
-            value="Mostly raw"
+            text="Spotty"
+            name="skinIssues"
+            value="Spotty"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, howVeggies: input })
+              setFormValues({ ...formValues, skinIssues: input })
             }
           />
           <RadioButton
-            text="Only raw"
-            name="howVeggies"
-            value="Only raw"
+            text="Itchy"
+            name="skinIssues"
+            value="Itchy"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, howVeggies: input })
+              setFormValues({ ...formValues, skinIssues: input })
             }
           />
           <RadioButton
-            text="What's a vegetable?"
-            name="howVeggies"
-            value="What's a vegetable?"
+            text="Eczema"
+            name="skinIssues"
+            value="Eczema"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, howVeggies: input })
+              setFormValues({ ...formValues, skinIssues: input })
+            }
+          />
+          <RadioButton
+            text="Dermatitis"
+            name="skinIssues"
+            value="Dermatitis"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({ ...formValues, skinIssues: input })
             }
           />
         </section>
         <section>
-          <h2>How often do you soak your wholegrains, beans or pulses?</h2>
+          <h2>Do you tend to have sore and cracked lips?</h2>
           <RadioButton
-            text="Always"
-            name="soaking"
-            value="Always"
+            text="Yes, a lot"
+            name="lipIssues"
+            value="Yes, a lot"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, soaking: input })
+              setFormValues({ ...formValues, lipIssues: input })
             }
           />
           <RadioButton
-            text="Sometimes"
-            name="soaking"
-            value="Sometimes"
+            text="Yeah, sometimes"
+            name="lipIssues"
+            value="Yeah, sometimes"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, soaking: input })
+              setFormValues({ ...formValues, lipIssues: input })
             }
           />
           <RadioButton
-            text="Hardly ever"
-            name="soaking"
-            value="Hardly ever"
+            text="Not very often"
+            name="lipIssues"
+            value="Not very often"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, soaking: input })
+              setFormValues({ ...formValues, lipIssues: input })
             }
           />
           <RadioButton
             text="Never"
-            name="soaking"
+            name="lipIssues"
             value="Never"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, soaking: input })
-            }
-          />
-          <RadioButton
-            text="I don't eat them"
-            name="soaking"
-            value="I don't eat them"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, soaking: input })
+              setFormValues({ ...formValues, lipIssues: input })
             }
           />
         </section>
       </div>
-      <Link to="../page-seventeen">
+      <Link to="../page-eleven">
         <img className={styles.leftArrow} src={Arrow} />
       </Link>
-      <Link to="../page-nineteen">
+      <Link to="../page-thirteen">
         <img className={styles.rightArrow} src={Arrow} />
       </Link>
       <img className={styles.bottomWave} src={BottomWave} />
@@ -124,4 +124,4 @@ const PageEighteen = () => {
   );
 };
 
-export default PageEighteen;
+export default PageTwelve;

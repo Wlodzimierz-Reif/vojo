@@ -4,7 +4,7 @@ import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
-import Image from "../../../assets/characters/beetroot-1.svg";
+import Image from "../../../assets/characters/blueberry-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
@@ -16,55 +16,55 @@ const PageNineteen = () => {
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>How do you sleep?</h2>
+          <h2>Do you use a pressue cooker?</h2>
           <RadioButton
-            text="Like a baby"
-            name="sleepRating"
-            value="Like a baby"
+            text="Yes"
+            name="pressureCooker"
+            value="Yes"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, sleepRating: input })
+              setFormValues({ ...formValues, pressureCooker: input })
             }
           />
           <RadioButton
-            text="I have mostly good nights"
-            name="sleepRating"
-            value="I have mostly good nights"
+            text="No"
+            name="pressureCooker"
+            value="No"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, sleepRating: input })
-            }
-          />
-          <RadioButton
-            text="I have mostly bad nights"
-            name="sleepRating"
-            value="I have mostly bad nights"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, sleepRating: input })
-            }
-          />
-          <RadioButton
-            text="Terribly pretty much all the time"
-            name="sleepRating"
-            value="Terribly pretty much all the time"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, sleepRating: input })
+              setFormValues({ ...formValues, pressureCooker: input })
             }
           />
         </section>
         <section>
-          <h2>How many hours of sleep do you get per night on average?</h2>
-          <InputLabel isPrimary={true} labelName={"Enter between 1 - 10"} />
-          <div className={styles.inputFieldContainer}>
-            <InputField
-              name={"sleepHours"}
-              selectInput={input =>
-                setFormValues({ ...formValues, sleepHours: input })
-              }
-            />
-          </div>
+          <h2>Do you sprout your beans, grains, nuts or seeds?</h2>
+          <RadioButton
+            text="Yes"
+            name="soaking"
+            value="Yes"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({ ...formValues, soaking: input })
+            }
+          />
+          <RadioButton
+            text="No"
+            name="soaking"
+            value="No"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({ ...formValues, soaking: input })
+            }
+          />
+          <RadioButton
+            text="Sometimes"
+            name="soaking"
+            value="Sometimes"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({ ...formValues, soaking: input })
+            }
+          />
         </section>
       </div>
       <Link to="../page-eighteen">
