@@ -2,10 +2,14 @@
 
 .mealList {
   list-style-type: none;
-  width: 90%;
+  width: 100%;
   font-weight: 300;
+  font-size: 12px;
+  padding-bottom: $base-spacing;
 }
 
 .mealHeader {
   color: $standard-text;
+  font-size: 12px;
+  padding-bottom: $base-spacing * 2;
 }

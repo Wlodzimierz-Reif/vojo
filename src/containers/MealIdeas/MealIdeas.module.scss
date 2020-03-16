@@ -1,16 +1,16 @@
 @import "../../variables.scss";
 
 .mealIdeas {
+  width: 100vw;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 90vw;
-  margin: 0 auto;
-}
-.infoSection {
-  img {
-    height: 100%;
-    position: absolute;
-    right: $base-spacing * 20;
+  padding: 0 $base-spacing * 4 0 $base-spacing * 4;
+
+  .dietContainer {
+    margin: $base-spacing * 4;
   }
+}
+
+.mealHeader {
+  color: $secondary-color;
+  margin-left: $base-spacing * 8;
 }
