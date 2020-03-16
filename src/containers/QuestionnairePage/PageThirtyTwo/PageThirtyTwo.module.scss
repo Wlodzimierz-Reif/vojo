@@ -1,0 +1,77 @@
+@import "../../../variables.scss";
+
+.page {
+  position: relative;
+  background-color: $primary-background;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box {
+    height: max-content;
+    width: 30%;
+    min-width: 300px;
+
+    & > section {
+      margin-bottom: $base-spacing * 3;
+    }
+
+    h2 {
+      color: $secondary-color;
+      margin-bottom: $base-spacing * 2;
+    }
+
+    .inputFieldContainer {
+      height: 35px;
+    }
+  }
+}
+
+.questionPerson {
+  display: none;
+  position: absolute;
+  right: 20%;
+  bottom: 30px;
+  height: 200px;
+  width: 100px;
+}
+
+.leftArrow {
+  display: none;
+  transform: rotate(270deg);
+  position: absolute;
+  left: 60px;
+  width: 60px;
+  height: 60px;
+  top: 50vh;
+}
+
+.rightArrow {
+  display: none;
+  transform: rotate(90deg);
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  right: 60px;
+  top: 50vh;
+}
+
+.bottomWave {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  z-index: 0.8;
+  width: 100%;
+  height: 15vh;
+}
+
+@media only screen and (min-width: 900px) {
+  .rightArrow,
+  .leftArrow,
+  .questionPerson,
+  .bottomWave {
+    display: unset;
+  }
+}
