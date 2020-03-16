@@ -3,14 +3,29 @@
 .mealIdeas {
   width: 100vw;
   display: flex;
-  padding: 0 $base-spacing * 4 0 $base-spacing * 4;
+  padding: 0 $base-spacing 0 $base-spacing;
 
   .dietContainer {
-    margin: $base-spacing * 4;
+    margin: $base-spacing;
   }
 }
 
 .mealHeader {
   color: $secondary-color;
-  margin-left: $base-spacing * 8;
+  margin-left: $base-spacing * 2;
+}
+
+@media only screen and (min-width: 720px) {
+  .dietContainer {
+    margin: $base-spacing;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .mealIdeas {
+    margin: $base-spacing;
+    justify-content: space-around;
+  }
+  .mealHeader {
+    margin-left: $base-spacing * 7;
+  }
 }

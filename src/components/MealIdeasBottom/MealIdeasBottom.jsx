@@ -6,7 +6,9 @@ const MealIdeasBottom = () => {
     <>
       <div className={styles.mealList}>
         <p>-</p>
-        <p>Coconut yogurt topped with nuts, seeds and berries</p>
+        <p className={styles.belowDash}>
+          Coconut yogurt topped with nuts, seeds and berries
+        </p>
       </div>
     </>
   );
