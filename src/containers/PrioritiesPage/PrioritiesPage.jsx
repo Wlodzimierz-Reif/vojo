@@ -16,7 +16,7 @@ const PrioritiesPage = props => {
 
   return (
     <>
-      <NavBar links={["Food"]} />
+      <NavBar />
       <section className={styles.prioritiesPage}>
         <h2>Priorities</h2>
         <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
@@ -35,8 +35,8 @@ const PrioritiesPage = props => {
           </div>
         </div>
         <p>
-          Here's a detailed break down of exactly what you need to do to up your nutrient intake and
-          improve your health!
+          Here's a detailed break down of exactly what you need to do to up your
+          nutrient intake and improve your health!
         </p>
         <section className={styles.priorityBoxesSection}>
           <div className={styles.priorityCardContainer}>

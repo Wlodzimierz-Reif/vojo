@@ -1,7 +1,7 @@
 import React from "react";
-import NavBar from "./NavBar";
+import Dashboard from "./Dashboard";
 
-describe("NavBar tests", () => {
+describe("Dashboard tests", () => {
   let component;
 
   beforeEach(() => {
