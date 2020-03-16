@@ -1,9 +1,9 @@
 import React from "react";
-import PageTwentyEight from "./PageTwentyEight";
+import PageTwentyNine from "./PageTwentyNine";
 import { render } from "@testing-library/react";
 
-describe("Questionnaire PageTwentyEight tests", () => {
+describe("Questionnaire PageTwentyNine tests", () => {
   it("should render", () => {
-    expect(render(<PageTwentyEight />)).toBeTruthy();
+    expect(render(<PageTwentyNine />)).toBeTruthy();
   });
 });

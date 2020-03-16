@@ -1,3 +1,3 @@
-import PageTwentyEight from "./PageTwentyEight";
+import PageTwentyNine from "./PageTwentyNine";
 
-export default PageTwentyEight;
+export default PageTwentyNine;
