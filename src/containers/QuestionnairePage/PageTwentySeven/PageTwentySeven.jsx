@@ -16,63 +16,84 @@ const PageTwentySeven = () => {
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>Which type of oil do you use most often?</h2>
+          <h2>Do you take any of these supplements?</h2>
           <RadioButton
-            text="Sunflower/vegetable"
-            name="oil"
-            value="Sunflower/vegetable"
+            text="B12"
+            name="allSupplements"
+            value="B12"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({ ...formValues, allSupplements: input })
+            }
+          />
+          <RadioButton
+            text="Omega-3"
+            name="allSupplements"
+            value="Omega-3"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({ ...formValues, allSupplements: input })
+            }
+          />
+          <RadioButton
+            text="Vitamin D"
+            name="allSupplements"
+            value="Vitamin D"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({ ...formValues, allSupplements: input })
+            }
+          />
+          <RadioButton
+            text="Calcium"
+            name="allSupplements"
+            value="Calcium"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({ ...formValues, allSupplements: input })
+            }
+          />
+          <RadioButton
+            text="Zinc"
+            name="allSupplements"
+            value="Zinc"
             startChecked={false}
             selectRadio={input => setFormValues({ ...formValues, oil: input })}
           />
           <RadioButton
-            text="Rapeseed"
-            name="oil"
-            value="Rapeseed"
+            text="Magnesium"
+            name="allSupllements"
+            value="Magnesium"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, allSupllements: input })
+            }
           />
           <RadioButton
-            text="Flaxseed"
-            name="oil"
-            value="Flaxseed"
+            text="Iron"
+            name="allSupllements"
+            value="Iron"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, allSupllements: input })
+            }
           />
           <RadioButton
-            text="Hemp"
-            name="oil"
-            value="Hemp"
+            text="A multivitamin"
+            name="allSupllements"
+            value="A multivitamin"
             startChecked={false}
             selectRadio={input => setFormValues({ ...formValues, oil: input })}
           />
-          <RadioButton
-            text="Cocunut"
-            name="oil"
-            value="Cocunut"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
-          />
-          <RadioButton
-            text="Olive"
-            name="oil"
-            value="Olive"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
-          />
-          <RadioButton
-            text="I'm on a low-fat diet"
-            name="oil"
-            value="I'm on a low-fat diet"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
-          />
-          <RadioButton
-            text="I'm on a wholefood diet"
-            name="oil"
-            value="I'm on a wholefood diet"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
-          />
+          <InputLabel isPrimary={true} labelName={"Other"} />
+          <div className={styles.inputFieldContainer}>
+            <InputField
+              name={"allSupllements"}
+              selectInput={input =>
+                setFormValues({ ...formValues, allSupllements: input })
+              }
+            />
+          </div>
         </section>
       </div>
       <Link to="../page-twenty-six">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./PageTwentyEight.module.scss";
+import styles from "./PageTwentyFour.module.scss";
 import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
@@ -9,98 +9,98 @@ import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
 
-const PageTwentyEight = () => {
+const PageTwentyFour = () => {
   const [formValues, setFormValues] = useState({});
 
   return (
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>
-            How often do you supplement B12 (or a multivitamin providing B12)?
-          </h2>
+          <h2>How often do you eat...</h2>
+          <h2>...porridge?</h2>
           <RadioButton
             text="Every day"
-            name="b12SupplementFrequency"
+            name="porridgeFrequency"
             value="Every day"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, b12SupplementFrequency: input })
+              setFormValues({ ...formValues, porridgeFrequency: input })
             }
           />
           <RadioButton
             text="A few times a week"
-            name="b12SupplementFrequency"
+            name="porridgeFrequency"
             value="A few times a week"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, b12SupplementFrequency: input })
+              setFormValues({ ...formValues, porridgeFrequency: input })
             }
           />
           <RadioButton
             text="A few times a month"
-            name="b12SupplementFrequency"
+            name="porridgeFrequency"
             value="A few times a month"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, b12SupplementFrequency: input })
+              setFormValues({ ...formValues, porridgeFrequency: input })
             }
           />
           <RadioButton
             text="Never or rarely"
-            name="b12SupplementFrequency"
+            name="porridgeFrequency"
             value="Never or rarely"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, b12SupplementFrequency: input })
+              setFormValues({ ...formValues, porridgeFrequency: input })
             }
           />
+        </section>
+        <section>
           <h2>
-            How often do you supplement vitamin D during the winter (or a
-            multivitamin providing vitamin D)? ?
+            ...fermented foods? (like sauerkraut, kimchi, sourdough bread, etc)
           </h2>
           <RadioButton
             text="Every day"
-            name="vitdSupplementFrequency"
+            name="fermentedFoodsFrequency"
             value="Every day"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, vitdSupplementFrequency: input })
+              setFormValues({ ...formValues, fermentedFoodsFrequency: input })
             }
           />
           <RadioButton
             text="A few times a week"
-            name="vitdSupplementFrequency"
+            name="fermentedFoodsFrequency"
             value="A few times a week"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, vitdSupplementFrequency: input })
+              setFormValues({ ...formValues, fermentedFoodsFrequency: input })
             }
           />
           <RadioButton
             text="A few times a month"
-            name="vitdSupplementFrequency"
+            name="fermentedFoodsFrequency"
             value="A few times a month"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, vitdSupplementFrequency: input })
+              setFormValues({ ...formValues, fermentedFoodsFrequency: input })
             }
           />
           <RadioButton
             text="Never or rarely"
-            name="vitdSupplementFrequency"
+            name="fermentedFoodsFrequency"
             value="Never or rarely"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, vitdSupplementFrequency: input })
+              setFormValues({ ...formValues, fermentedFoodsFrequency: input })
             }
           />
         </section>
       </div>
-      <Link to="../page-twenty-seven">
+      <Link to="../page-twenty-three">
         <img className={styles.leftArrow} src={Arrow} />
       </Link>
-      <Link to="../page-twenty-nine">
+      <Link to="../page-twenty-five">
         <img className={styles.rightArrow} src={Arrow} />
       </Link>
       <img className={styles.bottomWave} src={BottomWave} />
@@ -109,4 +109,4 @@ const PageTwentyEight = () => {
   );
 };
 
-export default PageTwentyEight;
+export default PageTwentyFour;

@@ -16,62 +16,43 @@ const PageTwentySix = () => {
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>Which type of oil do you use most often?</h2>
+          <h2>How often do you eat...</h2>
+          <h2>...caffeinated tea or coffee?</h2>
           <RadioButton
-            text="Sunflower/vegetable"
-            name="oil"
-            value="Sunflower/vegetable"
+            text="Every day"
+            name="teaCoffeeFrequency"
+            value="Every day"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, teaCoffeeFrequency: input })
+            }
           />
           <RadioButton
-            text="Rapeseed"
-            name="oil"
-            value="Rapeseed"
+            text="A few times a week"
+            name="teaCoffeeFrequency"
+            value="A few times a week"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, teaCoffeeFrequency: input })
+            }
           />
           <RadioButton
-            text="Flaxseed"
-            name="oil"
-            value="Flaxseed"
+            text="A few times a month"
+            name="teaCoffeeFrequency"
+            value="A few times a month"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, teaCoffeeFrequency: input })
+            }
           />
           <RadioButton
-            text="Hemp"
-            name="oil"
-            value="Hemp"
+            text="Never or rarely"
+            name="teaCoffeeFrequency"
+            value="Never or rarely"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
-          />
-          <RadioButton
-            text="Cocunut"
-            name="oil"
-            value="Cocunut"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
-          />
-          <RadioButton
-            text="Olive"
-            name="oil"
-            value="Olive"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
-          />
-          <RadioButton
-            text="I'm on a low-fat diet"
-            name="oil"
-            value="I'm on a low-fat diet"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
-          />
-          <RadioButton
-            text="I'm on a wholefood diet"
-            name="oil"
-            value="I'm on a wholefood diet"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, teaCoffeeFrequency: input })
+            }
           />
         </section>
       </div>

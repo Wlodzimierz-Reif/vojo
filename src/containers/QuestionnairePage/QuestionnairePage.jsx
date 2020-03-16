@@ -24,10 +24,12 @@ import PageNineteen from "./PageNineteen";
 import PageTwenty from "./PageTwenty";
 import PageTwentyOne from "./PageTwentyOne";
 import PageTwentyTwo from "./PageTwentyTwo";
-// import PageTwentyThree from "./PageTwentyThree";
-// import PageTwentyFour from "./PageTwentyFour";
-// import PageTwentyFive from "./PageTwentyFive";
-// import PageTwentySix from "./PageTwentySix";
+import PageTwentyThree from "./PageTwentyThree";
+import PageTwentyFour from "./PageTwentyFour";
+import PageTwentyFive from "./PageTwentyFive";
+import PageTwentySix from "./PageTwentySix";
+import PageTwentySeven from "./PageTwentySeven";
+import PageTwentyEight from "./PageTwentyEight";
 
 const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
@@ -58,10 +60,12 @@ const QuestionnairePage = () => {
         <PageTwenty path="page-twenty" />
         <PageTwentyOne path="page-twenty-one" />
         <PageTwentyTwo path="page-twenty-two" />
-        {/* <PageTwentyThree path="page-twenty-three" />
+        <PageTwentyThree path="page-twenty-three" />
         <PageTwentyFour path="page-twenty-four" />
         <PageTwentyFive path="page-twenty-five" />
-        <PageTwentySix path="page-twenty-six" /> */}
+        <PageTwentySix path="page-twenty-six" />
+        <PageTwentySeven path="page-twenty-seven" />
+        <PageTwentyEight path="page-twenty-eight" />
 
         <NotFound default />
       </Router>
