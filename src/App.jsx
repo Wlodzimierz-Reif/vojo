@@ -1,18 +1,14 @@
 import React from "react";
-// import styles from "./App.module.scss";
-import Router from "../src/containers/Routes";
-// import NavBar from "./components/NavBar";
-// import VegPictureBox from "./components/VegPictureBox";
-import DietBreakdown from "./containers/DietBreakdown";
+import "./App.module.scss";
+import Routes from "./containers/Routes";
+import DietBreakdown from "./containers/DietBreakdown/DietBreakdown";
 
 const App = () => {
   return (
     <>
-      <Router />
+      <Routes />
       <DietBreakdown
-        brief={
-          "Focus on a variety of colours. Spinach, broccoli and salad leaves are especially high in folate. Have starchy veg like potatoes occassionally, but as you have some genes related to blood sugar dysregulation, these are more likely to raise your blood sugar."
-        }
+        brief="Please stop looking at your phone and pet me good now the other hand, too find box a little too small and curl up with fur hanging out jump on human and sleep on her all night long be long in the bed, purr in the morning and then give a bite to every human around for not waking up request food, purr loud scratch the walls, the floor, the windows, the humans and sit in a box for hours and lick human with sandpaper tongue.  "
       />
     </>
   );

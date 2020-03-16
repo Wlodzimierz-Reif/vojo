@@ -25,10 +25,10 @@ const DietBreakdown = props => {
               <VegPictureBox pText={"Root veg"} image={beet} />
             </div>
           </section>
-          <p>{brief}</p>
+          <p className={styles.vegBrief}>{brief}</p>
         </section>
 
-        <section className={styles.secInfo}>
+        {/* <section className={styles.secInfo}>
           <div>
             <DietVeg
               imagesForVegBx={carrot}
@@ -43,7 +43,7 @@ const DietBreakdown = props => {
               brief={"dfsugiardoeioiudragub"}
             />
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   );

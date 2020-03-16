@@ -6,6 +6,7 @@
   align-content: center;
   justify-content: space-evenly;
   height: 100vh;
+  width: 100vw;
   margin: auto;
   // border: 2px solid black;
   // overflow: hidden;
@@ -14,14 +15,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto; 
-    width: 70%;
-    height: 50%; 
+    margin: $base-spacing * 2 auto;
+    width: 80%;
+    height: 60%;
 
     .primary {
       height: 100%;
       width: 100%;
-      margin: 16px;
+      margin: $base-spacing * 2;
     }
   }
 
@@ -30,13 +31,18 @@
     width: 100%;
     color: $secondary-color;
     height: 5%;
-    margin: 0;
+    text-align: center;
+  }
+
+  .vegBrief {
+    height: 30%;
+    text-align: center;
+    margin: 0 $base-spacing*3; 
   }
 }
 
 @media only screen and (min-width: 425px) {
   .secInfo {
-   
     overflow: hidden;
 
     .imgs {
