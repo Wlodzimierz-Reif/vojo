@@ -78,7 +78,7 @@ const PageTwenty = () => {
       <Link to="../page-nineteen">
         <img className={styles.leftArrow} src={Arrow} />
       </Link>
-      <Link to="../page-twentyone">
+      <Link to="../page-twenty-one">
         <img className={styles.rightArrow} src={Arrow} />
       </Link>
       <img className={styles.bottomWave} src={BottomWave} />
