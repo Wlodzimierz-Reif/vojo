@@ -1,0 +1,13 @@
+@import "..//../variables.scss";
+
+.btn {
+  padding: 0.5vw 2vw;
+  color: white;
+  background-color: $primary-color;
+  font-size: calc(18px + (24 - 18) * ((100vw - 440px) / (1920 - 440)));
+}
+
+.payPal {
+  color: white;
+  background-color: $secondary-color;
+}

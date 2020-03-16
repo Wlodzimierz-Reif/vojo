@@ -6,6 +6,7 @@ import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
 import PrioritiesPage from "../PrioritiesPage";
 import Footer from "../../components/Footer";
+import PaymentPage from "../PaymentPage/PaymentPage";
 
 const Routes = () => {
   return (
@@ -15,9 +16,10 @@ const Routes = () => {
         <HomePage path="home-page" />
         <NutrientsPage path="nutrients-page" />
         <PrioritiesPage path="priorities-page" />
+        <PaymentPage path="payment-page" />
         <NotFound default />
       </Router>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

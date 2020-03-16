@@ -7,6 +7,7 @@ const InputField = props => {
       className={styles.inputField}
       type={props.type}
       name={props.name}
+      placeholder={props.placeholder}
       required
     />
   );
