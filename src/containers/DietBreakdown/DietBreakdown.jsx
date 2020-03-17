@@ -5,45 +5,28 @@ import DietVeg from "../../components/DietVeg";
 import beet from "../../assets/characters/beetroot-1.svg";
 import broc from "../../assets/characters/broccoli-1.svg";
 import carrot from "../../assets/characters/carrot-1.svg";
+import DietBreakdownBox from "../../components/DietBreakdownBox";
 
 const DietBreakdown = props => {
   const { brief, title } = props;
 
+  const shortBrief =
+  brief.length < 300
+    ? brief
+    : brief.substring(0, 200) + "...";
+
+  
   return (
     <>
-      <div>
-        <section className={styles.secInfo}>
+      <div className={styles.secInfo}>
+        <section className={styles.information}>
           <h2 className={styles.title}>Your diet breakdown</h2>
-          <section className={styles.imgs}>
-            <div className={styles.primary}>
-              <VegPictureBox pText={"Rainbow veg"} image={carrot} />
-            </div>
-            <div className={styles.primary}>
-              <VegPictureBox pText={"Leafy greens"} image={broc} />
-            </div>
-            <div className={styles.primary}>
-              <VegPictureBox pText={"Root veg"} image={beet} />
-            </div>
+          <section className={styles.breakdowns}>
+            <div className={styles.singleBreakdown}>
+          <DietBreakdownBox image1={carrot} image2={broc} image3={beet} shortenedBrief={shortBrief}/>
+          </div>
           </section>
-          <p className={styles.vegBrief}>{brief}</p>
         </section>
-
-        {/* <section className={styles.secInfo}>
-          <div>
-            <DietVeg
-              imagesForVegBx={carrot}
-              txtForVegBx={"Root Veg"}
-              brief={"dfsugiardoeioiudragub"}
-            />
-          </div>
-          <div>
-            <DietVeg
-              imagesForVegBx={carrot}
-              txtForVegBx={"Root Veg"}
-              brief={"dfsugiardoeioiudragub"}
-            />
-          </div>
-        </section> */}
       </div>
     </>
   );
