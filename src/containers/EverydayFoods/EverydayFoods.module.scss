@@ -4,13 +4,13 @@
   width: 100%;
   height: 100%;
   top: $base-spacing * 2;
-  padding-left: 75px;
+  padding-left: 20px;
 
   img {
-    position: absolute;
+    position: fixed;
     width: 15vw;
-    right: 10%;
-    top: 25vh;
+    right: 15%;
+    top: 80vh;
   }
   .dietContainer {
     position: relative;
@@ -19,8 +19,51 @@
     .title {
       color: $secondary-color;
       font-weight: 600;
-      margin: $base-spacing * 3 0 $base-spacing * 3 0;
+      margin: $base-spacing * 2 0 $base-spacing * 6 0;
       font-size: $base-spacing * 3.5;
     }
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .mealList {
+    font-size: 14px;
+  }
+
+  .listImage {
+    padding-top: 50px;
+    padding-left: 70px;
+  }
+
+  .listImage img {
+    position: fixed;
+    width: 15vw;
+    right: 15%;
+    top: 60vh;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .mealList {
+    font-size: 16px;
+  }
+
+  .listImage img {
+    position: fixed;
+    width: 15vw;
+    right: 15%;
+    top: 40vh;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .mealList {
+    font-size: 16px;
+  }
+
+  .listImage img {
+    position: fixed;
+    width: 15vw;
+    right: 15%;
+    top: 40vh;
   }
 }

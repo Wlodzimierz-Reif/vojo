@@ -1,7 +1,6 @@
 @import "../../variables.scss";
 
 .mealIdeas {
-  width: 100vw;
   display: flex;
   padding: 0 $base-spacing 0 $base-spacing;
 
@@ -18,14 +17,26 @@
 @media only screen and (min-width: 720px) {
   .dietContainer {
     margin: $base-spacing;
+    justify-content: space-around;
   }
 }
 @media only screen and (min-width: 1440px) {
   .mealIdeas {
-    margin: $base-spacing;
+    margin: $base-spacing * 5;
     justify-content: space-around;
   }
   .mealHeader {
     margin-left: $base-spacing * 7;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .mealIdeas {
+    margin: $base-spacing * 5;
+    justify-content: space-around;
+  }
+  .mealHeader {
+    margin-left: $base-spacing * 11;
+    font-size: 24px;
   }
 }

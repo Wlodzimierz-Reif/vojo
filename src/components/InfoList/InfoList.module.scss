@@ -21,3 +21,20 @@
     color: $primary-color;
   }
 }
+
+@media only screen and (min-width: 720px) {
+  .infoList p {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .infoList p {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .infoList p {
+    font-size: 20px;
+  }
+}

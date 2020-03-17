@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./MealIdeas.module.scss";
 import MealIdeasTop from "../../components/MealIdeasTop";
 import MealIdeasBottom from "../../components/MealIdeasBottom";
-import EverydayFoods from "../../containers/EverydayFoods";
 
 const MealIdeas = () => {
   return (
@@ -14,13 +13,6 @@ const MealIdeas = () => {
           <MealIdeasBottom />
           <MealIdeasBottom />
           <MealIdeasBottom />
-          <MealIdeasBottom />
-        </div>
-        <div className={styles.dietContainer}>
-          <MealIdeasTop />
-          <MealIdeasBottom />
-          <MealIdeasBottom />
-          <MealIdeasBottom />
         </div>
         <div className={styles.dietContainer}>
           <MealIdeasTop />
@@ -31,6 +23,14 @@ const MealIdeas = () => {
         </div>
         <div className={styles.dietContainer}>
           <MealIdeasTop />
+          <MealIdeasBottom />
+          <MealIdeasBottom />
+          <MealIdeasBottom />
+          <MealIdeasBottom />
+        </div>
+        <div className={styles.dietContainer}>
+          <MealIdeasTop />
+          <MealIdeasBottom />
           <MealIdeasBottom />
           <MealIdeasBottom />
           <MealIdeasBottom />

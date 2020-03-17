@@ -11,3 +11,20 @@
   padding-top: $base-spacing;
   padding-bottom: $base-spacing;
 }
+
+@media only screen and (min-width: 720px) {
+  .mealList {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .mealList {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .mealList {
+    font-size: 16px;
+  }
+}

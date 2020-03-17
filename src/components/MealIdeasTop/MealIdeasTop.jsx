@@ -5,7 +5,7 @@ const MealIdeasTop = () => {
   return (
     <>
       <div>
-        <h3 className={styles.mealHeader}>Breakfasts</h3>
+        <h3 className={styles.mealHeader}>Snaks</h3>
         <p className={styles.mealList}>
           Coconut yogurt topped with nuts, seeds and berries
         </p>
