@@ -10,7 +10,27 @@ import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
 
 const PageFour = () => {
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState({ pregnantBreastFeeding: [] });
+  const { pregnantBreastFeeding } = formValues;
+
+  const handleCheckToggle = inputVal => {
+    const isPresent = pregnantBreastFeeding.includes(inputVal);
+
+    if (isPresent === true) {
+      const newArray = [...pregnantBreastFeeding];
+      const valPosition = pregnantBreastFeeding.indexOf(inputVal);
+      newArray.splice(valPosition, 1);
+      setFormValues({
+        ...formValues,
+        pregnantBreastFeeding: newArray
+      });
+    } else {
+      setFormValues({
+        ...formValues,
+        pregnantBreastFeeding: [...pregnantBreastFeeding, inputVal]
+      });
+    }
+  };
 
   return (
     <div className={styles.page}>
@@ -23,31 +43,31 @@ const PageFour = () => {
             text="Breastfeeding"
             startChecked={false}
             value="Breastfeeding"
-            selectRadio={input => setFormValues({ ...formValues, input })}
+            selectCheckBox={input => handleCheckToggle(input)}
           />
           <CheckBox
             text="Pregnant"
             startChecked={false}
             value="Pregnant"
-            selectRadio={input => setFormValues({ ...formValues, input })}
+            selectCheckBox={input => handleCheckToggle(input)}
           />
           <CheckBox
             text="Trying to conceive"
             startChecked={false}
             value="Trying to conceive"
-            selectRadio={input => setFormValues({ ...formValues, input })}
+            selectCheckBox={input => handleCheckToggle(input)}
           />
           <CheckBox
             text="Planning to have children in the next few years"
             startChecked={false}
             value="Planning to have children in the next few years"
-            selectRadio={input => setFormValues({ ...formValues, input })}
+            selectCheckBox={input => handleCheckToggle(input)}
           />
           <CheckBox
             text="No"
             startChecked={false}
             value="No"
-            selectRadio={input => setFormValues({ ...formValues, input })}
+            selectCheckBox={input => handleCheckToggle(input)}
           />
         </section>
         <section>

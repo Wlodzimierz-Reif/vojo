@@ -16,69 +16,94 @@ const PageThirtyOne = () => {
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>Which type of oil do you use most often?</h2>
+          <h2>Have you been diagnosed with an autoimmune condition?</h2>
           <RadioButton
-            text="Sunflower/vegetable"
-            name="oil"
-            value="Sunflower/vegetable"
+            text="Lupus"
+            name="autoimmuneCondition"
+            value="Lupus"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, autoimmuneCondition: input })
+            }
           />
           <RadioButton
-            text="Rapeseed"
-            name="oil"
-            value="Rapeseed"
+            text="MS"
+            name="autoimmuneCondition"
+            value="MS"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, autoimmuneCondition: input })
+            }
           />
           <RadioButton
-            text="Flaxseed"
-            name="oil"
-            value="Flaxseed"
+            text="Type 1 diabetes"
+            name="autoimmuneCondition"
+            value="Type 1 diabetes"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, autoimmuneCondition: input })
+            }
           />
           <RadioButton
-            text="Hemp"
-            name="oil"
-            value="Hemp"
+            text="Graves"
+            name="autoimmuneCondition"
+            value="Graves"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, autoimmuneCondition: input })
+            }
           />
           <RadioButton
-            text="Cocunut"
-            name="oil"
-            value="Cocunut"
+            text="Hashimoto's"
+            name="autoimmuneCondition"
+            value="Hashimoto's"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, autoimmuneCondition: input })
+            }
           />
           <RadioButton
-            text="Olive"
-            name="oil"
-            value="Olive"
+            text="IBD (Crohn's/Colitis)"
+            name="autoimmuneCondition"
+            value="IBD (Crohn's/Colitis)"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, autoimmuneCondition: input })
+            }
           />
           <RadioButton
-            text="I'm on a low-fat diet"
-            name="oil"
-            value="I'm on a low-fat diet"
+            text="Coeliac Disease"
+            name="autoimmuneCondition"
+            value="Coeliac Disease"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, autoimmuneCondition: input })
+            }
           />
           <RadioButton
-            text="I'm on a wholefood diet"
-            name="oil"
-            value="I'm on a wholefood diet"
+            text="Rhuematoid arthritis"
+            name="autoimmuneCondition"
+            value="Rhuematoid arthritis"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, autoimmuneCondition: input })
+            }
           />
+          <InputLabel isPrimary={true} labelName={"Other"} />
+          <div className={styles.inputFieldContainer}>
+            <InputField
+              name={"autoimmuneCondition"}
+              selectInput={input =>
+                setFormValues({ ...formValues, autoimmuneCondition: input })
+              }
+            />
+          </div>
         </section>
       </div>
-      <Link to="../page-twenty-nine">
+      <Link to="../page-thirty">
         <img className={styles.leftArrow} src={Arrow} />
       </Link>
-      <Link to="../page-thirty-one">
+      <Link to="../page-thirty-two">
         <img className={styles.rightArrow} src={Arrow} />
       </Link>
       <img className={styles.bottomWave} src={BottomWave} />

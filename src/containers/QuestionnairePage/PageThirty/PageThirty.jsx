@@ -16,65 +16,82 @@ const PageThirty = () => {
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>Which type of oil do you use most often?</h2>
+          <h2>Are you currently taking any of the following medications?</h2>
           <RadioButton
-            text="Sunflower/vegetable"
-            name="oil"
-            value="Sunflower/vegetable"
+            text="Proton-pump imhibitors"
+            name="whichPrescriptionMeds"
+            value="Proton-pump imhibitors"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, whichPrescriptionMeds: input })
+            }
           />
           <RadioButton
-            text="Rapeseed"
-            name="oil"
-            value="Rapeseed"
+            text="Statins"
+            name="whichPrescriptionMeds"
+            value="Statins"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, whichPrescriptionMeds: input })
+            }
           />
           <RadioButton
-            text="Flaxseed"
-            name="oil"
-            value="Flaxseed"
+            text="Metformin"
+            name="whichPrescriptionMeds"
+            value="Metformin"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, whichPrescriptionMeds: input })
+            }
           />
           <RadioButton
-            text="Hemp"
-            name="oil"
-            value="Hemp"
+            text="Antidepressants"
+            name="whichPrescriptionMeds"
+            value="Antidepressants"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, whichPrescriptionMeds: input })
+            }
           />
           <RadioButton
-            text="Cocunut"
-            name="oil"
-            value="Cocunut"
+            text="Anxiolytics"
+            name="whichPrescriptionMeds"
+            value="Anxiolytics"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, whichPrescriptionMeds: input })
+            }
           />
           <RadioButton
-            text="Olive"
-            name="oil"
-            value="Olive"
+            text="Sleep medications"
+            name="whichPrescriptionMeds"
+            value="Sleep medications"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, whichPrescriptionMeds: input })
+            }
           />
           <RadioButton
-            text="I'm on a low-fat diet"
-            name="oil"
-            value="I'm on a low-fat diet"
+            text="Anticoagulants"
+            name="whichPrescriptionMeds"
+            value="Anticoagulants"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({ ...formValues, whichPrescriptionMeds: input })
+            }
           />
-          <RadioButton
-            text="I'm on a wholefood diet"
-            name="oil"
-            value="I'm on a wholefood diet"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
-          />
+          <InputLabel isPrimary={true} labelName={"Other"} />
+          <div className={styles.inputFieldContainer}>
+            <InputField
+              name={"whichPrescriptionMeds"}
+              selectInput={input =>
+                setFormValues({ ...formValues, whichPrescriptionMeds: input })
+              }
+            />
+          </div>
         </section>
       </div>
+
       <Link to="../page-twenty-nine">
         <img className={styles.leftArrow} src={Arrow} />
       </Link>

@@ -16,69 +16,86 @@ const PageTwentyNine = () => {
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>Which type of oil do you use most often?</h2>
+          <h2>How often do you supplement algal algal (omega-3)?</h2>
           <RadioButton
-            text="Sunflower/vegetable"
-            name="oil"
-            value="Sunflower/vegetable"
+            text="Every day"
+            name="algalOilSupplementFrequency"
+            value="Every day"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({
+                ...formValues,
+                algalOilSupplementFrequency: input
+              })
+            }
           />
           <RadioButton
-            text="Rapeseed"
-            name="oil"
-            value="Rapeseed"
+            text="A few times a week"
+            name="algalOilSupplementFrequency"
+            value="A few times a week"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({
+                ...formValues,
+                algalOilSupplementFrequency: input
+              })
+            }
           />
           <RadioButton
-            text="Flaxseed"
-            name="oil"
-            value="Flaxseed"
+            text="A few times a month"
+            name="algalOilSupplementFrequency"
+            value="A few times a month"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({
+                ...formValues,
+                algalOilSupplementFrequency: input
+              })
+            }
           />
           <RadioButton
-            text="Hemp"
-            name="oil"
-            value="Hemp"
+            text="Never or rarely"
+            name="algalOilSupplementFrequency"
+            value="Never or rarely"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({
+                ...formValues,
+                algalOilSupplementFrequency: input
+              })
+            }
+          />
+          <h2>Are you currently taking any prescription medications?</h2>
+          <RadioButton
+            text="Yes"
+            name="algalOilSupplementFrequency"
+            value="Yes"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({
+                ...formValues,
+                algalOilSupplementFrequency: input
+              })
+            }
           />
           <RadioButton
-            text="Cocunut"
-            name="oil"
-            value="Cocunut"
+            text="No"
+            name="algalOilSupplementFrequency"
+            value="No"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
-          />
-          <RadioButton
-            text="Olive"
-            name="oil"
-            value="Olive"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
-          />
-          <RadioButton
-            text="I'm on a low-fat diet"
-            name="oil"
-            value="I'm on a low-fat diet"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
-          />
-          <RadioButton
-            text="I'm on a wholefood diet"
-            name="oil"
-            value="I'm on a wholefood diet"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectRadio={input =>
+              setFormValues({
+                ...formValues,
+                algalOilSupplementFrequency: input
+              })
+            }
           />
         </section>
       </div>
-      <Link to="../page-twenty-seven">
+      <Link to="../page-twenty-eight">
         <img className={styles.leftArrow} src={Arrow} />
       </Link>
-      <Link to="../page-twenty-nine">
+      <Link to="../page-thirty">
         <img className={styles.rightArrow} src={Arrow} />
       </Link>
       <img className={styles.bottomWave} src={BottomWave} />

@@ -30,6 +30,13 @@ import PageTwentyFive from "./PageTwentyFive";
 import PageTwentySix from "./PageTwentySix";
 import PageTwentySeven from "./PageTwentySeven";
 import PageTwentyEight from "./PageTwentyEight";
+import PageTwentyNine from "./PageTwentyNine";
+import PageThirty from "./PageThirty";
+import PageThirtyOne from "./PageThirtyOne";
+import PageThirtyTwo from "./PageThirtyTwo";
+import PageThirtyThree from "./PageThirtyThree";
+
+
 
 const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
@@ -66,6 +73,11 @@ const QuestionnairePage = () => {
         <PageTwentySix path="page-twenty-six" />
         <PageTwentySeven path="page-twenty-seven" />
         <PageTwentyEight path="page-twenty-eight" />
+        <PageTwentyNine path="page-twenty-nine" />
+        <PageThirty path="page-thirty" />
+        <PageThirtyOne path="page-thirty-one" />
+        <PageThirtyTwo path="page-thirty-two" />
+        <PageThirtyThree path="page-thirty-three" />
 
         <NotFound default />
       </Router>
