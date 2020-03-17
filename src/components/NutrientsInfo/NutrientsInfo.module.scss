@@ -1,0 +1,36 @@
+@import "../../variables.scss";
+
+.nutrientInfo {
+  margin-top: $base-spacing * 8;
+  padding: $base-spacing * 4;
+
+  h2, p {
+    padding: $base-spacing 0;
+    line-height: 1.25;
+  }
+
+}
+
+.red {
+  h2 {
+    color: $warning;
+  }
+}
+
+.orange {
+  h2 {
+    color: $vojo-orange;
+  }
+}
+
+.yellow {
+  h2 {
+    color: $neutral;
+  }
+}
+
+.green {
+  h2 {
+    color: $sucessful;
+  }
+}
