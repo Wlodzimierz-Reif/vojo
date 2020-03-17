@@ -8,15 +8,74 @@ import blueBerry from "../../assets/characters/blueberry-2.svg";
 import SidePanel from "../SidePanel";
 import { Link } from "@reach/router";
 
-const NutrientsPage = () => {
+const NutrientsPage = props => {
+  const { nutrients } = props;
+  // const { name, priority-category } = nutrients;
+
   const [currentState, updateState] = useState(false);
   const [currentColor, updateColor] = useState("red");
   const insertJsx = currentState ? (
     <SidePanel
       displayStyle={currentColor}
       handleClick={() => updateState(!currentState)}
+      nutrients={nutrients}
     />
   ) : null;
+
+  
+
+  // let high = [];
+  // let raised = [];
+  // let slightlyRaised = [];
+  // let normal = [];
+
+  // const getHigh = () => {
+  //   high = nutrients.filter(
+  //     nutrient => nutrient["requirement-category"] === "high"
+  //   );
+  // };
+
+  // const getRaised = () => {
+  //   raised = nutrients.filter(
+  //     nutrient => nutrient["requirement-category"] === "raised"
+  //   );
+  // };
+
+  // const getSlightlyRaised = () => {
+  //   slightlyRaised = nutrients.filter(
+  //     nutrient => nutrient["requirement-category"] === "slightly raised"
+  //   );
+  // };
+
+  // const getNormal = () => {
+  //   normal = nutrients.filter(
+  //     nutrient =>
+  //       nutrient["requirement-category"] === "normal" ||
+  //       nutrient["requirement-category"] === "lower"
+  //   );
+  // };
+
+  // getHigh();
+  // getRaised();
+  // getSlightlyRaised();
+  // getNormal();
+  // console.log(high);
+  // console.log(raised);
+  // console.log(slightlyRaised);
+  // console.log(normal);
+
+  // const print = () => {
+  //   for (let i = 0; i < high.length; i++) {
+  //     <InfoCard
+  //       displayStyle={cardColor}
+  //       nutrientName={high[i].name}
+  //       nutrientNeed={high[i]["requirement-category"]}
+  //       nutrientAdvice={high[i]["requirement-recommendation"]}
+  //       handleClick={() => updateState(!currentState)}
+  //       changeColor={color => updateColor(color)}
+  //     />;
+  //   }
+  // };
 
   return (
     <>
@@ -31,10 +90,13 @@ const NutrientsPage = () => {
         </div>
         <h1>Nutrients</h1>
         <div className={styles.infoCardHolder} data-simplebar>
-          <InfoCard
-            displayStyle={"red"}
-            nutrientName={"B12"}
-            nutrientNeed="High"
+          <InfoCard nutrient={nutrients[0]} />
+          <InfoCard nutrient={nutrients[2]} />
+
+          {/* <InfoCard
+            displayStyle={cardColor}
+            nutrientName={""}
+            nutrientNeed="high"
             nutrientAdvice="Your recommended intake: 5 mg/day
       Great news – you are a good converter of beta-carotene to vitamin A!
       Learn more"
@@ -129,7 +191,7 @@ const NutrientsPage = () => {
             src={bottomWave}
             className={`${styles.wave} ${styles.waveBottom}`}
             alt=""
-          />
+          /> */}
         </div>
       </section>
     </>

@@ -77,9 +77,9 @@
       "priority-category": "medium",
       "requirement-category": "raised",
       "requirement-recommendation": "You might need more folate in your diet compared to other people.",
-      "b9-intake-recommendation": "450 µg/day",
-      "b9-requirement-action": "",
-      "b9-intake-action": "Aim to eat 1-2 portions of leafy greens every day.",
+      "intake-recommendation": "450 µg/day",
+      "requirement-action": "",
+      "intake-action": "Aim to eat 1-2 portions of leafy greens every day.",
       "rs1801133-genotype": "CC",
       "rs1801133-science": "You have the wildtype genotype, which is the most common genotype. This is associated with normal MTHFR activity, normal homocysteine levels and normal B vitamin requirements.",
       "rs1801131-genotype": "AA",
@@ -138,7 +138,7 @@
     {
       "name": "Omega-3",
       "priority-category": "medium",
-      "requirement-category": "raised",
+      "requirement-category": "slightly raised",
       "requirement-recommendation": "You may be slower at converting plant-based omega-3 into DHA. You should supplement with algal oil to make sure you’re getting enough.",
       "intake-recommendation": "250 mg/day DHA and EPA",
       "intake-action": "Supplement algal oil providing 250 mg EPA/DHA every day. We recommend Testa’s Algal Oil.",
@@ -156,8 +156,8 @@
     {
       "name": "Omega-6",
       "priority-category": "medium",
-      "sensitivity-category": "raised",
-      "sensitivity-recommendation": "You might be a bit more sensitive to omega-6s.",
+      "requirement-category": "raised",
+      "requirement-recommendation": "You might be a bit more sensitive to omega-6s.",
       "intake-action": "Reduce your intake of vegetable oil, fried and processed foods. Aim to get your omega-6 from whole foods instead.",
       "fads1-recommendation": "People with your genotype tend to have lower levels of proinflammatory fatty acids like arachanoic acid (AA) - but also lower levels of DHA and EPA.",
       "rs174537-genotype": "GT",
@@ -167,7 +167,7 @@
     {
       "name": "beta-carotene",
       "priority-category": "medium",
-      "requirement-category": "raised",
+      "requirement-category": "slightly raised",
       "requirement-recommendation": "You might be a bit slower at converting beta-carotene to vitamin A.",
       "intake-recommendation": "5 mg/day",
       "intake-action": "Aim for at least 3 portions of foods rich in beta-carotene, such as sweet potato, carrots or kale, every day. Or you can get 5 mg from one teaspoon of spirulina!",
@@ -183,7 +183,7 @@
     {
       "name": "vit-d",
       "priority-category": "medium",
-      "requirement-category": "raised",
+      "requirement-category": "normal",
       "requirement-recommendation": "You may have an increased risk of vitamin D deficiency. Check your vitamin D levels with your GP every 6 months (in summer and in the winter).",
       "intake-recommendation": "Spring/summer: 600 IU/day. Autumn/Winter: 1000 IU/day.",
       "intake-action": "Take a supplement. We recommend BetterYou.",
@@ -222,7 +222,7 @@
     {
       "name": "Iron",
       "priority-category": "low",
-      "requirement-category": "normal",
+      "requirement-category": "lower",
       "requirement-recommendation": "You may be at a lower risk of iron deficiency on a plant-based diet. Nevertheless, it's recommended that you have your iron levels checked with your GP every 12 months.",
       "intake-recommendation": "11 mg/day",
       "absorption-category": "raised",
@@ -274,7 +274,7 @@
     {
       "name": "Magnesium",
       "priority-category": "medium",
-      "requirement-category": "raised",
+      "requirement-category": "high",
       "requirement-recommendation": "Your magnesium requirements may be raised. Make sure you're eating enough magnesium-rich foods.",
       "intake-recommendation": "270 mg/day",
       "requirement-action": "If you'd like to try supplementing magnesium, we recommend ‘magnesium bisglycinate’. While most other forms of magnesium supplements can cause gut symptoms, we recommend magnesium bisgycinate because it’s very easily absorbed and doesn’t cause any negative side effects.",

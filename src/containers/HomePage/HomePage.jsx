@@ -9,7 +9,7 @@ const HomePage = () => {
       <Link to="../priorities-page">Priorities Page</Link>
 
       <div className={styles.maintenanceContainer}>
-        <MaintenancePage />
+        {/* <MaintenancePage /> */}
       </div>
     </div>
   );
