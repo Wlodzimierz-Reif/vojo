@@ -15,7 +15,6 @@ const PageFour = () => {
 
   const handleCheckToggle = inputVal => {
     const isPresent = pregnantBreastFeeding.includes(inputVal);
-
     if (isPresent === true) {
       const newArray = [...pregnantBreastFeeding];
       const valPosition = pregnantBreastFeeding.indexOf(inputVal);

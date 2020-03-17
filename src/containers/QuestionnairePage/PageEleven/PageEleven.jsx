@@ -10,7 +10,26 @@ import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
 
 const PageEleven = () => {
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState({ eyeIssues: [] });
+  const { eyeIssues } = formValues;
+
+  const handleCheckToggle = inputVal => {
+    const isPresent = eyeIssues.includes(inputVal);
+    if (isPresent === true) {
+      const newArray = [...eyeIssues];
+      const valPosition = eyeIssues.indexOf(inputVal);
+      newArray.splice(valPosition, 1);
+      setFormValues({
+        ...formValues,
+        eyeIssues: newArray
+      });
+    } else {
+      setFormValues({
+        ...formValues,
+        eyeIssues: [...eyeIssues, inputVal]
+      });
+    }
+  };
 
   return (
     <div className={styles.page}>
@@ -68,59 +87,41 @@ const PageEleven = () => {
             Do you have issues with your vision (other than
             short/long-sightedness)?
           </h2>
-          <RadioButton
+          <CheckBox
             text="Nope"
-            name="eyeIssues"
+            startChecked={false}
             value="Nope"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, eyeIssues: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Blurry vision"
-            name="eyeIssues"
+            startChecked={false}
             value="Blurry vision"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, eyeIssues: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Dry eyes"
-            name="eyeIssues"
+            startChecked={false}
             value="Dry eyes"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, eyeIssues: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="I find it difficult to see in low light levels"
-            name="eyeIssues"
-            value="I find it difficult to see in low light levels"
+          <CheckBox
+            text="I find it difficult to see in low level light"
             startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, eyeIssues: input })
-            }
+            value="I find it difficult to see in low level light"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="Age-related macular degeneration"
-            name="eyeIssues"
-            value="Age-related macular degeneration"
+          <CheckBox
+            text="Age - related macular degeneration"
             startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, eyeIssues: input })
-            }
+            value="Age - related macular degeneration"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Glaucoma"
-            name="eyeIssues"
-            value="Glaucoma"
             startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, eyeIssues: input })
-            }
+            value="Glaucoma"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
         </section>
       </div>

@@ -10,105 +10,67 @@ import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
 
 const PageTwelve = () => {
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState({ skinIssues: [] });
+  const { skinIssues } = formValues;
+
+  const handleCheckToggle = inputVal => {
+    const isPresent = skinIssues.includes(inputVal);
+    if (isPresent === true) {
+      const newArray = [...skinIssues];
+      const valPosition = skinIssues.indexOf(inputVal);
+      newArray.splice(valPosition, 1);
+      setFormValues({
+        ...formValues,
+        skinIssues: newArray
+      });
+    } else {
+      setFormValues({
+        ...formValues,
+        skinIssues: [...skinIssues, inputVal]
+      });
+    }
+  };
 
   return (
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
           <h2>Which of the following sounds like your skin?</h2>
-          <RadioButton
+          <CheckBox
             text="Normal"
-            name="skinIssues"
+            startChecked={false}
             value="Normal"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, skinIssues: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Dry"
-            name="skinIssues"
+            startChecked={false}
             value="Dry"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, skinIssues: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Spotty"
-            name="skinIssues"
+            startChecked={false}
             value="Spotty"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, skinIssues: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Itchy"
-            name="skinIssues"
+            startChecked={false}
             value="Itchy"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, skinIssues: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Eczema"
-            name="skinIssues"
+            startChecked={false}
             value="Eczema"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, skinIssues: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Dermatitis"
-            name="skinIssues"
+            startChecked={false}
             value="Dermatitis"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, skinIssues: input })
-            }
-          />
-        </section>
-        <section>
-          <h2>Do you tend to have sore and cracked lips?</h2>
-          <RadioButton
-            text="Yes, a lot"
-            name="lipIssues"
-            value="Yes, a lot"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, lipIssues: input })
-            }
-          />
-          <RadioButton
-            text="Yeah, sometimes"
-            name="lipIssues"
-            value="Yeah, sometimes"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, lipIssues: input })
-            }
-          />
-          <RadioButton
-            text="Not very often"
-            name="lipIssues"
-            value="Not very often"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, lipIssues: input })
-            }
-          />
-          <RadioButton
-            text="Never"
-            name="lipIssues"
-            value="Never"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, lipIssues: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
         </section>
       </div>

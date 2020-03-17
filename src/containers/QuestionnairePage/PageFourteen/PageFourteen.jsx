@@ -7,10 +7,44 @@ import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/pickle-2.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 
 const PageFourteen = () => {
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState({
+    whichAllergies: []
+  });
+  const [other, setOther] = useState(null);
+  const { whichAllergies } = formValues;
+
+  const handleCheckToggle = inputVal => {
+    const isPresent = whichAllergies.includes(inputVal);
+    if (isPresent === true) {
+      const newArray = [...whichAllergies];
+      const valPosition = whichAllergies.indexOf(inputVal);
+      newArray.splice(valPosition, 1);
+      setFormValues({
+        ...formValues,
+        whichAllergies: newArray
+      });
+    } else {
+      setFormValues({
+        ...formValues,
+        whichAllergies: [...whichAllergies, inputVal]
+      });
+    }
+  };
+
+  const navigateToNext = () => {
+    setFormValues({
+      ...formValues,
+      whichAllergies: [...whichAllergies, other]
+    });
+    navigate("/questionnaire-page/page-fifteen");
+  };
+
+  const handleInputValue = inputVal => {
+    setOther(inputVal);
+  };
 
   return (
     <div className={styles.page}>
@@ -38,67 +72,47 @@ const PageFourteen = () => {
         </section>
         <section>
           <h2>Which allergies do you have?</h2>
-          <RadioButton
-            text="Hay fever, asthma or eczema"
-            name="whichAllergies"
-            value="Hay fever, asthma or eczema"
+          <CheckBox
+            text="Hayfeaver, asthma or eczema"
             startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, whichAllergies: input })
-            }
+            value="Hayfeaver, asthma or exzema"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Animals"
-            name="whichAllergies"
+            startChecked={false}
             value="Animals"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, whichAllergies: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Peanuts"
-            name="whichAllergies"
+            startChecked={false}
             value="Peanuts"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, whichAllergies: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Tree nuts"
-            name="whichAllergies"
+            startChecked={false}
             value="Tree nuts"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, whichAllergies: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Soy"
-            name="whichAllergies"
+            startChecked={false}
             value="Soy"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, whichAllergies: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Wheat"
-            name="whichAllergies"
-            value="Wheat"
             startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, whichAllergies: input })
-            }
+            value="Wheat"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
           <InputLabel isPrimary={true} labelName={"Other"} />
           <div className={styles.inputFieldContainer}>
             <InputField
               name={"whichAllergies"}
-              selectInput={input =>
-                setFormValues({ ...formValues, whichAllergies: input })
-              }
+              selectInput={input => handleInputValue(input)}
             />
           </div>
         </section>
@@ -106,9 +120,7 @@ const PageFourteen = () => {
       <Link to="../page-thirteen">
         <img className={styles.leftArrow} src={Arrow} />
       </Link>
-      <Link to="../page-fifteen">
-        <img className={styles.rightArrow} src={Arrow} />
-      </Link>
+      <img className={styles.rightArrow} src={Arrow} onClick={navigateToNext} />
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
