@@ -2,22 +2,23 @@
 
 .navBar {
   background-color: $primary-color;
+  position: fixed;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100px;
+  width: calc(100vw - 32px);
+  height: calc(100vh - 32px);
+
 
   .navBarLogo {
     width: 110px;
-    padding-left: $base-spacing * 6;
   }
 
   .links {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     color: white;
-    padding-right: $base-spacing * 6;
 
     p {
       padding: 0 $base-spacing * 2;
@@ -29,3 +30,13 @@
     }
   }
 }
+
+// @media 
+
+// .navBar {
+//   position: fixed;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 100px;
+//   height: 100vh;
