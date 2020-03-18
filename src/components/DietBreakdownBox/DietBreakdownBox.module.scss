@@ -12,7 +12,7 @@
     border-left: 2px solid #cc9a63;
     border-right: 2px solid #cc9a63;
     text-align: center;
-    margin-top: $base-spacing;
+    margin-top: $base-spacing *2;
 
     p {
       width: 50%;
@@ -50,7 +50,6 @@
 
     .imgs {
       width: 80%;
-      height: 100%;
       margin-top: 0;
     }
   }
@@ -58,11 +57,18 @@
 
 @media only screen and (min-width: 768px) {
   .breakdownBox1 {
+    .textBorder {
+      margin-top: $base-spacing * 3;
+    
+      p {
+        margin-top: -25px;
+      }
+    }
     .imgs {
       display: flex;
       flex-direction: row;
       width: 100%;
-      height: 20%;
+      height: 30%;
 
       .primary {
         height: 100%;

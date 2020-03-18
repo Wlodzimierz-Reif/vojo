@@ -1,0 +1,78 @@
+@import "../../variables.scss";
+
+.breakdownBox1 {
+  height: 100%;
+  width: 100%;
+
+  p {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.imgs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 80%;
+  height: 40%;
+
+  .primary {
+    height: 100%;
+    width: 100%;
+    margin: $base-spacing / 2;
+  }
+}
+
+.vegBrief {
+  height: 20%;
+  text-align: center;
+  width: 80%;
+}
+// }
+
+@media only screen and (min-width: 425px) {
+  .breakdownBox1 {
+   
+    .imgs {
+      width: 80%;
+      margin-top: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .breakdownBox1 {
+    
+    .imgs {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 30%;
+
+      .primary {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .breakdownBox1 {
+    margin: $base-spacing * 3 $base-spacing;
+
+    .imgs {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 20%;
+
+      .primary {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
