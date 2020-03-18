@@ -1,41 +1,77 @@
 @import "../../variables.scss";
 
-.inputContainer {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+.container {
+	padding: $base-spacing;
+	border: 1px solid lightgrey;
+	border-radius: 10px;
 
-  .info {
-    width: 100%;
-    height: 40%;
+	.header {
+		h5 {
+			font-size: calc(16px + (24 - 18) * ((100vw - 440px) / (1920 - 440)));
+			text-transform: uppercase;
+			margin: $base-spacing 0;
+		}
+	}
+	p {
+		font-size: calc(12px + (24 - 18) * ((100vw - 440px) / (1920 - 440)));
+		font-weight: 600;
+	}
 
-    p {
-      margin-bottom: $base-spacing;
-    }
+	.info {
+		margin: $base-spacing * 2 0;
+	}
 
-    div {
-      // border: 2px solid green;
-      padding-bottom: $base-spacing;
-      height: 40%;
-      width: 100%;
-    }
-  }
-  .cardContainer {
-    height: 40%;
-    p {
-      margin-bottom: $base-spacing;
-    }
+	.inputs {
+		width: 100%;
+		height: 35px;
+		margin-top: 5px;
+	}
 
-    div {
-      height: 40%;
-      padding-bottom: $base-spacing;
-    }
-    .cardInfo {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: $base-spacing;
-    }
-  }
+	.smallInputs {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: $base-spacing;
+		height: 35px;
+		margin-top: 5px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.container {
+		padding: $base-spacing * 3;
+
+		.info {
+			margin: $base-spacing * 2 0;
+		}
+
+		.inputs {
+			height: 45px;
+			margin-top: $base-spacing;
+		}
+
+		.smallInputs {
+			height: 45px;
+			margin-top: $base-spacing;
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.container {
+		padding: $base-spacing * 4;
+
+		.info {
+			margin: $base-spacing * 3 0;
+		}
+
+		.inputs {
+			height: 50px;
+			margin-top: $base-spacing;
+		}
+
+		.smallInputs {
+			height: 50px;
+			margin-top: $base-spacing;
+		}
+	}
 }

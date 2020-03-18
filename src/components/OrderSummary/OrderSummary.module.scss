@@ -1,0 +1,57 @@
+@import "../../variables.scss";
+
+.orderSummary {
+	width: 100%;
+	padding: $base-spacing * 2;
+
+	span {
+		font-weight: 900;
+	}
+
+	h5 {
+		font-size: calc(16px + (24 - 18) * ((100vw - 440px) / (1920 - 440)));
+		text-transform: uppercase;
+		margin: $base-spacing 0;
+	}
+
+	> :last-child {
+		font-weight: 900;
+	}
+
+	.productPrice {
+		display: flex;
+		justify-content: space-between;
+		margin: $base-spacing * 3 0;
+	}
+
+	.total {
+		display: flex;
+		justify-content: space-between;
+		margin: $base-spacing * 3 0;
+
+		.bigger {
+			font-size: 20px;
+		}
+	}
+
+	.thinLine {
+		background-color: $vojo-brown;
+		display: block;
+		height: 1px;
+		content: "";
+		width: 70%;
+		margin: 0 auto;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.orderSummary {
+		padding: $base-spacing * 3;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.orderSummary {
+		padding: $base-spacing * 4;
+	}
+}
