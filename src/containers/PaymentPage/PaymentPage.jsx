@@ -13,9 +13,9 @@ const PaymentPage = () => {
           <PaymentDetails />
         </div>
         <div className={styles.orderSummary}>
-          {/* <OrderSummary />
+          <OrderSummary />
           <PayButton btnText={"Pay with Paypal"} isPaypal={true} />
-          <PayButton btnText={"Pay Now"} isPaypal={false} /> */}
+          <PayButton btnText={"Pay Now"} isPaypal={false} />
         </div>
       </section>
     </>

@@ -6,27 +6,32 @@ import InputField from "../InputField/InputField";
 const PaymentDetails = () => {
   return (
     <>
-      <section>
-        <div>
-          <h3>Payment Details</h3>
-          <InputLabel isPrimary={true} labelName="Your Information" />
-          <InputField type="text" name="full name" placeholder="Full Name" />
-          <InputField type="email" name="email" placeholder="Email" />
+      <section className={styles.inputContainer}>
+        <h3>Payment Details</h3>
+        <div className={styles.info}>
+          <p>Your Information</p>
+          <div>
+            <InputField type="text" name="full name" placeholder="Full Name" />
+          </div>
+          <div>
+            <InputField type="email" name="email" placeholder="Email" />
+          </div>
         </div>
 
-        <div>
-          <InputLabel isPrimary={true} labelName="Card Details" />
-          <InputField
-            type="text"
-            name="card number"
-            placeholder="Card Number"
-          />
+        <div className={styles.cardContainer}>
+          <p>Card Details"</p>
           <div>
-            <div>
-              <InputField type="text" name="CVV" placeholder="CVV" />
-              <InputField type="text" name="CVV" placeholder="MM / YY" />
-              <InputField type="text" name="CVV" placeholder="Postal Code" />
-            </div>
+            <InputField
+              type="text"
+              name="card number"
+              placeholder="Card Number"
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.cardInfo}>
+            <InputField type="text" name="CVV" placeholder="CVV" />
+            <InputField type="text" name="CVV" placeholder="MM / YY" />
+            <InputField type="text" name="CVV" placeholder="Postal Code" />
           </div>
         </div>
       </section>
