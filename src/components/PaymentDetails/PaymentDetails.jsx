@@ -19,7 +19,7 @@ const PaymentDetails = () => {
         </div>
 
         <div className={styles.cardContainer}>
-          <p>Card Details"</p>
+          <p>Card Details</p>
           <div>
             <InputField
               type="text"

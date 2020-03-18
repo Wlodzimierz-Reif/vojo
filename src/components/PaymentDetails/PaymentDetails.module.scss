@@ -1,33 +1,37 @@
 @import "../../variables.scss";
 
-
 .inputContainer {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 
   .info {
-    // border: 2px red solid;
     width: 100%;
-    height: 30%;
+    height: 40%;
 
     p {
-      padding: $base-spacing 0;
+      margin-bottom: $base-spacing;
     }
 
     div {
       // border: 2px solid green;
-      padding: $base-spacing 0;
+      padding-bottom: $base-spacing;
       height: 40%;
       width: 100%;
     }
   }
   .cardContainer {
-      height: 30%;
+    height: 40%;
+    p {
+      margin-bottom: $base-spacing;
+    }
 
-      div {
-          height: 40%;
-          padding: $base-spacing 0;
-      }
+    div {
+      height: 40%;
+      padding-bottom: $base-spacing;
+    }
     .cardInfo {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
