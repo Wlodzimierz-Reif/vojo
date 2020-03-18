@@ -21,7 +21,7 @@ const PageTwentyNine = props => {
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>How often do you supplement algal algal (omega-3)?</h2>
+          <h2>How often do you supplement algal oil (omega-3)?</h2>
           <RadioButton
             text="Every day"
             name="algalOilSupplementFrequency"
@@ -73,25 +73,25 @@ const PageTwentyNine = props => {
           <h2>Are you currently taking any prescription medications?</h2>
           <RadioButton
             text="Yes"
-            name="algalOilSupplementFrequency"
+            name="prescriptionMeds"
             value="Yes"
             startChecked={false}
             selectRadio={input =>
               setFormValues({
                 ...formValues,
-                algalOilSupplementFrequency: input
+                prescriptionMeds: input
               })
             }
           />
           <RadioButton
             text="No"
-            name="algalOilSupplementFrequency"
+            name="prescriptionMeds"
             value="No"
             startChecked={false}
             selectRadio={input =>
               setFormValues({
                 ...formValues,
-                algalOilSupplementFrequency: input
+                prescriptionMeds: input
               })
             }
           />

@@ -10,11 +10,11 @@ import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link, navigate } from "@reach/router";
 
 const PageTwentySeven = props => {
-  const { allSupplements } = formValues;
-
   const { masterValues, changeMaster } = props;
 
   const [formValues, setFormValues] = useState({ allSupplements: [] });
+
+  const { allSupplements } = formValues;
 
   const [other, setOther] = useState(null);
 

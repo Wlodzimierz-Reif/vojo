@@ -21,104 +21,86 @@ const PageTwentyThree = props => {
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
+          <h2>How often do you eat...</h2>
           <h2>
-            Do you have a family history of any of these conditions? (Select a
-            condition if 2 or more of your close family members [that's
-            siblings, parents or grandparents] have it)
+            ...beans, pulses and bean products? (like tofu, tempeh, baked beans,
+            hummus)
           </h2>
           <RadioButton
-            text="High cholesterol"
-            name="familyHistory"
-            value="High cholesterol"
+            text="Every day"
+            name="plantMilkFrequency"
+            value="Every day"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, familyHistory: input })
+              setFormValues({ ...formValues, plantMilkFrequency: input })
             }
           />
           <RadioButton
-            text="Cardiovasuclar disease"
-            name="familyHistory"
-            value="Cardiovasuclar disease"
+            text="Few times a week"
+            name="plantMilkFrequency"
+            value="Few times a week"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, familyHistory: input })
+              setFormValues({ ...formValues, plantMilkFrequency: input })
             }
           />
           <RadioButton
-            text="High blood pressue"
-            name="familyHistory"
-            value="High blood pressue"
+            text="Few times a month"
+            name="plantMilkFrequency"
+            value="Few times a month"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, familyHistory: input })
+              setFormValues({ ...formValues, plantMilkFrequency: input })
             }
           />
           <RadioButton
-            text="Type 2 diabetes"
-            name="familyHistory"
-            value="Type 2 diabetes"
+            text="Never or rarely"
+            name="plantMilkFrequency"
+            value="Never or rarely"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, familyHistory: input })
+              setFormValues({ ...formValues, plantMilkFrequency: input })
             }
           />
         </section>
         <section>
           <h2>...wholegrains? (like brown rice, buckwheat, quinoa)</h2>
           <RadioButton
-            text="Depression"
-            name="familyHistory"
-            value="Depression"
+            text="Every day"
+            name="wholeGrainFrequency"
+            value="Every day"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, familyHistory: input })
+              setFormValues({ ...formValues, wholeGrainFrequency: input })
             }
           />
           <RadioButton
-            text="Anxiety"
-            name="familyHistory"
-            value="Anxiety"
+            text="Few times a week"
+            name="wholeGrainFrequency"
+            value="Few times a week"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, familyHistory: input })
+              setFormValues({ ...formValues, wholeGrainFrequency: input })
             }
           />
           <RadioButton
-            text="Insomia"
-            name="familyHistory"
-            value="Insomia"
+            text="Few times a month"
+            name="wholeGrainFrequency"
+            value="Few times a month"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, familyHistory: input })
+              setFormValues({ ...formValues, wholeGrainFrequency: input })
             }
           />
           <RadioButton
-            text="Osteoperosis"
-            name="familyHistory"
-            value="Osteoperosis"
+            text="Never or rarely"
+            name="wholeGrainFrequency"
+            value="Never or rarely"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, familyHistory: input })
+              setFormValues({ ...formValues, wholeGrainFrequency: input })
             }
           />
-          <RadioButton
-            text="Irritable Bowel Syndrome"
-            name="familyHistory"
-            value="Irritable Bowel Syndrome"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, familyHistory: input })
-            }
-          />
-          <InputLabel isPrimary={true} labelName={"Other"} />
-          <div className={styles.inputFieldContainer}>
-            <InputField
-              name={"familyHistory"}
-              selectInput={input =>
-                setFormValues({ ...formValues, familyHistory: input })
-              }
-            />
-          </div>
         </section>
       </div>
       <Link to="../page-twenty-two">

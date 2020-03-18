@@ -9,25 +9,31 @@ import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link, navigate } from "@reach/router";
 
-const PageThirtyOne = () => {
-  const [formValues, setFormValues] = useState({ familyHistory: [] });
-  const { familyHistory } = formValues;
+const PageThirtyOne = props => {
+  const { masterValues, changeMaster } = props;
+
+  const [formValues, setFormValues] = useState({ autoImmuneCondition: [] });
+  const { autoImmuneCondition } = formValues;
   const [other, setOther] = useState(null);
 
+  const updateMasterValues = () => {
+    changeMaster({ ...masterValues, ...formValues });
+  };
+
   const handleCheckToggle = inputVal => {
-    const isPresent = familyHistory.includes(inputVal);
+    const isPresent = autoImmuneCondition.includes(inputVal);
     if (isPresent === true) {
-      const newArray = [...familyHistory];
-      const valPosition = familyHistory.indexOf(inputVal);
+      const newArray = [...autoImmuneCondition];
+      const valPosition = autoImmuneCondition.indexOf(inputVal);
       newArray.splice(valPosition, 1);
       setFormValues({
         ...formValues,
-        familyHistory: newArray
+        autoImmuneCondition: newArray
       });
     } else {
       setFormValues({
         ...formValues,
-        familyHistory: [...familyHistory, inputVal]
+        autoImmuneCondition: [...autoImmuneCondition, inputVal]
       });
     }
   };
@@ -36,50 +42,94 @@ const PageThirtyOne = () => {
     if (!other === null || !other == "") {
       setFormValues({
         ...formValues,
-        familyHistory: [...familyHistory, other]
+        autoImmuneCondition: [...autoImmuneCondition, other]
       });
-      navigate("/questionnaire-page/page-thirty-two");
     }
+    navigate("/questionnaire-page/page-thirty-two");
   };
   const handleInputValue = inputVal => {
     setOther(inputVal);
+  };
+
+  const updateMasterNavigateWrapperFunction = () => {
+    updateMasterValues();
+    navigateToNext();
   };
 
   return (
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>...readymade vegan spread or butter alternative?</h2>
+          <h2>Have you been diagnosed with an autoimmune condition?</h2>
           <CheckBox
-            text="Everyday"
+            text="Lupus"
             startChecked={false}
-            value="Everyday"
+            value="Lupus"
             selectCheckBox={input => handleCheckToggle(input)}
           />
           <CheckBox
-            text="A few times a week"
+            text="MS"
             startChecked={false}
-            value="A few times a week"
+            value="MS"
             selectCheckBox={input => handleCheckToggle(input)}
           />
           <CheckBox
-            text="A few times a month"
+            text="Type 1 diabetes"
             startChecked={false}
-            value="A few times a month"
+            value="Type 1 diabetes"
             selectCheckBox={input => handleCheckToggle(input)}
           />
           <CheckBox
-            text="Never or rarely'"
+            text="Graves’"
             startChecked={false}
-            value="Never or rarely'"
+            value="Graves’"
             selectCheckBox={input => handleCheckToggle(input)}
           />
+          <CheckBox
+            text="Hashimoto’s"
+            startChecked={false}
+            value="Hashimoto’s"
+            selectCheckBox={input => handleCheckToggle(input)}
+          />
+          <CheckBox
+            text="IBD (Crohn’s/Colitis)"
+            startChecked={false}
+            value="IBD (Crohn’s/Colitis)"
+            selectCheckBox={input => handleCheckToggle(input)}
+          />
+          <CheckBox
+            text="Coeliac Disease"
+            startChecked={false}
+            value="Coeliac Disease"
+            selectCheckBox={input => handleCheckToggle(input)}
+          />
+          <CheckBox
+            text="Rheumatoid arthritis"
+            startChecked={false}
+            value="Rheumatoid arthritis"
+            selectCheckBox={input => handleCheckToggle(input)}
+          />
+          <InputLabel isPrimary={true} labelName={"Other"} />
+          <div className={styles.inputFieldContainer}>
+            <InputField
+              name={"autoImmuneCondition"}
+              selectInput={input => handleInputValue(input)}
+            />
+          </div>
         </section>
       </div>
       <Link to="../page-thirty">
-        <img className={styles.leftArrow} src={Arrow} />
+        <img
+          className={styles.leftArrow}
+          src={Arrow}
+          onClick={updateMasterNavigateWrapperFunction}
+        />
       </Link>
-      <img className={styles.rightArrow} src={Arrow} onClick={navigateToNext} />
+      <img
+        className={styles.rightArrow}
+        src={Arrow}
+        onClick={updateMasterNavigateWrapperFunction}
+      />
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>

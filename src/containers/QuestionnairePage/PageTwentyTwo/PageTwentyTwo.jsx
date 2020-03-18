@@ -21,97 +21,83 @@ const PageTwentyTwo = props => {
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>Have you ever been diagnosed with any of these conditions?</h2>
+          <h2>How often do you eat...</h2>
+          <h2>...readymade vegan spread or butter alternative?</h2>
           <RadioButton
-            text="High cholestoral"
-            name="diagnosedCondition"
-            value="High cholestoral"
+            text="Every day"
+            name="veganSpreadFrequency"
+            value="Every day"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, diagnosedCondition: input })
+              setFormValues({ ...formValues, veganSpreadFrequency: input })
             }
           />
           <RadioButton
-            text="Cardiovascular disease"
-            name="diagnosedCondition"
-            value="Cardiovascular disease"
+            text="Few times a week"
+            name="veganSpreadFrequency"
+            value="Few times a week"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, diagnosedCondition: input })
+              setFormValues({ ...formValues, veganSpreadFrequency: input })
             }
           />
           <RadioButton
-            text="High blood pressue"
-            name="diagnosedCondition"
-            value="High blood pressue"
+            text="Few times a month"
+            name="veganSpreadFrequency"
+            value="Few times a month"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, diagnosedCondition: input })
+              setFormValues({ ...formValues, veganSpreadFrequency: input })
             }
           />
           <RadioButton
-            text="Type 2 diabetes"
-            name="diagnosedCondition"
-            value="Type 2 diabetes"
+            text="Never or rarely"
+            name="veganSpreadFrequency"
+            value="Never or rarely"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, diagnosedCondition: input })
+              setFormValues({ ...formValues, veganSpreadFrequency: input })
+            }
+          />
+        </section>
+        <section>
+          <h2>...readymade plant milks?</h2>
+          <RadioButton
+            text="Every day"
+            name="plantMilkFrequency"
+            value="Every day"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({ ...formValues, plantMilkFrequency: input })
             }
           />
           <RadioButton
-            text="Depression"
-            name="diagnosedCondition"
-            value="Depression"
+            text="Few times a week"
+            name="plantMilkFrequency"
+            value="Few times a week"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, diagnosedCondition: input })
+              setFormValues({ ...formValues, plantMilkFrequency: input })
             }
           />
           <RadioButton
-            text="Anxiety"
-            name="diagnosedCondition"
-            value="Anxiety"
+            text="Few times a month"
+            name="plantMilkFrequency"
+            value="Few times a month"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, diagnosedCondition: input })
+              setFormValues({ ...formValues, plantMilkFrequency: input })
             }
           />
           <RadioButton
-            text="Insomnia"
-            name="diagnosedCondition"
-            value="Insomnia"
+            text="Never or rarely"
+            name="plantMilkFrequency"
+            value="Never or rarely"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, diagnosedCondition: input })
+              setFormValues({ ...formValues, plantMilkFrequency: input })
             }
           />
-          <RadioButton
-            text="Osteoperosis"
-            name="diagnosedCondition"
-            value="Osteoperosis"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, diagnosedCondition: input })
-            }
-          />
-          <RadioButton
-            text="Irritable Bowel Syndrome (IBS)"
-            name="diagnosedCondition"
-            value="Irritable Bowel Syndrome (IBS)"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, diagnosedCondition: input })
-            }
-          />
-          <InputLabel isPrimary={true} labelName={"Other"} />
-          <div className={styles.inputFieldContainer}>
-            <InputField
-              name={"diagnosedCondition"}
-              selectInput={input =>
-                setFormValues({ ...formValues, diagnosedCondition: input })
-              }
-            />
-          </div>
         </section>
       </div>
 

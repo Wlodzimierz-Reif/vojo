@@ -45,7 +45,7 @@ const PageFifteen = props => {
           <h2>How often do you exercise? (be honest!)</h2>
           <RadioButton
             text="Everyday"
-            name="loseWeight"
+            name="exerciseFrequency"
             value="Everyday"
             startChecked={false}
             selectRadio={input =>

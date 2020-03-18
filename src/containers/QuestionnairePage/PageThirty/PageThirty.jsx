@@ -9,7 +9,7 @@ import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link, navigate } from "@reach/router";
 
-const PageThirty = () => {
+const PageThirty = props => {
   const { masterValues, changeMaster } = props;
 
   const updateMasterValues = () => {
@@ -52,10 +52,15 @@ const PageThirty = () => {
     setOther(inputVal);
   };
 
+  const updateMasterNavigateWrapperFunction = () => {
+    updateMasterValues();
+    navigateToNext();
+  };
+
   return (
     <div className={styles.page}>
       <div className={styles.box}>
-        <h2>Are you currently taking any of the current medications?</h2>
+        <h2>Are you currently taking any of the following medications?</h2>
         <CheckBox
           text="Proton-pump inhibitors"
           startChecked={false}
@@ -114,8 +119,16 @@ const PageThirty = () => {
           onClick={updateMasterValues}
         />
       </Link>
-      <img className={styles.rightArrow} src={Arrow} onClick={navigateToNext} />
-      <img className={styles.bottomWave} src={BottomWave} />
+      <img
+        className={styles.rightArrow}
+        src={Arrow}
+        onClick={updateMasterNavigateWrapperFunction}
+      />
+      <img
+        className={styles.bottomWave}
+        src={BottomWave}
+        onClick={updateMasterNavigateWrapperFunction}
+      />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
   );
