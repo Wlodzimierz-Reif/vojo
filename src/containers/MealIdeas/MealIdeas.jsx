@@ -34,6 +34,7 @@ const MealIdeas = () => {
           <MealIdeasBottom />
           <MealIdeasBottom />
           <MealIdeasBottom />
+          <MealIdeasBottom />
         </div>
       </section>
     </>

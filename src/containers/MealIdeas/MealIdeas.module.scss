@@ -14,12 +14,33 @@
   margin-left: $base-spacing * 2;
 }
 
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 425px) {
   .dietContainer {
     margin: $base-spacing;
     justify-content: space-around;
   }
 }
+
+@media only screen and (min-width: 764px) {
+  .dietContainer {
+    margin: $base-spacing;
+    justify-content: space-around;
+  }
+  .mealHeader {
+    margin: $base-spacing 0 $base-spacing * 2 $base-spacing * 2;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .dietContainer {
+    margin: $base-spacing;
+    justify-content: space-around;
+  }
+  .mealHeader {
+    margin: $base-spacing * 3 0 $base-spacing * 2 $base-spacing * 2;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .mealIdeas {
     margin: $base-spacing * 5;

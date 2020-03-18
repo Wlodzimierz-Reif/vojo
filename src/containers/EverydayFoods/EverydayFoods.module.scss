@@ -25,11 +25,15 @@
   }
 }
 
-@media only screen and (min-width: 720px) {
-  .mealList {
-    font-size: 14px;
+@media only screen and (min-width: 425px) {
+  img {
+    position: fixed;
+    width: 15vw;
+    right: 15%;
+    top: 75vh;
   }
-
+}
+@media only screen and (min-width: 764px) {
   .listImage {
     padding-top: 50px;
     padding-left: 70px;
@@ -42,24 +46,31 @@
     top: 60vh;
   }
 }
-@media only screen and (min-width: 1440px) {
-  .mealList {
-    font-size: 16px;
+
+@media only screen and (min-width: 1024px) {
+  .listImage {
+    padding-top: 50px;
+    padding-left: 70px;
   }
 
   .listImage img {
     position: fixed;
     width: 15vw;
     right: 15%;
-    top: 40vh;
+    top: 50vh;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .listImage img {
+    position: fixed;
+    width: 15vw;
+    right: 15%;
+    top: 50vh;
   }
 }
 
 @media only screen and (min-width: 1920px) {
-  .mealList {
-    font-size: 16px;
-  }
-
   .listImage img {
     position: fixed;
     width: 15vw;
