@@ -11,7 +11,6 @@ import { Link } from "@reach/router";
 
 const PageFour = props => {
   const { masterValues, changeMaster } = props;
-
   const [formValues, setFormValues] = useState({ pregnantBreastFeeding: [] });
   const { pregnantBreastFeeding } = formValues;
 
@@ -116,10 +115,18 @@ const PageFour = props => {
         </section>
       </div>
       <Link to="../page-three">
-        <img className={styles.leftArrow} src={Arrow} />
+        <img
+          className={styles.leftArrow}
+          src={Arrow}
+          onClick={updateMasterValues}
+        />
       </Link>
       <Link to="../page-five">
-        <img className={styles.rightArrow} src={Arrow} />
+        <img
+          className={styles.rightArrow}
+          src={Arrow}
+          onClick={updateMasterValues}
+        />
       </Link>
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />

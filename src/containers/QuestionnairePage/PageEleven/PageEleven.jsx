@@ -9,9 +9,15 @@ import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
 
-const PageEleven = () => {
+const PageEleven = props => {
+  const { masterValues, changeMaster } = props;
+
   const [formValues, setFormValues] = useState({ eyeIssues: [] });
   const { eyeIssues } = formValues;
+
+  const updateMasterValues = () => {
+    changeMaster({ ...masterValues, ...formValues });
+  };
 
   const handleCheckToggle = inputVal => {
     const isPresent = eyeIssues.includes(inputVal);
@@ -126,10 +132,18 @@ const PageEleven = () => {
         </section>
       </div>
       <Link to="../page-ten">
-        <img className={styles.leftArrow} src={Arrow} />
+        <img
+          className={styles.leftArrow}
+          src={Arrow}
+          onClick={updateMasterValues}
+        />
       </Link>
       <Link to="../page-twelve">
-        <img className={styles.rightArrow} src={Arrow} />
+        <img
+          className={styles.rightArrow}
+          src={Arrow}
+          onClick={updateMasterValues}
+        />
       </Link>
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />

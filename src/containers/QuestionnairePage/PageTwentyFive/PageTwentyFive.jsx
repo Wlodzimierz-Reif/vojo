@@ -9,9 +9,14 @@ import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
 
-const PageTwentyFive = () => {
+const PageTwentyFive = props => {
+  const { masterValues, changeMaster } = props;
+
   const [formValues, setFormValues] = useState({});
 
+  const updateMasterValues = () => {
+    changeMaster({ ...masterValues, ...formValues });
+  };
   return (
     <div className={styles.page}>
       <div className={styles.box}>
@@ -96,10 +101,18 @@ const PageTwentyFive = () => {
         </section>
       </div>
       <Link to="../page-twenty-four">
-        <img className={styles.leftArrow} src={Arrow} />
+        <img
+          className={styles.leftArrow}
+          src={Arrow}
+          onClick={updateMasterValues}
+        />
       </Link>
       <Link to="../page-twenty-six">
-        <img className={styles.rightArrow} src={Arrow} />
+        <img
+          className={styles.rightArrow}
+          src={Arrow}
+          onClick={updateMasterValues}
+        />
       </Link>
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />

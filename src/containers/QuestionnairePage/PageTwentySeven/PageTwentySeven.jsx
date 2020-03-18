@@ -9,10 +9,18 @@ import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link, navigate } from "@reach/router";
 
-const PageTwentySeven = () => {
-  const [formValues, setFormValues] = useState({ allSupplements: [] });
+const PageTwentySeven = props => {
   const { allSupplements } = formValues;
+
+  const { masterValues, changeMaster } = props;
+
+  const [formValues, setFormValues] = useState({ allSupplements: [] });
+
   const [other, setOther] = useState(null);
+
+  const updateMasterValues = () => {
+    changeMaster({ ...masterValues, ...formValues });
+  };
 
   const handleCheckToggle = inputVal => {
     const isPresent = allSupplements.includes(inputVal);
@@ -42,6 +50,11 @@ const PageTwentySeven = () => {
 
   const handleInputValue = inputVal => {
     setOther(inputVal);
+  };
+
+  const updateMasterNavigateWrapperFunction = () => {
+    updateMasterValues();
+    navigateToNext();
   };
 
   return (
@@ -107,9 +120,17 @@ const PageTwentySeven = () => {
         </section>
       </div>
       <Link to="../page-twenty-six">
-        <img className={styles.leftArrow} src={Arrow} />
+        <img
+          className={styles.leftArrow}
+          src={Arrow}
+          onClick={updateMasterNavigateWrapperFunction}
+        />
       </Link>
-      <img className={styles.rightArrow} src={Arrow} onClick={navigateToNext} />
+      <img
+        className={styles.rightArrow}
+        src={Arrow}
+        onClick={updateMasterNavigateWrapperFunction}
+      />
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>

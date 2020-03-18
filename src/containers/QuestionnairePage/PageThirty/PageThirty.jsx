@@ -10,6 +10,12 @@ import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link, navigate } from "@reach/router";
 
 const PageThirty = () => {
+  const { masterValues, changeMaster } = props;
+
+  const updateMasterValues = () => {
+    changeMaster({ ...masterValues, ...formValues });
+  };
+
   const [formValues, setFormValues] = useState({ whichPrescriptionMeds: [] });
   const { whichPrescriptionMeds } = formValues;
   const [other, setOther] = useState(null);
@@ -102,7 +108,11 @@ const PageThirty = () => {
       </div>
 
       <Link to="../page-twenty-nine">
-        <img className={styles.leftArrow} src={Arrow} />
+        <img
+          className={styles.leftArrow}
+          src={Arrow}
+          onClick={updateMasterValues}
+        />
       </Link>
       <img className={styles.rightArrow} src={Arrow} onClick={navigateToNext} />
       <img className={styles.bottomWave} src={BottomWave} />
