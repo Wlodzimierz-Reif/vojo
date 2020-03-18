@@ -9,10 +9,26 @@ describe("Button tests", () => {
 
   beforeEach(() => {
     testFunc = jest.fn();
-    component = shallow(<Button btnText= "test text" handleClick={testFunc}/>);
-  })
+    component = shallow(<Button btnText="testText" handleClick={testFunc} />);
+  });
 
   it("should render", () => {
     expect(render(component)).toBeTruthy();
+  });
+
+  it("should render the correct text", () => {
+    expect(component.text()).toContain("testText");
+  });
+
+  it("should call a parent function when clicked", () => {
+    component.find("button").simulate("click");
+    expect(testFunc).toHaveBeenCalled();
+  });
+
+  it("should call a parent function every time it has been clicked", () => {
+    component.find("button").simulate("click");
+    component.find("button").simulate("click");
+    component.find("button").simulate("click");
+    expect(testFunc).toHaveBeenCalledTimes(3);
   });
 });

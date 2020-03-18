@@ -1,18 +1,17 @@
 import React from "react";
 import RegisterDNA from "./RegisterDNA";
-import { mount } from 'enzyme';
+import { mount } from "enzyme";
 import Button from "../../components/Button";
 import InputField from "../../components/InputField";
 
 describe("RegisterDNA tests", () => {
-
   let component;
 
   beforeEach(() => {
     component = mount(<RegisterDNA />);
   });
 
-  it("should render", () =>{
+  it("should render", () => {
     expect(component).toBeTruthy();
   });
 
@@ -20,12 +19,9 @@ describe("RegisterDNA tests", () => {
     expect(component.find(Button).length).toEqual(1);
   });
 
-  it("should render a input field component", () => {
+  it("should render an input field component", () => {
     expect(component.find(InputField).length).toEqual(1);
   });
 
-
-
-  it("should take in a string and update state to the value of that string")
-
+  // it("should take in a string and update state to the value of that string");
 });
