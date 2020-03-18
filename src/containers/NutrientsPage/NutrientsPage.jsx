@@ -21,15 +21,7 @@ const NutrientsPage = props => {
     updateArrays();
   }, []);
 
-  const [currentState, updateState] = useState(false);
-  const [currentColor, updateColor] = useState("red");
-  const insertJsx = currentState ? (
-    <SidePanel
-      displayStyle={currentColor}
-      handleClick={() => updateState(!currentState)}
-      nutrients={nutrients}
-    />
-  ) : null;
+  
 
   const updateArrays = () => {
     updateHigh(nutrients.filter(nutrient => checkTheLevel(nutrient, "high")));
@@ -55,7 +47,6 @@ const NutrientsPage = props => {
 
   return (
     <>
-      <section className={styles.showPanel}>{insertJsx}</section>
       <section className={styles.nutrientPage}>
         <img src={topWave} alt="" className={styles.wave} />
         <div className={styles.topContainer}>

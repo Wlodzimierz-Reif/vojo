@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./InfoCard.module.scss";
 import SidePanel from "../../containers/SidePanel";
 
 const InfoCard = props => {
   const { nutrient } = props;
+
+  const [currentState, updateState] = useState(false);
+  const [currentColor, updateColor] = useState("red");
+  const insertJsx = currentState ? (
+    <SidePanel
+      displayStyle={currentColor}
+      handleClick={() => updateState(!currentState)}
+      nutrient={nutrient}
+    />
+  ) : null;
 
   let displayStyle = null;
 
@@ -22,33 +32,37 @@ const InfoCard = props => {
       displayStyle = "red";
   }
 
-  const showSidePanel = () => {
-    return <SidePanel nutrient={nutrient} displayStyle={displayStyle} />;
-  };
+  // const showSidePanel = () => {
+  //   return <SidePanel nutrient={nutrient} displayStyle={displayStyle} />;
+  // };
 
   return (
-    <section
-      onClick={
-        () => showSidePanel()
-        // changeColor(displayStyle);
-      }
-      className={`${styles.card} ${styles[displayStyle]}`}
-    >
-      <div>
-        <h3>
-          Your {nutrient.name.charAt(0).toUpperCase() + nutrient.name.slice(1)}{" "}
-          needs:
-        </h3>
-        <h2>
-          {nutrient["requirement-category"].charAt(0).toUpperCase() +
-            nutrient["requirement-category"].slice(1)}
-        </h2>
-      </div>
-      <p>{nutrient["requirement-recommendation"]}</p>
-      <p>{nutrient["intake-recommendation"]}</p>
-      <p>{nutrient["intake-action"]}</p>
-      <p className={styles.link}>Learn more</p>
-    </section>
+    <>
+      <section className={styles.showPanel}>{insertJsx}</section>
+      <section
+        onClick={
+          () => updateState(!currentState)
+          // changeColor(displayStyle);
+        }
+        className={`${styles.card} ${styles[displayStyle]}`}
+      >
+        <div>
+          <h3>
+            Your{" "}
+            {nutrient.name.charAt(0).toUpperCase() + nutrient.name.slice(1)}{" "}
+            needs:
+          </h3>
+          <h2>
+            {nutrient["requirement-category"].charAt(0).toUpperCase() +
+              nutrient["requirement-category"].slice(1)}
+          </h2>
+        </div>
+        <p>{nutrient["requirement-recommendation"]}</p>
+        <p>{nutrient["intake-recommendation"]}</p>
+        <p>{nutrient["intake-action"]}</p>
+        <p className={styles.link}>Learn more</p>
+      </section>
+    </>
   );
 };
 

@@ -7,15 +7,9 @@ import NutrientsInfo from "../../components/NutrientsInfo/NutrientsInfo";
 const SidePanel = props => {
   const { handleClick, displayStyle, nutrient } = props;
 
-  // Shea's code
-  // const alcoholJsx = <p>{nutrientObj.alcoholAction}</p>;
-
   return (
     <>
       <section className={styles.sidePanelContainer}>
-        {/* {Shea's code} */}
-        {/* {nutrientObj.name === "beta-carotene" ? alcoholJsx : null}; */}
-
         <div className={styles.sidePanel}>
           <img src={topWave} className={styles.topWave} alt="" />
           <p
@@ -24,7 +18,7 @@ const SidePanel = props => {
           >
             Close
           </p>
-          <NutrientsInfo displayStyle={displayStyle} />
+          <NutrientsInfo displayStyle={displayStyle} nutrient={nutrient} />
           <img src={bottomWave} className={styles.bottomWave} alt="" />
         </div>
       </section>
