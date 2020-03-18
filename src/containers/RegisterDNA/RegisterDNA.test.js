@@ -1,9 +1,31 @@
 import React from "react";
 import RegisterDNA from "./RegisterDNA";
+import { mount } from 'enzyme';
+import Button from "../../components/Button";
+import InputField from "../../components/InputField";
 
 describe("RegisterDNA tests", () => {
-  it("should render", () => {
-    expect(render(<PrioritiesPage/>)).toBeTruthy();
+
+  let component;
+
+  beforeEach(() => {
+    component = mount(<RegisterDNA />);
   });
+
+  it("should render", () =>{
+    expect(component).toBeTruthy();
+  });
+
+  it("should render a button component", () => {
+    expect(component.find(Button).length).toEqual(1);
+  });
+
+  it("should render a input field component", () => {
+    expect(component.find(InputField).length).toEqual(1);
+  });
+
+
+
+  it("should take in a string and update state to the value of that string")
 
 });
