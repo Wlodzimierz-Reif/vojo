@@ -4,9 +4,9 @@
   height: 100%;
   width: 100%;
 
-  p {
-    width: 50%;
-    margin: 0 auto;
+  .vegBrief,
+  .vegTitle {
+    text-align: center;
   }
 }
 
@@ -26,15 +26,14 @@
 }
 
 .vegBrief {
-  height: 20%;
-  text-align: center;
-  width: 80%;
+  margin-top: $base-spacing * 2;
+  height: 40%;
+  width: 100%;
 }
 // }
 
 @media only screen and (min-width: 425px) {
   .breakdownBox1 {
-   
     .imgs {
       width: 80%;
       margin-top: 0;
@@ -44,7 +43,6 @@
 
 @media only screen and (min-width: 768px) {
   .breakdownBox1 {
-    
     .imgs {
       display: flex;
       flex-direction: row;

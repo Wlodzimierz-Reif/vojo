@@ -7,7 +7,10 @@ import broc from "../../assets/characters/broccoli-1.svg";
 import carrot from "../../assets/characters/carrot-1.svg";
 import DietBreakdownBox from "../../components/DietBreakdownBox";
 import SingleBreakdown from "../../components/SingleBreakdown";
-import bean from "../../assets/characters/bean-1.svg"
+import bean from "../../assets/characters/bean-1.svg";
+import strawberry from "../../assets/characters/strawberry-1.svg";
+import peanut from "../../assets/characters/peanut-1.svg";
+
 const DietBreakdown = props => {
   const { brief, title } = props;
 
@@ -32,7 +35,24 @@ const DietBreakdown = props => {
               <SingleBreakdown
                 image1={bean}
                 boxText={"Protein 4+ per day"}
-                shortenedBrief={shortBrief} />
+                shortenedBrief={shortBrief}
+                pictureTextInside={"Beans lentils tofu and quinoa"}
+              />
+            </div>
+            <div className={styles.singleBreakdown}>
+              <SingleBreakdown
+                image1={strawberry}
+                boxText={"Fruits 1-2 per day"}
+                pictureTextInside={"Citrus fruit and berries"}
+              />
+            </div>
+            <div className={styles.singleBreakdown}>
+              <SingleBreakdown
+                image1={peanut}
+                boxText={"Fats 2-3 portion per day"}
+                shortenedBrief={shortBrief}
+                pictureTextInside={"Avocado, olives, nuts and seeds"}
+              />
             </div>
           </section>
         </section>
