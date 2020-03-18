@@ -4,7 +4,7 @@ import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
-import Image from "../../../assets/characters/walnut-1.svg";
+import Image from "../../../assets/characters/strawberry-2.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
@@ -53,7 +53,7 @@ const PageTwentyTwo = () => {
               setFormValues({ ...formValues, diagnosedCondition: input })
             }
           />
-                    <RadioButton
+          <RadioButton
             text="Depression"
             name="diagnosedCondition"
             value="Depression"
@@ -62,7 +62,7 @@ const PageTwentyTwo = () => {
               setFormValues({ ...formValues, diagnosedCondition: input })
             }
           />
-                    <RadioButton
+          <RadioButton
             text="Anxiety"
             name="diagnosedCondition"
             value="Anxiety"
@@ -70,33 +70,34 @@ const PageTwentyTwo = () => {
             selectRadio={input =>
               setFormValues({ ...formValues, diagnosedCondition: input })
             }
-          />          <RadioButton
-          text="Insomnia"
-          name="diagnosedCondition"
-          value="Insomnia"
-          startChecked={false}
-          selectRadio={input =>
-            setFormValues({ ...formValues, diagnosedCondition: input })
-          }
-        />
-                 <RadioButton
-          text="Osteoperosis"
-          name="diagnosedCondition"
-          value="Osteoperosis"
-          startChecked={false}
-          selectRadio={input =>
-            setFormValues({ ...formValues, diagnosedCondition: input })
-          }
-        />
-           <RadioButton
-          text="Irritable Bowel Syndrome (IBS)"
-          name="diagnosedCondition"
-          value="Irritable Bowel Syndrome (IBS)"
-          startChecked={false}
-          selectRadio={input =>
-            setFormValues({ ...formValues, diagnosedCondition: input })
-          }
-        />
+          />
+          <RadioButton
+            text="Insomnia"
+            name="diagnosedCondition"
+            value="Insomnia"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({ ...formValues, diagnosedCondition: input })
+            }
+          />
+          <RadioButton
+            text="Osteoperosis"
+            name="diagnosedCondition"
+            value="Osteoperosis"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({ ...formValues, diagnosedCondition: input })
+            }
+          />
+          <RadioButton
+            text="Irritable Bowel Syndrome (IBS)"
+            name="diagnosedCondition"
+            value="Irritable Bowel Syndrome (IBS)"
+            startChecked={false}
+            selectRadio={input =>
+              setFormValues({ ...formValues, diagnosedCondition: input })
+            }
+          />
           <InputLabel isPrimary={true} labelName={"Other"} />
           <div className={styles.inputFieldContainer}>
             <InputField
@@ -105,8 +106,8 @@ const PageTwentyTwo = () => {
                 setFormValues({ ...formValues, diagnosedCondition: input })
               }
             />
-          </div>      
-      </section>
+          </div>
+        </section>
       </div>
 
       <Link to="../page-twenty-one">

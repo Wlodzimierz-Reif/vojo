@@ -36,8 +36,6 @@ import PageThirtyOne from "./PageThirtyOne";
 import PageThirtyTwo from "./PageThirtyTwo";
 import PageThirtyThree from "./PageThirtyThree";
 
-
-
 const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
 
@@ -45,39 +43,171 @@ const QuestionnairePage = () => {
     <>
       <Router>
         <Redirect noThrow from="/" to="page-one" />
-        <PageOne path="page-one" />
-        <PageTwo path="page-two" />
-        <PageThree path="page-three" />
-        <PageFour path="page-four" />
-        <PageFive path="page-five" />
-        <PageSix path="page-six" />
-        <PageSeven path="page-seven" />
-        <PageEight path="page-eight" />
-        <PageNine path="page-nine" />
-        <PageTen path="page-ten" />
-        <PageEleven path="page-eleven" />
-        <PageTwelve path="page-twelve" />
-        <PageThirteen path="page-thirteen" />
-        <PageFourteen path="page-fourteen" />
-        <PageFifteen path="page-fifteen" />
-        <PageSixteen path="page-sixteen" />
-        <PageSeventeen path="page-seventeen" />
-        <PageEighteen path="page-eighteen" />
-        <PageNineteen path="page-nineteen" />
-        <PageTwenty path="page-twenty" />
-        <PageTwentyOne path="page-twenty-one" />
-        <PageTwentyTwo path="page-twenty-two" />
-        <PageTwentyThree path="page-twenty-three" />
-        <PageTwentyFour path="page-twenty-four" />
-        <PageTwentyFive path="page-twenty-five" />
-        <PageTwentySix path="page-twenty-six" />
-        <PageTwentySeven path="page-twenty-seven" />
-        <PageTwentyEight path="page-twenty-eight" />
-        <PageTwentyNine path="page-twenty-nine" />
-        <PageThirty path="page-thirty" />
-        <PageThirtyOne path="page-thirty-one" />
-        <PageThirtyTwo path="page-thirty-two" />
-        <PageThirtyThree path="page-thirty-three" />
+        <PageOne
+          path="page-one"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTwo
+          path="page-two"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageThree
+          path="page-three"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageFour
+          path="page-four"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageFive
+          path="page-five"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageSix
+          path="page-six"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageSeven
+          path="page-seven"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageEight
+          path="page-eight"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageNine
+          path="page-nine"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTen
+          path="page-ten"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageEleven
+          path="page-eleven"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTwelve
+          path="page-twelve"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageThirteen
+          path="page-thirteen"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageFourteen
+          path="page-fourteen"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageFifteen
+          path="page-fifteen"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageSixteen
+          path="page-sixteen"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageSeventeen
+          path="page-seventeen"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageEighteen
+          path="page-eighteen"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageNineteen
+          path="page-nineteen"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTwenty
+          path="page-twenty"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTwentyOne
+          path="page-twenty-one"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTwentyTwo
+          path="page-twenty-two"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTwentyThree
+          path="page-twenty-three"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTwentyFour
+          path="page-twenty-four"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTwentyFive
+          path="page-twenty-five"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTwentySix
+          path="page-twenty-six"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTwentySeven
+          path="page-twenty-seven"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTwentyEight
+          path="page-twenty-eight"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageTwentyNine
+          path="page-twenty-nine"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageThirty
+          path="page-thirty"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageThirtyOne
+          path="page-thirty-one"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageThirtyTwo
+          path="page-thirty-two"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageThirtyThree
+          path="page-thirty-three"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
 
         <NotFound default />
       </Router>

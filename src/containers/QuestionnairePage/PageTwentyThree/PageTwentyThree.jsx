@@ -4,7 +4,7 @@ import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
-import Image from "../../../assets/characters/walnut-1.svg";
+import Image from "../../../assets/characters/bean-2.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
@@ -17,8 +17,9 @@ const PageTwentyThree = () => {
       <div className={styles.box}>
         <section>
           <h2>
-          Do you have a family history of any of these conditions? (Select a condition if 2 or more of your close family members [that's siblings, parents or grandparents] have it)
-
+            Do you have a family history of any of these conditions? (Select a
+            condition if 2 or more of your close family members [that's
+            siblings, parents or grandparents] have it)
           </h2>
           <RadioButton
             text="High cholesterol"
@@ -95,7 +96,7 @@ const PageTwentyThree = () => {
               setFormValues({ ...formValues, familyHistory: input })
             }
           />
-                    <RadioButton
+          <RadioButton
             text="Irritable Bowel Syndrome"
             name="familyHistory"
             value="Irritable Bowel Syndrome"
@@ -104,7 +105,7 @@ const PageTwentyThree = () => {
               setFormValues({ ...formValues, familyHistory: input })
             }
           />
-                    <InputLabel isPrimary={true} labelName={"Other"} />
+          <InputLabel isPrimary={true} labelName={"Other"} />
           <div className={styles.inputFieldContainer}>
             <InputField
               name={"familyHistory"}
@@ -112,7 +113,7 @@ const PageTwentyThree = () => {
                 setFormValues({ ...formValues, familyHistory: input })
               }
             />
-</div>
+          </div>
         </section>
       </div>
       <Link to="../page-twenty-two">

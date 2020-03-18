@@ -4,108 +4,82 @@ import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
-import Image from "../../../assets/characters/walnut-1.svg";
+import Image from "../../../assets/characters/pickle-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 
 const PageThirtyOne = () => {
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState({ familyHistory: [] });
+  const { familyHistory } = formValues;
+  const [other, setOther] = useState(null);
+
+  const handleCheckToggle = inputVal => {
+    const isPresent = familyHistory.includes(inputVal);
+    if (isPresent === true) {
+      const newArray = [...familyHistory];
+      const valPosition = familyHistory.indexOf(inputVal);
+      newArray.splice(valPosition, 1);
+      setFormValues({
+        ...formValues,
+        familyHistory: newArray
+      });
+    } else {
+      setFormValues({
+        ...formValues,
+        familyHistory: [...familyHistory, inputVal]
+      });
+    }
+  };
+
+  const navigateToNext = () => {
+    if (!other === null || !other == "") {
+      setFormValues({
+        ...formValues,
+        familyHistory: [...familyHistory, other]
+      });
+      navigate("/questionnaire-page/page-thirty-two");
+    }
+  };
+  const handleInputValue = inputVal => {
+    setOther(inputVal);
+  };
 
   return (
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>Have you been diagnosed with an autoimmune condition?</h2>
-          <RadioButton
-            text="Lupus"
-            name="autoimmuneCondition"
-            value="Lupus"
+          <h2>...readymade vegan spread or butter alternative?</h2>
+          <CheckBox
+            text="Everyday"
             startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, autoimmuneCondition: input })
-            }
+            value="Everyday"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="MS"
-            name="autoimmuneCondition"
-            value="MS"
+          <CheckBox
+            text="A few times a week"
             startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, autoimmuneCondition: input })
-            }
+            value="A few times a week"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="Type 1 diabetes"
-            name="autoimmuneCondition"
-            value="Type 1 diabetes"
+          <CheckBox
+            text="A few times a month"
             startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, autoimmuneCondition: input })
-            }
+            value="A few times a month"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="Graves"
-            name="autoimmuneCondition"
-            value="Graves"
+          <CheckBox
+            text="Never or rarely'"
             startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, autoimmuneCondition: input })
-            }
+            value="Never or rarely'"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="Hashimoto's"
-            name="autoimmuneCondition"
-            value="Hashimoto's"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, autoimmuneCondition: input })
-            }
-          />
-          <RadioButton
-            text="IBD (Crohn's/Colitis)"
-            name="autoimmuneCondition"
-            value="IBD (Crohn's/Colitis)"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, autoimmuneCondition: input })
-            }
-          />
-          <RadioButton
-            text="Coeliac Disease"
-            name="autoimmuneCondition"
-            value="Coeliac Disease"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, autoimmuneCondition: input })
-            }
-          />
-          <RadioButton
-            text="Rhuematoid arthritis"
-            name="autoimmuneCondition"
-            value="Rhuematoid arthritis"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, autoimmuneCondition: input })
-            }
-          />
-          <InputLabel isPrimary={true} labelName={"Other"} />
-          <div className={styles.inputFieldContainer}>
-            <InputField
-              name={"autoimmuneCondition"}
-              selectInput={input =>
-                setFormValues({ ...formValues, autoimmuneCondition: input })
-              }
-            />
-          </div>
         </section>
       </div>
       <Link to="../page-thirty">
         <img className={styles.leftArrow} src={Arrow} />
       </Link>
-      <Link to="../page-thirty-two">
-        <img className={styles.rightArrow} src={Arrow} />
-      </Link>
+      <img className={styles.rightArrow} src={Arrow} onClick={navigateToNext} />
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>

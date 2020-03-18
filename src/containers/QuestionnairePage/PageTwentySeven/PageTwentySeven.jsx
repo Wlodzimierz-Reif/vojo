@@ -4,94 +4,104 @@ import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
-import Image from "../../../assets/characters/walnut-1.svg";
+import Image from "../../../assets/characters/carrot-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 
 const PageTwentySeven = () => {
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState({ allSupplements: [] });
+  const { allSupplements } = formValues;
+  const [other, setOther] = useState(null);
+
+  const handleCheckToggle = inputVal => {
+    const isPresent = allSupplements.includes(inputVal);
+    if (isPresent === true) {
+      const newArray = [...allSupplements];
+      const valPosition = allSupplements.indexOf(inputVal);
+      newArray.splice(valPosition, 1);
+      setFormValues({
+        ...formValues,
+        allSupplements: newArray
+      });
+    } else {
+      setFormValues({
+        ...formValues,
+        allSupplements: [...allSupplements, inputVal]
+      });
+    }
+  };
+
+  const navigateToNext = () => {
+    setFormValues({
+      ...formValues,
+      allSupplements: [...allSupplements, other]
+    });
+    navigate("/questionnaire-page/page-twenty-eight");
+  };
+
+  const handleInputValue = inputVal => {
+    setOther(inputVal);
+  };
 
   return (
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
           <h2>Do you take any of these supplements?</h2>
-          <RadioButton
+          <CheckBox
             text="B12"
-            name="allSupplements"
+            startChecked={false}
             value="B12"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, allSupplements: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Omega-3"
-            name="allSupplements"
+            startChecked={false}
             value="Omega-3"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, allSupplements: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Vitamin D"
-            name="allSupplements"
+            startChecked={false}
             value="Vitamin D"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, allSupplements: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Calcium"
-            name="allSupplements"
+            startChecked={false}
             value="Calcium"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, allSupplements: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Zinc"
-            name="allSupplements"
+            startChecked={false}
             value="Zinc"
-            startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Magnesium"
-            name="allSupllements"
+            startChecked={false}
             value="Magnesium"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, allSupllements: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="Iron"
-            name="allSupllements"
+            startChecked={false}
             value="Iron"
-            startChecked={false}
-            selectRadio={input =>
-              setFormValues({ ...formValues, allSupllements: input })
-            }
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
+          <CheckBox
             text="A multivitamin"
-            name="allSupllements"
-            value="A multivitamin"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            value="A multivitamin"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
           <InputLabel isPrimary={true} labelName={"Other"} />
           <div className={styles.inputFieldContainer}>
             <InputField
-              name={"allSupllements"}
-              selectInput={input =>
-                setFormValues({ ...formValues, allSupllements: input })
-              }
+              name={"allSupplements"}
+              selectInput={input => handleInputValue(input)}
             />
           </div>
         </section>
@@ -99,9 +109,7 @@ const PageTwentySeven = () => {
       <Link to="../page-twenty-six">
         <img className={styles.leftArrow} src={Arrow} />
       </Link>
-      <Link to="../page-twenty-eight">
-        <img className={styles.rightArrow} src={Arrow} />
-      </Link>
+      <img className={styles.rightArrow} src={Arrow} onClick={navigateToNext} />
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>

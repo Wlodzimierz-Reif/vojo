@@ -4,83 +4,122 @@ import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
-import Image from "../../../assets/characters/walnut-1.svg";
+import Image from "../../../assets/characters/characters-together.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 
 const PageThirtyThree = () => {
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState({ familyHistory: [] });
+  const { familyHistory } = formValues;
+  const [other, setOther] = useState(null);
+
+  const handleCheckToggle = inputVal => {
+    const isPresent = familyHistory.includes(inputVal);
+    if (isPresent === true) {
+      const newArray = [...familyHistory];
+      const valPosition = familyHistory.indexOf(inputVal);
+      newArray.splice(valPosition, 1);
+      setFormValues({
+        ...formValues,
+        familyHistory: newArray
+      });
+    } else {
+      setFormValues({
+        ...formValues,
+        familyHistory: [...familyHistory, inputVal]
+      });
+    }
+  };
+
+  const navigateToNext = () => {
+    setFormValues({
+      ...formValues,
+      familyHistory: [...familyHistory, other]
+    });
+    navigate("/questionnaire-page/page-thirty-three");
+  };
+
+  const handleInputValue = inputVal => {
+    setOther(inputVal);
+  };
 
   return (
     <div className={styles.page}>
       <div className={styles.box}>
         <section>
-          <h2>Which type of oil do you use most often?</h2>
-          <RadioButton
-            text="Sunflower/vegetable"
-            name="oil"
-            value="Sunflower/vegetable"
+          <h2>
+            Do you have a family history of any of these conditions? (Select a
+            condition if 2 or more of your close family members [that's
+            siblings, parents or grandparents] have it)
+          </h2>
+          <CheckBox
+            text="High cholesterol"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            value="High cholesterol"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="Rapeseed"
-            name="oil"
-            value="Rapeseed"
+          <CheckBox
+            text="Cardiovascular disease"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            value="Cardiovascular disease"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="Flaxseed"
-            name="oil"
-            value="Flaxseed"
+          <CheckBox
+            text="High blood pressure"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            value="High blood pressure"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="Hemp"
-            name="oil"
-            value="Hemp"
+          <CheckBox
+            text="Type 2 diabetes"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            value="Type 2 diabetes"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="Cocunut"
-            name="oil"
-            value="Cocunut"
+          <CheckBox
+            text="Depression"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            value="Depression"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="Olive"
-            name="oil"
-            value="Olive"
+          <CheckBox
+            text="Anxiety"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            value="Anxiety"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="I'm on a low-fat diet"
-            name="oil"
-            value="I'm on a low-fat diet"
+          <CheckBox
+            text="Insomnia"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            value="Insomnia"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
-          <RadioButton
-            text="I'm on a wholefood diet"
-            name="oil"
-            value="I'm on a wholefood diet"
+          <CheckBox
+            text="Osteoporosis"
             startChecked={false}
-            selectRadio={input => setFormValues({ ...formValues, oil: input })}
+            value="Osteoporosis"
+            selectCheckBox={input => handleCheckToggle(input)}
           />
+          <CheckBox
+            text="Irritable Bowel Syndrome (IBS)"
+            startChecked={false}
+            value="Irritable Bowel Syndrome (IBS)"
+            selectCheckBox={input => handleCheckToggle(input)}
+          />
+          <InputLabel isPrimary={true} labelName={"Other"} />
+          <div className={styles.inputFieldContainer}>
+            <InputField
+              name={"familyHistory"}
+              selectInput={input => handleInputValue(input)}
+            />
+          </div>
         </section>
       </div>
       <Link to="../page-thirty-two">
         <img className={styles.leftArrow} src={Arrow} />
       </Link>
-      <Link to="../page-thirty-three">
-        <img className={styles.rightArrow} src={Arrow} />
-      </Link>
+      <img className={styles.rightArrow} src={Arrow} onClick={navigateToNext} />
       <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>

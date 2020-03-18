@@ -9,8 +9,14 @@ import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
 
-const PageEighteen = () => {
+const PageEighteen = p => {
+  const { masterValues, changeMaster } = props;
+
   const [formValues, setFormValues] = useState({});
+
+  const updateMasterValues = () => {
+    changeMaster({ ...masterValues, ...formValues });
+  };
 
   return (
     <div className={styles.page}>

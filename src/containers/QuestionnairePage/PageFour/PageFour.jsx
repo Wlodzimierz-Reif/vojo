@@ -9,9 +9,15 @@ import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
 
-const PageFour = () => {
+const PageFour = props => {
+  const { masterValues, changeMaster } = props;
+
   const [formValues, setFormValues] = useState({ pregnantBreastFeeding: [] });
   const { pregnantBreastFeeding } = formValues;
+
+  const updateMasterValues = () => {
+    changeMaster({ ...masterValues, ...formValues });
+  };
 
   const handleCheckToggle = inputVal => {
     const isPresent = pregnantBreastFeeding.includes(inputVal);

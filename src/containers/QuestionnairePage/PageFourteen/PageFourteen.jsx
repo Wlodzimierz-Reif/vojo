@@ -35,10 +35,12 @@ const PageFourteen = () => {
   };
 
   const navigateToNext = () => {
-    setFormValues({
-      ...formValues,
-      whichAllergies: [...whichAllergies, other]
-    });
+    if (!other === null || !other == "") {
+      setFormValues({
+        ...formValues,
+        whichAllergies: [...whichAllergies, other]
+      });
+    }
     navigate("/questionnaire-page/page-fifteen");
   };
 
@@ -73,9 +75,9 @@ const PageFourteen = () => {
         <section>
           <h2>Which allergies do you have?</h2>
           <CheckBox
-            text="Hayfeaver, asthma or eczema"
+            text="Hayfever, asthma or eczema"
             startChecked={false}
-            value="Hayfeaver, asthma or exzema"
+            value="Hayfever, asthma or exzema"
             selectCheckBox={input => handleCheckToggle(input)}
           />
           <CheckBox
