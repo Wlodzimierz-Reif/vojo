@@ -11,6 +11,7 @@ const RegisterDNA = () => {
     const [userBarcode, updateUserBarcode] = useState("");
 
     const updateDB = () =>  {
+      // to be hooked up later
       console.log(userBarcode);
     }
 
