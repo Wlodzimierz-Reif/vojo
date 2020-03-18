@@ -5,7 +5,7 @@ import bottomWave from "../../assets//graphic-devices/grey-wave-bottom.svg";
 import NutrientsInfo from "../../components/NutrientsInfo/NutrientsInfo";
 
 const SidePanel = props => {
-  const { handleClick, displayStyle, nutrients } = props;
+  const { handleClick, displayStyle, nutrient } = props;
 
   // Shea's code
   // const alcoholJsx = <p>{nutrientObj.alcoholAction}</p>;

@@ -1,5 +1,10 @@
 @import "../../variables.scss";
 
+.showPanel {
+  position: absolute;
+  z-index: 2;
+}
+
 .card {
   border: 2px solid $warning;
   border-radius: 8px;

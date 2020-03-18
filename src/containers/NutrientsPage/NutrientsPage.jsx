@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./NutrientsPage.module.scss";
 import InfoCard from "../../components/InfoCard";
 import logo from "../../assets/logos/primary-logo.png";
@@ -10,7 +10,16 @@ import { Link } from "@reach/router";
 
 const NutrientsPage = props => {
   const { nutrients } = props;
-  // const { name, priority-category } = nutrients;
+
+  const [high, updateHigh] = useState([]);
+  const [raised, updateRaised] = useState([]);
+  const [slightlyRaised, updateSlightlyRaised] = useState([]);
+  const [normal, updateNormal] = useState([]);
+  const [lower, updateLower] = useState([]);
+
+  useEffect(() => {
+    updateArrays();
+  }, []);
 
   const [currentState, updateState] = useState(false);
   const [currentColor, updateColor] = useState("red");
@@ -22,60 +31,27 @@ const NutrientsPage = props => {
     />
   ) : null;
 
-  
+  const updateArrays = () => {
+    updateHigh(nutrients.filter(nutrient => checkTheLevel(nutrient, "high")));
+    updateRaised(
+      nutrients.filter(nutrient => checkTheLevel(nutrient, "slightly-raised"))
+    );
+    updateSlightlyRaised(
+      nutrients.filter(nutrient => checkTheLevel(nutrient, "raised"))
+    );
+    updateNormal(
+      nutrients.filter(nutrient => checkTheLevel(nutrient, "normal"))
+    );
 
-  // let high = [];
-  // let raised = [];
-  // let slightlyRaised = [];
-  // let normal = [];
+    updateLower(nutrients.filter(nutrient => checkTheLevel(nutrient, "lower")));
+  };
 
-  // const getHigh = () => {
-  //   high = nutrients.filter(
-  //     nutrient => nutrient["requirement-category"] === "high"
-  //   );
-  // };
+  const checkTheLevel = (nutrient, level) =>
+    nutrient["requirement-category"] === level;
 
-  // const getRaised = () => {
-  //   raised = nutrients.filter(
-  //     nutrient => nutrient["requirement-category"] === "raised"
-  //   );
-  // };
-
-  // const getSlightlyRaised = () => {
-  //   slightlyRaised = nutrients.filter(
-  //     nutrient => nutrient["requirement-category"] === "slightly raised"
-  //   );
-  // };
-
-  // const getNormal = () => {
-  //   normal = nutrients.filter(
-  //     nutrient =>
-  //       nutrient["requirement-category"] === "normal" ||
-  //       nutrient["requirement-category"] === "lower"
-  //   );
-  // };
-
-  // getHigh();
-  // getRaised();
-  // getSlightlyRaised();
-  // getNormal();
-  // console.log(high);
-  // console.log(raised);
-  // console.log(slightlyRaised);
-  // console.log(normal);
-
-  // const print = () => {
-  //   for (let i = 0; i < high.length; i++) {
-  //     <InfoCard
-  //       displayStyle={cardColor}
-  //       nutrientName={high[i].name}
-  //       nutrientNeed={high[i]["requirement-category"]}
-  //       nutrientAdvice={high[i]["requirement-recommendation"]}
-  //       handleClick={() => updateState(!currentState)}
-  //       changeColor={color => updateColor(color)}
-  //     />;
-  //   }
-  // };
+  const mapFunction = array => {
+    return array.map(item => <InfoCard nutrient={item} />);
+  };
 
   return (
     <>
@@ -89,109 +65,12 @@ const NutrientsPage = props => {
           </Link>
         </div>
         <h1>Nutrients</h1>
-        <div className={styles.infoCardHolder} data-simplebar>
-          <InfoCard nutrient={nutrients[0]} />
-          <InfoCard nutrient={nutrients[2]} />
-
-          {/* <InfoCard
-            displayStyle={cardColor}
-            nutrientName={""}
-            nutrientNeed="high"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-      Great news – you are a good converter of beta-carotene to vitamin A!
-      Learn more"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"red"}
-            nutrientName={"B12"}
-            nutrientNeed="High"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-      Great news – you are a good converter of beta-carotene to vitamin A!
-      Learn more"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"orange"}
-            nutrientName={"B12"}
-            nutrientNeed="Raised"
-            nutrientAdvice="You may have raised B12 requirements. Supplement at least 50 µg/day. If you go vegan, you are recommend to supplement a minimum of this recommended dose of B12 every day. Even while you’re not yet vegan, you might still benefit from supplementing with B12 if you're not eating animal foods every day."
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"yellow"}
-            nutrientName={"B12"}
-            nutrientNeed="Normal"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"yellow"}
-            nutrientName={"B12"}
-            nutrientNeed="Normal"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"green"}
-            nutrientName={"B12"}
-            nutrientNeed="Lower"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"green"}
-            nutrientName={"B12"}
-            nutrientNeed="Lower"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"green"}
-            nutrientName={"B12"}
-            nutrientNeed="Lower"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"green"}
-            nutrientName={"B12"}
-            nutrientNeed="Lower"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"green"}
-            nutrientName={"B12"}
-            nutrientNeed="Lower"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-        </div>
-        <div className={styles.bottomContainer}>
-          <img src={blueBerry} className={styles.blueBerry} alt="" />
-          <img
-            src={bottomWave}
-            className={`${styles.wave} ${styles.waveBottom}`}
-            alt=""
-          /> */}
+        <div className={styles.infoCardHolder}>
+          {mapFunction(high)}
+          {mapFunction(slightlyRaised)}
+          {mapFunction(raised)}
+          {mapFunction(normal)}
+          {mapFunction(lower)}
         </div>
       </section>
     </>

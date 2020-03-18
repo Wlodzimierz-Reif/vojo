@@ -8,7 +8,7 @@ const InfoCard = props => {
   let displayStyle = null;
 
   switch (nutrient["requirement-category"]) {
-    case "low":
+    case "lower":
     case "normal":
       displayStyle = "green";
       break;
@@ -22,13 +22,16 @@ const InfoCard = props => {
       displayStyle = "red";
   }
 
+  const showSidePanel = () => {
+    return <SidePanel nutrient={nutrient} displayStyle={displayStyle} />;
+  };
+
   return (
     <section
-      // onClick={(event, nutrient) => {
-      //   handleClick(event.target.value);
-      //   changeColor(displayStyle);
-      //   callParent(nutrient);
-      // }}
+      onClick={
+        () => showSidePanel()
+        // changeColor(displayStyle);
+      }
       className={`${styles.card} ${styles[displayStyle]}`}
     >
       <div>
