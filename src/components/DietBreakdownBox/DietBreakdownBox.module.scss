@@ -19,6 +19,7 @@
       margin: 0 auto;
       margin-top: -15px;
       background: white;
+      white-space: pre-wrap;
     }
   }
 
@@ -39,8 +40,10 @@
 
   .vegBrief {
     height: 10%;
+    width: 80%;
     text-align: center;
-    margin: $base-spacing * 3;
+    margin: $base-spacing auto;
+    white-space: pre-wrap;
   }
 }
 
@@ -80,15 +83,19 @@
 
 @media only screen and (min-width: 1024px) {
   .breakdownBox1 {
-    .imgs {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      height: 20%;
+    .textBorder {
+      width: 70%;
 
-      .primary {
-        height: 100%;
+      .imgs {
+        display: flex;
+        flex-direction: row;
         width: 100%;
+        height: 20%;
+
+        .primary {
+          height: 100%;
+          width: 100%;
+        }
       }
     }
   }
