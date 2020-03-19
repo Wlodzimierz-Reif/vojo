@@ -17,7 +17,7 @@ const RegisterDNA = () => {
       <h2>Register your DNA kit</h2>
       <h3>Find your barcode number</h3>
       <p>Your barcode can be found on the instructions and sample tube</p>
-      <img src={DNAimage} alt="Picture of DNA tube test and barcode" />
+      <img src={DNAimage} alt="DNA tube test and barcode" />
       <div className={styles.input}>
         <InputField
           type="text"
