@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./SingleBreakdown.module.scss";
-// import PrioritiesPage from "../../containers/PrioritiesPage";
 import VegPictureBox from "../VegPictureBox";
 
 const SingleBreakdown = props => {

@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./DietBreakdownBox.module.scss";
-import PrioritiesPage from "../../containers/PrioritiesPage";
 import VegPictureBox from "../VegPictureBox";
 
 const DietBreakdownBox = props => {
