@@ -59,7 +59,7 @@ const PageThirtyThree = props => {
     <div className={styles.page}>
       <div className={styles.box}>
         <div className={styles.arrows}>
-          <Link to="../../page-thirty-two">
+          <Link to="../page-thirty-two">
             <img
               className={styles.leftArrow}
               src={Arrow}
