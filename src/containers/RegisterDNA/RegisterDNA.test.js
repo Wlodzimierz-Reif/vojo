@@ -22,6 +22,4 @@ describe("RegisterDNA tests", () => {
   it("should render an input field component", () => {
     expect(component.find(InputField).length).toEqual(1);
   });
-
-  // it("should take in a string and update state to the value of that string");
 });
