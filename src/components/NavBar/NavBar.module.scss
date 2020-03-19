@@ -1,32 +1,71 @@
 @import "../../variables.scss";
 
 .navBar {
-  background-color: $primary-color;
+  background-color: $vojo-cream;
   position: fixed;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   align-items: center;
   width: calc(100vw - 32px);
   height: calc(100vh - 32px);
 
+  .logoBurgerFlex {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: $base-spacing;
+  
+    .navBarLogo {
+      width: 70px;
+    }
 
-  .navBarLogo {
-    width: 110px;
+    .burgerMenu {
+      border: none;
+      width: $base-spacing * 5;
+      height: $base-spacing * 5;
+      background-size: contain;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      outline: none;
+    }
+    
+    .burgerMenuIcon {
+      background-image: url("../../assets/graphic-devices/blue-burger-menu.svg");
+      background-size: contain;
+    }
+
+    .burgerMenuCross {
+      background-image: url("../../assets/graphic-devices/blue-cross.svg");
+      background-size: contain;
+    }
+  }
+
+  .navBottom {
+    text-decoration: underline;
+    font-weight: lighter;
   }
 
   .links {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    color: white;
-
+    @include flex-column;
+    color: #3C3934;
+    font-weight: bold;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    
     p {
       padding: 0 $base-spacing * 2;
     }
 
-    .logOut {
-      text-decoration: underline;
-      font-weight: lighter;
+    .navLine {
+      width: $base-spacing * 8;
+      height: $base-spacing / 2;
+      background-image: url("../../assets/graphic-devices/secondary-col-nav-line.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
   }
 }
