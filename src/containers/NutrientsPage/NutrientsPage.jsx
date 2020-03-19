@@ -39,7 +39,7 @@ const NutrientsPage = props => {
     );
 
     updateLower(nutrients.filter(nutrient => checkTheLevel(nutrient, "lower")));
-  }, []);
+  }, [nutrients]);
 
   const checkTheLevel = (nutrient, level) =>
     nutrient["requirement-category"] === level;
