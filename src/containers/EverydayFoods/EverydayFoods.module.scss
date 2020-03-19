@@ -25,15 +25,7 @@
   }
 }
 
-@media only screen and (min-width: 425px) {
-  img {
-    position: fixed;
-    width: 15vw;
-    right: 15%;
-    top: 75vh;
-  }
-}
-@media only screen and (min-width: 764px) {
+@media only screen and (min-width: 768px) {
   .listImage {
     padding-top: 50px;
     padding-left: 70px;
@@ -58,23 +50,5 @@
     width: 15vw;
     right: 15%;
     top: 50vh;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .listImage img {
-    position: fixed;
-    width: 15vw;
-    right: 15%;
-    top: 50vh;
-  }
-}
-
-@media only screen and (min-width: 1920px) {
-  .listImage img {
-    position: fixed;
-    width: 15vw;
-    right: 15%;
-    top: 40vh;
   }
 }

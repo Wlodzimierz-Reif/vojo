@@ -14,13 +14,7 @@
   padding-bottom: $base-spacing * 2;
 }
 
-@media only screen and (min-width: 425px) {
-  .mealList {
-    font-size: 12px;
-  }
-}
-
-@media only screen and (min-width: 764px) {
+@media only screen and (min-width: 768px) {
   .mealList {
     font-size: 14px;
   }
@@ -31,36 +25,9 @@
 
 @media only screen and (min-width: 1024px) {
   .mealList {
-    font-size: 14px;
+    font-size: 18px;
   }
   .mealHeader {
-    font-size: 14px;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .mealList {
-    font-size: 16px;
-  }
-  .mealHeader {
-    font-size: 16px;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .mealList {
-    font-size: 16px;
-  }
-  .mealHeader {
-    font-size: 16px;
-  }
-}
-
-@media only screen and (min-width: 1920px) {
-  .mealList {
-    font-size: 16px;
-  }
-  .mealHeader {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
