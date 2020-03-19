@@ -6,6 +6,8 @@ import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
 import PrioritiesPage from "../PrioritiesPage";
 import Footer from "../../components/Footer";
+import RegisterDNA from "../RegisterDNA";
+
 
 
 const Routes = () => {
@@ -16,6 +18,7 @@ const Routes = () => {
         <HomePage path="home-page" />
         <NutrientsPage path="nutrients-page" />
         <PrioritiesPage path="priorities-page" />
+        <RegisterDNA path="register-dna" />
         <NotFound default />
       </Router>
       <Footer />
