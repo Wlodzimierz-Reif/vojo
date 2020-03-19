@@ -1,9 +1,9 @@
 import React from "react";
-import PageTwentyOneTwo from "./PageTwentyOneTwo";
+import PageTwentyTwo from "./PageTwentyTwo";
 import { render } from "@testing-library/react";
 
 describe("Questionnaire PageTwentyOneTwo tests", () => {
   it("should render", () => {
-    expect(render(<PageTwentyOneTwo />)).toBeTruthy();
+    expect(render(<PageTwentyTwo />)).toBeTruthy();
   });
 });
