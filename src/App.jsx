@@ -2,7 +2,7 @@ import React from "react";
 import "./App.module.scss";
 import Routes from "./containers/Routes";
 import DietBreakdown from "./containers/DietBreakdown/DietBreakdown";
-// import DietBreakdownox from "./containers/DietBreakdown/DietBreakdownBox";
+
 
 const App = () => {
   return (

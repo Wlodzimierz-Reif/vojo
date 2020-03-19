@@ -1,10 +1,11 @@
 import React from "react";
 import DietBreakdownBox from "./DietBreakdownBox";
 
-describe("DietBreakdownBox tests", () => {
-  let component;
+import { render } from "@testing-library/react";
 
-  beforeEach(() => {
-    component =
-  })
+describe("DietBreakdownBox tests", () => {
+  it("should render", () => {
+    expect(render(<DietBreakdownBox />)).toBeTruthy();
+  });
 });
+
