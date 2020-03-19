@@ -17,16 +17,28 @@ const NutrientsPage = props => {
   const [normal, updateNormal] = useState([]);
   const [lower, updateLower] = useState([]);
 
+  const [isPanelDisplayed, updateDisplay] = useState(false);
+  const [currentColor, updateColor] = useState("red");
+  const [currentNutrient, updateNutrient] = useState(null);
+
+  // onClick = handleClick;
+  const insertJsx = isPanelDisplayed ? (
+    <SidePanel
+      displayStyle={currentColor}
+      handleClick={() => updateDisplay(!isPanelDisplayed)}
+      nutrient={currentNutrient}
+    />
+  ) : null;
+  console.log(currentNutrient);
+
   useEffect(() => {
     updateArrays();
   }, []);
 
-  
-
   const updateArrays = () => {
     updateHigh(nutrients.filter(nutrient => checkTheLevel(nutrient, "high")));
     updateRaised(
-      nutrients.filter(nutrient => checkTheLevel(nutrient, "slightly-raised"))
+      nutrients.filter(nutrient => checkTheLevel(nutrient, "slightly raised"))
     );
     updateSlightlyRaised(
       nutrients.filter(nutrient => checkTheLevel(nutrient, "raised"))
@@ -42,11 +54,21 @@ const NutrientsPage = props => {
     nutrient["requirement-category"] === level;
 
   const mapFunction = array => {
-    return array.map(item => <InfoCard nutrient={item} />);
+    return array.map(item => (
+      <InfoCard
+        nutrient={item}
+        displayPanel={(nutrient, displayStyle) => {
+          updateNutrient(nutrient);
+          updateColor(displayStyle);
+          updateDisplay(!isPanelDisplayed);
+        }}
+      />
+    ));
   };
 
   return (
     <>
+      <section className={styles.showPanel}>{insertJsx}</section>
       <section className={styles.nutrientPage}>
         <img src={topWave} alt="" className={styles.wave} />
         <div className={styles.topContainer}>

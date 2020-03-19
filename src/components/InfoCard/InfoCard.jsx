@@ -3,17 +3,18 @@ import styles from "./InfoCard.module.scss";
 import SidePanel from "../../containers/SidePanel";
 
 const InfoCard = props => {
-  const { nutrient } = props;
+  const { nutrient, displayPanel } = props;
 
-  const [currentState, updateState] = useState(false);
-  const [currentColor, updateColor] = useState("red");
-  const insertJsx = currentState ? (
-    <SidePanel
-      displayStyle={currentColor}
-      handleClick={() => updateState(!currentState)}
-      nutrient={nutrient}
-    />
-  ) : null;
+  // const [currentState, updateState] = useState(false);
+  // const [currentColor, updateColor] = useState("red");
+
+  // const insertJsx = currentState ? (
+  //   <SidePanel
+  //     displayStyle={currentColor}
+  //     handleClick={() => updateState(!currentState)}
+  //     nutrient={nutrient}
+  //   />
+  // ) : null;
 
   let displayStyle = null;
 
@@ -38,10 +39,11 @@ const InfoCard = props => {
 
   return (
     <>
-      <section className={styles.showPanel}>{insertJsx}</section>
+      {/* <section className={styles.showPanel}>{insertJsx}</section> */}
       <section
         onClick={
-          () => updateState(!currentState)
+          () => displayPanel(nutrient, displayStyle)
+          // () => updateState(!currentState)
           // changeColor(displayStyle);
         }
         className={`${styles.card} ${styles[displayStyle]}`}
