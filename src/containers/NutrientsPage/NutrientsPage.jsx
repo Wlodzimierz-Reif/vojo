@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./NutrientsPage.module.scss";
 import InfoCard from "../../components/InfoCard";
 import logo from "../../assets/logos/primary-logo.png";
-import topWave from "../../assets//graphic-devices/grey-wave-top.svg";
-import bottomWave from "../../assets//graphic-devices/grey-wave-bottom.svg";
-import blueBerry from "../../assets/characters/blueberry-2.svg";
 import SidePanel from "../SidePanel";
 import { Link } from "@reach/router";
 
@@ -68,7 +65,6 @@ const NutrientsPage = props => {
     <>
       <section className={styles.showPanel}>{insertJsx}</section>
       <section className={styles.nutrientPage}>
-        <img src={topWave} alt="" className={styles.wave} />
         <div className={styles.topContainer}>
           <img src={logo} alt="vojo logo" />
           <Link to="../priorities-page">

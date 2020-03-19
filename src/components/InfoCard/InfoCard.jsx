@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./InfoCard.module.scss";
-import SidePanel from "../../containers/SidePanel";
 
 const InfoCard = props => {
   const { nutrient, displayPanel } = props;

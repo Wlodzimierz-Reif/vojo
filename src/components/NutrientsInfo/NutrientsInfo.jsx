@@ -1,12 +1,9 @@
 import React from "react";
 import styles from "./NutrientsInfo.module.scss";
-import List from "../List";
 import DisplaySlider from "../DisplaySlider";
 
 const NutrientsInfo = props => {
   const { displayStyle, nutrient } = props;
-
-  const alcoholJsx = nutrient["alcohol-action"];
 
   let value = null;
 

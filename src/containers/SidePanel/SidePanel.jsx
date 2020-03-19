@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./SidePanel.module.scss";
-import topWave from "../../assets//graphic-devices/grey-wave-top.svg";
-import bottomWave from "../../assets//graphic-devices/grey-wave-bottom.svg";
 import NutrientsInfo from "../../components/NutrientsInfo/NutrientsInfo";
 
 const SidePanel = props => {
