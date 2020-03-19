@@ -5,19 +5,22 @@ import HomePage from "../HomePage";
 import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
 import PrioritiesPage from "../PrioritiesPage";
-import MealIdeas from "../MealIdeas/MealIdeas";
-import EverydayFoods from "../EverydayFoods/EverydayFoods";
+import Footer from "../../components/Footer";
+import RegisterDNA from "../RegisterDNA";
 
 const Routes = () => {
   return (
-    <Router>
-      <Redirect noThrow from="/" to="priorities-page" />
-      <HomePage path="home-page" />
-      <PrioritiesPage path="priorities-page" />
-      <EverydayFoods path="everyday-foods" />
-      <MealIdeas path="meal-ideas" />
-      <NotFound default />
-    </Router>
+    <>
+      <Router>
+        <Redirect noThrow from="/" to="priorities-page" />
+        <HomePage path="home-page" />
+        <NutrientsPage path="nutrients-page" />
+        <PrioritiesPage path="priorities-page" />
+        <RegisterDNA path="register-dna" />
+        <NotFound default />
+      </Router>
+      <Footer />
+    </>
   );
 };
 
