@@ -6,7 +6,6 @@ import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/bean-2.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
-import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
 
 const PageOne = props => {
@@ -21,6 +20,22 @@ const PageOne = props => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
+        <div className={styles.arrows}>
+          <Link to="../../home-page">
+            <img
+              className={styles.leftArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+          <Link to="../page-two">
+            <img
+              className={styles.rightArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+        </div>
         <section>
           <h2>What is your name?</h2>
           <InputLabel isPrimary={true} labelName={"First name"} />
@@ -76,21 +91,6 @@ const PageOne = props => {
           />
         </section>
       </div>
-      <Link to="../../home-page">
-        <img
-          className={styles.leftArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <Link to="../page-two">
-        <img
-          className={styles.rightArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
   );
