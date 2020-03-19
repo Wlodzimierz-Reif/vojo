@@ -21,7 +21,7 @@ const PageOne = props => {
     <div className={styles.page}>
       <div className={styles.box}>
         <div className={styles.arrows}>
-          <Link to="../../home-page">
+          <Link to="../home-page">
             <img
               className={styles.leftArrow}
               src={Arrow}

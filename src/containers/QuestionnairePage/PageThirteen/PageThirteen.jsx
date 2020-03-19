@@ -21,14 +21,14 @@ const PageThirteen = props => {
     <div className={styles.page}>
       <div className={styles.box}>
         <div className={styles.arrows}>
-          <Link to="../../page-twelve">
+          <Link to="../page-twelve">
             <img
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValues}
             />
           </Link>
-          <Link to="../page-thirteen">
+          <Link to="../page-fourteen">
             <img
               className={styles.rightArrow}
               src={Arrow}
