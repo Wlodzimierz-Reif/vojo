@@ -4,9 +4,6 @@ node_js:
 cache:
   directories:
     - node_modules
-process:
-  env:
-    - CI=false
 install:
   - yarn global add firebase-tools
   - yarn install

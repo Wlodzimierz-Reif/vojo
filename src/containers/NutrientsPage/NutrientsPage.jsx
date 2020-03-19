@@ -27,10 +27,6 @@ const NutrientsPage = props => {
   ) : null;
 
   useEffect(() => {
-    updateArrays();
-  }, []);
-
-  const updateArrays = () => {
     updateHigh(nutrients.filter(nutrient => checkTheLevel(nutrient, "high")));
     updateRaised(
       nutrients.filter(nutrient => checkTheLevel(nutrient, "slightly raised"))
@@ -43,7 +39,7 @@ const NutrientsPage = props => {
     );
 
     updateLower(nutrients.filter(nutrient => checkTheLevel(nutrient, "lower")));
-  };
+  }, []);
 
   const checkTheLevel = (nutrient, level) =>
     nutrient["requirement-category"] === level;
