@@ -1,10 +1,10 @@
-import React from "react";
-import PaymentPage from "./PaymentPage";
+import React from 'react';
+import PaymentPage from './PaymentPage';
 
-describe("PaymentPage tests", () => {
-  let component;
+import { render } from '@testing-library/react';
 
-  beforeEach(() => {
-    component =
-  })
+describe('PaymentPage tests', () => {
+	it('should render', () => {
+		expect(render(<PaymentPage />)).toBeTruthy();
+	});
 });

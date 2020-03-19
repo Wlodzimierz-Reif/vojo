@@ -1,10 +1,10 @@
-import React from "react";
-import PaymentDetails from "./PaymentDetails";
+import React from 'react';
+import PaymentDetails from './PaymentDetails';
 
-describe("PaymentDetails tests", () => {
-  let component;
+import { render } from '@testing-library/react';
 
-  beforeEach(() => {
-    component =
-  })
+describe('PaymentDetails tests', () => {
+	it('should render', () => {
+		expect(render(<PaymentDetails />)).toBeTruthy();
+	});
 });
