@@ -7,10 +7,10 @@ import NotFound from "../NotFound";
 import PrioritiesPage from "../PrioritiesPage";
 import Footer from "../../components/Footer";
 import mockData from "../../data";
+import RegisterDNA from "../RegisterDNA";
 
 const Routes = () => {
-
-  // Any object, any key that contains the words 
+  // Any object, any key that contains the words
   // "recommendation" or "action" place into
   // new recommendations array
 
@@ -21,6 +21,7 @@ const Routes = () => {
         <HomePage path="home-page" />
         <NutrientsPage nutrients={mockData.nutrients} path="nutrients-page" />
         <PrioritiesPage path="priorities-page" />
+        <RegisterDNA path="register-dna" />
         <NotFound default />
       </Router>
       <Footer />
