@@ -7,7 +7,7 @@
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: left;
 
   .box {
     height: max-content;
@@ -61,6 +61,8 @@
 
 @media only screen and (min-width: 764px) {
   .page {
+    align-items: center;
+
     .questionPerson {
       display: unset;
     }
