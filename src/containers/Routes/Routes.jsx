@@ -19,7 +19,7 @@ const Routes = () => {
         <PaymentPage path="payment-page" />
         <NotFound default />
       </Router>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
