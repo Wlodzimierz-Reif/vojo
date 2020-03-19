@@ -1,9 +1,8 @@
 @import "../../variables.scss";
 
 .sidePanelContainer {
-  width: 100%;
+  min-width: 100vw;
   min-height: 100vh;
-  
 
   .sidePanel {
     background-color: $primary-background;
@@ -43,7 +42,6 @@
     display: flex;
     justify-content: flex-end;
     background-color: $standard-text-80;
-    
 
     .sidePanel {
       width: 50%;
