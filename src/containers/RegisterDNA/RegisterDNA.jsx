@@ -3,7 +3,7 @@ import styles from "./RegisterDNA.module.scss";
 import InputField from "../../components/InputField";
 import Button from "../../components/Button";
 import DNAimage from "../../assets/misc/barcode-dna.jpg";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const RegisterDNA = () => {
   const [userBarcode, updateUserBarcode] = useState("");
