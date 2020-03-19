@@ -21,6 +21,22 @@ const PageSixteen = props => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
+        <div className={styles.arrows}>
+          <Link to="../../page-fifteen">
+            <img
+              className={styles.leftArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+          <Link to="../page-seventeen">
+            <img
+              className={styles.rightArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+        </div>
         <section>
           <h2>When did you last break a bone or tooth?</h2>
           <RadioButton
@@ -100,21 +116,7 @@ const PageSixteen = props => {
           />
         </section>
       </div>
-      <Link to="../page-fifteen">
-        <img
-          className={styles.leftArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <Link to="../page-seventeen">
-        <img
-          className={styles.rightArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <img className={styles.bottomWave} src={BottomWave} />
+
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
   );

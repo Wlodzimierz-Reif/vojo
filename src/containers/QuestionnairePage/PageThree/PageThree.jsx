@@ -21,6 +21,22 @@ const PageThree = props => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
+        <div className={styles.arrows}>
+          <Link to="../../home-two">
+            <img
+              className={styles.leftArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+          <Link to="../page-four">
+            <img
+              className={styles.rightArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+        </div>
         <section>
           <h2>How tall are you?</h2>
           <InputLabel isPrimary={true} labelName={"Enter height in metres"} />
@@ -46,21 +62,7 @@ const PageThree = props => {
           </div>
         </section>
       </div>
-      <Link to="../page-two">
-        <img
-          className={styles.leftArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <Link to="../page-four">
-        <img
-          className={styles.rightArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <img className={styles.bottomWave} src={BottomWave} />
+
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
   );

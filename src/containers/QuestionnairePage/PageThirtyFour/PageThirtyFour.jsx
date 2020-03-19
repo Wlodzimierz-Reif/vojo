@@ -15,6 +15,22 @@ const PageThirtyFour = () => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
+        <div className={styles.arrows}>
+          <Link to="../../page-thirty-three">
+            <img
+              className={styles.leftArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+          <Link to="../page-thirty-five">
+            <img
+              className={styles.rightArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+        </div>
         <section>
           <h2>Which type of oil do you use most often?</h2>
           <RadioButton
@@ -75,13 +91,7 @@ const PageThirtyFour = () => {
           />
         </section>
       </div>
-      <Link to="../page-thirty-two">
-        <img className={styles.leftArrow} src={Arrow} />
-      </Link>
-      <Link to="../page-thirty-three">
-        <img className={styles.rightArrow} src={Arrow} />
-      </Link>
-      <img className={styles.bottomWave} src={BottomWave} />
+
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
   );

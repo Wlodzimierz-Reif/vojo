@@ -20,6 +20,22 @@ const PageNine = props => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
+        <div className={styles.arrows}>
+          <Link to="../../page-eight">
+            <img
+              className={styles.leftArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+          <Link to="../page-ten">
+            <img
+              className={styles.rightArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+        </div>
         <section>
           <h2>How would you generally describe your mood?</h2>
           <RadioButton
@@ -117,21 +133,6 @@ const PageNine = props => {
           />
         </section>
       </div>
-      <Link to="../page-eight">
-        <img
-          className={styles.leftArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <Link to="../page-ten">
-        <img
-          className={styles.rightArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
   );

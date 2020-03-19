@@ -60,6 +60,22 @@ const PageThirty = props => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
+        <div className={styles.arrows}>
+          <Link to="../../page-twenty-nine">
+            <img
+              className={styles.leftArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+          <Link to="../page-thirty-one">
+            <img
+              className={styles.rightArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+        </div>
         <h2>Are you currently taking any of the following medications?</h2>
         <CheckBox
           text="Proton-pump inhibitors"
@@ -112,23 +128,6 @@ const PageThirty = props => {
         </div>
       </div>
 
-      <Link to="../page-twenty-nine">
-        <img
-          className={styles.leftArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <img
-        className={styles.rightArrow}
-        src={Arrow}
-        onClick={updateMasterNavigateWrapperFunction}
-      />
-      <img
-        className={styles.bottomWave}
-        src={BottomWave}
-        onClick={updateMasterNavigateWrapperFunction}
-      />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
   );

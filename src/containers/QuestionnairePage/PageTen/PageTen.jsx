@@ -20,6 +20,22 @@ const PageTen = props => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
+        <div className={styles.arrows}>
+          <Link to="../../page-nine">
+            <img
+              className={styles.leftArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+          <Link to="../page-eleven">
+            <img
+              className={styles.rightArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+        </div>
         <section>
           <h2>Are you prone to indigestion or bloating after food?</h2>
           <RadioButton
@@ -108,21 +124,7 @@ const PageTen = props => {
           />
         </section>
       </div>
-      <Link to="../page-nine">
-        <img
-          className={styles.leftArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <Link to="../page-eleven">
-        <img
-          className={styles.rightArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <img className={styles.bottomWave} src={BottomWave} />
+
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
   );

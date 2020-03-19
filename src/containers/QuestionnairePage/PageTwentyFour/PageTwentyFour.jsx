@@ -20,6 +20,22 @@ const PageTwentyFour = props => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
+        <div className={styles.arrows}>
+          <Link to="../../page-twenty-three">
+            <img
+              className={styles.leftArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+          <Link to="../page-twenty-five">
+            <img
+              className={styles.rightArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+        </div>
         <section>
           <h2>How often do you eat...</h2>
           <h2>...porridge?</h2>
@@ -102,21 +118,7 @@ const PageTwentyFour = props => {
           />
         </section>
       </div>
-      <Link to="../page-twenty-three">
-        <img
-          className={styles.leftArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <Link to="../page-twenty-five">
-        <img
-          className={styles.rightArrow}
-          src={Arrow}
-          onClick={updateMasterValues}
-        />
-      </Link>
-      <img className={styles.bottomWave} src={BottomWave} />
+
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
   );

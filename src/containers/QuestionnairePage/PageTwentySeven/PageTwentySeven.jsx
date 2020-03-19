@@ -60,6 +60,22 @@ const PageTwentySeven = props => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
+        <div className={styles.arrows}>
+          <Link to="../../page-twenty-six">
+            <img
+              className={styles.leftArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+          <Link to="../page-twenty-eight">
+            <img
+              className={styles.rightArrow}
+              src={Arrow}
+              onClick={updateMasterValues}
+            />
+          </Link>
+        </div>
         <section>
           <h2>Do you take any of these supplements?</h2>
           <CheckBox
@@ -119,19 +135,6 @@ const PageTwentySeven = props => {
           </div>
         </section>
       </div>
-      <Link to="../page-twenty-six">
-        <img
-          className={styles.leftArrow}
-          src={Arrow}
-          onClick={updateMasterNavigateWrapperFunction}
-        />
-      </Link>
-      <img
-        className={styles.rightArrow}
-        src={Arrow}
-        onClick={updateMasterNavigateWrapperFunction}
-      />
-      <img className={styles.bottomWave} src={BottomWave} />
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
   );
