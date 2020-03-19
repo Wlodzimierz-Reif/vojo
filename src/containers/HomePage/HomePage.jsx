@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./HomePage.module.scss";
-import MaintenancePage from "../../components/MaintenancePage";
 import { Link } from "@reach/router";
 
 const HomePage = () => {
@@ -10,7 +9,7 @@ const HomePage = () => {
       <Link to="../register-dna">Register your DNA</Link>
 
       <div className={styles.maintenanceContainer}>
-        <MaintenancePage />
+        {/* <MaintenancePage /> */}
       </div>
     </div>
   );
