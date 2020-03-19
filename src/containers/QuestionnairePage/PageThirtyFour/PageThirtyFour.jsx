@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./PageThirtyFive.module.scss";
+import styles from "./PageThirtyFour.module.scss";
 import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
@@ -9,7 +9,7 @@ import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import BottomWave from "../../../assets/graphic-devices/grey-wave-bottom.svg";
 import { Link } from "@reach/router";
 
-const PageThirtyFive = props => {
+const PageThirtyFour = props => {
   const { masterValues, changeMaster } = props;
 
   const [formValues, setFormValues] = useState({});
@@ -22,7 +22,7 @@ const PageThirtyFive = props => {
     <div className={styles.page}>
       <div className={styles.box}>
         <div className={styles.arrows}>
-          <Link to="../page-thirty-four">
+          <Link to="../page-thirty-three">
             <img
               className={styles.leftArrow}
               src={Arrow}
@@ -37,4 +37,4 @@ const PageThirtyFive = props => {
   );
 };
 
-export default PageThirtyFive;
+export default PageThirtyFour;

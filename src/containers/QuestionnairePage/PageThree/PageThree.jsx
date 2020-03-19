@@ -22,7 +22,7 @@ const PageThree = props => {
     <div className={styles.page}>
       <div className={styles.box}>
         <div className={styles.arrows}>
-          <Link to="../home-two">
+          <Link to="../page-two">
             <img
               className={styles.leftArrow}
               src={Arrow}
