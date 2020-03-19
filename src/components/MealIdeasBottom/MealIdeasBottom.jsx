@@ -7,7 +7,7 @@ const MealIdeasBottom = props => {
   return (
     <>
       <div className={styles.mealList}>
-        <p>-</p>
+        <p className={styles.dash}>-</p>
         <p className={styles.belowDash}>{pMealIdeas}</p>
       </div>
     </>

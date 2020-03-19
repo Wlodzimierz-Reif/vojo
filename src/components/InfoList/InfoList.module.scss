@@ -1,7 +1,8 @@
 @import "../../variables.scss";
 
 .infoList {
-  width: 50%;
+  width: 90%;
+  margin: $base-spacing;
 
   p {
     margin: $base-spacing 0 $base-spacing * 4 0;
@@ -25,11 +26,13 @@
 @media only screen and (min-width: 768px) {
   .infoList p {
     font-size: 14px;
+    width: 50%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .infoList p {
-    font-size: 14px;
+    font-size: 16px;
+    width: 50%;
   }
 }

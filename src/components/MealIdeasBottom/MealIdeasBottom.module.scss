@@ -5,11 +5,15 @@
   width: 100%;
   font-weight: 300;
   font-size: 12px;
-}
 
-.belowDash {
-  padding-top: $base-spacing;
-  padding-bottom: $base-spacing;
+  .dash {
+    color: $vojo-orange;
+  }
+
+  .belowDash {
+    padding-top: $base-spacing;
+    padding-bottom: $base-spacing;
+  }
 }
 
 @media only screen and (min-width: 768px) {
