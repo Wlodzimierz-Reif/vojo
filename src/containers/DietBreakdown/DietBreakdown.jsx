@@ -12,7 +12,7 @@ import strawberry from "../../assets/characters/strawberry-1.svg";
 import peanut from "../../assets/characters/peanut-1.svg";
 
 const DietBreakdown = props => {
-  const { brief, title } = props;
+  const { brief } = props;
 
   const shortBrief =
     brief.length < 300 ? brief : brief.substring(0, 200) + "...";

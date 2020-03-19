@@ -1,6 +1,5 @@
 import React from "react";
 import DietBreakdownBox from "./DietBreakdownBox";
-
 import { render } from "@testing-library/react";
 
 describe("DietBreakdownBox tests", () => {
@@ -8,4 +7,3 @@ describe("DietBreakdownBox tests", () => {
     expect(render(<DietBreakdownBox />)).toBeTruthy();
   });
 });
-

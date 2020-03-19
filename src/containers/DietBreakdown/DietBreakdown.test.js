@@ -4,6 +4,6 @@ import { render } from "@testing-library/react";
 
 describe("DietBreakdown tests", () => {
   it("should render", () => {
-    expect(render(<DietBreakdown />)).toBeTruthy();
+    expect(render(<DietBreakdown brief={"hello"} />)).toBeTruthy();
   });
 });
