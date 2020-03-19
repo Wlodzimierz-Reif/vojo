@@ -5,17 +5,6 @@ import SidePanel from "../../containers/SidePanel";
 const InfoCard = props => {
   const { nutrient, displayPanel } = props;
 
-  // const [currentState, updateState] = useState(false);
-  // const [currentColor, updateColor] = useState("red");
-
-  // const insertJsx = currentState ? (
-  //   <SidePanel
-  //     displayStyle={currentColor}
-  //     handleClick={() => updateState(!currentState)}
-  //     nutrient={nutrient}
-  //   />
-  // ) : null;
-
   let displayStyle = null;
 
   switch (nutrient["requirement-category"]) {

@@ -1,7 +1,7 @@
 @import "../../variables.scss";
 
 .sidePanelContainer {
-  width: 100%;
+  min-width: 100vw;
   min-height: 100vh;
 
   .sidePanel {

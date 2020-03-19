@@ -10,6 +10,10 @@ import mockData from "../../data";
 
 const Routes = () => {
 
+  // Any object, any key that contains the words 
+  // "recommendation" or "action" place into
+  // new recommendations array
+
   return (
     <>
       <Router>

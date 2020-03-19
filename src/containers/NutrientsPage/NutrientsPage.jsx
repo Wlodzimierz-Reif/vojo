@@ -21,7 +21,6 @@ const NutrientsPage = props => {
   const [currentColor, updateColor] = useState("red");
   const [currentNutrient, updateNutrient] = useState(null);
 
-  // onClick = handleClick;
   const insertJsx = isPanelDisplayed ? (
     <SidePanel
       displayStyle={currentColor}
@@ -29,7 +28,6 @@ const NutrientsPage = props => {
       nutrient={currentNutrient}
     />
   ) : null;
-  console.log(currentNutrient);
 
   useEffect(() => {
     updateArrays();
