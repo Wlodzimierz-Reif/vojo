@@ -35,6 +35,7 @@ import PageThirty from "./PageThirty";
 import PageThirtyOne from "./PageThirtyOne";
 import PageThirtyTwo from "./PageThirtyTwo";
 import PageThirtyThree from "./PageThirtyThree";
+import PageThirtyFour from "./PageThirtyFour";
 
 const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
@@ -205,6 +206,11 @@ const QuestionnairePage = () => {
         />
         <PageThirtyThree
           path="page-thirty-three"
+          masterValues={formValues}
+          changeMaster={setFormValues}
+        />
+        <PageThirtyFour
+          path="page-thirty-four"
           masterValues={formValues}
           changeMaster={setFormValues}
         />
