@@ -28,7 +28,7 @@ const PageThirteen = props => {
               onClick={updateMasterValues}
             />
           </Link>
-          <Link to="../page-thirteen">
+          <Link to="../page-fourteen">
             <img
               className={styles.rightArrow}
               src={Arrow}
