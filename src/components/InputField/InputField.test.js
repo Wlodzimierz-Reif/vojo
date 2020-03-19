@@ -31,4 +31,16 @@ describe("InputField tests", () => {
         .props().placeholder
     ).toEqual("testText");
   });
+
+  it("should call a parent function on change", () => {
+    component.find("input").simulate("change");
+    expect(testFunc).toHaveBeenCalled();
+  });
+
+  it("should call a parent function every time change occurs", () => {
+    component.find("input").simulate("change");
+    component.find("input").simulate("change");
+    component.find("input").simulate("change");
+    expect(testFunc).toHaveBeenCalledTimes(3);
+  });
 });
