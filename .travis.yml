@@ -4,14 +4,17 @@ node_js:
 cache:
   directories:
     - node_modules
+process:
+  env:
+    - CI=false
 install:
   - yarn global add firebase-tools
   - yarn install
 script:
   - yarn test
-  - yarn build CI=false
+  - yarn build
 before_deploy:
-  - yarn build CI=false
+  - yarn build
 branches:
   only:
     - master
