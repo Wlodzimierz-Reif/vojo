@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './PaymentDetails.module.scss';
-import InputLabel from '../InputLabel/InputLabel';
 import InputField from '../InputField/InputField';
 
 const PaymentDetails = () => {
