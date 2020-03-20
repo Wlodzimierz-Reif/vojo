@@ -8,7 +8,7 @@ import PrioritiesPage from "../PrioritiesPage";
 import Footer from "../../components/Footer";
 import RegisterDNA from "../RegisterDNA";
 
-
+import DietBreakdown from "../DietBreakdown";
 
 const Routes = () => {
   return (
@@ -20,6 +20,7 @@ const Routes = () => {
         <PrioritiesPage path="priorities-page" />
         <RegisterDNA path="register-dna" />
         <NotFound default />
+        <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
       </Router>
       <Footer />
     </>
