@@ -6,6 +6,7 @@ import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
 import PrioritiesPage from "../PrioritiesPage";
 import Footer from "../../components/Footer";
+import PaymentPage from "../PaymentPage/PaymentPage";
 import mockData from "../../data";
 import RegisterDNA from "../RegisterDNA";
 
@@ -21,6 +22,7 @@ const Routes = () => {
         <HomePage path="home-page" />
         <NutrientsPage nutrients={mockData.nutrients} path="nutrients-page" />
         <PrioritiesPage path="priorities-page" />
+        <PaymentPage path="payment-page" />
         <RegisterDNA path="register-dna" />
         <NotFound default />
       </Router>
