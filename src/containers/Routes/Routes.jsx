@@ -9,6 +9,8 @@ import Footer from "../../components/Footer";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import mockData from "../../data";
 import RegisterDNA from "../RegisterDNA";
+import EverydayFoods from "../EverydayFoods";
+import MealIdeas from "../MealIdeas";
 
 const Routes = () => {
   // Any object, any key that contains the words
@@ -24,6 +26,8 @@ const Routes = () => {
         <PrioritiesPage path="priorities-page" />
         <PaymentPage path="payment-page" />
         <RegisterDNA path="register-dna" />
+        <EverydayFoods path="everyday-foods" />
+        <MealIdeas path="meal-ideas" />
         <NotFound default />
       </Router>
       <Footer />

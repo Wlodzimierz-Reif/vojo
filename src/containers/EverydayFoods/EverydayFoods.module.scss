@@ -26,7 +26,7 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 720px) {
   .listImage {
     padding-top: 50px;
     padding-left: 50px;
@@ -35,12 +35,12 @@
   .listImage img {
     position: fixed;
     width: 15vw;
-    right: 15%;
+    right: 5%;
     top: 60vh;
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1440px) {
   .listImage {
     padding-top: 50px;
     padding-left: 60px;
@@ -50,6 +50,6 @@
     position: fixed;
     width: 15vw;
     right: 15%;
-    top: 50vh;
+    top: 25vh;
   }
 }
