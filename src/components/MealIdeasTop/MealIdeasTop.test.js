@@ -1,10 +1,9 @@
 import React from "react";
 import MealIdeasTop from "./MealIdeasTop";
+import { render } from "@testing-library/react";
 
-describe("MealIdeasTop tests", () => {
-  let component;
-
-  beforeEach(() => {
-    component =
-  })
+describe("MealIdeasTop test", () => {
+  it("should render", () => {
+    expect(render(<MealIdeasTop />)).toBeTruthy();
+  });
 });
