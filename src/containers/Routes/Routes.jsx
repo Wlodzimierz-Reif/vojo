@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Routes.module.scss";
+// import styles from "./Routes.module.scss";
 import { Router, Redirect } from "@reach/router";
 import HomePage from "../HomePage";
 import NutrientsPage from "../NutrientsPage";
