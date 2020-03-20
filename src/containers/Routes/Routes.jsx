@@ -10,6 +10,8 @@ import PaymentPage from "../PaymentPage/PaymentPage";
 import mockData from "../../data";
 import RegisterDNA from "../RegisterDNA";
 
+import DietBreakdown from "../DietBreakdown";
+
 const Routes = () => {
   // Any object, any key that contains the words
   // "recommendation" or "action" place into
@@ -25,6 +27,7 @@ const Routes = () => {
         <PaymentPage path="payment-page" />
         <RegisterDNA path="register-dna" />
         <NotFound default />
+        <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
       </Router>
       <Footer />
     </>

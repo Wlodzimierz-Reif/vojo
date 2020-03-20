@@ -6,7 +6,9 @@ const VegPictureBox = props => {
 
   return (
     <section className={styles.card}>
+      <div className={styles.vegChar}>
       <img src={image} alt={`${pText} `} />
+      </div>
       <p>{pText}</p>
     </section>
   );
