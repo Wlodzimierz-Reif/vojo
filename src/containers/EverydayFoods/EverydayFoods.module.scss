@@ -8,9 +8,9 @@
 
   img {
     display: block;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
   }
 
   .dietContainer {
@@ -33,10 +33,11 @@
   }
 
   .listImage img {
-    position: fixed;
-    width: 15vw;
-    right: 5%;
+    position: absolute;
     top: 60vh;
+    display: block;
+    width: 20%;
+    margin-left: 70%;
   }
 }
 
@@ -47,9 +48,10 @@
   }
 
   .listImage img {
-    position: fixed;
-    width: 15vw;
-    right: 15%;
-    top: 25vh;
+    position: absolute;
+    top: 10vh;
+    display: block;
+    width: 20%;
+    margin-left: 70%;
   }
 }
