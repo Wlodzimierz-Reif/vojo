@@ -77,6 +77,8 @@
 
 @media only screen and (min-width: 1024px) {
   .secInfo {
+    width: 95vw;
+
     .information {
       height: 60vh;
       margin: 0 $base-spacing;
@@ -87,12 +89,15 @@
         height: 100%;
         margin: $base-spacing * 4 $base-spacing * 2;
         padding: $base-spacing;
-        // border: 2px solid black;
+
+        ::-webkit-scrollbar {
+          display: none;
+        }
 
         .singleBreakdown {
           width: 80%;
           max-height: 100%;
-          margin: $base-spacing $base-spacing * 2 ;
+          margin: $base-spacing $base-spacing * 2;
         }
       }
     }

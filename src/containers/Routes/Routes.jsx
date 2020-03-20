@@ -6,6 +6,7 @@ import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
 import PrioritiesPage from "../PrioritiesPage";
 import Footer from "../../components/Footer";
+import DietBreakdown from "../DietBreakdown";
 
 
 const Routes = () => {
@@ -17,6 +18,7 @@ const Routes = () => {
         <NutrientsPage path="nutrients-page" />
         <PrioritiesPage path="priorities-page" />
         <NotFound default />
+        <DietBreakdown brief= {"ysfadud"} path="diet-breakdown"/>
       </Router>
       <Footer />
     </>
