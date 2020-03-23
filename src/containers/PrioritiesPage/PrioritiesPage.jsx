@@ -17,8 +17,8 @@ const PrioritiesPage = props => {
   return (
     <>
       <NavBar links={["Food"]} />
-      {/* <button onClick={signInWithRedirect}>Sign In</button>
-      <button onClick={signOut}>Sign Out</button> */}
+      <button onClick={signInWithRedirect}>Sign In</button>
+      <button onClick={signOut}>Sign Out</button>
       <section className={styles.prioritiesPage}>
         <h2>Priorities</h2>
         <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>

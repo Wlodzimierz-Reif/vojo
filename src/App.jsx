@@ -10,6 +10,8 @@ const App = () => {
 
   const [user, setUser] = useState(null);
 
+  console.log(user);
+
   const signInWithRedirect = () => {
     firebase.auth().signInWithRedirect(provider)
   };
@@ -20,6 +22,7 @@ const App = () => {
     .then(result => {
       if (result.credential) {
         const token = result.credential.accessToken
+        console.log(token)
       }
       const user = result.user;
       setUser(user);
@@ -28,7 +31,8 @@ const App = () => {
       const errorCode = error.code;
       const errorMessage = error.message;
       const email = error.email;
-      const credential = error.credential;
+      const credential = error.credential
+      console.log(errorCode, errorMessage, email, credential);
     });
   };
 
@@ -40,7 +44,7 @@ const App = () => {
     alert("You have signed out");
     })
     .catch(error => {
-      alert("error")
+      console.log(error)
     });
   };
 
