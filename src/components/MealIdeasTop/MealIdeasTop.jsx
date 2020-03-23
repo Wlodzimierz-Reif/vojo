@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./MealIdeasTop.module.scss";
 
-const MealIdeasTop = () => {
+const MealIdeasTop = props => {
+  const { pMealIdeas, hMealIdeas } = props;
+
   return (
     <>
       <div>
-        <h3 className={styles.mealHeader}>Snaks</h3>
-        <p className={styles.mealList}>
-          Coconut yogurt topped with nuts, seeds and berries
-        </p>
+        <h3 className={styles.mealHeader}>{hMealIdeas}</h3>
+        <p className={styles.mealList}>{pMealIdeas}</p>
       </div>
     </>
   );

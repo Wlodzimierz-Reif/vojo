@@ -2,10 +2,13 @@
 
 .mealIdeas {
   display: flex;
+  flex-wrap: wrap;
   padding: 0 $base-spacing 0 $base-spacing;
 
   .dietContainer {
     margin: $base-spacing;
+    width: 40%;
+    height: 50vh;
   }
 }
 
@@ -14,50 +17,34 @@
   margin-left: $base-spacing * 2;
 }
 
-@media only screen and (min-width: 425px) {
+@media only screen and (min-width: 720px) {
   .dietContainer {
-    margin: $base-spacing;
+    margin: $base-spacing $base-spacing * 4 $base-spacing $base-spacing * 4;
     justify-content: space-around;
+    width: 20%;
   }
-}
 
-@media only screen and (min-width: 764px) {
-  .dietContainer {
-    margin: $base-spacing;
-    justify-content: space-around;
+  .mealIdeas {
+    flex-wrap: nowrap;
+    height: 100vh;
   }
-  .mealHeader {
-    margin: $base-spacing 0 $base-spacing * 2 $base-spacing * 2;
-  }
-}
 
-@media only screen and (min-width: 1024px) {
-  .dietContainer {
-    margin: $base-spacing;
-    justify-content: space-around;
-  }
   .mealHeader {
-    margin: $base-spacing * 3 0 $base-spacing * 2 $base-spacing * 2;
+    margin: $base-spacing * 2 0 $base-spacing * 2 $base-spacing * 2;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  .mealIdeas {
-    margin: $base-spacing * 5;
+  .dietContainer {
+    margin: $base-spacing $base-spacing * 6 $base-spacing $base-spacing * 6;
     justify-content: space-around;
   }
-  .mealHeader {
-    margin-left: $base-spacing * 7;
-  }
-}
 
-@media only screen and (min-width: 1920px) {
   .mealIdeas {
-    margin: $base-spacing * 5;
-    justify-content: space-around;
+    height: 100vh;
   }
+
   .mealHeader {
-    margin-left: $base-spacing * 11;
-    font-size: 24px;
+    margin: $base-spacing * 2 0 $base-spacing * 2 $base-spacing * 2;
   }
 }

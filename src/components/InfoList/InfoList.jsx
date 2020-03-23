@@ -1,20 +1,17 @@
 import React from "react";
 import styles from "./InfoList.module.scss";
 
-const InfoList = () => {
+const InfoList = props => {
+  const { infoHeaderBlack, infoHeaderPurple, foodList } = props;
+
   return (
     <>
       <section className={styles.infoList}>
         <h4>
-          <span className={styles.blackText}>Plant milk:</span>
-          <span className={styles.purpleText}> Coconut</span>
+          <span className={styles.blackText}>{infoHeaderBlack}</span>
+          <span className={styles.purpleText}>{infoHeaderPurple}</span>
         </h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolore,
-          ipsam accusamus inventore expedita labore consequuntur eaque natus
-          corrupti impedit, consectetur blanditiis vero. Repellendus nemo
-          accusamus aperiam perspiciatis optio eaque?
-        </p>
+        <p>{foodList}</p>
       </section>
     </>
   );
