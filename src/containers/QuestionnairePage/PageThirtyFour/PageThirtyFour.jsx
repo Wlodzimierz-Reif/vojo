@@ -11,12 +11,7 @@ const PageThirtyFour = () => {
       <div className={styles.box}>
         <div className={styles.arrows}>
           <Link to="../page-thirty-three">
-            <img
-              className={styles.leftArrow}
-              src={Arrow}
-              onClick={updateMasterValues}
-              alt="arrow"
-            />
+            <img className={styles.leftArrow} src={Arrow} alt="arrow" />
           </Link>
         </div>
         <h2>
