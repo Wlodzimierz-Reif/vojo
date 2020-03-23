@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./PageThirtyThree.module.scss";
 import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
-import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/broccoli-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
@@ -14,10 +13,6 @@ const PageThirtyThree = props => {
   const [formValues, setFormValues] = useState({ familyHistory: [] });
   const { familyHistory } = formValues;
   const [other, setOther] = useState(null);
-
-  const updateMasterValues = formValues => {
-    changeMaster({ ...masterValues, ...formValues });
-  };
 
   const updateMasterValuesBackwards = () => {
     changeMaster({ ...masterValues, ...formValues });
@@ -73,12 +68,14 @@ const PageThirtyThree = props => {
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValuesBackwards}
+              alt="arrow"
             />
           </Link>
           <img
             className={styles.rightArrow}
             src={Arrow}
             onClick={navigateToNext}
+            alt="arrow"
           />
         </div>
         <section>

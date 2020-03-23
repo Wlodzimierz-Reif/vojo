@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./PageThirty.module.scss";
 import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
-import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/strawberry-2.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
@@ -10,10 +9,6 @@ import { Link, navigate } from "@reach/router";
 
 const PageThirty = props => {
   const { masterValues, changeMaster } = props;
-
-  const updateMasterValues = formValues => {
-    changeMaster({ ...masterValues, ...formValues });
-  };
 
   const updateMasterValuesBackwards = () => {
     changeMaster({ ...masterValues, ...formValues });
@@ -73,12 +68,14 @@ const PageThirty = props => {
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValuesBackwards}
+              alt="arrow"
             />
           </Link>
           <img
             className={styles.rightArrow}
             src={Arrow}
             onClick={navigateToNext}
+            alt="arrow"
           />
         </div>
         <h2>Are you currently taking any of the following medications?</h2>

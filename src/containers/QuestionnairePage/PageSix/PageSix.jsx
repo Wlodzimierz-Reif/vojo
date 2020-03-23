@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import styles from "./PageSix.module.scss";
-import InputLabel from "../../../components/InputLabel";
-import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
-import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/carrot-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import { Link } from "@reach/router";
@@ -11,6 +8,7 @@ import { Link } from "@reach/router";
 const PageSix = props => {
   const { masterValues, changeMaster } = props;
   const [formValues, setFormValues] = useState({});
+
   const updateMasterValues = () => {
     changeMaster({ ...masterValues, ...formValues });
   };
@@ -24,6 +22,7 @@ const PageSix = props => {
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValues}
+              alt="arrow"
             />
           </Link>
           <Link to="../page-seven">
@@ -31,6 +30,7 @@ const PageSix = props => {
               className={styles.rightArrow}
               src={Arrow}
               onClick={updateMasterValues}
+              alt="arrow"
             />
           </Link>
         </div>

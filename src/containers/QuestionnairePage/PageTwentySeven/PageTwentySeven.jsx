@@ -17,10 +17,6 @@ const PageTwentySeven = props => {
 
   const [other, setOther] = useState(null);
 
-  const updateMasterValues = formValues => {
-    changeMaster({ ...masterValues, ...formValues });
-  };
-
   const updateMasterValuesBackwards = () => {
     changeMaster({ ...masterValues, ...formValues });
   };

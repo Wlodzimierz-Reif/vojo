@@ -71,12 +71,14 @@ const PageFourteen = props => {
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValuesBackwards}
+              alt="arrow"
             />
           </Link>
           <img
             className={styles.rightArrow}
             src={Arrow}
             onClick={navigateToNext}
+            alt="arrow"
           />
         </div>
         <section>

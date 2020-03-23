@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styles from "./PageFour.module.scss";
-import InputLabel from "../../../components/InputLabel";
-import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/bean-2.svg";
@@ -44,6 +42,7 @@ const PageFour = props => {
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValues}
+              alt="arrow"
             />
           </Link>
           <Link to="../page-five">
@@ -51,6 +50,7 @@ const PageFour = props => {
               className={styles.rightArrow}
               src={Arrow}
               onClick={updateMasterValues}
+              alt="arrow"
             />
           </Link>
         </div>
