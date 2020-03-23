@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./PageTwentySeven.module.scss";
 import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
-import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/carrot-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
