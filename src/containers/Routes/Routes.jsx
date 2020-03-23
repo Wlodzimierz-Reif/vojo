@@ -4,18 +4,31 @@ import { Router, Redirect } from "@reach/router";
 import HomePage from "../HomePage";
 import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
+import QuestionnairePage from "../QuestionnairePage";
 import PrioritiesPage from "../PrioritiesPage";
 import Footer from "../../components/Footer";
+import PaymentPage from "../PaymentPage/PaymentPage";
+import mockData from "../../data";
+import RegisterDNA from "../RegisterDNA";
+import DietBreakdown from "../DietBreakdown";
 
 const Routes = () => {
+  // Any object, any key that contains the words
+  // "recommendation" or "action" place into
+  // new recommendations array
+
   return (
     <>
       <Router>
         <Redirect noThrow from="/" to="priorities-page" />
-        {/* <HomePage path="home-page" /> */}
-        <NutrientsPage path="nutrients-page" />
+        <HomePage path="home-page" />
+        <NutrientsPage nutrients={mockData.nutrients} path="nutrients-page" />
         <PrioritiesPage path="priorities-page" />
+        <PaymentPage path="payment-page" />
+        <RegisterDNA path="register-dna" />
+        <QuestionnairePage path="questionnaire-page/*" />
         <NotFound default />
+        <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
       </Router>
       {/* <Footer /> */}
     </>

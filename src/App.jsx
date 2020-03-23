@@ -1,7 +1,6 @@
 import React from "react";
-import "./App.module.scss";
-import Routes from "./containers/Routes";
-import ProgressBar from "./components/ProgressBar";
+import styles from "./App.module.scss";
+import Routes from "../src/containers/Routes";
 
 const App = () => {
   return (
