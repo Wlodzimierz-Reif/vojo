@@ -5,13 +5,7 @@ import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import Button from "../../../components/Button";
 import { Link } from "@reach/router";
 
-const PageThirtyFour = props => {
-  const { masterValues, changeMaster } = props;
-
-  const updateMasterValues = () => {
-    changeMaster({ ...masterValues, ...formValues });
-  };
-
+const PageThirtyFour = () => {
   return (
     <div className={styles.page}>
       <div className={styles.box}>
