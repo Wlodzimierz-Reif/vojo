@@ -12,12 +12,12 @@ const Routes = () => {
     <>
       <Router>
         <Redirect noThrow from="/" to="priorities-page" />
-        <HomePage path="home-page" />
+        {/* <HomePage path="home-page" /> */}
         <NutrientsPage path="nutrients-page" />
         <PrioritiesPage path="priorities-page" />
         <NotFound default />
       </Router>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
