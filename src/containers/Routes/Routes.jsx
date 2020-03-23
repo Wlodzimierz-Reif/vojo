@@ -12,6 +12,8 @@ import RegisterDNA from "../RegisterDNA";
 import EverydayFoods from "../EverydayFoods";
 import MealIdeas from "../MealIdeas";
 
+import DietBreakdown from "../DietBreakdown";
+
 const Routes = () => {
   // Any object, any key that contains the words
   // "recommendation" or "action" place into
@@ -29,6 +31,7 @@ const Routes = () => {
         <EverydayFoods path="everyday-foods" />
         <MealIdeas path="meal-ideas" />
         <NotFound default />
+        <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
       </Router>
       <Footer />
     </>
