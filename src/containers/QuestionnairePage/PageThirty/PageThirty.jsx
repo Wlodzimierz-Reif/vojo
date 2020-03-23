@@ -11,7 +11,11 @@ import { Link, navigate } from "@reach/router";
 const PageThirty = props => {
   const { masterValues, changeMaster } = props;
 
-  const updateMasterValues = () => {
+  const updateMasterValues = formValues => {
+    changeMaster({ ...masterValues, ...formValues });
+  };
+
+  const updateMasterValuesBackwards = () => {
     changeMaster({ ...masterValues, ...formValues });
   };
 
@@ -38,10 +42,19 @@ const PageThirty = props => {
   };
 
   const navigateToNext = () => {
-    if (!other === null || !other == "") {
+    if (other !== null && other !== "") {
       setFormValues({
         ...formValues,
         whichPrescriptionMeds: [...whichPrescriptionMeds, other]
+      });
+      changeMaster({
+        ...formValues,
+        whichPrescriptionMeds: [...whichPrescriptionMeds, other]
+      });
+    } else {
+      changeMaster({
+        ...formValues,
+        whichPrescriptionMeds: [...whichPrescriptionMeds]
       });
     }
     navigate("/questionnaire-page/page-thirty-one");
@@ -49,11 +62,6 @@ const PageThirty = props => {
 
   const handleInputValue = inputVal => {
     setOther(inputVal);
-  };
-
-  const updateMasterNavigateWrapperFunction = () => {
-    updateMasterValues();
-    navigateToNext();
   };
 
   return (
@@ -64,16 +72,14 @@ const PageThirty = props => {
             <img
               className={styles.leftArrow}
               src={Arrow}
-              onClick={updateMasterValues}
+              onClick={updateMasterValuesBackwards}
             />
           </Link>
-          <Link to="../page-thirty-one">
-            <img
-              className={styles.rightArrow}
-              src={Arrow}
-              onClick={updateMasterValues}
-            />
-          </Link>
+          <img
+            className={styles.rightArrow}
+            src={Arrow}
+            onClick={navigateToNext}
+          />
         </div>
         <h2>Are you currently taking any of the following medications?</h2>
         <CheckBox

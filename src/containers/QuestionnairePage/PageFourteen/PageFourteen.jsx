@@ -17,7 +17,11 @@ const PageFourteen = props => {
 
   const { whichAllergies } = formValues;
 
-  const updateMasterValues = () => {
+  const updateMasterValues = formValues => {
+    changeMaster({ ...masterValues, ...formValues });
+  };
+
+  const updateMasterValuesBackwards = () => {
     changeMaster({ ...masterValues, ...formValues });
   };
 
@@ -40,10 +44,19 @@ const PageFourteen = props => {
   };
 
   const navigateToNext = () => {
-    if (!other === null || !other == "") {
+    if (other !== null && other !== "") {
       setFormValues({
         ...formValues,
         whichAllergies: [...whichAllergies, other]
+      });
+      changeMaster({
+        ...formValues,
+        whichAllergies: [...whichAllergies, other]
+      });
+    } else {
+      changeMaster({
+        ...formValues,
+        whichAllergies: [...whichAllergies]
       });
     }
     navigate("/questionnaire-page/page-fifteen");
@@ -51,11 +64,6 @@ const PageFourteen = props => {
 
   const handleInputValue = inputVal => {
     setOther(inputVal);
-  };
-
-  const updateMasterNavigateWrapperFunction = () => {
-    updateMasterValues();
-    navigateToNext();
   };
 
   return (
@@ -66,16 +74,14 @@ const PageFourteen = props => {
             <img
               className={styles.leftArrow}
               src={Arrow}
-              onClick={updateMasterValues}
+              onClick={updateMasterValuesBackwards}
             />
           </Link>
-          <Link to="../page-fifteen">
-            <img
-              className={styles.rightArrow}
-              src={Arrow}
-              onClick={updateMasterValues}
-            />
-          </Link>
+          <img
+            className={styles.rightArrow}
+            src={Arrow}
+            onClick={navigateToNext}
+          />
         </div>
         <section>
           <h2>Do you have any allergies?</h2>

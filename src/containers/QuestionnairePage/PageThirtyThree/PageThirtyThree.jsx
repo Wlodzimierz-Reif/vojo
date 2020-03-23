@@ -15,7 +15,11 @@ const PageThirtyThree = props => {
   const { familyHistory } = formValues;
   const [other, setOther] = useState(null);
 
-  const updateMasterValues = () => {
+  const updateMasterValues = formValues => {
+    changeMaster({ ...masterValues, ...formValues });
+  };
+
+  const updateMasterValuesBackwards = () => {
     changeMaster({ ...masterValues, ...formValues });
   };
 
@@ -38,20 +42,26 @@ const PageThirtyThree = props => {
   };
 
   const navigateToNext = () => {
-    setFormValues({
-      ...formValues,
-      familyHistory: [...familyHistory, other]
-    });
-    navigate("/questionnaire-page/page-thirty-three");
+    if (other !== null && other !== "") {
+      setFormValues({
+        ...formValues,
+        familyHistory: [...familyHistory, other]
+      });
+      changeMaster({
+        ...formValues,
+        familyHistory: [...familyHistory, other]
+      });
+    } else {
+      changeMaster({
+        ...formValues,
+        familyHistory: [...familyHistory]
+      });
+    }
+    navigate("/questionnaire-page/page-thirty-four");
   };
 
   const handleInputValue = inputVal => {
     setOther(inputVal);
-  };
-
-  const updateMasterNavigateWrapperFunction = () => {
-    updateMasterValues();
-    navigateToNext();
   };
 
   return (
@@ -62,16 +72,14 @@ const PageThirtyThree = props => {
             <img
               className={styles.leftArrow}
               src={Arrow}
-              onClick={updateMasterValues}
+              onClick={updateMasterValuesBackwards}
             />
           </Link>
-          <Link to="../page-thirty-four">
-            <img
-              className={styles.rightArrow}
-              src={Arrow}
-              onClick={updateMasterValues}
-            />
-          </Link>
+          <img
+            className={styles.rightArrow}
+            src={Arrow}
+            onClick={navigateToNext}
+          />
         </div>
         <section>
           <h2>

@@ -17,7 +17,11 @@ const PageTwentySeven = props => {
 
   const [other, setOther] = useState(null);
 
-  const updateMasterValues = () => {
+  const updateMasterValues = formValues => {
+    changeMaster({ ...masterValues, ...formValues });
+  };
+
+  const updateMasterValuesBackwards = () => {
     changeMaster({ ...masterValues, ...formValues });
   };
 
@@ -40,20 +44,26 @@ const PageTwentySeven = props => {
   };
 
   const navigateToNext = () => {
-    setFormValues({
-      ...formValues,
-      allSupplements: [...allSupplements, other]
-    });
+    if (other !== null && other !== "") {
+      setFormValues({
+        ...formValues,
+        allSupplements: [...allSupplements, other]
+      });
+      changeMaster({
+        ...formValues,
+        allSupplements: [...allSupplements, other]
+      });
+    } else {
+      changeMaster({
+        ...formValues,
+        allSupplements: [...allSupplements]
+      });
+    }
     navigate("/questionnaire-page/page-twenty-eight");
   };
 
   const handleInputValue = inputVal => {
     setOther(inputVal);
-  };
-
-  const updateMasterNavigateWrapperFunction = () => {
-    updateMasterValues();
-    navigateToNext();
   };
 
   return (
@@ -64,16 +74,14 @@ const PageTwentySeven = props => {
             <img
               className={styles.leftArrow}
               src={Arrow}
-              onClick={updateMasterValues}
+              onClick={updateMasterValuesBackwards}
             />
           </Link>
-          <Link to="../page-twenty-eight">
-            <img
-              className={styles.rightArrow}
-              src={Arrow}
-              onClick={updateMasterValues}
-            />
-          </Link>
+          <img
+            className={styles.rightArrow}
+            src={Arrow}
+            onClick={navigateToNext}
+          />
         </div>
         <section>
           <h2>Do you take any of these supplements?</h2>
