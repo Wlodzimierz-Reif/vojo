@@ -1,12 +1,23 @@
 @import "../../variables.scss";
 
+p {
+  padding: $base-spacing * 0.75 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
 .navBar {
   background-color: $vojo-cream;
   position: fixed;
   @include flex-column;
   align-items: center;
+  justify-content: space-between;
   width: calc(100vw - 32px);
-  height: calc(100vh - 32px);
+  transition: 0.5s;
+
+  .navTop {
+    width: 100%;
+  }
 
   .logoBurgerFlex {
     @include flex-row;
@@ -16,18 +27,23 @@
     padding: $base-spacing;
   
     .navBarLogo {
-      width: 70px;
+      width: 48px;
+    }
+
+    p {
+      color: $secondary-color;
     }
 
     .burgerMenu {
       border: none;
-      width: $base-spacing * 5;
+      width: $base-spacing * 3;
       height: $base-spacing * 5;
       background-size: contain;
       background-color: transparent;
       background-repeat: no-repeat;
       background-position: center;
       outline: none;
+      margin: 0 12px;
     }
     
     .burgerMenuIcon {
@@ -41,24 +57,16 @@
     }
   }
 
-  .navBottom {
-    text-decoration: underline;
-    font-weight: lighter;
-  }
-
   .links {
     @include flex-column;
     color: #3C3934;
-    font-weight: bold;
     height: 100%;
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    opacity: 1;
+    transition: 1s;
     
-    p {
-      padding: 0 $base-spacing * 2;
-    }
-
     .navLine {
       width: $base-spacing * 8;
       height: $base-spacing / 2;
@@ -68,14 +76,36 @@
       background-repeat: no-repeat;
     }
   }
+
+  .navBottom {
+    text-align: center;
+    text-decoration: underline;
+    padding-bottom: $base-spacing * 2;
+    opacity: 1;
+    transition: 1s;
+
+    button {
+      padding: 0 10px;
+      font-weight: bold;
+    }
+
+    * {
+      margin: $base-spacing 0;
+      font-weight: normal;
+      font-size: 13px;
+    }
+  }
+
 }
 
-// @media 
+@media only screen and (min-width: 768px) {
 
-// .navBar {
-//   position: fixed;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   width: 100px;
-//   height: 100vh;
+  .navBar {
+    height: { height: "calc(100vh - 32px)" }
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+  }
+}
