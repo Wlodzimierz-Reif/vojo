@@ -6946,10 +6946,10 @@ mkdirp@0.5.1, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.1:
   dependencies:
     minimist "0.0.8"
 
-mkrc@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/mkrc/-/mkrc-1.2.2.tgz#f36276e9121b6a4c2b9f81bd39cc71f46b015a04"
-  integrity sha512-40NC+0uVFoyQhk5KG7Rvae1dsYB8YsfprCg1VH6D92rTjPJbkDO3bKT4AXp/bZU6PhRkWMwvRrADh7+boRglyw==
+mkrc@^1.2.22:
+  version "1.2.22"
+  resolved "https://registry.yarnpkg.com/mkrc/-/mkrc-1.2.22.tgz#9d533a8d5eecf09d5eddc01a56f30085f7ac6cb3"
+  integrity sha512-9swP2MbYaLop9xs4mOU8R9UE+cQHD52w1icbQFzf6EDDRGUWxwKZdtcQv6/ifDFCw6YJ+o0zrIP914GslZpsCg==
   dependencies:
     commander "^4.1.0"
 

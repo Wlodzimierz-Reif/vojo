@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./DisplaySlider.module.scss";
 
 const DisplaySlider = props => {
-  const { sliderColor } = props;
+  const { sliderColor, value } = props;
   let sliderClass;
 
   switch (sliderColor) {
@@ -17,9 +17,13 @@ const DisplaySlider = props => {
       break;
   }
 
+  const gaugeValue = {
+    left: `${value}%`
+  };
+
   return (
     <div className={`${styles.slider} ${sliderClass}`}>
-      <div className={styles.sliderGauge}></div>
+      <div className={styles.sliderGauge} style={gaugeValue}></div>
     </div>
   );
 };
