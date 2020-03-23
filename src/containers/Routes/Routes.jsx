@@ -20,16 +20,16 @@ const Routes = () => {
   return (
     <>
       <Router>
-        {/* <Redirect noThrow from="/" to="priorities-page" />
+        <Redirect noThrow from="/" to="priorities-page" />
         <HomePage path="home-page" />
         <NutrientsPage nutrients={mockData.nutrients} path="nutrients-page" />
         <PrioritiesPage path="priorities-page" />
-        <PaymentPage path="payment-page" /> */}
+        <PaymentPage path="payment-page" />
         <RegisterDNA path="register-dna" />
-        {/* <NotFound default />
-        <DietBreakdown brief={"ysfadud"} path="diet-breakdown" /> */}
+        <NotFound default />
+        <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
       </Router>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
