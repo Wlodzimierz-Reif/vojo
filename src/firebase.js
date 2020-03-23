@@ -3,7 +3,7 @@ import "firebase/firestore";
 import "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_VOJO_API_KEY,
+    apiKey: `${process.env.REACT_APP_VOJO_API_KEY}`,
     authDomain: "vojo-bbe4f.firebaseapp.com",
     databaseURL: "https://vojo-bbe4f.firebaseio.com",
     projectId: "vojo-bbe4f",
