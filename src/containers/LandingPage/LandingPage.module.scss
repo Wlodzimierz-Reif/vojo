@@ -1,0 +1,151 @@
+@import "../../variables.scss";
+
+img {
+  width: 20vw;
+}
+
+.navBar {
+  position: fixed;
+  top: 0;
+  height: 10vh;
+  width: 100%;
+  padding: 0 $base-spacing * 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $vojo-cream;
+
+  img {
+    height: 100%;
+  }
+
+  div {
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
+    border: 2px solid red;
+
+    a {
+      margin: 0 $base-spacing;
+      font-size: 14px;
+      font-weight: bold;
+      color: #000;
+      text-decoration: none;
+    }
+
+    div {
+      width: 25%;
+      position: relative;
+      display: flex;
+      justify-content: space-evenly;
+      a {
+        color: $primary-color;
+        margin: 0;
+        width: 50%;
+
+        &:first-child {
+          border-right: 1px solid $primary-color;
+        }
+      }
+    }
+  }
+}
+
+section {
+  height: 90vh;
+
+  article {
+    // border: 2px solid red;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .button {
+    height: 40px;
+    width: 250px;
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  &.veganMojo {
+    height: 100vh;
+    background-color: $primary-background;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    article {
+      height: 300px;
+    }
+  }
+
+  &.shouldVojo {
+    background-color: $vojo-cream;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    article {
+      h2 {
+        // border: 2px solid blue;
+        text-align: left;
+      }
+      height: 80vh;
+    }
+  }
+
+  &.howItWorks {
+    background-color: $primary-background;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    img {
+      height: 20vh;
+    }
+
+    .imageList {
+    //   border: 2px solid green;
+      width: 100vw;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      div {
+        // border: 2px solid blue;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        h2 {
+          padding: $base-spacing * 2 0;
+        }
+
+        h3 {
+          text-align: center;
+          width: 150px;
+        }
+      }
+    }
+  }
+
+  &.price {
+    background-color: $vojo-cream;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    article {
+      height: 400px;
+    }
+  }
+}
