@@ -37,7 +37,7 @@ const PageThirtyOne = props => {
   };
 
   const navigateToNext = () => {
-    if (!other === null || !other == "") {
+    if (other !== null || other !== "") {
       setFormValues({
         ...formValues,
         autoImmuneCondition: [...autoImmuneCondition, other]
