@@ -17,10 +17,6 @@ const PageFourteen = props => {
 
   const { whichAllergies } = formValues;
 
-  const updateMasterValues = formValues => {
-    changeMaster({ ...masterValues, ...formValues });
-  };
-
   const updateMasterValuesBackwards = () => {
     changeMaster({ ...masterValues, ...formValues });
   };
