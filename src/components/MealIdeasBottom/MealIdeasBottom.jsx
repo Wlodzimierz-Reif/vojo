@@ -5,12 +5,10 @@ const MealIdeasBottom = props => {
   const { pMealIdeas } = props;
 
   return (
-    <>
-      <div className={styles.mealList}>
-        <p className={styles.dash}>-</p>
-        <p className={styles.belowDash}>{pMealIdeas}</p>
-      </div>
-    </>
+    <div className={styles.mealList}>
+      <p className={styles.dash}>-</p>
+      <p className={styles.belowDash}>{pMealIdeas}</p>
+    </div>
   );
 };
 
