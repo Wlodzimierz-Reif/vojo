@@ -1,6 +1,8 @@
 import React from "react";
 
-import logo from "../../assets/logos/black-logo.png";
+import blackLogo from "../../assets/logos/black-logo.png";
+import tofuLogo from "../../assets/logos/tofu-logo.png";
+
 import strawBerry from "../../assets/characters/strawberry-1.svg";
 import charactersTogether from "../../assets/characters/characters-together.svg";
 import butternut from "../../assets/characters/butternut-1.svg";
@@ -18,14 +20,14 @@ const LandingPage = () => {
   return (
     <>
       <header className={styles.navBar}>
-        <img src={logo} alt="Vojo Logo" />
-        <div>
-          <a href="">Why should you Vojo</a>
-          <a href="">How it works</a>
-          <a href="">Price</a>
-          <div>
+        <img src={blackLogo} alt="Vojo Logo" />
+        <div className={styles.navLinks}>
+          <a href="#shouldVojo">Why you should Vojo</a>
+          <a href="#howItWorks">How it works</a>
+          <a href="#price">Price</a>
+          <div className={styles.authLinks}>
             <a href="">Login</a>
-
+            <p>|</p>
             <a href="">Sign up</a>
           </div>
         </div>
@@ -37,15 +39,15 @@ const LandingPage = () => {
           <h2>It’s time to find your vegan mojo</h2>
           <p>
             Want to personalise your vegan diet based on your DNA? Want to know
-            if your body is getting all the things that it needs? Vojo is here
-            to help you do exactly that.
+            if your body is getting all the things that it needs? <br />
+            Vojo is here to help you do exactly that.
           </p>
-          <div className={styles.button}>
+          <div className={`${styles.button} ${styles.bold}`}>
             <Button btnText={"Sign me up"} />
           </div>
         </article>
       </section>
-      <section className={styles.shouldVojo}>
+      <section className={styles.shouldVojo} id="shouldVojo">
         <img src={charactersTogether} alt="Characters Together" />
         <article>
           <h2>Why you should Vojo</h2>
@@ -80,9 +82,11 @@ const LandingPage = () => {
           </p>
         </article>
       </section>
-      <section className={styles.howItWorks}>
-        <h2>How does it work?</h2>
-        <p>All it takes is these fice easy-peasy steps.</p>
+      <section className={styles.howItWorks} id="howItWorks">
+        <div className={styles.howItWorksTitles}>
+          <h2>How does it work?</h2>
+          <p>All it takes is these fice easy-peasy steps.</p>
+        </div>
         <span className={styles.imageList}>
           <div>
             <img src={butternut} alt="butternut squash character" />
@@ -118,30 +122,41 @@ const LandingPage = () => {
           <Button btnText={"Let's create an account"} />
         </div>
       </section>
-      <section className={styles.price}>
-        <img src={bean} alt="Bean Character" />
+      <section className={styles.price} id="price">
+        <span>
+          <img src={bean} alt="Bean Character" />
 
-        <article>
-          <h2>Price</h2>
-          <h3>Vojo genetic health test</h3>
-          <ul>
-            <li>Product description goes here.</li>
-            <li>Product description goes here.</li>
-            <li>Product description goes here.</li>
-          </ul>
-          <h3>What's included?</h3>
-          <ul>
-            <li>Test specifics go here.</li>
-            <li>Test specifics go here.</li>
-          </ul>
-          <p className={styles.bold}>Price</p>
-          <h2>£120</h2>
-          <div className={styles.button}>
-            <Button btnText={"Let's create an account"} />
-          </div>
-          <a href="">Let's try a free trial</a>
-        </article>
+          <article>
+            <h2>Price</h2>
+            <h3>Vojo genetic health test</h3>
+            <ul>
+              <li>Product description goes here.</li>
+              <li>Product description goes here.</li>
+              <li>Product description goes here.</li>
+            </ul>
+            <h3>What's included?</h3>
+            <ul>
+              <li>Test specifics go here.</li>
+              <li>Test specifics go here.</li>
+            </ul>
+            <p className={styles.bold}>Price</p>
+            <h2>£120</h2>
+          </article>
+        </span>
+        <div className={styles.button}>
+          <Button btnText={"Let's create an account"} />
+        </div>
+        <a href="">Let's try a free trial</a>
       </section>
+      <footer>
+        <img src={tofuLogo} alt="Vojo Logo" />
+        <div className={styles.navLinks}>
+          <a href="">About us</a>
+          <a href="">Take a free trial</a>
+          <a href="">Q&A</a>
+          <a href="">Contact us</a>
+        </div>
+      </footer>
     </>
   );
 };

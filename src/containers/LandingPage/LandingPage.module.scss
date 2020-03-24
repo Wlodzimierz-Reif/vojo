@@ -1,9 +1,5 @@
 @import "../../variables.scss";
 
-img {
-  width: 20vw;
-}
-
 .navBar {
   position: fixed;
   top: 0;
@@ -19,33 +15,34 @@ img {
     height: 100%;
   }
 
-  div {
+  .navLinks {
     display: flex;
-    justify-content: flex-end;
-    width: 60%;
-    border: 2px solid red;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
 
     a {
-      margin: 0 $base-spacing;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
       color: #000;
       text-decoration: none;
     }
 
-    div {
-      width: 25%;
-      position: relative;
+    .authLinks {
       display: flex;
       justify-content: space-evenly;
+      align-items: center;
+
+      p {
+        padding: 0 $base-spacing;
+        color: $primary-color;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
       a {
         color: $primary-color;
         margin: 0;
-        width: 50%;
-
-        &:first-child {
-          border-right: 1px solid $primary-color;
-        }
       }
     }
   }
@@ -53,14 +50,21 @@ img {
 
 section {
   height: 90vh;
+  font-size: 18px;
+  line-height: 24px;
+
+  h2 {
+    width: 400px;
+    font-size: $heading-2-size;
+    line-height: initial;
+  }
 
   article {
     // border: 2px solid red;
-    width: 320px;
+    width: 440px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
   }
 
   .bold {
@@ -73,6 +77,7 @@ section {
     border-radius: 50px;
     overflow: hidden;
   }
+
   &.veganMojo {
     height: 100vh;
     background-color: $primary-background;
@@ -80,39 +85,55 @@ section {
     justify-content: space-evenly;
     align-items: center;
 
+    img {
+      height: 65vh;
+    }
+
     article {
-      height: 300px;
+      height: 370px;
     }
   }
 
   &.shouldVojo {
+    height: 100vh;
     background-color: $vojo-cream;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
+    img {
+      height: 80vh;
+    }
+
     article {
-      h2 {
-        // border: 2px solid blue;
-        text-align: left;
-      }
+      // padding-top: 30px;
       height: 80vh;
     }
   }
 
   &.howItWorks {
+    height: 100vh;
     background-color: $primary-background;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 
+    .howItWorksTitles {
+      padding-top: 20px;
+      height: 180px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
     img {
       height: 20vh;
     }
 
     .imageList {
-    //   border: 2px solid green;
+      //   border: 2px solid green;
       width: 100vw;
       display: flex;
       justify-content: space-evenly;
@@ -127,7 +148,9 @@ section {
         align-items: center;
 
         h2 {
+          width: initial;
           padding: $base-spacing * 2 0;
+          text-align: center;
         }
 
         h3 {
@@ -139,13 +162,64 @@ section {
   }
 
   &.price {
+    height: 100vh;
+    padding-top: 40px;
     background-color: $vojo-cream;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 
+    img {
+      height: 65vh;
+    }
+
+    span {
+      width: 90vw;
+      display: flex;
+      justify-content: space-around;
+    }
+
     article {
-      height: 400px;
+      height: 450px;
+
+      li {
+        list-style-type: none;
+      }
+    }
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: $primary-color;
+      font-size: 20px;
+    }
+  }
+}
+
+footer {
+  height: 10vh;
+  width: 100%;
+  padding: 0 $base-spacing * 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+
+  img {
+    height: 100%;
+  }
+
+  .navLinks {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+
+    a {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
     }
   }
 }

@@ -1,10 +1,60 @@
-body {
-  background-color: #f2e4d0;
+.showPanel {
+  position: absolute;
+  z-index: 2;
 }
 
-.infoCardHolder {
+.nutrientPage {
+  min-width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.nutrientPage .wave {
   width: 100%;
-  height: 100%;
+  position: absolute;
+  z-index: 0;
+  height: 10vh;
+}
+
+.nutrientPage .topContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  padding: 8px 16px;
+}
+
+.nutrientPage .topContainer p {
+  margin: 0;
+  color: #b44370;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nutrientPage .topContainer img {
+  width: 40px;
+  height: 30px;
+}
+
+.nutrientPage h1 {
+  margin-top: 32px;
+  position: relative;
+  color: #5567ae;
+  font-size: 2em;
+  text-align: center;
+  z-index: 1;
+}
+
+.nutrientPage .infoCardHolder {
+  padding: 0;
+  width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -15,15 +65,28 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: none;
 }
 
-.topContainer {
-  height: 187px;
-  background-image: url(../../assets//graphic-devices//grey-wave-top.svg);
+.nutrientPage .bottomContainer {
+  height: 20vh;
+  position: relative;
+}
+
+.nutrientPage .bottomContainer .waveBottom {
+  bottom: 0;
+}
+
+.nutrientPage .bottomContainer .blueBerry {
+  height: 100%;
+  left: 25%;
+  position: absolute;
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
-  .infoCardHolder {
+  .nutrientPage .infoCardHolder {
+    padding: 8px 0;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -34,9 +97,32 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
     overflow-x: auto;
+  }
+  .nutrientPage .topContainer {
+    padding: 8px 64px;
+  }
+  .nutrientPage h1 {
+    margin: 0 0 40px 0;
+  }
+  .nutrientPage .wave {
+    position: absolute;
+    z-index: 0;
+    height: 15vh;
+  }
+  .nutrientPage .bottomContainer {
+    height: 20vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+  }
+  .nutrientPage .bottomContainer .blueBerry {
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
   }
 }
 /*# sourceMappingURL=NutrientsPage.module.css.map */
