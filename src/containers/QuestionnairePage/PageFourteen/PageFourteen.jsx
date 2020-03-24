@@ -46,6 +46,7 @@ const PageFourteen = props => {
         whichAllergies: [...whichAllergies, other]
       });
       changeMaster({
+        ...masterValues,
         ...formValues,
         whichAllergies: [...whichAllergies, other]
       });

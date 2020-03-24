@@ -45,6 +45,7 @@ const PageTwentySeven = props => {
         allSupplements: [...allSupplements, other]
       });
       changeMaster({
+        ...masterValues,
         ...formValues,
         allSupplements: [...allSupplements, other]
       });
