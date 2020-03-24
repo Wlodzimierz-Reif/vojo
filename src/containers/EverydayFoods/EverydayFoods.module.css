@@ -1,34 +1,15 @@
 .listImage {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
   top: 16px;
   padding-left: 20px;
-}
-
-.listImage .dietContainer {
-  height: 100%;
-  width: 100%;
 }
 
 .listImage .dietContainer img {
   display: block;
   width: 40%;
   margin: auto;
-  top: 60vh;
+  top: 30%;
   right: 10vw;
 }
 
@@ -40,34 +21,19 @@
 }
 
 @media only screen and (min-width: 764px) {
-  .listImage {
-    height: 100vh;
-  }
-  .listImage .dietContainer {
-    height: 100%;
-  }
   .listImage .dietContainer img {
     position: absolute;
-    top: 50vh;
-    display: block;
-    width: 30%;
+    width: 20%;
     margin-left: 70%;
+    top: 50%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  .listImage {
-    height: 100vh;
-  }
-  .listImage .dietContainer {
-    height: 100vh;
-  }
   .listImage .dietContainer img {
     position: absolute;
-    top: 50vh;
-    display: block;
-    width: 20%;
-    margin-left: 70%;
+    width: 15%;
+    top: 40%;
   }
 }
 /*# sourceMappingURL=EverydayFoods.module.css.map */
