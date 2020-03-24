@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./LandingPage.module.scss";
 
 import blackLogo from "../../assets/logos/black-logo.png";
 import tofuLogo from "../../assets/logos/tofu-logo.png";
@@ -10,13 +11,13 @@ import pickle from "../../assets/characters/pickle-1.svg";
 import drBlueberry from "../../assets/characters/blueberry-2.svg";
 import beetrootRunner from "../../assets/characters/beetroot-2.svg";
 import walnut from "../../assets/characters/walnut-2.svg";
-
 import bean from "../../assets/characters/bean-2.svg";
 
 import Button from "../../components/Button";
-import styles from "./LandingPage.module.scss";
 
-const LandingPage = () => {
+const LandingPage = props => {
+  const { signInWithRedirect, signOut } = props;
+
   return (
     <>
       <header className={styles.navBar}>
@@ -26,9 +27,7 @@ const LandingPage = () => {
           <a href="#howItWorks">How it works</a>
           <a href="#price">Price</a>
           <div className={styles.authLinks}>
-            <a href="">Login</a>
-            <p>|</p>
-            <a href="">Sign up</a>
+            <a onClick={signInWithRedirect}>Login</a>
           </div>
         </div>
       </header>
@@ -43,7 +42,7 @@ const LandingPage = () => {
             Vojo is here to help you do exactly that.
           </p>
           <div className={`${styles.button} ${styles.bold}`}>
-            <Button btnText={"Sign me up"} />
+            <Button btnText={"Sign me up"} handleClick={signInWithRedirect} />
           </div>
         </article>
       </section>
@@ -119,7 +118,10 @@ const LandingPage = () => {
           </div>
         </span>
         <div className={styles.button}>
-          <Button btnText={"Let's create an account"} />
+          <Button
+            btnText={"Let's create an account"}
+            handleClick={signInWithRedirect}
+          />
         </div>
       </section>
       <section className={styles.price} id="price">
@@ -144,7 +146,10 @@ const LandingPage = () => {
           </article>
         </span>
         <div className={styles.button}>
-          <Button btnText={"Let's create an account"} />
+          <Button
+            btnText={"Let's create an account"}
+            handleClick={signInWithRedirect}
+          />
         </div>
         <a href="">Let's try a free trial</a>
       </section>

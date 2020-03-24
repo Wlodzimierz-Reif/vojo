@@ -30,10 +30,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 40%;
+  width: 550px;
 }
 
 .navBar .navLinks a {
+  cursor: pointer;
   font-size: 16px;
   font-weight: bold;
   color: #000;
@@ -99,6 +100,10 @@ section .button {
   width: 250px;
   border-radius: 50px;
   overflow: hidden;
+}
+
+section .button :hover {
+  cursor: pointer;
 }
 
 section.veganMojo {
@@ -301,7 +306,7 @@ footer .navLinks {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 40%;
+  width: 550px;
 }
 
 footer .navLinks a {

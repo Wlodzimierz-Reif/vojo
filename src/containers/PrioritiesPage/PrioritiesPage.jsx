@@ -8,7 +8,7 @@ import Arrow from "../../assets/graphic-devices/primary-col-arrow-1.svg";
 import { Link } from "@reach/router";
 
 const PrioritiesPage = props => {
-  const { haveSample } = props;
+  const { haveSample , signInWithRedirect, signOut } = props;
 
   const [isPromptShown, togglePromptShown] = useState(haveSample);
 
@@ -17,6 +17,8 @@ const PrioritiesPage = props => {
   return (
     <>
       <NavBar links={["Food"]} />
+      <button onClick={signInWithRedirect}>Sign In</button>
+      <button onClick={signOut}>Sign Out</button>
       <section className={styles.prioritiesPage}>
         <h2>Priorities</h2>
         <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
@@ -24,7 +26,7 @@ const PrioritiesPage = props => {
         </div>
         <div>
           <div className={styles.yourNutrients}>
-            <h3>Get Some Nutrients!</h3>
+         <h3>Get Some Nutrients!</h3>
             <Link to="../nutrients-page" className={styles.link}>
               <div>
                 <p>Your nutrients</p>
