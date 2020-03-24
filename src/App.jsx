@@ -10,8 +10,6 @@ const App = () => {
 
   const [user, setUser] = useState(null);
 
-  console.log(user);
-
   const signInWithRedirect = () => {
     firebase.auth().signInWithRedirect(provider)
   };
@@ -20,10 +18,6 @@ const App = () => {
     firebase.auth()
     .getRedirectResult()
     .then(result => {
-      if (result.credential) {
-        const token = result.credential.accessToken
-        console.log(token)
-      }
       const user = result.user;
       setUser(user);
     })
@@ -50,7 +44,7 @@ const App = () => {
 
   useEffect(() => {
     getUser();
-  }, []);
+  }, [user]);
 
 
 
