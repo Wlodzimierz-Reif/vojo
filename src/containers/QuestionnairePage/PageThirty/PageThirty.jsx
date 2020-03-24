@@ -43,6 +43,7 @@ const PageThirty = props => {
         whichPrescriptionMeds: [...whichPrescriptionMeds, other]
       });
       changeMaster({
+        ...masterValues,
         ...formValues,
         whichPrescriptionMeds: [...whichPrescriptionMeds, other]
       });
