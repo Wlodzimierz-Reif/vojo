@@ -36,9 +36,27 @@ import PageThirtyOne from "./PageThirtyOne";
 import PageThirtyTwo from "./PageThirtyTwo";
 import PageThirtyThree from "./PageThirtyThree";
 import PageThirtyFour from "./PageThirtyFour";
+import { firestore } from "../../firebase";
 
 const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
+
+  // const getMasterValue = () => {
+  //   changeMaster({ ...masterValues, ...formValues });
+  // };
+
+  const addToDb = user => {
+    // logic to add to db
+
+    firestore
+      .collection("users")
+      .doc(user.uid)
+      .add(formValues)
+      .then(result => {
+        console.log(result);
+      })
+      .catch(err => console.log(err));
+  };
 
   return (
     <>
@@ -209,11 +227,7 @@ const QuestionnairePage = () => {
           masterValues={formValues}
           changeMaster={setFormValues}
         />
-        <PageThirtyFour
-          path="page-thirty-four"
-          masterValues={formValues}
-          changeMaster={setFormValues}
-        />
+        <PageThirtyFour path="page-thirty-four" addToDb={addToDb} />
 
         <NotFound default />
       </Router>
