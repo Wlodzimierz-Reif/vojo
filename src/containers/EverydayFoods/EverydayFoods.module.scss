@@ -21,12 +21,12 @@
       color: $secondary-color;
       font-weight: 600;
       margin: $base-spacing * 2 0 $base-spacing * 6 0;
-      font-size: $base-spacing * 3.5;
+      font-size: 28px;
     }
   }
 }
 
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 764px) {
   .listImage {
     padding-top: 50px;
     padding-left: 50px;
@@ -34,7 +34,7 @@
 
   .listImage img {
     position: absolute;
-    top: 60vh;
+    top: 45vh;
     display: block;
     width: 20%;
     margin-left: 70%;
