@@ -1,28 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./NutrientsPage.module.scss";
 import InfoCard from "../../components/InfoCard";
 import logo from "../../assets/logos/primary-logo.png";
-import topWave from "../../assets//graphic-devices/grey-wave-top.svg";
-import bottomWave from "../../assets//graphic-devices/grey-wave-bottom.svg";
-import blueBerry from "../../assets/characters/blueberry-2.svg";
 import SidePanel from "../SidePanel";
 import { Link } from "@reach/router";
 
-const NutrientsPage = () => {
-  const [currentState, updateState] = useState(false);
+const NutrientsPage = props => {
+  const { nutrients } = props;
+
+  const [high, updateHigh] = useState([]);
+  const [raised, updateRaised] = useState([]);
+  const [slightlyRaised, updateSlightlyRaised] = useState([]);
+  const [normal, updateNormal] = useState([]);
+  const [lower, updateLower] = useState([]);
+
+  const [isPanelDisplayed, updateDisplay] = useState(false);
   const [currentColor, updateColor] = useState("red");
-  const insertJsx = currentState ? (
+  const [currentNutrient, updateNutrient] = useState(null);
+
+  const insertJsx = isPanelDisplayed ? (
     <SidePanel
       displayStyle={currentColor}
-      handleClick={() => updateState(!currentState)}
+      handleClick={() => updateDisplay(!isPanelDisplayed)}
+      nutrient={currentNutrient}
     />
   ) : null;
+
+  useEffect(() => {
+    updateHigh(nutrients.filter(nutrient => checkTheLevel(nutrient, "high")));
+    updateRaised(
+      nutrients.filter(nutrient => checkTheLevel(nutrient, "slightly raised"))
+    );
+    updateSlightlyRaised(
+      nutrients.filter(nutrient => checkTheLevel(nutrient, "raised"))
+    );
+    updateNormal(
+      nutrients.filter(nutrient => checkTheLevel(nutrient, "normal"))
+    );
+
+    updateLower(nutrients.filter(nutrient => checkTheLevel(nutrient, "lower")));
+  }, [nutrients]);
+
+  const checkTheLevel = (nutrient, level) =>
+    nutrient["requirement-category"] === level;
+
+  const mapFunction = array => {
+    return array.map(item => (
+      <InfoCard
+        nutrient={item}
+        displayPanel={(nutrient, displayStyle) => {
+          updateNutrient(nutrient);
+          updateColor(displayStyle);
+          updateDisplay(!isPanelDisplayed);
+        }}
+      />
+    ));
+  };
 
   return (
     <>
       <section className={styles.showPanel}>{insertJsx}</section>
       <section className={styles.nutrientPage}>
-        <img src={topWave} alt="" className={styles.wave} />
         <div className={styles.topContainer}>
           <img src={logo} alt="vojo logo" />
           <Link to="../priorities-page">
@@ -30,106 +68,12 @@ const NutrientsPage = () => {
           </Link>
         </div>
         <h1>Nutrients</h1>
-        <div className={styles.infoCardHolder} data-simplebar>
-          <InfoCard
-            displayStyle={"red"}
-            nutrientName={"B12"}
-            nutrientNeed="High"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-      Great news – you are a good converter of beta-carotene to vitamin A!
-      Learn more"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"red"}
-            nutrientName={"B12"}
-            nutrientNeed="High"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-      Great news – you are a good converter of beta-carotene to vitamin A!
-      Learn more"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"orange"}
-            nutrientName={"B12"}
-            nutrientNeed="Raised"
-            nutrientAdvice="You may have raised B12 requirements. Supplement at least 50 µg/day. If you go vegan, you are recommend to supplement a minimum of this recommended dose of B12 every day. Even while you’re not yet vegan, you might still benefit from supplementing with B12 if you're not eating animal foods every day."
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"yellow"}
-            nutrientName={"B12"}
-            nutrientNeed="Normal"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"yellow"}
-            nutrientName={"B12"}
-            nutrientNeed="Normal"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"green"}
-            nutrientName={"B12"}
-            nutrientNeed="Lower"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"green"}
-            nutrientName={"B12"}
-            nutrientNeed="Lower"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"green"}
-            nutrientName={"B12"}
-            nutrientNeed="Lower"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"green"}
-            nutrientName={"B12"}
-            nutrientNeed="Lower"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-          <InfoCard
-            displayStyle={"green"}
-            nutrientName={"B12"}
-            nutrientNeed="Lower"
-            nutrientAdvice="Your recommended intake: 5 mg/day
-              Great news – you are a good converter of beta-carotene to vitamin A!"
-            handleClick={() => updateState(!currentState)}
-            changeColor={color => updateColor(color)}
-          />
-        </div>
-        <div className={styles.bottomContainer}>
-          <img src={blueBerry} className={styles.blueBerry} alt="" />
-          <img
-            src={bottomWave}
-            className={`${styles.wave} ${styles.waveBottom}`}
-            alt=""
-          />
+        <div className={styles.infoCardHolder}>
+          {mapFunction(high)}
+          {mapFunction(slightlyRaised)}
+          {mapFunction(raised)}
+          {mapFunction(normal)}
+          {mapFunction(lower)}
         </div>
       </section>
     </>

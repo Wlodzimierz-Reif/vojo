@@ -24,7 +24,7 @@ const PrioritiesPage = props => {
         </div>
         <div>
           <div className={styles.yourNutrients}>
-            <h3>Get Some Nutrients!</h3>
+         <h3>Get Some Nutrients!</h3>
             <Link to="../nutrients-page" className={styles.link}>
               <div>
                 <p>Your nutrients</p>

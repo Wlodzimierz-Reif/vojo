@@ -3,12 +3,13 @@ import "./App.module.scss";
 import Routes from "./containers/Routes";
 import styles from "./App.module.scss";
 
+
+
 const App = () => {
   return (
     <>
-      <section className={styles.mainBody}>
-        <Routes />
-      </section>
+      <Routes />
+      
     </>
   );
 };
