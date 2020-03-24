@@ -4,12 +4,12 @@ import { Router, Redirect } from "@reach/router";
 import HomePage from "../HomePage";
 import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
+import QuestionnairePage from "../QuestionnairePage";
 import PrioritiesPage from "../PrioritiesPage";
 import Footer from "../../components/Footer";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import mockData from "../../data";
 import RegisterDNA from "../RegisterDNA";
-
 import DietBreakdown from "../DietBreakdown";
 
 const Routes = (props) => {
@@ -28,6 +28,7 @@ const Routes = (props) => {
         <PrioritiesPage path="priorities-page" signInWithRedirect={signIn} signOut={signOut} />
         <PaymentPage path="payment-page" />
         <RegisterDNA path="register-dna" />
+        <QuestionnairePage path="questionnaire-page/*" />
         <NotFound default />
         <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
       </Router>
