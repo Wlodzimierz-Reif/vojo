@@ -5,7 +5,7 @@
   flex-direction: column;
   align-content: center;
   justify-content: space-evenly;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   margin: auto;
   overflow: hidden;
@@ -37,7 +37,7 @@
     height: 100vh;
 
     .dietContainer {
-      height: 100vh;
+      height: 100%;
 
       img {
         position: absolute;
