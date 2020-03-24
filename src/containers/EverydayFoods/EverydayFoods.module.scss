@@ -34,14 +34,9 @@
 
 @media only screen and (min-width: 764px) {
   .listImage {
-    // height: 100%;
-
     .dietContainer {
-      // height: 100%;
-
       img {
         position: absolute;
-        // display: block;
         width: 20%;
         margin-left: 70%;
         top: 50%;
@@ -55,10 +50,8 @@
     .dietContainer {
       img {
         position: absolute;
-        // display: block;
         width: 15%;
-        top: 40%;
-        // margin-left: 70%;
+        top: 45%;
       }
     }
   }
