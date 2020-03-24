@@ -37,15 +37,26 @@ const PageThirtyOne = props => {
   };
 
   const navigateToNext = () => {
-    if (other !== null || other !== "") {
+    if (other !== null && other !== "") {
       setFormValues({
+        ...formValues,
+        autoImmuneCondition: [...autoImmuneCondition, other]
+      });
+      changeMaster({
         ...masterValues,
         ...formValues,
         autoImmuneCondition: [...autoImmuneCondition, other]
       });
+    } else {
+      changeMaster({
+        ...masterValues,
+        ...formValues,
+        autoImmuneCondition: [...autoImmuneCondition]
+      });
     }
     navigate("/questionnaire-page/page-thirty-two");
   };
+
   const handleInputValue = inputVal => {
     setOther(inputVal);
   };

@@ -52,6 +52,7 @@ const PageFourteen = props => {
       });
     } else {
       changeMaster({
+        ...masterValues,
         ...formValues,
         whichAllergies: [...whichAllergies]
       });

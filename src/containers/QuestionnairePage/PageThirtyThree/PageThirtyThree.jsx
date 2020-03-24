@@ -43,11 +43,13 @@ const PageThirtyThree = props => {
         familyHistory: [...familyHistory, other]
       });
       changeMaster({
+        ...masterValues,
         ...formValues,
         familyHistory: [...familyHistory, other]
       });
     } else {
       changeMaster({
+        ...masterValues,
         ...formValues,
         familyHistory: [...familyHistory]
       });

@@ -49,6 +49,7 @@ const PageThirty = props => {
       });
     } else {
       changeMaster({
+        ...masterValues,
         ...formValues,
         whichPrescriptionMeds: [...whichPrescriptionMeds]
       });

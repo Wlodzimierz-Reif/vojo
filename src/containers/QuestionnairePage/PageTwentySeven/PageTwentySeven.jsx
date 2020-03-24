@@ -51,6 +51,7 @@ const PageTwentySeven = props => {
       });
     } else {
       changeMaster({
+        ...masterValues,
         ...formValues,
         allSupplements: [...allSupplements]
       });

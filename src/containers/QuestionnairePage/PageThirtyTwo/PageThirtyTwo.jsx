@@ -43,11 +43,13 @@ const PageThirtyTwo = props => {
         diagnosedCondition: [...diagnosedCondition, other]
       });
       changeMaster({
+        ...masterValues,
         ...formValues,
         diagnosedCondition: [...diagnosedCondition, other]
       });
     } else {
       changeMaster({
+        ...masterValues,
         ...formValues,
         diagnosedCondition: [...diagnosedCondition]
       });
