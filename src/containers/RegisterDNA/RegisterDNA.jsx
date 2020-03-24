@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./RegisterDNA.module.scss";
 import InputField from "../../components/InputField";
 import Button from "../../components/Button";
-import DNAimage from "../../assets/misc/barcode-dna.jpg";
+import DNAimage from "../../assets/misc/barcode.jpg";
 import { useState } from "react";
 
 const RegisterDNA = () => {
