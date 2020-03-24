@@ -3,7 +3,7 @@ import styles from "../EverydayFoods/EverydayFoods.module.scss";
 import InfoList from "../../components/InfoList";
 import Image from "../../assets/characters/characters-together.svg";
 
-const EverydayFoods = props => {
+const EverydayFoods = () => {
   return (
     <>
       <div className={styles.listImage}>
@@ -43,8 +43,8 @@ const EverydayFoods = props => {
               "We all have that food... and yours is a good dose of dark chocolate now and again!"
             }
           />
+          <img src={Image} alt="characters-together" />
         </section>
-        <img src={Image} alt="characters-together" />
       </div>
     </>
   );
