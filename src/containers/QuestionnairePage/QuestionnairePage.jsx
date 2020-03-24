@@ -40,8 +40,16 @@ import PageThirtyFour from "./PageThirtyFour";
 const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
 
+  const keysLength = Object.keys(formValues).length;
+  console.log(keysLength);
+
+  const percentage = (keysLength / 59) * 100;
+  console.log(percentage);
+  console.log(formValues);
+
   return (
     <>
+      <p>dsfjhdsfjsfkdsjf</p>
       <Router>
         <Redirect noThrow from="/" to="page-one" />
         <PageOne

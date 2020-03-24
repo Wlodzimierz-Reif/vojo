@@ -23,7 +23,7 @@ const PageFourteen = props => {
 
   const handleCheckToggle = inputVal => {
     const isPresent = whichAllergies.includes(inputVal);
-    if (isPresent === true) {
+    if (isPresent === false) {
       const newArray = [...whichAllergies];
       const valPosition = whichAllergies.indexOf(inputVal);
       newArray.splice(valPosition, 1);
