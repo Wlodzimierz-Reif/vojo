@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./PageTwentySeven.module.scss";
 import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
-import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/carrot-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
@@ -16,10 +15,6 @@ const PageTwentySeven = props => {
   const { allSupplements } = formValues;
 
   const [other, setOther] = useState(null);
-
-  const updateMasterValues = formValues => {
-    changeMaster({ ...masterValues, ...formValues });
-  };
 
   const updateMasterValuesBackwards = () => {
     changeMaster({ ...masterValues, ...formValues });
@@ -50,11 +45,13 @@ const PageTwentySeven = props => {
         allSupplements: [...allSupplements, other]
       });
       changeMaster({
+        ...masterValues,
         ...formValues,
         allSupplements: [...allSupplements, other]
       });
     } else {
       changeMaster({
+        ...masterValues,
         ...formValues,
         allSupplements: [...allSupplements]
       });
@@ -75,12 +72,14 @@ const PageTwentySeven = props => {
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValuesBackwards}
+              alt="arrow"
             />
           </Link>
           <img
             className={styles.rightArrow}
             src={Arrow}
             onClick={navigateToNext}
+            alt="arrow"
           />
         </div>
         <section>

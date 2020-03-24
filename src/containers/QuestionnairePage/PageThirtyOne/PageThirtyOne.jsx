@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./PageThirtyOne.module.scss";
 import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
-import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/pickle-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
@@ -38,21 +37,28 @@ const PageThirtyOne = props => {
   };
 
   const navigateToNext = () => {
-    if (!other === null || !other == "") {
+    if (other !== null && other !== "") {
       setFormValues({
         ...formValues,
         autoImmuneCondition: [...autoImmuneCondition, other]
       });
+      changeMaster({
+        ...masterValues,
+        ...formValues,
+        autoImmuneCondition: [...autoImmuneCondition, other]
+      });
+    } else {
+      changeMaster({
+        ...masterValues,
+        ...formValues,
+        autoImmuneCondition: [...autoImmuneCondition]
+      });
     }
     navigate("/questionnaire-page/page-thirty-two");
   };
+
   const handleInputValue = inputVal => {
     setOther(inputVal);
-  };
-
-  const updateMasterNavigateWrapperFunction = () => {
-    updateMasterValues();
-    navigateToNext();
   };
 
   return (
@@ -64,13 +70,15 @@ const PageThirtyOne = props => {
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValues}
+              alt="arrow"
             />
           </Link>
           <Link to="../page-thirty-two">
             <img
               className={styles.rightArrow}
               src={Arrow}
-              onClick={updateMasterValues}
+              onClick={navigateToNext}
+              alt="arrow"
             />
           </Link>
         </div>

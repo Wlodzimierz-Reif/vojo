@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import styles from "./PageTwentyOne.module.scss";
-import InputLabel from "../../../components/InputLabel";
-import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
-import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/pickle-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import { Link } from "@reach/router";
@@ -25,6 +22,7 @@ const PageTwentyOne = props => {
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValues}
+              alt="arrow"
             />
           </Link>
           <Link to="../page-twenty-two">
@@ -32,6 +30,7 @@ const PageTwentyOne = props => {
               className={styles.rightArrow}
               src={Arrow}
               onClick={updateMasterValues}
+              alt="arrow"
             />
           </Link>
         </div>

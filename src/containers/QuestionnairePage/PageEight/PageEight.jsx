@@ -3,7 +3,6 @@ import styles from "./PageEight.module.scss";
 import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
-import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/beetroot-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import { Link } from "@reach/router";
@@ -25,6 +24,7 @@ const PageEight = props => {
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValues}
+              alt="arrow"
             />
           </Link>
           <Link to="../page-nine">
@@ -32,6 +32,7 @@ const PageEight = props => {
               className={styles.rightArrow}
               src={Arrow}
               onClick={updateMasterValues}
+              alt="arrow"
             />
           </Link>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./QuestionnairePage.module.scss";
+// import styles from "./QuestionnairePage.module.scss";
 import { Router, Redirect } from "@reach/router";
 import NotFound from "../NotFound";
 import PageOne from "./PageOne";

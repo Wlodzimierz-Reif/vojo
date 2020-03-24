@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./RadioButton.module.scss";
 
 const RadioButton = props => {
   const { text, name, value, startChecked, selectRadio } = props;
-  const [isChecked, toggleCheckedState] = useState(startChecked);
 
   return (
     <section className={styles.radioButton}>

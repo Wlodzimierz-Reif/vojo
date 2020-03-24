@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import styles from "./PageFive.module.scss";
-import InputLabel from "../../../components/InputLabel";
-import InputField from "../../../components/InputField";
 import RadioButton from "../../../components/RadioButton";
-import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/peanut-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import { Link } from "@reach/router";
@@ -26,6 +23,7 @@ const PageFive = props => {
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValues}
+              alt="arrow"
             />
           </Link>
           <Link to="../page-six">
@@ -33,6 +31,7 @@ const PageFive = props => {
               className={styles.rightArrow}
               src={Arrow}
               onClick={updateMasterValues}
+              alt="arrow"
             />
           </Link>
         </div>

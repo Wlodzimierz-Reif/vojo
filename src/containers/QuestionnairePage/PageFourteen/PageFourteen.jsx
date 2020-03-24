@@ -46,11 +46,13 @@ const PageFourteen = props => {
         whichAllergies: [...whichAllergies, other]
       });
       changeMaster({
+        ...masterValues,
         ...formValues,
         whichAllergies: [...whichAllergies, other]
       });
     } else {
       changeMaster({
+        ...masterValues,
         ...formValues,
         whichAllergies: [...whichAllergies]
       });
@@ -71,12 +73,14 @@ const PageFourteen = props => {
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValuesBackwards}
+              alt="arrow"
             />
           </Link>
           <img
             className={styles.rightArrow}
             src={Arrow}
             onClick={navigateToNext}
+            alt="arrow"
           />
         </div>
         <section>

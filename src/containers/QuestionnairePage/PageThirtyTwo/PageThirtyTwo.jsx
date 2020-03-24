@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./PageThirtyTwo.module.scss";
 import InputLabel from "../../../components/InputLabel";
 import InputField from "../../../components/InputField";
-import RadioButton from "../../../components/RadioButton";
 import CheckBox from "../../../components/CheckBox";
 import Image from "../../../assets/characters/beetroot-1.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
@@ -14,10 +13,6 @@ const PageThirtyTwo = props => {
   const [formValues, setFormValues] = useState({ diagnosedCondition: [] });
   const { diagnosedCondition } = formValues;
   const [other, setOther] = useState(null);
-
-  const updateMasterValues = formValues => {
-    changeMaster({ ...masterValues, ...formValues });
-  };
 
   const updateMasterValuesBackwards = () => {
     changeMaster({ ...masterValues, ...formValues });
@@ -48,11 +43,13 @@ const PageThirtyTwo = props => {
         diagnosedCondition: [...diagnosedCondition, other]
       });
       changeMaster({
+        ...masterValues,
         ...formValues,
         diagnosedCondition: [...diagnosedCondition, other]
       });
     } else {
       changeMaster({
+        ...masterValues,
         ...formValues,
         diagnosedCondition: [...diagnosedCondition]
       });
@@ -73,6 +70,7 @@ const PageThirtyTwo = props => {
               className={styles.leftArrow}
               src={Arrow}
               onClick={updateMasterValuesBackwards}
+              alt="arrow"
             />
           </Link>
           <Link to="../page-thirty-three">
@@ -80,6 +78,7 @@ const PageThirtyTwo = props => {
               className={styles.rightArrow}
               src={Arrow}
               onClick={navigateToNext}
+              alt="arrow"
             />
           </Link>
         </div>

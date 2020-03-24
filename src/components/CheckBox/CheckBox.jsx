@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./CheckBox.module.scss";
 
 const CheckBox = props => {
   const { text, value, startChecked, selectCheckBox } = props;
-
-  const [isChecked, toggleCheckedState] = useState(startChecked);
 
   return (
     <label className={styles.container}>
