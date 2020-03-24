@@ -1,0 +1,42 @@
+body {
+  background-color: #f2e4d0;
+}
+
+.infoCardHolder {
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.topContainer {
+  height: 187px;
+  background-image: url(../../assets//graphic-devices//grey-wave-top.svg);
+}
+
+@media screen and (min-width: 768px) {
+  .infoCardHolder {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}
+/*# sourceMappingURL=NutrientsPage.module.css.map */

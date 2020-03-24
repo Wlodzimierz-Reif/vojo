@@ -1,14 +1,53 @@
 import React from "react";
-// import styles from "./App.module.scss";
-import Router from "../src/containers/Routes";
-// import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
+import "./App.module.scss";
+import Routes from "./containers/Routes";
+import { useState, useEffect } from "react";
+import firebase, { provider } from "./firebase";
 
 const App = () => {
+  const [user, setUser] = useState(null);
+
+  const signInWithRedirect = () => {
+    firebase.auth().signInWithRedirect(provider);
+  };
+
+  const getUser = () => {
+    firebase
+      .auth()
+      .getRedirectResult()
+      .then(result => {
+        setUser(result.user);
+      })
+      .catch(error => {
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
+        // const email = error.email;
+        // const credential = error.credential;
+        // console.log(errorCode, errorMessage, email, credential);
+        console.log(error);
+      });
+  };
+
+  const signOut = () => {
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        setUser(null);
+        alert("You have signed out");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getUser();
+  },[]);
+
   return (
     <>
-      <Router />
-      <Footer />
+      <Routes signOut={signOut} signIn={signInWithRedirect} user={user}/>
     </>
   );
 };

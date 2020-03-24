@@ -1,0 +1,52 @@
+.card {
+  border: 2px solid #e94842;
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  height: 100%;
+  background-color: #f9d1cf;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  max-width: 320px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.card h2 {
+  font-size: 2.5em;
+  padding: 8px 0;
+}
+
+.card p {
+  line-height: 24px;
+}
+
+.card .link {
+  margin-top: 8px;
+  text-decoration: underline;
+}
+
+.card.orange {
+  border: 2px solid #ef7d40;
+  background-color: #fbdecf;
+}
+
+.card.yellow {
+  border: 2px solid #efbd3f;
+  background-color: #fbeecf;
+}
+
+.card.green {
+  border: 2px solid #82a44d;
+  background-color: #dfe8d2;
+}
+/*# sourceMappingURL=InfoCard.module.css.map */
