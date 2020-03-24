@@ -1,6 +1,6 @@
 .inputField {
   font-family: inherit;
-  border: 2px solid #cc9a63;
+  border: 2px solid #CC9A63;
   border-radius: 5px;
   outline: none;
   width: 100%;
@@ -13,5 +13,20 @@
 .inputField:focus {
   font-weight: 500;
   border-color: #ef7d40;
+}
+
+@media only screen and (max-width: 440px) {
+  .inputField::-webkit-input-placeholder {
+    font-size: 11px;
+  }
+  .inputField:-ms-input-placeholder {
+    font-size: 11px;
+  }
+  .inputField::-ms-input-placeholder {
+    font-size: 11px;
+  }
+  .inputField::placeholder {
+    font-size: 11px;
+  }
 }
 /*# sourceMappingURL=InputField.module.css.map */

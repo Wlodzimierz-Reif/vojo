@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: gt-walsheim;
+  font-weight: normal;
+}
+
 @font-face {
   font-family: "gt-walsheim";
   src: url(./assets/fonts/gt-walsheim-pro-light.woff2);
@@ -12,7 +21,11 @@
   font-style: normal;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-weight: bold;
 }
 
@@ -23,197 +36,5 @@ h1, h2, h3, h4, h5 {
           box-sizing: border-box;
   font-family: gt-walsheim;
   font-weight: normal;
-}
-
-.nav {
-  height: 80px;
-}
-
-.topFlex {
-  height: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.topFlex .button {
-  height: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.topFlex .button .buttonContainer {
-  margin: 20px;
-  height: 40px;
-  width: 80px;
-}
-
-.topFlex .checkBox {
-  height: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.topFlex .checkBox .checkBoxContainer {
-  margin: 20px;
-  height: 40px;
-  width: 150px;
-}
-
-.topFlex .slider {
-  height: 150px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.topFlex .slider .sliderContainer {
-  margin: 12px;
-  height: 10px;
-  width: 300px;
-}
-
-.middleFlex {
-  height: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.middleFlex .infoCard {
-  height: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.middleFlex .infoCard .infoCardContainer {
-  height: 300px;
-  width: 400px;
-}
-
-.middleFlex .input {
-  height: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.middleFlex .input .label {
-  margin: 5px 0;
-}
-
-.middleFlex .input .inputContainer {
-  width: 400px;
-  height: 30px;
-}
-
-.bottomFlex {
-  height: 350px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.bottomFlex .priority {
-  height: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.bottomFlex .priority .priorityContainer {
-  margin-top: 50px;
-  height: 180px;
-  width: 420px;
-}
-
-.bottomFlex .vegPersonBox {
-  height: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.bottomFlex .vegPersonBox .vegPersonBoxContainer {
-  height: 300px;
-  width: 300px;
-}
-
-.bottomFlex .vegPersonBox .vegPictureBoxContainer {
-  height: 300px;
-  width: 300px;
 }
 /*# sourceMappingURL=App.module.css.map */

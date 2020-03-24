@@ -1,0 +1,73 @@
+.listImage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  top: 16px;
+  padding-left: 20px;
+}
+
+.listImage .dietContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.listImage .dietContainer img {
+  display: block;
+  width: 40%;
+  margin: auto;
+  top: 60vh;
+  right: 10vw;
+}
+
+.listImage .dietContainer .title {
+  color: #5567ae;
+  font-weight: 600;
+  margin: 16px 0 48px 0;
+  font-size: 28px;
+}
+
+@media only screen and (min-width: 764px) {
+  .listImage {
+    height: 100vh;
+  }
+  .listImage .dietContainer {
+    height: 100%;
+  }
+  .listImage .dietContainer img {
+    position: absolute;
+    top: 50vh;
+    display: block;
+    width: 30%;
+    margin-left: 70%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .listImage {
+    height: 100vh;
+  }
+  .listImage .dietContainer {
+    height: 100vh;
+  }
+  .listImage .dietContainer img {
+    position: absolute;
+    top: 50vh;
+    display: block;
+    width: 20%;
+    margin-left: 70%;
+  }
+}
+/*# sourceMappingURL=EverydayFoods.module.css.map */
