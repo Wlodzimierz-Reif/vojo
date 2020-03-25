@@ -26,6 +26,7 @@ const PageOne = props => {
                 className={styles.leftArrow}
                 src={Arrow}
                 onClick={updateMasterValues}
+                alt="Previous Page"
               />
             </Link>
             <Link to="../page-two">
@@ -33,6 +34,7 @@ const PageOne = props => {
                 className={styles.rightArrow}
                 src={Arrow}
                 onClick={updateMasterValues}
+                alt="Next Page"
               />
             </Link>
           </div>
