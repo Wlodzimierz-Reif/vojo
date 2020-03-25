@@ -42,8 +42,6 @@ const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
 
   const keysLength = Object.keys(formValues).length;
-  console.log(keysLength);
-  console.log(formValues);
 
   const percentage = Math.floor((keysLength / 59) * 100);
   useEffect(() => window.scrollTo(0, 0));
