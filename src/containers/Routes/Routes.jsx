@@ -42,7 +42,6 @@ const Routes = props => {
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
         </PrivateRoutes>
       </Router>
-      
     </>
   );
 };
