@@ -17,10 +17,6 @@ const Routes = props => {
   const { signIn, signOut, user } = props;
   const [userData, setUserData] = useState(null);
 
-  // Any object, any key that contains the words
-  // "recommendation" or "action" place into
-  // new recommendations array
-
   const fetchUserData = () => {
     if (user) {
       firestore
@@ -36,6 +32,7 @@ const Routes = props => {
 
   useEffect(() => {
     fetchUserData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   const nutrientsJSX = userData ? (
