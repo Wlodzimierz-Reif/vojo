@@ -19,11 +19,6 @@ const App = () => {
         setUser(result.user);
       })
       .catch(error => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // const email = error.email;
-        // const credential = error.credential;
-        // console.log(errorCode, errorMessage, email, credential);
         console.log(error);
       });
   };
@@ -43,11 +38,11 @@ const App = () => {
 
   useEffect(() => {
     getUser();
-  },[]);
+  }, []);
 
   return (
     <>
-      <Routes signOut={signOut} signIn={signInWithRedirect} user={user}/>
+      <Routes signOut={signOut} signIn={signInWithRedirect} user={user} />
     </>
   );
 };
