@@ -10,14 +10,6 @@
   justify-content: center;
   align-items: center;
 
-  .progressBar {
-    background-color: $primary-background;
-    // display: flex;
-    // justify-content: center;
-    //   position: fixed;
-    //   top: 0;
-  }
-
   .box {
     height: max-content;
     width: 30%;
@@ -71,12 +63,6 @@
 @media only screen and (min-width: 764px) {
   .page {
     align-items: center;
-
-    .progressBar {
-      background-color: $primary-background;
-      position: fixed;
-      top: 0;
-    }
 
     .questionPerson {
       display: unset;
