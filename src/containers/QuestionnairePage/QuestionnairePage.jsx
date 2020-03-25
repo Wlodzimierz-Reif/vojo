@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import styles from "./QuestionnairePage.module.scss";
+import styles from "./QuestionnairePage.module.scss";
 import { Router, Redirect } from "@reach/router";
 import NotFound from "../NotFound";
 import PageOne from "./PageOne";
@@ -36,8 +36,11 @@ import PageThirtyOne from "./PageThirtyOne";
 import PageThirtyTwo from "./PageThirtyTwo";
 import PageThirtyThree from "./PageThirtyThree";
 import PageThirtyFour from "./PageThirtyFour";
+
 import firebase, { provider, firestore } from "../../firebase";
 import MockData from "../../data/index.json";
+
+import ProgressBar from "../../components/ProgressBar";
 
 const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
@@ -116,8 +119,16 @@ const QuestionnairePage = () => {
       .catch(error => console.log(error));
   };
 
+  const keysLength = Object.keys(formValues).length;
+
+  const percentage = Math.floor((keysLength / 59) * 100);
+  useEffect(() => window.scrollTo(0, 0));
+
   return (
     <>
+      <div className={styles.progressBar}>
+        <ProgressBar value={percentage} />
+      </div>
       <Router>
         <Redirect noThrow from="/" to="page-one" />
         <PageOne

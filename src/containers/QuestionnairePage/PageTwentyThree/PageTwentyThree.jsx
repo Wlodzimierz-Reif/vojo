@@ -42,38 +42,38 @@ const PageTwentyThree = props => {
           </h2>
           <RadioButton
             text="Every day"
-            name="plantMilkFrequency"
+            name="beansFrequency"
             value="Every day"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, plantMilkFrequency: input })
+              setFormValues({ ...formValues, beansFrequency: input })
             }
           />
           <RadioButton
             text="Few times a week"
-            name="plantMilkFrequency"
+            name="beansFrequency"
             value="Few times a week"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, plantMilkFrequency: input })
+              setFormValues({ ...formValues, beansFrequency: input })
             }
           />
           <RadioButton
             text="Few times a month"
-            name="plantMilkFrequency"
+            name="beansFrequency"
             value="Few times a month"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, plantMilkFrequency: input })
+              setFormValues({ ...formValues, beansFrequency: input })
             }
           />
           <RadioButton
             text="Never or rarely"
-            name="plantMilkFrequency"
+            name="beansFrequency"
             value="Never or rarely"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, plantMilkFrequency: input })
+              setFormValues({ ...formValues, beansFrequency: input })
             }
           />
         </section>
