@@ -11,11 +11,7 @@ import PaymentPage from "../PaymentPage/PaymentPage";
 import mockData from "../../data";
 import RegisterDNA from "../RegisterDNA";
 import EverydayFoods from "../EverydayFoods";
-<<<<<<< HEAD
-import MealIdeas from "../MealIdeas";
-=======
 import DietBreakdown from "../DietBreakdown";
->>>>>>> 1bfa2622137933593fba60fc858c210d52f2f114
 
 const Routes = props => {
   const { signIn, signOut, user } = props;
