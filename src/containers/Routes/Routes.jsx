@@ -13,8 +13,6 @@ import RegisterDNA from "../RegisterDNA";
 import EverydayFoods from "../EverydayFoods";
 import MealIdeas from "../MealIdeas";
 
-import DietBreakdown from "../DietBreakdown";
-
 const Routes = props => {
   const { signIn, signOut } = props;
   // Any object, any key that contains the words
