@@ -33,7 +33,7 @@ const LandingPage = props => {
   const display = isOpen ? "" : styles.display;
 
   const burgerImg = () => {
-    if (navStyles == isOpen) {
+    if (navStyles === isOpen) {
       return burgerMenu;
     } else {
       return burgerCross;
@@ -55,7 +55,7 @@ const LandingPage = props => {
             Price
           </a>
           <div className={styles.authLinks}>
-            <a onClick={signInWithRedirect}>Login</a>
+            <p onClick={signInWithRedirect}>Login</p>
           </div>
         </div>
         <img
@@ -185,17 +185,17 @@ const LandingPage = props => {
             handleClick={signInWithRedirect}
           />
         </div>
-        <a className={styles.marginTop} href="">
+        <a className={styles.marginTop} href="/landing-page">
           Let's try a free trial
         </a>
       </section>
       <footer>
         <img src={tofuLogo} alt="Vojo Logo" />
         <div className={styles.navLinks}>
-          <a href="">About us</a>
-          <a href="">Take a free trial</a>
-          <a href="">Q&A</a>
-          <a href="">Contact us</a>
+          <a href="/landing-page">About us</a>
+          <a href="/landing-page">Take a free trial</a>
+          <a href="/landing-page">Q&A</a>
+          <a href="/landing-page">Contact us</a>
         </div>
       </footer>
     </>

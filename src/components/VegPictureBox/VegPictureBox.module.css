@@ -1,9 +1,14 @@
 .card {
+<<<<<<< HEAD
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 2px #efbd3f solid;
   background-color: #202020;
+=======
+  border: 2px #CC9A63 solid;
+  background-color: #f2e5d8;
+>>>>>>> 68ee5e6618d4bce0b9c31a43f4662260f0c9a371
   border-radius: 8px;
   height: 100%;
   width: 100%;
@@ -14,22 +19,40 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 8px;
 }
 
-.card img {
-  width: 60%;
-  height: 60%;
-  margin: 32px;
+.card .vegChar {
+  height: 80%;
+  width: 50%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.card .vegChar img {
+  height: 90%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .card p {
-  color: #000;
-  font-size: 24px;
+  height: 20%;
+  width: 100%;
+  color: #202913;
+  font-size: 16px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .card .vegChar {
+    height: 80%;
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+  }
+  .card p {
+    font-size: 12px;
+  }
 }
 /*# sourceMappingURL=VegPictureBox.module.css.map */

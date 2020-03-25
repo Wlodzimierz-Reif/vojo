@@ -1,14 +1,15 @@
 import React from "react";
 // import styles from "./Routes.module.scss";
+import PrivateRoutes from "../PrivateRoutes";
 import { Router, Redirect } from "@reach/router";
 import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
 import QuestionnairePage from "../QuestionnairePage";
 import PrioritiesPage from "../PrioritiesPage";
-import Footer from "../../components/Footer";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import mockData from "../../data";
 import RegisterDNA from "../RegisterDNA";
+import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
 import LandingPage from "../LandingPage";
 
@@ -38,9 +39,22 @@ const Routes = props => {
         <RegisterDNA path="register-dna" />
         <QuestionnairePage path="questionnaire-page/*" />
         <NotFound default />
-        <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
+        <Redirect noThrow from="/" to="home-page" />
+
+        <PrivateRoutes path="/" user={user}>
+          <NutrientsPage nutrients={mockData.nutrients} path="nutrients-page" />
+          <PrioritiesPage
+            path="priorities-page"
+            signInWithRedirect={signIn}
+            signOut={signOut}
+          />
+          <PaymentPage path="payment-page" />
+          <EverydayFoods path="everyday-foods" />
+          <RegisterDNA path="register-dna" />
+          <QuestionnairePage path="questionnaire-page/*" />
+          <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
+        </PrivateRoutes>
       </Router>
-      <Footer />
     </>
   );
 };

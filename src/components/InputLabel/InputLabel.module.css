@@ -4,7 +4,11 @@
 }
 
 .label.primary {
+<<<<<<< HEAD
   color: #202020;
+=======
+  color: #CC9A63;
+>>>>>>> 68ee5e6618d4bce0b9c31a43f4662260f0c9a371
 }
 
 .label.secondary {

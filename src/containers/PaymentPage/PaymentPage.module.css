@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header h2 {
+  text-align: center;
+  font-size: calc(22px + (32 - 22) * ((100vw - 440px) / (1920 - 440)));
+}
+
+.mainContainer {
+  width: 90vw;
+  height: 90vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.mainContainer .details {
+  background-color: white;
+  width: 100%;
+  height: 55%;
+}
+
+.mainContainer .summary {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.mainContainer .summary .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (min-width: 568px) {
+  .mainContainer {
+    width: 80vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mainContainer {
+    width: 70vw;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .header {
+    margin: 32px 0 32px 0;
+  }
+  .mainContainer {
+    width: 70vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .mainContainer .details {
+    width: 55%;
+    height: 60%;
+  }
+  .mainContainer .summary {
+    width: 40%;
+    height: 60%;
+  }
+  .mainContainer .summary .btns {
+    display: unset;
+  }
+}
+/*# sourceMappingURL=PaymentPage.module.css.map */

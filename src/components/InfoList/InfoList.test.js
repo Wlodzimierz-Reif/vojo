@@ -7,4 +7,3 @@ describe("InfoList tests", () => {
     expect(render(<InfoList />)).toBeTruthy();
   });
 });
-

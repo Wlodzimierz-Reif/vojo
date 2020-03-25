@@ -46,13 +46,8 @@ html {
       align-items: center;
 
       p {
-        padding: 0 $base-spacing;
-        color: $primary-color;
-        font-size: 20px;
+        cursor: pointer;
         font-weight: bold;
-      }
-
-      a {
         color: $primary-color;
         margin: 0;
       }

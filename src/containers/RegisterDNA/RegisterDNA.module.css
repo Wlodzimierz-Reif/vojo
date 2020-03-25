@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: gt-walsheim;
   font-weight: normal;
 }
@@ -20,7 +20,7 @@
 }
 
 .dnaRegister img {
-  width: 90%;
+  width: 60%;
 }
 
 .dnaRegister .input {
@@ -37,7 +37,7 @@
 
 @media only screen and (min-width: 768px) {
   .dnaRegister img {
-    width: 60%;
+    width: 50%;
   }
 }
 /*# sourceMappingURL=RegisterDNA.module.css.map */
