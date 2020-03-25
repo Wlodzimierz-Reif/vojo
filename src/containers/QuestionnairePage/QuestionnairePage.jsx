@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./QuestionnairePage.module.scss";
-import { Router, Redirect } from "@reach/router";
+import { Router, Redirect, navigate } from "@reach/router";
 import NotFound from "../NotFound";
 import PageOne from "./PageOne";
 import PageTwo from "./PageTwo";
@@ -36,6 +36,7 @@ import PageThirtyOne from "./PageThirtyOne";
 import PageThirtyTwo from "./PageThirtyTwo";
 import PageThirtyThree from "./PageThirtyThree";
 import PageThirtyFour from "./PageThirtyFour";
+import ConfirmationPage from "../ConfirmationPage";
 
 import firebase, { provider, firestore } from "../../firebase";
 import MockData from "../../data/index.json";
@@ -78,45 +79,38 @@ const QuestionnairePage = () => {
       });
   };
 
-  const addToDb = () => {
-    // logic to add to db
-    // console.log(user);
+  const addToDb = apiData => {
     firestore
       .collection("users")
       .doc(user.uid)
-      .set({ questionnaireAnswers: formValues, userApiData: MockData })
-      .then(result => {
-        console.log(result);
+      .set({
+        questionnaireAnswers: formValues,
+        userApiData: apiData,
+        priorityActions: MockData["user-dashboard"].priorities
       })
+      .then(navigate("/confirmation-page"))
       .catch(err => console.log(err));
   };
 
-  const mockObject = {
-    geneticGuid: "12345-6789",
-    reportType: "full",
-    answers: formValues
-  };
+  const submitAnswers = () => {
+    const dataToPost = {
+      geneticGuid: "12345-6789",
+      reportType: "full",
+      answers: formValues
+    };
 
-  const fetchApi = () => {
     const requestOptions = {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(mockObject)
+      // headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dataToPost)
     };
-    // fetch("http://api.codetechs.co.uk/pbhl/report", requestOptions)
-    //   .then(response => response.json())
-    //   .then(
-    //     data => console.log(data)
-    //     // data => this.setState({ postId: data.id })
-    //   )
-    //   .catch(error => console.log(error));
-    fetch("http://api.codetechs.co.uk/pbhl/report")
+    fetch("http://api.codetechs.co.uk/pbhl/report", requestOptions)
       .then(response => response.json())
-      .then(
-        data => console.log(data)
-        // data => this.setState({ postId: data.id })
-      )
+      .then(data => {
+        addToDb(data);
+      })
       .catch(error => console.log(error));
+    console.log(dataToPost);
   };
 
   const keysLength = Object.keys(formValues).length;
@@ -296,13 +290,12 @@ const QuestionnairePage = () => {
           masterValues={formValues}
           changeMaster={setFormValues}
         />
-        <PageThirtyFour path="page-thirty-four" addToDb={addToDb} />
+        <PageThirtyFour path="page-thirty-four" addToDb={submitAnswers} />
+        <ConfirmationPage path="confirmation-page" />
 
         <NotFound default />
       </Router>
       <button onClick={signInWithRedirect}>You need to be signed it</button>
-
-      <button onClick={fetchApi}>Fetch from API</button>
     </>
   );
 };
