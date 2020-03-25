@@ -43,7 +43,6 @@ const EverydayFoods = () => {
               "We all have that food... and yours is a good dose of dark chocolate now and again!"
             }
           />
-          <img src={Image} alt="characters-together" />
         </section>
       </div>
     </>

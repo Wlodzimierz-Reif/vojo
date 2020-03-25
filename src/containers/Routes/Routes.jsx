@@ -37,8 +37,8 @@ const Routes = props => {
             signInWithRedirect={signIn}
             signOut={signOut}
           />
-          <EverydayFoods path="everyday-food" />
           <PaymentPage path="payment-page" />
+          <EverydayFoods path="everyday-foods" />
           <RegisterDNA path="register-dna" />
           <QuestionnairePage path="questionnaire-page/*" />
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
