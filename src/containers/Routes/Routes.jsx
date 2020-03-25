@@ -40,9 +40,10 @@ const Routes = props => {
           <PaymentPage path="payment-page" />
           <EverydayFoods path="everyday-foods" />
           <RegisterDNA path="register-dna" />
-          <QuestionnairePage path="questionnaire-page/*" />
+
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
         </PrivateRoutes>
+        <QuestionnairePage path="questionnaire-page/*" />
       </Router>
     </>
   );

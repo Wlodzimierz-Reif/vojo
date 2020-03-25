@@ -88,7 +88,7 @@ const QuestionnairePage = () => {
         userApiData: apiData,
         priorityActions: MockData["user-dashboard"].priorities
       })
-      .then(navigate("/confirmation-page"))
+      .then(navigate("confirmation-page"))
       .catch(err => console.log(err));
   };
 
