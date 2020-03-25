@@ -10,12 +10,13 @@
       display: block;
       width: 20%;
       right: 10vw;
+      margin: auto;
     }
     .title {
       color: $secondary-color;
       font-weight: 600;
-      margin: $base-spacing * 2 0 $base-spacing * 6 0;
-      font-size: 28px;
+      margin: $base-spacing * 2 0 $base-spacing * 3 $base-spacing;
+      font-size: 25px;
     }
   }
 }
@@ -26,8 +27,7 @@
     .dietContainer {
       img {
         position: absolute;
-        width: 20%;
-        margin-left: 70%;
+        width: 15%;
         top: 50%;
       }
     }
@@ -41,6 +41,12 @@
         position: absolute;
         width: 15%;
         top: 40%;
+      }
+      .title {
+        color: $secondary-color;
+        font-weight: 600;
+        margin: $base-spacing * 2 0 $base-spacing * 6 0;
+        font-size: 28px;
       }
     }
   }
