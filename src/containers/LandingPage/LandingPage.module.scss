@@ -238,39 +238,7 @@ footer {
 }
 
 @media only screen and (max-width: 764px) {
-  .logoBurgerFlex {
-    @include flex-row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: $base-spacing;
-
-    .navBarLogo {
-      width: 70px;
-    }
-
-    .burgerMenu {
-      border: none;
-      width: $base-spacing * 5;
-      height: $base-spacing * 5;
-      background-size: contain;
-      background-color: transparent;
-      background-repeat: no-repeat;
-      background-position: center;
-      outline: none;
-    }
-
-    .burgerMenuIcon {
-      background-image: url("../../assets/graphic-devices/blue-burger-menu.svg");
-      background-size: contain;
-    }
-
-    .burgerMenuCross {
-      background-image: url("../../assets/graphic-devices/blue-cross.svg");
-      background-size: contain;
-    }
-  }
-
+  
   .navBar {
     .navLinks {
       display: none;
