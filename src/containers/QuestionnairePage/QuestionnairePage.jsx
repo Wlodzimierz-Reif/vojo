@@ -87,7 +87,6 @@ const QuestionnairePage = () => {
         userApiData: apiData,
         priorityActions: MockData["user-dashboard"].priorities
       })
-      .then(navigate("confirmation-page"))
       .catch(err => console.log(err));
   };
 
@@ -105,6 +104,7 @@ const QuestionnairePage = () => {
     };
     fetch("http://api.codetechs.co.uk/pbhl/report", requestOptions)
       .then(response => response.json())
+      .then(navigate("/confirmation-page"))
       .then(data => {
         addToDb(data);
       })
@@ -293,7 +293,7 @@ const QuestionnairePage = () => {
 
         <NotFound default />
       </Router>
-      <button onClick={signInWithRedirect}>You need to be signed it</button>
+      {/* <button onClick={signInWithRedirect}>You need to be signed it</button> */}
     </>
   );
 };
