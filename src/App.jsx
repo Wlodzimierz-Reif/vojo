@@ -47,7 +47,7 @@ const App = () => {
 
   return (
     <>
-      <Routes signOut={signOut} signIn={signInWithRedirect} />
+      <Routes signOut={signOut} signIn={signInWithRedirect} user={user} />
     </>
   );
 };
