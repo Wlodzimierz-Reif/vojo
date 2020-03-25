@@ -16,15 +16,10 @@ const App = () => {
       .auth()
       .getRedirectResult()
       .then(result => {
-        const user = result.user;
-        setUser(user);
+        setUser(result.user);
       })
       .catch(error => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.email;
-        const credential = error.credential;
-        console.log(errorCode, errorMessage, email, credential);
+        console.log(error);
       });
   };
 
@@ -43,11 +38,11 @@ const App = () => {
 
   useEffect(() => {
     getUser();
-  }, [user]);
+  }, []);
 
   return (
     <>
-      <Routes signOut={signOut} signIn={signInWithRedirect} />
+      <Routes signOut={signOut} signIn={signInWithRedirect} user={user} />
     </>
   );
 };
