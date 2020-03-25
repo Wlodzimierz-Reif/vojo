@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./ConfirmationPage.module.scss";
 import Button from "../../components/Button";
 import { Link } from "@reach/router";
-// import PayButton from "../../components/PayButton/PayButton";
 
 const ConfirmationPage = () => {
   return (
@@ -14,7 +13,6 @@ const ConfirmationPage = () => {
           <Link to="/home-page">
             <div className={styles.btn}>
               <Button btnText="Go to dashboard" />
-              {/* <PayButton btnText="Go to dashboard" isPaypal={false} /> */}
             </div>
           </Link>
         </div>

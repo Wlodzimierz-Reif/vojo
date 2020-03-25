@@ -293,7 +293,6 @@ const QuestionnairePage = () => {
 
         <NotFound default />
       </Router>
-      {/* <button onClick={signInWithRedirect}>You need to be signed it</button> */}
     </>
   );
 };
