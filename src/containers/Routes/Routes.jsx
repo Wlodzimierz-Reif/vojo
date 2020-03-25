@@ -12,9 +12,8 @@ import mockData from "../../data";
 import RegisterDNA from "../RegisterDNA";
 import DietBreakdown from "../DietBreakdown";
 
-const Routes = (props) => {
-
-  const {signIn, signOut} = props;
+const Routes = props => {
+  const { signIn, signOut } = props;
   // Any object, any key that contains the words
   // "recommendation" or "action" place into
   // new recommendations array
@@ -24,15 +23,19 @@ const Routes = (props) => {
       <Router>
         <Redirect noThrow from="/" to="priorities-page" />
         <HomePage path="home-page" />
-        <NutrientsPage nutrients={mockData.nutrients} path="nutrients-page"/>
-        <PrioritiesPage path="priorities-page" signInWithRedirect={signIn} signOut={signOut} />
+        <NutrientsPage nutrients={mockData.nutrients} path="nutrients-page" />
+        <PrioritiesPage
+          path="priorities-page"
+          signInWithRedirect={signIn}
+          signOut={signOut}
+        />
         <PaymentPage path="payment-page" />
         <RegisterDNA path="register-dna" />
         <QuestionnairePage path="questionnaire-page/*" />
         <NotFound default />
         <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
       </Router>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

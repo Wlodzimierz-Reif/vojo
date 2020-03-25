@@ -6,7 +6,6 @@ import RadioButton from "../../../components/RadioButton";
 import Image from "../../../assets/characters/bean-2.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
 import { Link } from "@reach/router";
-import ProgressBar from "../../../components/ProgressBar";
 
 const PageOne = props => {
   const { masterValues, changeMaster } = props;
