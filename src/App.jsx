@@ -1,37 +1,26 @@
 import React from "react";
 import "./App.module.scss";
-import { navigate } from "@reach/router";
 import Routes from "./containers/Routes";
 import { useState, useEffect } from "react";
 import firebase, { provider } from "./firebase";
+import { navigate } from "@reach/router";
 
 const App = () => {
   const [user, setUser] = useState(null);
 
   const signInWithRedirect = () => {
-    firebase
-      .auth()
-      .signInWithRedirect(provider)
-      .then(() => {
-        navigate("/priorities-page");
-      });
+    firebase.auth().signInWithRedirect(provider);
   };
 
   const getUser = () => {
-    firebase
-      .auth()
-      .getRedirectResult()
-      .then(result => {
-        const user = result.user;
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
         setUser(user);
-      })
-      .catch(error => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.email;
-        const credential = error.credential;
-        console.log(errorCode, errorMessage, email, credential);
-      });
+      } else {
+        setUser(null);
+        navigate("/landing-page");
+      }
+    });
   };
 
   const signOut = () => {
@@ -53,8 +42,7 @@ const App = () => {
 
   return (
     <>
-      {/* <Routes /> */}
-      <Routes signOut={signOut} signIn={signInWithRedirect} />
+      <Routes signOut={signOut} signIn={signInWithRedirect} user={user} />
     </>
   );
 };

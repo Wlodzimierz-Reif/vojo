@@ -13,7 +13,7 @@ import DietBreakdown from "../DietBreakdown";
 import LandingPage from "../LandingPage";
 
 const Routes = props => {
-  const { signIn, signOut } = props;
+  const { signIn, signOut, user } = props;
   // Any object, any key that contains the words
   // "recommendation" or "action" place into
   // new recommendations array
@@ -26,6 +26,7 @@ const Routes = props => {
           path="landing-page"
           signInWithRedirect={signIn}
           signOut={signOut}
+          user={user}
         />
         <NutrientsPage nutrients={mockData.nutrients} path="nutrients-page" />
         <PrioritiesPage

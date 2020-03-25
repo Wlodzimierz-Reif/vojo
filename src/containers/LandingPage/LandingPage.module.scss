@@ -1,5 +1,8 @@
 @import "../../variables.scss";
 
+html {
+  scroll-behavior: smooth;
+}
 .navBar {
   position: fixed;
   top: 0;
@@ -13,6 +16,10 @@
 
   img {
     height: 100%;
+  }
+
+  .mobNavLinks {
+    display: none;
   }
 
   .navLinks {
@@ -84,6 +91,7 @@ section {
   }
 
   &.veganMojo {
+    scroll-behavior: smooth;
     height: 100vh;
     background-color: $primary-background;
     display: flex;
@@ -138,7 +146,7 @@ section {
     }
 
     .imageList {
-      //   border: 2px solid green;
+      // border: 2px solid green;
       width: 100vw;
       display: flex;
       justify-content: space-evenly;
@@ -168,7 +176,7 @@ section {
 
   &.price {
     height: 100vh;
-    padding-top: 40px;
+    padding-top: 70px;
     background-color: $vojo-cream;
     display: flex;
     flex-direction: column;
@@ -225,6 +233,99 @@ footer {
       font-weight: bold;
       color: white;
       text-decoration: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 764px) {
+  .navBar {
+    .navLinks {
+      display: none;
+    }
+    .mobNavLinks {
+      background-color: $vojo-cream;
+      height: 100vh;
+      &.openNav {
+        display: unset;
+      }
+    }
+  }
+
+  section {
+    padding: 70px 30px;
+    height: initial;
+    font-size: 16px;
+    line-height: 20px;
+
+    h2 {
+      width: unset;
+      font-size: $heading-2-size / 1.5;
+    }
+
+    article {
+      // border: 2px solid red;
+      width: unset;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      text-align: center;
+      align-items: center;
+    }
+
+    &.veganMojo {
+      height: initial;
+      flex-direction: column;
+
+      img {
+        height: 30vh;
+      }
+    }
+
+    &.shouldVojo {
+      height: initial;
+      flex-direction: column;
+
+      img {
+        height: 30vh;
+      }
+
+      article {
+        height: unset;
+        align-items: center;
+
+        p {
+          margin: 10px 0;
+        }
+      }
+    }
+
+    &.howItWorks {
+      height: initial;
+
+      .imageList {
+        flex-direction: column;
+        padding: 20px 0;
+
+        div {
+          background-color: $vojo-cream;
+          margin: 10px 0;
+          padding: 20px 0;
+        }
+      }
+    }
+
+    &.price {
+      height: initial;
+
+      span {
+        flex-direction: column;
+        height: initial;
+
+        img {
+          height: 30vh;
+          max-height: 200px;
+        }
+      }
     }
   }
 }

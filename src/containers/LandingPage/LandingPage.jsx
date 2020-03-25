@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./LandingPage.module.scss";
+import { navigate } from "@reach/router";
 
 import blackLogo from "../../assets/logos/black-logo.png";
 import tofuLogo from "../../assets/logos/tofu-logo.png";
@@ -16,13 +17,34 @@ import bean from "../../assets/characters/bean-2.svg";
 import Button from "../../components/Button";
 
 const LandingPage = props => {
-  const { signInWithRedirect, signOut } = props;
+  const [isOpen, toggleIsOpen] = useState(true);
+  const { signInWithRedirect, user } = props;
+
+  useEffect(() => {
+    if (user) {
+      navigate("/priorities-page");
+    }
+  }, [user]);
+
+  const navStyles = isOpen ? styles.openNav : "";
 
   return (
     <>
       <header className={styles.navBar}>
-        <img src={blackLogo} alt="Vojo Logo" />
+        <img
+          src={blackLogo}
+          alt="Vojo Logo"
+          onClick={() => toggleIsOpen(!isOpen)}
+        />
         <div className={styles.navLinks}>
+          <a href="#shouldVojo">Why you should Vojo</a>
+          <a href="#howItWorks">How it works</a>
+          <a href="#price">Price</a>
+          <div className={styles.authLinks}>
+            <a onClick={signInWithRedirect}>Login</a>
+          </div>
+        </div>
+        <div className={`${styles.mobNavLinks} ${navStyles}`}>
           <a href="#shouldVojo">Why you should Vojo</a>
           <a href="#howItWorks">How it works</a>
           <a href="#price">Price</a>
