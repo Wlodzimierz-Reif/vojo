@@ -4,9 +4,8 @@
   display: block;
   position: relative;
   padding-left: 40px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   cursor: pointer;
-  font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -27,7 +26,7 @@
 
 .container .checkmark {
   position: absolute;
-  top: 5px;
+  top: -3px;
   left: 0;
   height: 25px;
   width: 25px;
