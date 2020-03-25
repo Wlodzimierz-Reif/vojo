@@ -60,29 +60,29 @@ const PageNineteen = props => {
           <h2>Do you sprout your beans, grains, nuts or seeds?</h2>
           <RadioButton
             text="Yes"
-            name="soaking"
+            name="sprouting"
             value="Yes"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, soaking: input })
+              setFormValues({ ...formValues, sprouting: input })
             }
           />
           <RadioButton
             text="No"
-            name="soaking"
+            name="sprouting"
             value="No"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, soaking: input })
+              setFormValues({ ...formValues, sprouting: input })
             }
           />
           <RadioButton
             text="Sometimes"
-            name="soaking"
+            name="sprouting"
             value="Sometimes"
             startChecked={false}
             selectRadio={input =>
-              setFormValues({ ...formValues, soaking: input })
+              setFormValues({ ...formValues, sprouting: input })
             }
           />
         </section>

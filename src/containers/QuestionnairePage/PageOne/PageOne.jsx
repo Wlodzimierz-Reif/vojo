@@ -20,9 +20,6 @@ const PageOne = props => {
   return (
     <>
       <div className={styles.page}>
-        <div className={styles.progressBar}>
-          <ProgressBar value="25" />
-        </div>
         <div className={styles.box}>
           <div className={styles.arrows}>
             <Link to="../home-page">
