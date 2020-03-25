@@ -14,12 +14,16 @@ html {
   align-items: center;
   background-color: $vojo-cream;
 
-  img {
+  .burgs {
+    display: none;
     height: 100%;
+    max-height: 55px;
+    margin-top: 5px;
   }
 
-  .mobNavLinks {
-    display: none;
+  img {
+    height: 100%;
+    max-height: 55px;
   }
 
   .navLinks {
@@ -238,18 +242,34 @@ footer {
 }
 
 @media only screen and (max-width: 764px) {
-  
   .navBar {
-    .navLinks {
-      display: none;
+    align-items: unset;
+
+    .burgs {
+      // margin-top: 10px;
+      display: unset;
+      height: 100%;
+      max-height: 40px;
+      width: 100%;
+      max-width: 40px;
     }
-    .mobNavLinks {
+
+    .navLinks {
+      flex-direction: column;
       background-color: $vojo-cream;
       height: 100vh;
-      &.openNav {
-        display: unset;
-      }
+      // justify-content: flex-start;
+      // align-items: flex-start;
     }
+
+    .display {
+      display: none;
+    }
+  }
+
+  .openNav {
+    height: 100vh;
+    // display: unset;
   }
 
   section {

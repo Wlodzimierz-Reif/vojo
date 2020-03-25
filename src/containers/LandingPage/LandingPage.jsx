@@ -4,6 +4,8 @@ import { navigate } from "@reach/router";
 
 import blackLogo from "../../assets/logos/black-logo.png";
 import tofuLogo from "../../assets/logos/tofu-logo.png";
+import burgerMenu from "../../assets/graphic-devices/blue-burger-menu.svg";
+import burgerCross from "../../assets/graphic-devices/blue-cross.svg";
 
 import strawBerry from "../../assets/characters/strawberry-1.svg";
 import charactersTogether from "../../assets/characters/characters-together.svg";
@@ -17,7 +19,7 @@ import bean from "../../assets/characters/bean-2.svg";
 import Button from "../../components/Button";
 
 const LandingPage = props => {
-  const [isOpen, toggleIsOpen] = useState(true);
+  const [isOpen, toggleIsOpen] = useState(false);
   const { signInWithRedirect, user } = props;
 
   useEffect(() => {
@@ -28,30 +30,35 @@ const LandingPage = props => {
 
   const navStyles = isOpen ? styles.openNav : "";
 
+  const display = isOpen ? "" : styles.display;
+
+  const burgerImg = () => {
+    if (navStyles == isOpen) {
+      return burgerMenu;
+    } else {
+      return burgerCross;
+    }
+  };
+
+
   return (
     <>
-      <header className={styles.navBar}>
+      <header className={`${styles.navBar} ${navStyles}`}>
+        <img src={blackLogo} alt="Vojo Logo" />
+        <div className={`${styles.navLinks} ${display}`}>
+          <a href="#shouldVojo">Why you should Vojo</a>
+          <a href="#howItWorks">How it works</a>
+          <a href="#price">Price</a>
+          <div className={styles.authLinks}>
+            <a onClick={signInWithRedirect}>Login</a>
+          </div>
+        </div>
         <img
-          src={blackLogo}
-          alt="Vojo Logo"
+          className={styles.burgs}
+          src={burgerImg()}
+          alt="burger menu"
           onClick={() => toggleIsOpen(!isOpen)}
         />
-        <div className={styles.navLinks}>
-          <a href="#shouldVojo">Why you should Vojo</a>
-          <a href="#howItWorks">How it works</a>
-          <a href="#price">Price</a>
-          <div className={styles.authLinks}>
-            <a onClick={signInWithRedirect}>Login</a>
-          </div>
-        </div>
-        <div className={`${styles.mobNavLinks} ${navStyles}`}>
-          <a href="#shouldVojo">Why you should Vojo</a>
-          <a href="#howItWorks">How it works</a>
-          <a href="#price">Price</a>
-          <div className={styles.authLinks}>
-            <a onClick={signInWithRedirect}>Login</a>
-          </div>
-        </div>
       </header>
 
       <section className={styles.veganMojo}>
