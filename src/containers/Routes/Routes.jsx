@@ -8,15 +8,13 @@ import NotFound from "../NotFound";
 import QuestionnairePage from "../QuestionnairePage";
 import PrioritiesPage from "../PrioritiesPage";
 import PaymentPage from "../PaymentPage/PaymentPage";
-import mockData from "../../data";
 import RegisterDNA from "../RegisterDNA";
 import DietBreakdown from "../DietBreakdown";
 import { firestore } from "../../firebase";
-import firebase, { provider } from "../../firebase";
 
 const Routes = props => {
   const { signIn, signOut, user } = props;
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState(null);
 
   // Any object, any key that contains the words
   // "recommendation" or "action" place into
@@ -37,7 +35,11 @@ const Routes = props => {
 
   useEffect(() => {
     fetchUserData();
-  }, []);
+  }, [user]);
+
+  const nutrientsJSX = userData ? (
+    <NutrientsPage nutrients={userData.nutrients} path="nutrients-page" />
+  ) : null;
 
   return (
     <>
@@ -49,7 +51,6 @@ const Routes = props => {
           signOut={signOut}
         />
         <PrivateRoutes path="/" user={user}>
-          <NutrientsPage nutrients={userData.nutrients} path="nutrients-page" />
           <PrioritiesPage
             path="priorities-page"
             signInWithRedirect={signIn}
@@ -58,54 +59,13 @@ const Routes = props => {
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />
           <QuestionnairePage path="questionnaire-page/*" />
+          {nutrientsJSX}
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
-          <NotFound default />
         </PrivateRoutes>
+        <NotFound default />
       </Router>
     </>
   );
 };
 
 export default Routes;
-// const [user, setUser] = useState(null);
-
-// const signInWithRedirect = () => {
-//   firebase
-//     .auth()
-//     .signInWithRedirect(provider)
-//     .then(() => {
-//       getUser();
-//     });
-// };
-
-// const getUser = () => {
-//   firebase
-//     .auth()
-//     .getRedirectResult()
-//     .then(result => {
-//       const user = result.user;
-//       setUser(user);
-//     })
-//     .catch(error => {
-//       const errorCode = error.code;
-//       const errorMessage = error.message;
-//       const email = error.email;
-//       const credential = error.credential;
-//       console.log(errorCode, errorMessage, email, credential);
-//     });
-// };
-
-// const addToDb = () => {
-//   firestore
-//     .collection("users")
-//     .doc(user.uid)
-//     .set({
-//       userApiData: mockData
-//     })
-//     .then(() => {
-//       console.log(user.uid.userApiData);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// };

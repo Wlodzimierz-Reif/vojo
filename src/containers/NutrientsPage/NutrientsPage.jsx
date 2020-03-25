@@ -5,8 +5,6 @@ import logo from "../../assets/logos/primary-logo.png";
 import SidePanel from "../SidePanel";
 import { Link } from "@reach/router";
 
-import mockData from "../../data";
-
 const NutrientsPage = props => {
   const { nutrients } = props;
   //add user to props when login saves through navigation
