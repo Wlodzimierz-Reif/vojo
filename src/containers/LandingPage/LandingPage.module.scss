@@ -72,7 +72,6 @@ section {
   }
 
   article {
-    // border: 2px solid red;
     width: 440px;
     display: flex;
     flex-direction: column;
@@ -123,8 +122,11 @@ section {
     }
 
     article {
-      // padding-top: 30px;
       height: 80vh;
+
+      p {
+        padding: 5px;
+      }
     }
   }
 
@@ -150,14 +152,12 @@ section {
     }
 
     .imageList {
-      // border: 2px solid green;
       width: 100vw;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
 
       div {
-        // border: 2px solid blue;
         width: 200px;
         display: flex;
         flex-direction: column;
@@ -224,6 +224,7 @@ footer {
 
   img {
     height: 100%;
+    max-height: 55px;
   }
 
   .navLinks {
@@ -242,11 +243,13 @@ footer {
 }
 
 @media only screen and (max-width: 764px) {
+  .marginTop {
+    margin-top: $base-spacing * 3;
+  }
   .navBar {
     align-items: unset;
 
     .burgs {
-      // margin-top: 10px;
       display: unset;
       height: 100%;
       max-height: 40px;
@@ -258,8 +261,6 @@ footer {
       flex-direction: column;
       background-color: $vojo-cream;
       height: 100vh;
-      // justify-content: flex-start;
-      // align-items: flex-start;
     }
 
     .display {
@@ -269,7 +270,6 @@ footer {
 
   .openNav {
     height: 100vh;
-    // display: unset;
   }
 
   section {
@@ -284,7 +284,6 @@ footer {
     }
 
     article {
-      // border: 2px solid red;
       width: unset;
       display: flex;
       flex-direction: column;
@@ -347,6 +346,22 @@ footer {
           max-height: 200px;
         }
       }
+    }
+  }
+
+  footer {
+    height: 50vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    img {
+      display: none;
+    }
+
+    .navLinks {
+      height: inherit;
+      width: unset;
+      flex-direction: column;
     }
   }
 }

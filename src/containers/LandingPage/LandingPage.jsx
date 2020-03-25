@@ -40,15 +40,20 @@ const LandingPage = props => {
     }
   };
 
-
   return (
     <>
       <header className={`${styles.navBar} ${navStyles}`}>
         <img src={blackLogo} alt="Vojo Logo" />
         <div className={`${styles.navLinks} ${display}`}>
-          <a href="#shouldVojo">Why you should Vojo</a>
-          <a href="#howItWorks">How it works</a>
-          <a href="#price">Price</a>
+          <a href="#shouldVojo" onClick={() => toggleIsOpen(!isOpen)}>
+            Why you should Vojo
+          </a>
+          <a href="#howItWorks" onClick={() => toggleIsOpen(!isOpen)}>
+            How it works
+          </a>
+          <a href="#price" onClick={() => toggleIsOpen(!isOpen)}>
+            Price
+          </a>
           <div className={styles.authLinks}>
             <a onClick={signInWithRedirect}>Login</a>
           </div>
@@ -180,7 +185,9 @@ const LandingPage = props => {
             handleClick={signInWithRedirect}
           />
         </div>
-        <a href="">Let's try a free trial</a>
+        <a className={styles.marginTop} href="">
+          Let's try a free trial
+        </a>
       </section>
       <footer>
         <img src={tofuLogo} alt="Vojo Logo" />
