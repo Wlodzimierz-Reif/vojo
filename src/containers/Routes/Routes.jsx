@@ -12,6 +12,7 @@ import mockData from "../../data";
 import RegisterDNA from "../RegisterDNA";
 import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
+import ConfirmationPage from "../ConfirmationPage";
 
 const Routes = props => {
   const { signIn, signOut, user } = props;
@@ -44,6 +45,7 @@ const Routes = props => {
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
         </PrivateRoutes>
         <QuestionnairePage path="questionnaire-page/*" />
+        <ConfirmationPage path="confirmation-page" />
       </Router>
     </>
   );

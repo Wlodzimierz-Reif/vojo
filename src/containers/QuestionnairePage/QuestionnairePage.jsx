@@ -36,7 +36,6 @@ import PageThirtyOne from "./PageThirtyOne";
 import PageThirtyTwo from "./PageThirtyTwo";
 import PageThirtyThree from "./PageThirtyThree";
 import PageThirtyFour from "./PageThirtyFour";
-import ConfirmationPage from "../ConfirmationPage";
 
 import firebase, { provider, firestore } from "../../firebase";
 import MockData from "../../data/index.json";
@@ -291,7 +290,6 @@ const QuestionnairePage = () => {
           changeMaster={setFormValues}
         />
         <PageThirtyFour path="page-thirty-four" addToDb={submitAnswers} />
-        <ConfirmationPage path="confirmation-page" />
 
         <NotFound default />
       </Router>
