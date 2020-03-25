@@ -9,12 +9,15 @@ const PrivateRoutes = props => {
   useEffect(() => {
     if (!user) {
       redirectTo("/");
-    }} );
+    }
+  });
 
-  return <>
-  { children }
-  <Footer/>
-  </>;
+  return (
+    <>
+      {children}
+      <Footer />
+    </>
+  );
 };
 
 export default PrivateRoutes;
