@@ -10,6 +10,7 @@ const HomePage = props => {
       <button onClick={signOut}>Sign Out</button>
       <Link to="../priorities-page">Priorities Page</Link>
       <Link to="../register-dna">Register your DNA</Link>
+      <Link to="../questionnaire-page">Questionnaire</Link>
 
       <div className={styles.maintenanceContainer}>
         {/* <MaintenancePage /> */}

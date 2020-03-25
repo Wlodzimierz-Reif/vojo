@@ -7,7 +7,6 @@ import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
 import QuestionnairePage from "../QuestionnairePage";
 import PrioritiesPage from "../PrioritiesPage";
-import Footer from "../../components/Footer";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import mockData from "../../data";
 import RegisterDNA from "../RegisterDNA";
@@ -43,7 +42,7 @@ const Routes = props => {
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
         </PrivateRoutes>
       </Router>
-      <Footer />
+      
     </>
   );
 };
