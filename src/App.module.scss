@@ -16,6 +16,7 @@ p, ul {
 body {
   padding: $base-spacing * 2;
   background-color: $primary-background;
+  margin-top: $base-spacing * 9;
 }
 
 @font-face {
@@ -42,3 +43,8 @@ h5 {
 }
 
 
+@media only screen and (min-width: 768px) {
+  body {
+    margin-top: 0;
+  }
+}

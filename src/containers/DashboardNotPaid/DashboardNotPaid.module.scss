@@ -3,10 +3,8 @@
 .entirePage {
     @include flex-column;
     
-
     .mainPage {
         width: 100%;
-        // margin-top: $base-spacing * 9;
         @include flex-column;
         align-items: center;
 
@@ -19,7 +17,7 @@
             width: 100%;
         }
 
-        .healthScore {
+        .toDoNext {
             margin-top: $base-spacing * 4;
             background-color: $neutral;
             border-radius: $base-spacing;
@@ -38,6 +36,11 @@
             }  
         }
 
+        .stepTwo, .stepThree {
+            // opacity: 0.5;
+            // background-color: black;
+        }
+
         .nextSteps {
             background-color: $vojo-cream;
             border-radius: $base-spacing;
@@ -45,7 +48,7 @@
             margin-bottom: $base-spacing * 2;
 
             h3 {
-                padding-bottom: $base-spacing;
+                padding-bottom: $base-spacing * 2;
                 font-size: 1em;
             }
 
@@ -58,10 +61,11 @@
         .fruitPeople {
             display: flex;
             justify-content: center;
+            padding-top: $base-spacing * 3;
             img {
                 height: 60px;
-                width: 60px;
-            } 
+                width: 70px;
+            }
         }
     }
 }
@@ -70,14 +74,6 @@
 
     .entirePage {
         flex-direction: row;
-        justify-content: space-between;
-
-        // .stickyTop {
-        //     height: calc(100vh - 32px);        
-        //     min-width: 186px;
-        //     width: 186px;
-        //     position: unset;
-        //     margin-right: $base-spacing * 2;
-        // }
+        // justify-content: space-between;
     }
 }  

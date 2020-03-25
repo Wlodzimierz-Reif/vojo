@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Dashboard.module.scss";
+import styles from "./DashboardNotPaid.module.scss";
 import NavBar from "../../components/NavBar";
 import data from "../../data/index.json";
 import Button from "../../components/Button";
@@ -11,45 +11,44 @@ import banana from "../../assets/characters/banana-1.svg";
 
 
 
-const Dashboard = (props) => {
+const DashboardNotPaid = (props) => {
   // const {} = props;
 
   return (
     <>
       <section className={styles.entirePage}>
-        {/* <div className={styles.stickyTop}></div> */}
         <NavBar />
         <div className={styles.mainPage}>
           <section>
-            <h2>Hey {data["user-dashboard"]["first-name"]}</h2>
-            <div className={styles.healthScore}>
+            <h2>Hey {data["user-dashboard"]["first-name"]}, get to know your inner vegan</h2>
+            <div className={styles.toDoNext}>
+              <h3>What you need to do next</h3>
               <p>
-Your vegan health score:               </p>
+              There are some things you need to complete before you have full access to the application!
+              </p>
               <ul>
                 <li>Pay for membership</li>
                 <li>Take lifestyle questionaire</li>
                 <li>Take genetic test</li>
               </ul>
             </div>
-            <div className={styles.nextSteps}>
+            <div className={`${styles.nextSteps} ${styles.stepOne}`}>
               <h3>1. Pay up!</h3>
               <Button btnText={"Pay now"} />
             </div>
-            <div className={styles.nextSteps}>
+            <div className={`${styles.nextSteps} ${styles.stepTwo}`}>
               <h3>2. Answer some quick questions about you</h3>
-              <p>To get the most accurate results we need you to take a lifestyle questionnaire</p>
               <Button btnText={"Take questionnaire"} />
             </div>
-            <div className={styles.nextSteps}>
+            <div className={`${styles.nextSteps} ${styles.stepThree}`}>
               <h3>3. Register your test kit & send us your saliva</h3>
-              <p>To get the most accurate results we need you to take a lifestyle questionnaire</p>
               <Button btnText={"Take test"} />
             </div>
             <div className={styles.fruitPeople}>
               <img src={blueberry} alt="blueberry person"/>
-              <img src={beetroot} alt="beetroot person"/>
-              <img src={apple} alt="apple person"/>
-              <img src={butternut} alt="butternut person"/>
+              <img src={beetroot} alt="blueberry person"/>
+              <img src={apple} alt="blueberry person"/>
+              <img src={butternut} alt="blueberry person"/>
               <img src={banana} alt="banana person"/>
             </div>
           </section>
@@ -59,4 +58,4 @@ Your vegan health score:               </p>
   );
 };
 
-export default Dashboard;
+export default DashboardNotPaid;

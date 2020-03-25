@@ -5,6 +5,7 @@ import HomePage from "../HomePage";
 import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
 import PrioritiesPage from "../PrioritiesPage";
+import DashboardNotPaid from "../../containers/DashboardNotPaid"
 import Dashboard from "../../containers/Dashboard"
 import Footer from "../../components/Footer";
 import PaymentPage from "../PaymentPage/PaymentPage";
@@ -25,6 +26,7 @@ const Routes = () => {
         <HomePage path="home-page" />
         <NutrientsPage nutrients={mockData.nutrients} path="nutrients-page" />
         <PrioritiesPage path="priorities-page" />
+        <DashboardNotPaid path="dashboard-notpaid" />
         <Dashboard path="dashboard" />
         <PaymentPage path="payment-page" />
         <RegisterDNA path="register-dna" />

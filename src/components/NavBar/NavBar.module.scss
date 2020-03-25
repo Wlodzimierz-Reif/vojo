@@ -6,13 +6,27 @@ p {
   font-weight: bold;
 }
 
+.navMargin {
+  position: fixed;
+  height: $base-spacing * 9;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  padding: 16px;
+  // position: sticky;
+  background-color: $primary-background;
+}
+
 .navBar {
   background-color: $vojo-cream;
   position: fixed;
+  left: $base-spacing * 2;
+  top: $base-spacing * 2;
   @include flex-column;
   align-items: center;
   justify-content: space-between;
   width: calc(100vw - 32px);
+  // width: calc(100vw - 32px);
   transition: 0.5s;
 
   .navTop {
@@ -99,6 +113,15 @@ p {
 
 
 @media only screen and (min-width: 768px) {
+  .navMargin {
+    height: calc(100vh - 32px);        
+    min-width: 186px;
+    width: 186px;
+    position: unset;
+    margin-right: $base-spacing * 2;
+    // display: none;
+}
+
   .navBar {
     height: {
       height: "calc(100vh - 32px)";

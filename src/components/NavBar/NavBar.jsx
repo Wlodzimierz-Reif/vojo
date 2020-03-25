@@ -51,6 +51,7 @@ const NavBar = props => {
 
   return (
     <>
+      <div className={styles.navMargin}></div>
       <div className={`${styles.navBar} `} style={toggleNav.height}>
         <section className={styles.navTop}>
           <div className={styles.logoBurgerFlex}>
