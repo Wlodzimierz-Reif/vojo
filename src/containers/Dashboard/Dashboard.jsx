@@ -33,6 +33,7 @@ Your vegan health score:               </p>
             </div>
             <div className={styles.nextSteps}>
               <h3>1. Pay up!</h3>
+              <p>To get you started we need you to pay for the service, this is a put payment information here.</p>
               <Button btnText={"Pay now"} />
             </div>
             <div className={styles.nextSteps}>
@@ -47,7 +48,7 @@ Your vegan health score:               </p>
             </div>
             <div className={styles.fruitPeople}>
               <img src={blueberry} alt="blueberry person"/>
-              <img src={beetroot} alt="beetroot person"/>
+              <img className={styles.beetRoot} src={beetroot} alt="beetroot person"/>
               <img src={apple} alt="apple person"/>
               <img src={butternut} alt="butternut person"/>
               <img src={banana} alt="banana person"/>

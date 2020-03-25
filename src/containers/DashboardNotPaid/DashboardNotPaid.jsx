@@ -1,4 +1,5 @@
 import React from "react";
+import {navigate} from "@reach/router";
 import styles from "./DashboardNotPaid.module.scss";
 import NavBar from "../../components/NavBar";
 import data from "../../data/index.json";
@@ -13,6 +14,10 @@ import banana from "../../assets/characters/banana-1.svg";
 
 const DashboardNotPaid = (props) => {
   // const {} = props;
+
+  const navigateToNext = () => {
+    navigate("/payment-page");
+  };
 
   return (
     <>
@@ -34,7 +39,7 @@ const DashboardNotPaid = (props) => {
             </div>
             <div className={`${styles.nextSteps} ${styles.stepOne}`}>
               <h3>1. Pay up!</h3>
-              <Button btnText={"Pay now"} />
+              <Button handleClick={() => navigate("/payment-page")} btnText={"Pay now"} />
             </div>
             <div className={`${styles.nextSteps} ${styles.stepTwo}`}>
               <h3>2. Answer some quick questions about you</h3>

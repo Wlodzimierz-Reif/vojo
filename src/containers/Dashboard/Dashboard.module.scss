@@ -61,7 +61,11 @@
             img {
                 height: 60px;
                 width: 60px;
-            } 
+            }
+
+            .beetRoot {
+                height: 30px;
+            }
         }
     }
 }
@@ -71,7 +75,6 @@
     .entirePage {
         flex-direction: row;
         justify-content: space-between;
-
         // .stickyTop {
         //     height: calc(100vh - 32px);        
         //     min-width: 186px;
