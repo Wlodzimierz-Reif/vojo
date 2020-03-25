@@ -10,6 +10,7 @@ import PrioritiesPage from "../PrioritiesPage";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import mockData from "../../data";
 import RegisterDNA from "../RegisterDNA";
+import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
 
 const Routes = props => {
@@ -37,6 +38,7 @@ const Routes = props => {
             signOut={signOut}
           />
           <PaymentPage path="payment-page" />
+          <EverydayFoods path="everyday-foods" />
           <RegisterDNA path="register-dna" />
           <QuestionnairePage path="questionnaire-page/*" />
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
