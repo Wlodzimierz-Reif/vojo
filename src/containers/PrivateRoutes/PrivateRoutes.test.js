@@ -4,7 +4,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import { render } from '@testing-library/react';
 
 describe("PrivateRoutes tests", () => {
-    it('should render', () => {
+    it("should render", () => {
       expect(render(<PrivateRoutes />)).toBeTruthy();
     });
   });
