@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import styles from "./QuestionnairePage.module.scss";
 import { Router, Redirect } from "@reach/router";
 import NotFound from "../NotFound";
@@ -36,26 +36,84 @@ import PageThirtyOne from "./PageThirtyOne";
 import PageThirtyTwo from "./PageThirtyTwo";
 import PageThirtyThree from "./PageThirtyThree";
 import PageThirtyFour from "./PageThirtyFour";
-import { firestore } from "../../firebase";
+import firebase, { provider, firestore } from "../../firebase";
+import MockData from "../../data/index.json";
 
 const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
 
-  // const getMasterValue = () => {
-  //   changeMaster({ ...masterValues, ...formValues });
-  // };
+  const [user, setUser] = useState(null);
 
-  const addToDb = user => {
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  const signInWithRedirect = () => {
+    firebase
+      .auth()
+      .signInWithRedirect(provider)
+      .then(() => {
+        console.log(user);
+        getUser();
+      });
+  };
+  const getUser = () => {
+    firebase
+      .auth()
+      .getRedirectResult()
+      .then(result => {
+        const user = result.user;
+
+        setUser(user);
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.email;
+        const credential = error.credential;
+        console.log(errorCode, errorMessage, email, credential);
+      });
+  };
+
+  const addToDb = () => {
     // logic to add to db
-
+    // console.log(user);
     firestore
       .collection("users")
       .doc(user.uid)
-      .add(formValues)
+      .set({ questionnaireAnswers: formValues, userApiData: MockData })
       .then(result => {
         console.log(result);
       })
       .catch(err => console.log(err));
+  };
+
+  const mockObject = {
+    geneticGuid: "12345-6789",
+    reportType: "full",
+    answers: formValues
+  };
+
+  const fetchApi = () => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(mockObject)
+    };
+    // fetch("http://api.codetechs.co.uk/pbhl/report", requestOptions)
+    //   .then(response => response.json())
+    //   .then(
+    //     data => console.log(data)
+    //     // data => this.setState({ postId: data.id })
+    //   )
+    //   .catch(error => console.log(error));
+    fetch("http://api.codetechs.co.uk/pbhl/report")
+      .then(response => response.json())
+      .then(
+        data => console.log(data)
+        // data => this.setState({ postId: data.id })
+      )
+      .catch(error => console.log(error));
   };
 
   return (
@@ -231,6 +289,9 @@ const QuestionnairePage = () => {
 
         <NotFound default />
       </Router>
+      <button onClick={signInWithRedirect}>You need to be signed it</button>
+
+      <button onClick={fetchApi}>Fetch from API</button>
     </>
   );
 };
