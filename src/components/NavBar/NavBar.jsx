@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./NavBar.module.scss";
 import logos from "../../assets/logos/tofu-logo.png";
-import { Link } from "@reach/router";
 
 // TO BE HANDED IN AS PROPS (SEE MATE AND DENNIS!!! )
 // const exampleLinks = [
@@ -26,7 +25,6 @@ const NavBar = props => {
       <img src={logos} alt="Logo" className={styles.navBarLogo} />
       <section className={styles.links}>
         {links.map(getLinks)}
-        <Link to="../../register-dna">Register DNA</Link>
         <p className={styles.logOut} onClick={signOut}>
           Log out
         </p>

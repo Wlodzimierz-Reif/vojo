@@ -21,6 +21,8 @@ const PrioritiesPage = props => {
         {/* the paragraph bellow can be removed after the demo or after we have another way to link the questionnaire page to the dashboard. - Lucian -*/}
         <p>
           <Link to="/questionnaire-page">Questionnaire Page</Link>
+          <br></br>
+          <Link to="/register-dna">Register DNA</Link>
         </p>
         <h2>Priorities</h2>
         <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
