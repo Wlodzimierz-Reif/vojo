@@ -35,6 +35,10 @@
       width: 150px;
       height: 40px;
       margin-top: $base-spacing * 3;
+
+      :hover {
+        cursor: pointer;
+      }
     }
   }
 }

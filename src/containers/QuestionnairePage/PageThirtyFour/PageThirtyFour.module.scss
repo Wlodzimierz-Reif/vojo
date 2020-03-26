@@ -18,6 +18,10 @@
       margin: $base-spacing * 4 auto;
       height: 50px;
       width: 100px;
+
+      :hover {
+        cursor: pointer;
+      }
     }
 
     & > section {

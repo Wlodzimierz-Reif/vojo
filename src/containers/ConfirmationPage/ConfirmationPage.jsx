@@ -8,8 +8,8 @@ const ConfirmationPage = () => {
     <>
       <section className={styles.container}>
         <div className={styles.box}>
-          <h1>Your answers have been submitted !</h1>
-          <h3>Thank you for taking the time to fill in the questionnaire !</h3>
+          <h1>Your answers have been submitted!</h1>
+          <h3>Thank you for taking the time to fill in the questionnaire!</h3>
           <Link to="/priorities-page">
             <div className={styles.btn}>
               <Button btnText="Go to dashboard" />

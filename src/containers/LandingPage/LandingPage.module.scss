@@ -1,9 +1,10 @@
 @import "../../variables.scss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .landingPage {
-  html {
-    scroll-behavior: smooth;
-  }
   .navBar {
     position: fixed;
     top: 0;
@@ -243,6 +244,7 @@
       margin-top: $base-spacing * 3;
     }
     .navBar {
+      height: 60px;
       align-items: unset;
 
       .burgs {
