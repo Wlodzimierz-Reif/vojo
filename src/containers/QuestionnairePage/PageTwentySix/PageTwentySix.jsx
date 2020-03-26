@@ -35,7 +35,7 @@ const PageTwentySix = props => {
           </Link>
         </div>
         <section>
-          <h2>How often do you eat...</h2>
+          <h2>How often do you drink...</h2>
           <h2>...caffeinated tea or coffee?</h2>
           <RadioButton
             text="Every day"
