@@ -49,6 +49,8 @@ const QuestionnairePage = props => {
 
   const [isShown, toggleShown] = useState(false);
 
+  const [showError, toggleShowError] = useState(false);
+
   const addToDb = apiData => {
     firestore
       .collection("users")
@@ -59,7 +61,7 @@ const QuestionnairePage = props => {
         priorityActions: MockData["user-dashboard"].priorities
       })
       .then(navigate("/confirmation-page"))
-      .catch(err => console.log(err));
+      .catch(err => toggleShowError(err));
   };
 
   const submitAnswers = () => {
@@ -73,15 +75,14 @@ const QuestionnairePage = props => {
 
     const requestOptions = {
       method: "POST",
-      // headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dataToPost)
     };
-    fetch("http://api.codetechs.co.uk/pbhl/report", requestOptions)
+    fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
       .then(response => response.json())
       .then(data => {
         addToDb(data);
       })
-      .catch(error => console.log(error));
+      .catch(error => toggleShowError(error));
     console.log(dataToPost);
   };
 
@@ -264,6 +265,7 @@ const QuestionnairePage = props => {
         />
         <PageThirtyFour
           isShown={isShown}
+          showError={showError}
           path="page-thirty-four"
           addToDb={submitAnswers}
         />
