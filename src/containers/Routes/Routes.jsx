@@ -55,7 +55,7 @@ const Routes = props => {
         <PrivateRoutes path="/" user={user}>
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
-          <RegisterDNA path="register-dna" user={user} userData={userData} />
+          <RegisterDNA path="register-dna" user={user} />
           <EverydayFoods path="everyday-foods" />
           <QuestionnairePage path="questionnaire-page/*" user={user} />
           {nutrientsJSX}

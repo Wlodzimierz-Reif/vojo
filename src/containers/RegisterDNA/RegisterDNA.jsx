@@ -7,7 +7,7 @@ import { useState } from "react";
 import { firestore } from "../../firebase";
 
 const RegisterDNA = props => {
-  const { user, userData } = props;
+  const { user } = props;
   const [userBarcode, updateUserBarcode] = useState("");
 
   const addToDb = () => {
