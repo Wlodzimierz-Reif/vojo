@@ -37,7 +37,7 @@ import PageThirtyTwo from "./PageThirtyTwo";
 import PageThirtyThree from "./PageThirtyThree";
 import PageThirtyFour from "./PageThirtyFour";
 
-import firebase, { provider, firestore } from "../../firebase";
+import { firestore } from "../../firebase";
 import MockData from "../../data/index.json";
 
 import ProgressBar from "../../components/ProgressBar";

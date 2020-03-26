@@ -20,6 +20,10 @@ const PrioritiesPage = props => {
       {/* <button onClick={signInWithRedirect}>Sign In</button>
       <button onClick={signOut}>Sign Out</button> */}
       <section className={styles.prioritiesPage}>
+        {/* the paragraph bellow can be removed after the demo or after we have another way to link the questionnaire page to the dashboard. - Lucian -*/}
+        <p>
+          <Link to="/questionnaire-page">Questionnaire Page</Link>
+        </p>
         <h2>Priorities</h2>
         <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
           <NoSampleBox closeBox={() => togglePromptShown(!isPromptShown)} />

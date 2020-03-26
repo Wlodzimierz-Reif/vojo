@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./PageThirtyFour.module.scss";
 import Image from "../../../assets/characters/characters-together.svg";
 import Arrow from "../../../assets/graphic-devices/primary-color-arrow-1.svg";
