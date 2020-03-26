@@ -4,6 +4,8 @@ import InputField from "../../components/InputField";
 import Button from "../../components/Button";
 import DNAimage from "../../assets/misc/barcode.jpg";
 import { useState } from "react";
+import { firestore } from "../../firebase";
+import Mockdata from "../../data";
 
 const RegisterDNA = props => {
   const { user } = props;
@@ -11,15 +13,16 @@ const RegisterDNA = props => {
 
   const addToDb = () => {
     console.log(user, userBarcode);
-    // firestore
-    //   .collection("users")
-    //   .doc(user.uid)
-    //   .set({
-    //     geneticguid: userBarcode
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   });
+    firestore
+      .collection("users")
+      .doc(user.uid)
+      .set({
+        userApiData: Mockdata
+        // geneticguid: userBarcode
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   return (
