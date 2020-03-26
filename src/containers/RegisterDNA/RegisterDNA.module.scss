@@ -1,15 +1,7 @@
 @import "../../variables.scss";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: gt-walsheim;
-  font-weight: normal;
-}
-
 .dnaRegister {
   & * {
-    padding: 10px 0;
+    padding: 10px 20px;
   }
 
   background-color: $primary-background;
@@ -18,27 +10,35 @@
   height: 100vh;
   text-align: center;
 
-  img {
-    width: 60%;
-  }
-
-  .input {
-    width: 50%;
-    height: 10%;
+  img,
+  p {
+    width: 90%;
     margin: 0 auto;
   }
 
+  .input,
   .button {
-    width: 50%;
-    height: 10%;
+    width: 90%;
     margin: 0 auto;
+    max-width: 320px;
+  }
+
+  input::placeholder {
+    text-align: center;
+    font-size: 1em;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .dnaRegister {
-    img {
+    img,
+    .input,
+    .button {
       width: 50%;
+    }
+
+    img {
+      min-width: 600px;
     }
   }
 }

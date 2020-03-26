@@ -5,20 +5,17 @@ import Button from "../../components/Button";
 import DNAimage from "../../assets/misc/barcode.jpg";
 import { useState } from "react";
 import { firestore } from "../../firebase";
-import Mockdata from "../../data";
 
 const RegisterDNA = props => {
-  const { user } = props;
+  const { user, userData } = props;
   const [userBarcode, updateUserBarcode] = useState("");
 
   const addToDb = () => {
-    console.log(user, userBarcode);
     firestore
       .collection("users")
       .doc(user.uid)
-      .set({
-        userApiData: Mockdata
-        // geneticguid: userBarcode
+      .update({
+        geneticGUID: userBarcode
       })
       .catch(err => {
         console.log(err);
@@ -37,9 +34,7 @@ const RegisterDNA = props => {
           name="DNA ID"
           placeholder="Input your barcode here"
           handleInput={event => updateUserBarcode(event.target.value)}
-          selectInput={inputVal => {
-            // console.log(inputVal);
-          }}
+          selectInput={inputVal => {}}
         />
       </div>
       <div className={styles.button}>

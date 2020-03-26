@@ -24,7 +24,7 @@ const Routes = props => {
         .doc(user.uid)
         .get()
         .then(doc => {
-          setUserData(doc.data().userApiData);
+          setUserData(doc.data());
         })
         .catch(err => console.log(err));
     }
@@ -36,7 +36,10 @@ const Routes = props => {
   }, [user]);
 
   const nutrientsJSX = userData ? (
-    <NutrientsPage nutrients={userData.nutrients} path="nutrients-page" />
+    <NutrientsPage
+      nutrients={userData.userApiData.nutrients}
+      path="nutrients-page"
+    />
   ) : null;
 
   return (
@@ -51,7 +54,7 @@ const Routes = props => {
         <PrivateRoutes path="/" user={user}>
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
-          <RegisterDNA path="register-dna" user={user} />
+          <RegisterDNA path="register-dna" user={user} userData={userData} />
           <EverydayFoods path="everyday-foods" />
           <QuestionnairePage path="questionnaire-page/*" />
           {nutrientsJSX}
