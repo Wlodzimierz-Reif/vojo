@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./NavBar.module.scss";
 import logos from "../../assets/logos/tofu-logo.png";
-import { Link } from "@reach/router";
+// import { Link } from "@reach/router";
 
 // TO BE HANDED IN AS PROPS (SEE MATE AND DENNIS!!! )
 // const exampleLinks = [

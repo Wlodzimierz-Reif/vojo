@@ -9,18 +9,34 @@ const App = () => {
   const [user, setUser] = useState(null);
 
   const signInWithRedirect = () => {
-    firebase.auth().signInWithRedirect(provider);
+    firebase
+      .auth()
+      .signInWithRedirect(provider)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   const getUser = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        setUser(user);
-      } else {
-        redirectTo("/landing-page");
-        setUser(null);
-      }
-    });
+    firebase
+      .auth()
+      .onAuthStateChanged(user => {
+        if (user) {
+          setUser(user);
+        } else {
+          redirectTo("/landing-page");
+          setUser(null);
+        }
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   const signOut = () => {
