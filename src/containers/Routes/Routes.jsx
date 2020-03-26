@@ -58,7 +58,7 @@ const Routes = props => {
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />
           <EverydayFoods path="everyday-foods" />
-          <QuestionnairePage path="questionnaire-page/*" />
+          <QuestionnairePage path="questionnaire-page/*" user={user} />
           {nutrientsJSX}
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
           <ConfirmationPage path="confirmation-page" />

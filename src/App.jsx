@@ -49,15 +49,3 @@ const App = () => {
 };
 
 export default App;
-
-// const getUser = () => {
-//   firebase
-//     .auth()
-//     .getRedirectResult()
-//     .then(result => {
-//       setUser(result.user);
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     });
-// };

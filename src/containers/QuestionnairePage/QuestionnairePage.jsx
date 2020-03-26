@@ -42,41 +42,12 @@ import MockData from "../../data/index.json";
 
 import ProgressBar from "../../components/ProgressBar";
 
-const QuestionnairePage = () => {
+const QuestionnairePage = props => {
+  const { user } = props;
+
   const [formValues, setFormValues] = useState({});
 
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    getUser();
-  }, []);
-
-  const signInWithRedirect = () => {
-    firebase
-      .auth()
-      .signInWithRedirect(provider)
-      .then(() => {
-        console.log(user);
-        getUser();
-      });
-  };
-  const getUser = () => {
-    firebase
-      .auth()
-      .getRedirectResult()
-      .then(result => {
-        const user = result.user;
-
-        setUser(user);
-      })
-      .catch(error => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.email;
-        const credential = error.credential;
-        console.log(errorCode, errorMessage, email, credential);
-      });
-  };
+  const [isShown, toggleShown] = useState(false);
 
   const addToDb = apiData => {
     firestore
@@ -87,10 +58,13 @@ const QuestionnairePage = () => {
         userApiData: apiData,
         priorityActions: MockData["user-dashboard"].priorities
       })
+      .then(navigate("/confirmation-page"))
       .catch(err => console.log(err));
   };
 
   const submitAnswers = () => {
+    toggleShown(!isShown);
+
     const dataToPost = {
       geneticGuid: "12345-6789",
       reportType: "full",
@@ -104,7 +78,6 @@ const QuestionnairePage = () => {
     };
     fetch("http://api.codetechs.co.uk/pbhl/report", requestOptions)
       .then(response => response.json())
-      .then(navigate("/confirmation-page"))
       .then(data => {
         addToDb(data);
       })
@@ -289,7 +262,11 @@ const QuestionnairePage = () => {
           masterValues={formValues}
           changeMaster={setFormValues}
         />
-        <PageThirtyFour path="page-thirty-four" addToDb={submitAnswers} />
+        <PageThirtyFour
+          isShown={isShown}
+          path="page-thirty-four"
+          addToDb={submitAnswers}
+        />
 
         <NotFound default />
       </Router>
