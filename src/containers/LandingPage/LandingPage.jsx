@@ -32,16 +32,10 @@ const LandingPage = props => {
 
   const display = isOpen ? "" : styles.display;
 
-  const burgerImg = () => {
-    if (navStyles == isOpen) {
-      return burgerMenu;
-    } else {
-      return burgerCross;
-    }
-  };
-
+  const burgerImg = () => (isOpen ? burgerCross : burgerMenu);
+  
   return (
-    <>
+    <div className={styles.landingPage}>
       <header className={`${styles.navBar} ${navStyles}`}>
         <img src={blackLogo} alt="Vojo Logo" />
         <div className={`${styles.navLinks} ${display}`}>
@@ -65,7 +59,6 @@ const LandingPage = props => {
           onClick={() => toggleIsOpen(!isOpen)}
         />
       </header>
-
       <section className={styles.veganMojo}>
         <img src={strawBerry} alt="Strawberry Character" />
         <article>
@@ -198,7 +191,7 @@ const LandingPage = props => {
           <a href="/landing-page">Contact us</a>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 
