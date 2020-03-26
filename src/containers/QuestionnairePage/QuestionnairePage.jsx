@@ -55,7 +55,7 @@ const QuestionnairePage = props => {
     firestore
       .collection("users")
       .doc(user.uid)
-      .set({
+      .update({
         questionnaireAnswers: formValues,
         userApiData: apiData,
         priorityActions: MockData["user-dashboard"].priorities

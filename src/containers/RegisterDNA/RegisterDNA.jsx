@@ -15,7 +15,7 @@ const RegisterDNA = props => {
       .collection("users")
       .doc(user.uid)
       .update({
-        geneticGUID: userBarcode
+        geneticGuid: userBarcode
       })
       .catch(err => {
         console.log(err);
