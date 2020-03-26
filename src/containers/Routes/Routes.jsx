@@ -49,7 +49,7 @@ const Routes = props => {
           signInWithRedirect={signIn}
           user={user}
         />
-        <PrivateRoutes path="/" user={user}>
+        <PrivateRoutes path="/">
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />
