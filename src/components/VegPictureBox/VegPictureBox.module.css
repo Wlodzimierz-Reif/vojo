@@ -1,6 +1,14 @@
 .card {
+<<<<<<< HEAD
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px #efbd3f solid;
+  background-color: #202020;
+=======
   border: 2px #CC9A63 solid;
   background-color: #f2e5d8;
+>>>>>>> 68ee5e6618d4bce0b9c31a43f4662260f0c9a371
   border-radius: 8px;
   height: 100%;
   width: 100%;

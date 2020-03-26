@@ -1,9 +1,9 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { shallow } from "enzyme";
 import App from "./App.jsx";
 
 describe("App tests", () => {
   it("renders app", () => {
-    expect(render(<App />)).toBeTruthy();
+    expect(shallow(<App />)).toBeTruthy();
   });
 });
