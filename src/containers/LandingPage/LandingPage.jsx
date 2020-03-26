@@ -33,7 +33,7 @@ const LandingPage = props => {
   const display = isOpen ? "" : styles.display;
 
   const burgerImg = () => {
-    if (navStyles === isOpen) {
+    if (navStyles == isOpen) {
       return burgerMenu;
     } else {
       return burgerCross;
