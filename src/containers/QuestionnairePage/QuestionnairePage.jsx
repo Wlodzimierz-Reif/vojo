@@ -41,10 +41,32 @@ import ProgressBar from "../../components/ProgressBar";
 const QuestionnairePage = () => {
   const [formValues, setFormValues] = useState({});
 
-  const keysLength = Object.keys(formValues).length;
-
-  const percentage = Math.floor((keysLength / 59) * 100);
   useEffect(() => window.scrollTo(0, 0));
+
+  // let newFormValues = { ...formValues };
+  let counter = 0;
+  for (const property in formValues) {
+    //   if (
+    //     formValues[property].length !== 0 &&
+    //     typeof formValues[property] != ["undefinded"]
+    //   ) {
+    //     counter++;
+
+    //     console.log(counter);
+    //   }
+    // }
+    // console.log(formValues);
+
+    // if (Array.isArray(newFormValues[property])) {
+    if (formValues[property].length !== 0) {
+      counter++;
+    }
+    // }
+  }
+
+  // const keysLength = Object.keys(newFormValues).length;
+
+  const percentage = Math.floor((counter / 59) * 100);
 
   return (
     <>
