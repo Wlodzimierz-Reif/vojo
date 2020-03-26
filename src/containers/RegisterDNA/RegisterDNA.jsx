@@ -5,10 +5,13 @@ import Button from "../../components/Button";
 import DNAimage from "../../assets/misc/barcode.jpg";
 import { useState } from "react";
 import { firestore } from "../../firebase";
+import ModalBox from "../../components/ModalBox";
+import { navigate } from "@reach/router";
 
 const RegisterDNA = props => {
   const { user } = props;
   const [userBarcode, updateUserBarcode] = useState("");
+  const [modalShown, toggleModal] = useState(false);
 
   const addToDb = () => {
     firestore
@@ -17,9 +20,18 @@ const RegisterDNA = props => {
       .update({
         geneticGuid: userBarcode
       })
+      .then(() => {
+        displayConfirmation();
+      })
       .catch(err => {
         console.log(err);
       });
+  };
+
+  let modalJSX = modalShown ? { display: "unset" } : null;
+
+  const displayConfirmation = () => {
+    toggleModal(!modalShown);
   };
 
   return (
@@ -39,6 +51,13 @@ const RegisterDNA = props => {
       </div>
       <div className={styles.button}>
         <Button btnText="Submit DNA barcode" handleClick={addToDb} />
+      </div>
+      <div className={styles.modal} style={modalJSX}>
+        <ModalBox
+          title="Success"
+          message="You have successfully registered your DNA sample"
+          handleClick={() => navigate("priorities-page")}
+        />
       </div>
     </section>
   );
