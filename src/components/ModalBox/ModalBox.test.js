@@ -1,10 +1,8 @@
 import React from "react";
 import ModalBox from "./ModalBox";
-
+import { render } from "@testing-library/react";
 describe("ModalBox tests", () => {
-  let component;
-
-  beforeEach(() => {
-    component =
-  })
+  it("should render", () => {
+    expect(render(<ModalBox />)).toBeTruthy();
+  });
 });
