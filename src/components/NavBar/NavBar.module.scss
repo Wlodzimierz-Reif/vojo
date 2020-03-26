@@ -21,6 +21,11 @@
 
     p {
       padding: 0 $base-spacing * 2;
+
+      &.logOut {
+        cursor: pointer;
+        text-decoration: unset;
+      }
     }
 
     .logOut {

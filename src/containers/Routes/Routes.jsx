@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 // import styles from "./Routes.module.scss";
 import PrivateRoutes from "../PrivateRoutes";
 import { Router, Redirect } from "@reach/router";
-import HomePage from "../HomePage";
 import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
 import QuestionnairePage from "../QuestionnairePage";
@@ -11,6 +10,7 @@ import PaymentPage from "../PaymentPage/PaymentPage";
 import RegisterDNA from "../RegisterDNA";
 import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
+import LandingPage from "../LandingPage";
 import { firestore } from "../../firebase";
 
 const Routes = props => {
@@ -42,18 +42,14 @@ const Routes = props => {
   return (
     <>
       <Router>
-        <Redirect noThrow from="/" to="home-page" />
-        <HomePage
-          path="home-page"
+        <Redirect noThrow from="/" to="landing-page" />
+        <LandingPage
+          path="landing-page"
           signInWithRedirect={signIn}
-          signOut={signOut}
+          user={user}
         />
         <PrivateRoutes path="/" user={user}>
-          <PrioritiesPage
-            path="priorities-page"
-            signInWithRedirect={signIn}
-            signOut={signOut}
-          />
+          <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />
           <EverydayFoods path="everyday-foods" />
