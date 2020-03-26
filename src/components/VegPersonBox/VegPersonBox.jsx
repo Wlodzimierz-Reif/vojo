@@ -12,7 +12,7 @@ const VegPersonBox = props => {
       <div className={styles.vegChar}>
         <img src={image} alt="vegetable" />
       </div>
-      <p>{pText}</p> 
+      <p>{pText}</p>
     </section>
   );
 };

@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: gt-walsheim;
+  font-weight: normal;
+}
+
+.dnaRegister {
+  background-color: #f2e4d0;
+  padding-top: 8vh;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+.dnaRegister * {
+  padding: 10px 0;
+}
+
+.dnaRegister img {
+  width: 60%;
+}
+
+.dnaRegister .input {
+  width: 50%;
+  height: 10%;
+  margin: 0 auto;
+}
+
+.dnaRegister .button {
+  width: 50%;
+  height: 10%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .dnaRegister img {
+    width: 50%;
+  }
+}
+/*# sourceMappingURL=RegisterDNA.module.css.map */

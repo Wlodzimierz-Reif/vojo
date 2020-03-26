@@ -1,0 +1,318 @@
+.navBar {
+  position: fixed;
+  top: 0;
+  height: 10vh;
+  width: 100%;
+  padding: 0 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f8f2e9;
+}
+
+.navBar img {
+  height: 100%;
+}
+
+.navBar .navLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 550px;
+}
+
+.navBar .navLinks a {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+
+.navBar .navLinks .authLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navBar .navLinks .authLinks p {
+  padding: 0 8px;
+  color: #b44370;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navBar .navLinks .authLinks a {
+  color: #b44370;
+  margin: 0;
+}
+
+section {
+  height: 90vh;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+section h2 {
+  width: 400px;
+  font-size: 48px;
+  line-height: initial;
+}
+
+section article {
+  width: 440px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+section .bold {
+  font-weight: bold;
+}
+
+section .button {
+  height: 40px;
+  width: 250px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+section .button :hover {
+  cursor: pointer;
+}
+
+section.veganMojo {
+  height: 100vh;
+  background-color: #f2e4d0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.veganMojo img {
+  height: 65vh;
+}
+
+section.veganMojo article {
+  height: 370px;
+}
+
+section.shouldVojo {
+  height: 100vh;
+  background-color: #f8f2e9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.shouldVojo img {
+  height: 80vh;
+}
+
+section.shouldVojo article {
+  height: 80vh;
+}
+
+section.howItWorks {
+  height: 100vh;
+  background-color: #f2e4d0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.howItWorks .howItWorksTitles {
+  padding-top: 20px;
+  height: 180px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+section.howItWorks img {
+  height: 20vh;
+}
+
+section.howItWorks .imageList {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.howItWorks .imageList div {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.howItWorks .imageList div h2 {
+  width: initial;
+  padding: 16px 0;
+  text-align: center;
+}
+
+section.howItWorks .imageList div h3 {
+  text-align: center;
+  width: 150px;
+}
+
+section.price {
+  height: 100vh;
+  padding-top: 40px;
+  background-color: #f8f2e9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.price img {
+  height: 65vh;
+}
+
+section.price span {
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+section.price article {
+  height: 450px;
+}
+
+section.price article li {
+  list-style-type: none;
+}
+
+section.price a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #b44370;
+  font-size: 20px;
+}
+
+footer {
+  height: 10vh;
+  width: 100%;
+  padding: 0 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #b44370;
+}
+
+footer img {
+  height: 100%;
+}
+
+footer .navLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 550px;
+}
+
+footer .navLinks a {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+/*# sourceMappingURL=LandingPage.module.css.map */

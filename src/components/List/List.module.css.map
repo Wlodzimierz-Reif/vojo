@@ -1,0 +1,14 @@
+{
+    "version": 3,
+<<<<<<< HEAD
+    "mappings": "AAEA,AAAA,KAAK,CAAC;EACF,WAAW,EAAE,IAAI;EACjB,mBAAmB,EAAE,MAAM;EAC3B,OAAO,EC6EI,GAAG;CD5EjB",
+=======
+    "mappings": "AAEA,AAAA,KAAK,CAAC;EACF,WAAW,EAAE,IAAI;EACjB,mBAAmB,EAAE,MAAM;EAC3B,OAAO,EC8EI,GAAG;CD7EjB",
+>>>>>>> 68ee5e6618d4bce0b9c31a43f4662260f0c9a371
+    "sources": [
+        "List.module.scss",
+        "../../variables.scss"
+    ],
+    "names": [],
+    "file": "List.module.css"
+}

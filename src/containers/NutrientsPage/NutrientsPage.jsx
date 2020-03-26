@@ -7,6 +7,7 @@ import { Link } from "@reach/router";
 
 const NutrientsPage = props => {
   const { nutrients } = props;
+  //add user to props when login saves through navigation
 
   const [high, updateHigh] = useState([]);
   const [raised, updateRaised] = useState([]);
@@ -37,7 +38,6 @@ const NutrientsPage = props => {
     updateNormal(
       nutrients.filter(nutrient => checkTheLevel(nutrient, "normal"))
     );
-
     updateLower(nutrients.filter(nutrient => checkTheLevel(nutrient, "lower")));
   }, [nutrients]);
 
