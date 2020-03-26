@@ -10,6 +10,7 @@ import PaymentPage from "../PaymentPage/PaymentPage";
 import RegisterDNA from "../RegisterDNA";
 import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
+import ConfirmationPage from "../ConfirmationPage";
 import LandingPage from "../LandingPage";
 import { firestore } from "../../firebase";
 
@@ -53,9 +54,10 @@ const Routes = props => {
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />
           <EverydayFoods path="everyday-foods" />
-          <QuestionnairePage path="questionnaire-page/*" />
+          <QuestionnairePage path="questionnaire-page/*" user={user} />
           {nutrientsJSX}
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
+          <ConfirmationPage path="confirmation-page" />
         </PrivateRoutes>
         <NotFound default />
       </Router>

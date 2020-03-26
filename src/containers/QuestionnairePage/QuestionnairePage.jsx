@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./QuestionnairePage.module.scss";
-import { Router, Redirect } from "@reach/router";
+import { Router, Redirect, navigate } from "@reach/router";
 import NotFound from "../NotFound";
 import PageOne from "./PageOne";
 import PageTwo from "./PageTwo";
@@ -36,10 +36,54 @@ import PageThirtyOne from "./PageThirtyOne";
 import PageThirtyTwo from "./PageThirtyTwo";
 import PageThirtyThree from "./PageThirtyThree";
 import PageThirtyFour from "./PageThirtyFour";
+
+import { firestore } from "../../firebase";
+import MockData from "../../data/index.json";
+
 import ProgressBar from "../../components/ProgressBar";
 
-const QuestionnairePage = () => {
+const QuestionnairePage = props => {
+  const { user } = props;
+
   const [formValues, setFormValues] = useState({});
+
+  const [isShown, toggleShown] = useState(false);
+
+  const addToDb = apiData => {
+    firestore
+      .collection("users")
+      .doc(user.uid)
+      .set({
+        questionnaireAnswers: formValues,
+        userApiData: apiData,
+        priorityActions: MockData["user-dashboard"].priorities
+      })
+      .then(navigate("/confirmation-page"))
+      .catch(err => console.log(err));
+  };
+
+  const submitAnswers = () => {
+    toggleShown(!isShown);
+
+    const dataToPost = {
+      geneticGuid: "12345-6789",
+      reportType: "full",
+      answers: formValues
+    };
+
+    const requestOptions = {
+      method: "POST",
+      // headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dataToPost)
+    };
+    fetch("http://api.codetechs.co.uk/pbhl/report", requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        addToDb(data);
+      })
+      .catch(error => console.log(error));
+    console.log(dataToPost);
+  };
 
   const keysLength = Object.keys(formValues).length;
 
@@ -219,9 +263,9 @@ const QuestionnairePage = () => {
           changeMaster={setFormValues}
         />
         <PageThirtyFour
+          isShown={isShown}
           path="page-thirty-four"
-          masterValues={formValues}
-          changeMaster={setFormValues}
+          addToDb={submitAnswers}
         />
 
         <NotFound default />
