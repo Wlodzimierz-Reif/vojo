@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: gt-walsheim;
   font-weight: normal;
 }
@@ -27,14 +27,5 @@ h3,
 h4,
 h5 {
   font-weight: bold;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: gt-walsheim;
-  font-weight: normal;
 }
 /*# sourceMappingURL=App.module.css.map */
