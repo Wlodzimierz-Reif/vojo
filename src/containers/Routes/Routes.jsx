@@ -12,6 +12,7 @@ import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
 import ConfirmationPage from "../ConfirmationPage";
 import LandingPage from "../LandingPage";
+import UnderContructionPage from "../UnderContructionPage";
 import { firestore } from "../../firebase";
 
 const Routes = props => {
@@ -61,6 +62,7 @@ const Routes = props => {
           {nutrientsJSX}
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
           <ConfirmationPage path="confirmation-page" />
+          <UnderContructionPage path="under-construction-page" />
         </PrivateRoutes>
         <NotFound default />
       </Router>
