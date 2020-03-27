@@ -19,9 +19,21 @@ const UnderConstructionPage = () => {
             </Link>
           </div>
         </div>
-        <img className={styles.leftImg} src={strawBerry} />
-        <img className={styles.rightImg} src={butternut} />
-        <img className={styles.techSupport} src={technicalSupport} />
+        <img
+          className={styles.leftImg}
+          src={strawBerry}
+          alt="Strawberry image"
+        />
+        <img
+          className={styles.rightImg}
+          src={butternut}
+          alt="Butternut image"
+        />
+        <img
+          className={styles.techSupport}
+          src={technicalSupport}
+          alt="technical support image"
+        />
       </section>
     </>
   );
