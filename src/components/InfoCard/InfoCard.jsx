@@ -29,8 +29,8 @@ const InfoCard = props => {
       >
         <div>
           <h3>
-            Your
-            {nutrient.name.charAt(0).toUpperCase() + nutrient.name.slice(1)}
+            Your{" "}
+            {nutrient.name.charAt(0).toUpperCase() + nutrient.name.slice(1)}{" "}
             needs:
           </h3>
           <h2>
