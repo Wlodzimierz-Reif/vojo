@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./QuestionnairePage.module.scss";
-import { Router, Redirect } from "@reach/router";
+import { Router, Redirect, navigate } from "@reach/router";
 import NotFound from "../NotFound";
 import PageOne from "./PageOne";
 import PageTwo from "./PageTwo";
@@ -36,15 +36,66 @@ import PageThirtyOne from "./PageThirtyOne";
 import PageThirtyTwo from "./PageThirtyTwo";
 import PageThirtyThree from "./PageThirtyThree";
 import PageThirtyFour from "./PageThirtyFour";
+
+import { firestore } from "../../firebase";
+import MockData from "../../data/index.json";
+
 import ProgressBar from "../../components/ProgressBar";
 
-const QuestionnairePage = () => {
+const QuestionnairePage = props => {
+  const { user } = props;
+
   const [formValues, setFormValues] = useState({});
 
-  const keysLength = Object.keys(formValues).length;
+  const [isShown, toggleShown] = useState(false);
 
-  const percentage = Math.floor((keysLength / 59) * 100);
+  const [showError, toggleShowError] = useState(false);
+
+  const addToDb = apiData => {
+    firestore
+      .collection("users")
+      .doc(user.uid)
+      .update({
+        questionnaireAnswers: formValues,
+        userApiData: apiData,
+        priorityActions: MockData["user-dashboard"].priorities
+      })
+      .then(navigate("/confirmation-page"))
+      .catch(err => toggleShowError(err));
+  };
+
+  const submitAnswers = () => {
+    toggleShown(!isShown);
+
+    const dataToPost = {
+      geneticGuid: "12345-6789",
+      reportType: "full",
+      answers: formValues
+    };
+
+    const requestOptions = {
+      method: "POST",
+      body: JSON.stringify(dataToPost)
+    };
+    fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        addToDb(data);
+      })
+      .catch(error => toggleShowError(error));
+    console.log(dataToPost);
+  };
+
   useEffect(() => window.scrollTo(0, 0));
+
+  let counter = 0;
+  for (const property in formValues) {
+    if (formValues[property].length !== 0) {
+      counter++;
+    }
+  }
+
+  const percentage = Math.floor((counter / 59) * 100);
 
   return (
     <>
@@ -219,9 +270,10 @@ const QuestionnairePage = () => {
           changeMaster={setFormValues}
         />
         <PageThirtyFour
+          isShown={isShown}
+          showError={showError}
           path="page-thirty-four"
-          masterValues={formValues}
-          changeMaster={setFormValues}
+          addToDb={submitAnswers}
         />
 
         <NotFound default />

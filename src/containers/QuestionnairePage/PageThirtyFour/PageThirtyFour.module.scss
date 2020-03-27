@@ -13,10 +13,18 @@
     height: max-content;
     width: 30%;
     min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .button {
+      margin: $base-spacing * 4 auto;
       height: 50px;
       width: 100px;
+
+      :hover {
+        cursor: pointer;
+      }
     }
 
     & > section {
@@ -39,6 +47,60 @@
       top: 0;
       background-color: $primary-background;
       border-bottom: solid 2px $primary-color;
+    }
+
+    .displayError {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80vw;
+      height: 30vh;
+      background-color: rgba(255, 0, 0, 0.5);
+      border: 2px solid red;
+      padding: $base-spacing * 3;
+      font-size: calc(16px + (22 - 16) * ((100vw - 440px) / (1920 - 440)));
+
+      h4 {
+        margin: $base-spacing;
+      }
+
+      .btn {
+        width: 100px;
+        height: 40px;
+        margin-top: $base-spacing * 3;
+
+        :hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .loadingBox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .loader {
+        border: $base-spacing solid #f3f3f3; /* Light grey */
+        border-top: $base-spacing solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 2s linear infinite;
+        margin: $base-spacing;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     }
   }
 }
@@ -72,6 +134,21 @@
       display: unset;
     }
     .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .displayError {
+        width: 30vw;
+        height: 30vh;
+        background-color: rgba(255, 0, 0, 0.5);
+        border: 2px solid red;
+        border-radius: 10px;
+        padding: $base-spacing * 3;
+        font-size: calc(16px + (22 - 16) * ((100vw - 440px) / (1920 - 440)));
+      }
+
       .arrows {
         position: static;
         border-bottom: none;
@@ -83,6 +160,7 @@
         left: 60px;
         top: calc(50vh - 30px);
       }
+
       .rightArrow {
         position: absolute;
         transform: rotate(90deg);

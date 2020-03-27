@@ -4,12 +4,34 @@ import InputField from "../../components/InputField";
 import Button from "../../components/Button";
 import DNAimage from "../../assets/misc/barcode.jpg";
 import { useState } from "react";
+import { firestore } from "../../firebase";
+import ModalBox from "../../components/ModalBox";
+import { navigate } from "@reach/router";
 
-const RegisterDNA = () => {
+const RegisterDNA = props => {
+  const { user } = props;
   const [userBarcode, updateUserBarcode] = useState("");
+  const [modalShown, toggleModal] = useState(false);
 
-  const updateDB = () => {
-    console.log(userBarcode);
+  const addToDb = () => {
+    firestore
+      .collection("users")
+      .doc(user.uid)
+      .update({
+        geneticGuid: userBarcode
+      })
+      .then(() => {
+        displayConfirmation();
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  let modalJSX = modalShown ? { display: "unset" } : null;
+
+  const displayConfirmation = () => {
+    toggleModal(!modalShown);
   };
 
   return (
@@ -24,10 +46,18 @@ const RegisterDNA = () => {
           name="DNA ID"
           placeholder="Input your barcode here"
           handleInput={event => updateUserBarcode(event.target.value)}
+          selectInput={inputVal => {}}
         />
       </div>
       <div className={styles.button}>
-        <Button btnText="Submit DNA barcode" handleClick={updateDB} />
+        <Button btnText="Submit DNA barcode" handleClick={addToDb} />
+      </div>
+      <div className={styles.modal} style={modalJSX}>
+        <ModalBox
+          title="Success"
+          message="You have successfully registered your DNA sample"
+          handleClick={() => navigate("priorities-page")}
+        />
       </div>
     </section>
   );

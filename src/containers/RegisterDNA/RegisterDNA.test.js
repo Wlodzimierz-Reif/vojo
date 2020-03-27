@@ -16,7 +16,7 @@ describe("RegisterDNA tests", () => {
   });
 
   it("should render a button component", () => {
-    expect(component.find(Button).length).toEqual(1);
+    expect(component.find(Button).length).toEqual(2);
   });
 
   it("should render an input field component", () => {

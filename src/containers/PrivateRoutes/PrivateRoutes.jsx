@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
-import { redirectTo } from "@reach/router";
+import { navigate } from "@reach/router";
 import Footer from "../../components/Footer";
+import firebase from "../../firebase";
 
 const PrivateRoutes = props => {
-  const { children, user } = props;
+  const { children } = props;
 
   useEffect(() => {
-    if (!user) {
-      redirectTo("/");
-    }
+    firebase.auth().onAuthStateChanged(user => {
+      if (!user) {
+        navigate("/landing-page");
+      }
+    });
   });
 
   return (

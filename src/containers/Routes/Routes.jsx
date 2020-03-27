@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // import styles from "./Routes.module.scss";
 import PrivateRoutes from "../PrivateRoutes";
 import { Router, Redirect } from "@reach/router";
-import HomePage from "../HomePage";
 import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
 import QuestionnairePage from "../QuestionnairePage";
@@ -11,44 +10,64 @@ import DashboardNotPaid from "../../containers/DashboardNotPaid";
 import Dashboard from "../../containers/Dashboard";
 import Footer from "../../components/Footer";
 import PaymentPage from "../PaymentPage/PaymentPage";
-import mockData from "../../data";
 import RegisterDNA from "../RegisterDNA";
 import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
+import ConfirmationPage from "../ConfirmationPage";
+import LandingPage from "../LandingPage";
+import { firestore } from "../../firebase";
 
 const Routes = props => {
   const { signIn, signOut, user } = props;
-  // Any object, any key that contains the words
-  // "recommendation" or "action" place into
-  // new recommendations array
+  const [userData, setUserData] = useState(null);
+
+  const fetchUserData = () => {
+    if (user) {
+      firestore
+        .collection("users")
+        .doc(user.uid)
+        .get()
+        .then(doc => {
+          setUserData(doc.data());
+        })
+        .catch(err => console.log(err));
+    }
+  };
+
+  useEffect(() => {
+    fetchUserData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
+
+  const nutrientsJSX = userData ? (
+    <NutrientsPage
+      nutrients={userData.userApiData.nutrients}
+      path="nutrients-page"
+    />
+  ) : null;
 
   return (
     <>
       <Router>
-        <HomePage
-          path="home-page"
+        <Redirect noThrow from="/" to="landing-page" />
+        <LandingPage
+          path="landing-page"
           signInWithRedirect={signIn}
-          signOut={signOut}
+          user={user}
         />
         <DashboardNotPaid path="dashboard-notpaid" />
         <Dashboard path="dashboard" />
-
+        <PrivateRoutes path="/">
+          <PrioritiesPage path="priorities-page" signOut={signOut} />
+          <PaymentPage path="payment-page" />
+          <RegisterDNA path="register-dna" user={user} />
+          <EverydayFoods path="everyday-foods" />
+          <QuestionnairePage path="questionnaire-page/*" user={user} />
+          {nutrientsJSX}
+          <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
+          <ConfirmationPage path="confirmation-page" />
+        </PrivateRoutes>
         <NotFound default />
-        <Redirect noThrow from="/" to="home-page" />
-
-        {/* <PrivateRoutes path="/" user={user}> */}
-        <NutrientsPage nutrients={mockData.nutrients} path="nutrients-page" />
-        <PrioritiesPage
-          path="priorities-page"
-          signInWithRedirect={signIn}
-          signOut={signOut}
-        />
-        <PaymentPage path="payment-page" />
-        <EverydayFoods path="everyday-foods" />
-        <RegisterDNA path="register-dna" />
-        <QuestionnairePage path="questionnaire-page/*" />
-        <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
-        {/* </PrivateRoutes> */}
       </Router>
     </>
   );

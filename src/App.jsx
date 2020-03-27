@@ -4,6 +4,7 @@ import Routes from "./containers/Routes";
 // import Routes from "../src/containers/Routes";
 import { useState, useEffect } from "react";
 import firebase, { provider } from "./firebase";
+import { redirectTo } from "@reach/router";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -13,15 +14,14 @@ const App = () => {
   };
 
   const getUser = () => {
-    firebase
-      .auth()
-      .getRedirectResult()
-      .then(result => {
-        setUser(result.user);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        setUser(user);
+      } else {
+        redirectTo("/landing-page");
+        setUser(null);
+      }
+    });
   };
 
   const signOut = () => {
@@ -39,7 +39,7 @@ const App = () => {
 
   useEffect(() => {
     getUser();
-  }, []);
+  }, [user]);
 
   return (
     <>
