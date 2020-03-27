@@ -41,8 +41,11 @@ const NutrientsPage = props => {
     updateLower(nutrients.filter(nutrient => checkTheLevel(nutrient, "lower")));
   }, [nutrients, user]);
 
-  const checkTheLevel = (nutrient, level) =>
-    nutrient["requirement-category"] === level;
+  const checkTheLevel = (nutrient, level) => {
+    if (nutrient.hasOwnProperty(["requirement-category"])) {
+      return nutrient["requirement-category"].toLowerCase() === level;
+    }
+  };
 
   const mapFunction = array => {
     return array.map(item => (
