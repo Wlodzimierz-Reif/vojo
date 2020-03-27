@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./UnderContructionPage.module.scss";
+import styles from "./UnderConstructionPage.module.scss";
 import strawBerry from "../../assets/characters/strawberry-1.svg";
 import butternut from "../../assets/characters/butternut-1.svg";
 import technicalSupport from "../../assets/other-sgvs/technical-support.svg";
 import PayButton from "../../components/PayButton/PayButton";
-// import alert from "../../assets/other-sgvs/alert.svg";
+import { Link } from "@reach/router";
 
-const UnderContructionPage = () => {
+const UnderConstructionPage = () => {
   return (
     <>
       <section className={styles.container}>
@@ -14,16 +14,17 @@ const UnderContructionPage = () => {
           <h1>Oops... Page under construction...</h1>
           <h2>Coming soon...</h2>
           <div className={styles.btn}>
-            <PayButton btnText="Return to Home Page" isPaypal={true} />
+            <Link to="/landing-page">
+              <PayButton btnText="Return to Home Page" isPaypal={true} />
+            </Link>
           </div>
         </div>
         <img className={styles.leftImg} src={strawBerry} />
         <img className={styles.rightImg} src={butternut} />
         <img className={styles.techSupport} src={technicalSupport} />
-        {/* <img className={styles.alert} src={alert} /> */}
       </section>
     </>
   );
 };
 
-export default UnderContructionPage;
+export default UnderConstructionPage;
