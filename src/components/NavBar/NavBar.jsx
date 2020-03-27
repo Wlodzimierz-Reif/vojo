@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import styles from "./NavBar.module.scss";
 import logos from "../../assets/logos/black-logo.png";
@@ -42,7 +41,8 @@ const NavBar = props => {
 
   let toggleNav = navVisibility === true ? navOpen : navClosed;
 
-  window.onresize = () => (window.innerWidth >= 768 ? toggleOpen(true) : toggleOpen(false));
+  window.onresize = () =>
+    window.innerWidth >= 768 ? toggleOpen(true) : toggleOpen(false);
 
   useEffect(() => {
     if (window.innerWidth >= 768) {
@@ -77,40 +77,6 @@ const NavBar = props => {
         </section>
       </div>
     </>
-=======
-import React from "react";
-import styles from "./NavBar.module.scss";
-import logos from "../../assets/logos/tofu-logo.png";
-
-// TO BE HANDED IN AS PROPS (SEE MATE AND DENNIS!!! )
-// const exampleLinks = [
-//   "Priorities",
-//   "Nutrients",
-//   "Diet",
-//   "Health",
-//   "Genetics",
-//   "Answers",
-//   "Settings"
-// ];
-
-const getLinks = link => {
-  return <p> {link} </p>;
-};
-
-const NavBar = props => {
-  const { links, signOut } = props;
-
-  return (
-    <section className={styles.navBar}>
-      <img src={logos} alt="Logo" className={styles.navBarLogo} />
-      <section className={styles.links}>
-        {links.map(getLinks)}
-        <p className={styles.logOut} onClick={signOut}>
-          Log out
-        </p>
-      </section>
-    </section>
->>>>>>> 442f54a581c4e8603d8b764411dd94cf20d54d6b
   );
 };
 
