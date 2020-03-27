@@ -22,7 +22,15 @@
 
 @media only screen and (min-width: 1024px) {
   .listImage {
+    border: solid black 2px;
+    width: 100%;
+    padding: 50px 0 0 75px;
+    background-color: $primary-background;
+    display: flex;
+    // height: 100%;
     .dietContainer {
+      border: solid red 2px;
+      width: 50%;
       .title {
         color: $secondary-color;
         font-weight: 600;
