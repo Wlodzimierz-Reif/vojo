@@ -13,7 +13,6 @@ import DietBreakdown from "../DietBreakdown";
 import ConfirmationPage from "../ConfirmationPage";
 import LandingPage from "../LandingPage";
 import { firestore } from "../../firebase";
-import Mockdata from "../../data";
 
 const Routes = props => {
   const { signIn, signOut, user } = props;
@@ -28,7 +27,6 @@ const Routes = props => {
         .get()
         .then(doc => {
           setEverdayFoods(doc.data().userApiData);
-          // const retrievedItems = doc.data().userApiData);
         })
         .catch(err => console.log(err));
     }
@@ -41,9 +39,10 @@ const Routes = props => {
 
   const everydayFoodsJSX = userData ? (
     <EverydayFoods
-      infoHeaderBlack={item["food-stuffs"].name}
-      infoHeaderPurple={}
-      foodList={}
+      foods={foods}
+      infoHeaderBlack={userData["food-stuffs"].name}
+      // infoHeaderPurple={}
+      // foodList={}
       path="everyday-foods"
     />
   ) : null;

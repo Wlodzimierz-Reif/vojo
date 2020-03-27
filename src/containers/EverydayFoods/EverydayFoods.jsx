@@ -2,44 +2,34 @@ import React, { useState, useEffect } from "react";
 import styles from "../EverydayFoods/EverydayFoods.module.scss";
 import InfoList from "../../components/InfoList";
 import { firestore } from "../../firebase";
-// import Mockdata from "../../data";
 
 const EverydayFoods = props => {
-  const { user } = props;
-
-  // const addToDataBase = () => {
-  //   firestore
-  //     .collection("users")
-  //     .doc(user.uid)
-  //     .set({ userApiData: Mockdata })
-  //     // .then(() => {
-  //     //   fetchUserData();
-  //     // })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // };
+  const { user, foods } = props;
 
   const getItemJsx = () => {
     return foods.map(item => (
-      <InfoList infoHeaderBlack={item["food-stuffs"].name} infoHeaderPurple={item} foodList={item} />
-    ))};
-    
+      <InfoList
+        infoHeaderBlack={item["food-stuffs"].name}
+        infoHeaderPurple={item["food-stuffs"].name}
+        foodList={item["foods-stuffs"]["rs7454108-genotype"]}
+      />
+    ));
+  };
+
   return (
-    
-      <div className={styles.listImage}>
-        <section className={styles.dietContainer}>
-          {/* <button onClick={addToDataBase}>im angry an upset</button> */}
-          <h3 className={styles.title}>Your go-to everyday foods</h3>
-          {getItemJsx}
-          {/* <InfoList
+    <div className={styles.listImage}>
+      <section className={styles.dietContainer}>
+        {/* <button onClick={addToDataBase}>im angry an upset</button> */}
+        <h3 className={styles.title}>Your go-to everyday foods</h3>
+        {getItemJsx}
+        {/* <InfoList
             infoHeaderBlack={user.uid["food-stuffs"].name}
             infoHeaderPurple={"Coconut or Soya"}
             foodList={
               "Plant-based milks and yoghurts are a good alternative to dairy foods and can be a good source of vitamins and minerals, such as calcium, as they are often fortified. As you handle fats better than carbohydrates, go for coconut or soya milk as these are higher in fat and lower in carbohydrate." */}
-            {/* }
+        {/* }
           /> */}
-          {/* <InfoList
+        {/* <InfoList
             infoHeaderBlack={"Other Vegan Dairy Alternatives"}
             foodList={
               "There is an increasing variety of plant-based cheeses and spreads, but these are highly processed foods, often high in fat and salt, so should only be eaten as a occasionally."
@@ -65,10 +55,8 @@ const EverydayFoods = props => {
             foodList={
               "We all have that food... and yours is a good dose of dark chocolate now and again!"
             } */}
-          </>
-        </section>
-      </div>
-  
+      </section>
+    </div>
   );
 };
 

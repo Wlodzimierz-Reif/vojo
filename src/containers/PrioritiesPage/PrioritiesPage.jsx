@@ -17,7 +17,7 @@ const PrioritiesPage = props => {
   return (
     <>
       <NavBar links={[""]} signOut={signOut} />
-
+      <button path="everyday-foods">Everyday Foods Test</button>
       {/* <button onClick={signInWithRedirect}>Sign In</button>
       <button onClick={signOut}>Sign Out</button> */}
       <section className={styles.prioritiesPage}>
