@@ -18,6 +18,7 @@ import { firestore } from "../../firebase";
 const Routes = props => {
   const { signIn, signOut, user } = props;
   const [userData, setUserData] = useState(null);
+  // const [data, reloadData] = useState(true);
 
   const fetchUserData = () => {
     if (user) {
@@ -37,12 +38,18 @@ const Routes = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
-  const nutrientsJSX = userData ? (
-    <NutrientsPage
-      nutrients={userData.userApiData.nutrients}
-      path="nutrients-page"
-    />
-  ) : null;
+  const nutrientsJSX =
+    userData && userData.userApiData ? (
+      <>
+      {fetchUserData()}
+      <NutrientsPage
+        nutrients={userData.userApiData.nutrients}
+        path="nutrients-page"
+      />
+      </>
+    ) : (
+      <IncompletePage text={"questionnaire"} path="nutrients-page" />
+    );
 
   return (
     <>
@@ -56,10 +63,15 @@ const Routes = props => {
         <PrivateRoutes path="/">
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
-          <RegisterDNA path="register-dna" user={user} />
+          <RegisterDNA path="register-dna" user={user} userData={userData} />
           <EverydayFoods path="everyday-foods" />
           <IncompletePage path="incomplete-page" text={"questionnaire"} />
-          <QuestionnairePage path="questionnaire-page/*" user={user} />
+          <QuestionnairePage
+            path="questionnaire-page/*"
+            user={user}
+            userData={userData}
+            // refreshNutrients={() => reloadData(!data)}
+          />
           {nutrientsJSX}
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
           <ConfirmationPage path="confirmation-page" />
