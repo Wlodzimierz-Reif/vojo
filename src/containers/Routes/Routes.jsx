@@ -36,12 +36,13 @@ const Routes = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
-  const nutrientsJSX = userData ? (
-    <NutrientsPage
-      nutrients={userData.userApiData.nutrients}
-      path="nutrients-page"
-    />
-  ) : null;
+  const nutrientsJSX =
+    userData && userData.userApiData ? (
+      <NutrientsPage
+        nutrients={userData.userApiData.nutrients}
+        path="nutrients-page"
+      />
+    ) : null;
 
   return (
     <>
@@ -55,9 +56,13 @@ const Routes = props => {
         <PrivateRoutes path="/" user={user}>
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
-          <RegisterDNA path="register-dna" user={user} />
+          <RegisterDNA path="register-dna" user={user} userData={userData} />
           <EverydayFoods path="everyday-foods" />
-          <QuestionnairePage path="questionnaire-page/*" user={user} />
+          <QuestionnairePage
+            path="questionnaire-page/*"
+            user={user}
+            userData={userData}
+          />
           {nutrientsJSX}
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
           <ConfirmationPage path="confirmation-page" />
