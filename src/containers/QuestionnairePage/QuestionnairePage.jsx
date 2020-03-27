@@ -43,7 +43,7 @@ import MockData from "../../data/index.json";
 import ProgressBar from "../../components/ProgressBar";
 
 const QuestionnairePage = props => {
-  const { user } = props;
+  const { user, userData } = props;
 
   const [formValues, setFormValues] = useState({});
 
@@ -55,7 +55,8 @@ const QuestionnairePage = props => {
     firestore
       .collection("users")
       .doc(user.uid)
-      .update({
+      .set({
+        ...userData,
         questionnaireAnswers: formValues,
         userApiData: apiData,
         priorityActions: MockData["user-dashboard"].priorities
@@ -77,6 +78,7 @@ const QuestionnairePage = props => {
       method: "POST",
       body: JSON.stringify(dataToPost)
     };
+
     fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
       .then(response => response.json())
       .then(data => {

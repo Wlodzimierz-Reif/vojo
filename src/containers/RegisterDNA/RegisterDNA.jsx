@@ -9,7 +9,7 @@ import ModalBox from "../../components/ModalBox";
 import { navigate } from "@reach/router";
 
 const RegisterDNA = props => {
-  const { user } = props;
+  const { user, userData } = props;
   const [userBarcode, updateUserBarcode] = useState("");
   const [modalShown, toggleModal] = useState(false);
 
@@ -17,7 +17,8 @@ const RegisterDNA = props => {
     firestore
       .collection("users")
       .doc(user.uid)
-      .update({
+      .set({
+        ...userData,
         geneticGuid: userBarcode
       })
       .then(() => {
