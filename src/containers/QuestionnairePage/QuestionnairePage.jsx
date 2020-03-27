@@ -43,7 +43,7 @@ import MockData from "../../data/index.json";
 import ProgressBar from "../../components/ProgressBar";
 
 const QuestionnairePage = props => {
-  const { user } = props;
+  const { user, userData } = props;
 
   const [formValues, setFormValues] = useState({});
 
@@ -56,6 +56,7 @@ const QuestionnairePage = props => {
       .collection("users")
       .doc(user.uid)
       .set({
+        ...userData,
         questionnaireAnswers: formValues,
         userApiData: apiData,
         priorityActions: MockData["user-dashboard"].priorities
@@ -77,6 +78,7 @@ const QuestionnairePage = props => {
       method: "POST",
       body: JSON.stringify(dataToPost)
     };
+
     fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
       .then(response => response.json())
       .then(data => {
@@ -86,10 +88,16 @@ const QuestionnairePage = props => {
     console.log(dataToPost);
   };
 
-  const keysLength = Object.keys(formValues).length;
-
-  const percentage = Math.floor((keysLength / 59) * 100);
   useEffect(() => window.scrollTo(0, 0));
+
+  let counter = 0;
+  for (const property in formValues) {
+    if (formValues[property].length !== 0) {
+      counter++;
+    }
+  }
+
+  const percentage = Math.floor((counter / 59) * 100);
 
   return (
     <>

@@ -54,7 +54,7 @@ const Routes = props => {
         .doc(user.uid)
         .get()
         .then(doc => {
-          setUserData(doc.data().userApiData);
+          setUserData(doc.data());
         })
         .catch(err => console.log(err));
     }
@@ -65,9 +65,13 @@ const Routes = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
-  const nutrientsJSX = userData ? (
-    <NutrientsPage nutrients={userData.nutrients} path="nutrients-page" />
-  ) : null;
+  const nutrientsJSX =
+    userData && userData.userApiData ? (
+      <NutrientsPage
+        nutrients={userData.userApiData.nutrients}
+        path="nutrients-page"
+      />
+    ) : null;
 
   return (
     <>
@@ -78,15 +82,16 @@ const Routes = props => {
           signInWithRedirect={signIn}
           user={user}
         />
-        <PrivateRoutes path="/" user={user}>
-          <PrioritiesPage
-            path="priorities-page"
-            user={user}
-            signOut={signOut}
-          />
+        <PrivateRoutes path="/">
+          <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
-          <RegisterDNA path="register-dna" user={user} />
-          <QuestionnairePage path="questionnaire-page/*" user={user} />
+          <RegisterDNA path="register-dna" user={user} userData={userData} />
+          <EverydayFoods path="everyday-foods" />
+          <QuestionnairePage
+            path="questionnaire-page/*"
+            user={user}
+            userData={userData}
+          />
           {nutrientsJSX}
           {everydayFoodsJSX}
           <EverydayFoods path="everyday-foods" />
