@@ -44,6 +44,7 @@ const Routes = props => {
       <NutrientsPage
         nutrients={userData.userApiData.nutrients}
         path="nutrients-page"
+        signOut={signOut}
       />
     ) : null;
 
@@ -59,7 +60,7 @@ const Routes = props => {
         <DashboardNotPaid path="dashboard-notpaid" />
         <Dashboard path="dashboard" />
         <PrivateRoutes path="/">
-          <PrioritiesPage path="priorities-page" signOut={signOut} />
+        <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} userData={userData} />
           <EverydayFoods path="everyday-foods" />

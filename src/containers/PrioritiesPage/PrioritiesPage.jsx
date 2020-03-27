@@ -8,22 +8,22 @@ import Arrow from "../../assets/graphic-devices/primary-col-arrow-1.svg";
 import { Link } from "@reach/router";
 
 const PrioritiesPage = props => {
-  const { haveSample, signInWithRedirect, signOut } = props;
+  const { haveSample, signOut } = props;
 
   const [isPromptShown, togglePromptShown] = useState(haveSample);
 
   const setSampleBoxVisibility = isPromptShown ? styles.hideNoSampleBox : "";
 
   return (
-    <>
-      <NavBar links={[""]} signOut={signOut} />
+    <section className={styles.navBarFlex}>
+      <NavBar signOut={signOut} />
       <section className={styles.prioritiesPage}>
         {/* the paragraph bellow can be removed after the demo or after we have another way to link the questionnaire page to the dashboard. - Lucian -*/}
-        <p>
+        {/* <p>
           <Link to="/questionnaire-page">Questionnaire Page</Link>
           <br></br>
           <Link to="/register-dna">Register DNA</Link>
-        </p>
+        </p> */}
         <h2>Priorities</h2>
         <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
           <NoSampleBox closeBox={() => togglePromptShown(!isPromptShown)} />
@@ -77,7 +77,7 @@ const PrioritiesPage = props => {
           <img src={Image} alt="Vegetable person" />
         </div>
       </section>
-    </>
+    </section>
   );
 };
 

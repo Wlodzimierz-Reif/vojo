@@ -17,7 +17,7 @@ const PrivateRoutes = props => {
   return (
     <>
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

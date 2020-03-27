@@ -3,19 +3,26 @@ import styles from "./NavBar.module.scss";
 import logos from "../../assets/logos/black-logo.png";
 import Button from "../Button";
 import data from "../../data/index.json";
+import { Link } from "@reach/router";
 
 const mainLinks = [
-  { name: "Dashboard" },
-  { name: "Diet plan" },
-  { name: "Health" },
-  { name: "Nutrient breakdown" },
-  { name: "Recipes" },
-  { name: "Genetics" },
-  { name: "Profile" }
+  { name: "Dashboard", path: "../dashboard" },
+  { name: "Diet plan", path: "../nutrients-page" },
+  { name: "Health", path: "../nutrients-page" },
+  { name: "Nutrient breakdown", path: "../priorities-page" },
+  { name: "Recipes", path: "../nutrients-page" },
+  { name: "Genetics", path: "../nutrients-page" },
+  { name: "Profile", path: "../nutrients-page" }
 ];
 
 const getLinks = link => {
-  return <p> {link.name} </p>;
+  return (
+    <>
+      <Link to={link.path} className={styles.link}>
+        <p>{link.name}</p>
+      </Link>
+    </>
+  );
 };
 
 console.log(data["user-dashboard"]);
@@ -23,7 +30,7 @@ console.log(data["user-dashboard"]);
 const currentPage = "Dashboard";
 
 const NavBar = props => {
-  // const { currentPage } = props;
+  const { signOut } = props;
   const [navVisibility, toggleOpen] = useState(false);
 
   let switchBurgerIcon =
@@ -40,6 +47,8 @@ const NavBar = props => {
   };
 
   let toggleNav = navVisibility === true ? navOpen : navClosed;
+
+  const display = navVisibility ? "" : styles.display;
 
   window.onresize = () =>
     window.innerWidth >= 768 ? toggleOpen(true) : toggleOpen(false);
@@ -63,17 +72,25 @@ const NavBar = props => {
               className={`${styles.burgerMenu} ${switchBurgerIcon}`}
             ></button>
           </div>
-          <div className={styles.links} style={toggleNav.hide}>
+          <div className={`${styles.links} ${display}`} style={toggleNav.hide}>
             <p className={styles.navLine}></p>
             {mainLinks.map(getLinks)}
+            <p className={styles.link} onClick={signOut}>
+              Log Out
+            </p>
             <p className={styles.navLine}></p>
           </div>
         </section>
-        <section className={styles.navBottom} style={toggleNav.hide}>
-          <p>Ask a question</p>
-          <p>T&Cs</p>
-          <p>Legal stuff</p>
-          <Button btnText={"Join us on Facebook"} />
+        <section
+          className={`${styles.navBottom} ${display}`}
+          style={toggleNav.hide}
+        >
+          <p className={styles.link}>Ask a question</p>
+          <p className={styles.link}>T&Cs</p>
+          <p className={styles.link}>Legal stuff</p>
+          <div className={styles.btn}>
+            <Button btnText={"Join us on Facebook"} />
+          </div>
         </section>
       </div>
     </>
