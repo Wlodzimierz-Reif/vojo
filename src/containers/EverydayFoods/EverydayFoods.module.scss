@@ -1,0 +1,34 @@
+@import "../../variables.scss";
+
+.listImage {
+  width: 100vw;
+
+  word-wrap: break-word;
+
+  .dietContainer {
+    .title {
+      color: $secondary-color;
+      font-weight: 600;
+      font-size: 25px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .listImage {
+    height: 100vh;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .listImage {
+    .dietContainer {
+      .title {
+        color: $secondary-color;
+        font-weight: 600;
+        margin: $base-spacing * 2 0 $base-spacing * 6 0;
+        font-size: 28px;
+      }
+    }
+  }
+}

@@ -1,86 +1,167 @@
 @import "../../variables.scss";
 
 .entirePage {
-    @include flex-column;
-    
+  @include flex-column;
+  // width: 100%;
 
-    .mainPage {
-        width: 100%;
-        // margin-top: $base-spacing * 9;
-        @include flex-column;
+  .mainPage {
+    // margin-top: $base-spacing * 9;
+    @include flex-column;
+    align-items: center;
+
+    section {
+      width: 100%;
+
+      .healthScore {
+        margin-top: $base-spacing * 4;
+        background-color: $sucessful;
+        border-radius: $base-spacing;
+        padding: $base-spacing * 2;
+        margin-bottom: $base-spacing * 2;
+        @include flex-row;
         align-items: center;
+        justify-content: space-between;
+        color: white;
+
+        p {
+          // text-decoration: underline;
+          width: 33%;
+          // margin-bottom: $base-spacing;
+          // display: inline-block;
+        }
 
         h2 {
-            padding-top: $base-spacing * 2;
-            font-size: 48px;
+          // display: inline-block;
+          font-size: 42px;
+          span {
+            font-size: 42px;
+          }
         }
 
-        section {
-            width: 100%;
+        span {
+          font-size: 13px;
+          font-weight: bold;
+        }
+      }
+
+      .planOfAction {
+        @include flex-row;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        h3 {
+          color: $vojo-orange;
+          font-size: 22px;
+          padding: $base-spacing 0;
         }
 
-        .healthScore {
-            margin-top: $base-spacing * 4;
-            background-color: $neutral;
+        img {
+          position: relative;
+          z-index: 1;
+          width: 70px;
+          top: 15px;
+        }
+      }
+
+      .dietPlan {
+        h3 {
+          color: $vojo-orange;
+          font-size: 22px;
+          margin-top: $base-spacing * 3;
+          padding: $base-spacing 0;
+        }
+
+        div {
+          .mojoBox {
+            // @include flex-column;
             border-radius: $base-spacing;
+            background-color: $secondary-background;
             padding: $base-spacing * 2;
             margin-bottom: $base-spacing * 2;
-
-            
-            p {
-                // text-decoration: underline;
-                margin-bottom: $base-spacing;
-            }
 
             li {
-                list-style-position: inside;
-                padding-left: $base-spacing * 2;
-            }  
-        }
-
-        .nextSteps {
-            background-color: $vojo-cream;
-            border-radius: $base-spacing;
-            padding: $base-spacing * 2;
-            margin-bottom: $base-spacing * 2;
-
-            h3 {
-                padding-bottom: $base-spacing;
-                font-size: 1em;
+              list-style-position: inside;
             }
 
             p {
-                margin-bottom: $base-spacing;
-                font-weight: normal;
-            }
-        }
+              font-weight: normal;
 
-        .fruitPeople {
-            display: flex;
-            justify-content: center;
+              padding: 0;
+            }
+          }
+          .dietType {
+            align-items: center;
+            text-align: center;
             img {
-                height: 60px;
-                width: 60px;
+              width: 110px;
+              margin-bottom: $base-spacing * 3;
             }
-
-            .beetRoot {
-                height: 30px;
+            p {
+              margin-bottom: $base-spacing;
             }
+            h4 {
+              font-size: 28px;
+              margin-bottom: $base-spacing * 5;
+            }
+          }
         }
+      }
+
+      .fruitPeople {
+        @include flex-row;
+        justify-content: center;
+        align-items: flex-end;
+        margin-top: $base-spacing * 3;
+        height: 100%;
+        max-width: 100%;
+
+        img {
+          height: 40px;
+          width: 50px;
+        }
+
+        .beetRoot {
+          height: 90px;
+          width: 70px;
+        }
+
+        .banana {
+          margin-left: $base-spacing;
+          height: 40px;
+          width: 80px;
+        }
+      }
+
+      .prioBox {
+        margin-bottom: $base-spacing * 2;
+      }
     }
+  }
 }
 
 @media only screen and (min-width: 768px) {
+  .entirePage {
+    flex-direction: row;
+    // justify-content: space-between;
 
-    .entirePage {
-        flex-direction: row;
-        justify-content: space-between;
-        // .stickyTop {
-        //     height: calc(100vh - 32px);        
-        //     min-width: 186px;
-        //     width: 186px;
-        //     position: unset;
-        //     margin-right: $base-spacing * 2;
-        // }
+    .mainPage {
+      .fruitPeople {
+        img {
+          height: 60px;
+          width: 70px;
+        }
+
+        .beetRoot {
+          height: 110px;
+          width: 90px;
+        }
+
+        .banana {
+          margin-left: $base-spacing;
+          height: 50px;
+          width: 110px;
+        }
+      }
     }
-}  
+  }
+}
