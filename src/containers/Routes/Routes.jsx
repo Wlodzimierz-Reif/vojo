@@ -12,6 +12,7 @@ import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
 import ConfirmationPage from "../ConfirmationPage";
 import LandingPage from "../LandingPage";
+import IncompletePage from "../IncompletePage";
 import { firestore } from "../../firebase";
 
 const Routes = props => {
@@ -57,6 +58,7 @@ const Routes = props => {
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />
           <EverydayFoods path="everyday-foods" />
+          <IncompletePage path="incomplete-page" text={"questionnaire"} />
           <QuestionnairePage path="questionnaire-page/*" user={user} />
           {nutrientsJSX}
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
