@@ -4,14 +4,13 @@ import InfoList from "../../components/InfoList";
 import { firestore } from "../../firebase";
 
 const EverydayFoods = props => {
-  const { user, foods } = props;
+  const { everydayFoods } = props;
 
-  const getItemJsx = () => {
-    return foods.map(item => (
+  const getItemJsx = array => {
+    return array.map(item => (
       <InfoList
-        infoHeaderBlack={item["food-stuffs"].name}
-        infoHeaderPurple={item["food-stuffs"].name}
-        foodList={item["foods-stuffs"]["rs7454108-genotype"]}
+        infoHeaderBlack={item.name}
+        infoHeaderPurple={item.recommendation}
       />
     ));
   };
@@ -19,16 +18,15 @@ const EverydayFoods = props => {
   return (
     <div className={styles.listImage}>
       <section className={styles.dietContainer}>
-        {/* <button onClick={addToDataBase}>im angry an upset</button> */}
         <h3 className={styles.title}>Your go-to everyday foods</h3>
-        {getItemJsx}
+        {getItemJsx(everydayFoods)}
         {/* <InfoList
             infoHeaderBlack={user.uid["food-stuffs"].name}
             infoHeaderPurple={"Coconut or Soya"}
             foodList={
               "Plant-based milks and yoghurts are a good alternative to dairy foods and can be a good source of vitamins and minerals, such as calcium, as they are often fortified. As you handle fats better than carbohydrates, go for coconut or soya milk as these are higher in fat and lower in carbohydrate." */}
         {/* }
-          /> */}
+          />
         {/* <InfoList
             infoHeaderBlack={"Other Vegan Dairy Alternatives"}
             foodList={

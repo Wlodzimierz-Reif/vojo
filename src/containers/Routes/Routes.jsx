@@ -17,35 +17,6 @@ import { firestore } from "../../firebase";
 const Routes = props => {
   const { signIn, signOut, user } = props;
   const [userData, setUserData] = useState(null);
-  const [foods, setEverdayFoods] = useState([]);
-
-  const fetchFoods = () => {
-    if (user) {
-      firestore
-        .collection("users")
-        .doc(user.uid)
-        .get()
-        .then(doc => {
-          setEverdayFoods(doc.data().userApiData);
-        })
-        .catch(err => console.log(err));
-    }
-  };
-
-  useEffect(() => {
-    fetchFoods();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
-
-  const everydayFoodsJSX = userData ? (
-    <EverydayFoods
-      foods={foods}
-      infoHeaderBlack={userData["food-stuffs"].name}
-      // infoHeaderPurple={}
-      // foodList={}
-      path="everyday-foods"
-    />
-  ) : null;
 
   const fetchUserData = () => {
     if (user) {
@@ -64,6 +35,16 @@ const Routes = props => {
     fetchUserData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
+
+  const everydayFoodsJSX =
+    userData && userData.userApiData ? (
+      <EverydayFoods
+        everydayFoods={userData.userApiData["food-stuffs"]}
+        path="everyday-foods"
+      />
+    ) : (
+      <EverydayFoods everydayFoods={[]} path="everyday-foods" />
+    );
 
   const nutrientsJSX =
     userData && userData.userApiData ? (
@@ -86,7 +67,6 @@ const Routes = props => {
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} userData={userData} />
-          <EverydayFoods path="everyday-foods" />
           <QuestionnairePage
             path="questionnaire-page/*"
             user={user}
