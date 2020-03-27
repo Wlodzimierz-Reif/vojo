@@ -6,7 +6,7 @@ const InfoCard = props => {
 
   let displayStyle = null;
 
-  switch (nutrient["requirement-category"]) {
+  switch (nutrient["requirement-category"].toLowerCase()) {
     case "lower":
     case "normal":
       displayStyle = "green";
@@ -21,19 +21,10 @@ const InfoCard = props => {
       displayStyle = "red";
   }
 
-  // const showSidePanel = () => {
-  //   return <SidePanel nutrient={nutrient} displayStyle={displayStyle} />;
-  // };
-
   return (
     <>
-      {/* <section className={styles.showPanel}>{insertJsx}</section> */}
       <section
-        onClick={
-          () => displayPanel(nutrient, displayStyle)
-          // () => updateState(!currentState)
-          // changeColor(displayStyle);
-        }
+        onClick={() => displayPanel(nutrient, displayStyle)}
         className={`${styles.card} ${styles[displayStyle]}`}
       >
         <div>
