@@ -38,18 +38,20 @@ const Routes = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
-  const nutrientsJSX =
-    userData && userData.userApiData ? (
-      <>
-      {fetchUserData()}
-      <NutrientsPage
-        nutrients={userData.userApiData.nutrients}
-        path="nutrients-page"
-      />
-      </>
-    ) : (
-      <IncompletePage text={"questionnaire"} path="nutrients-page" />
-    );
+  const nutrientsJSX = () => {
+  return(
+    fetchUserData();
+      userData && userData.userApiData ? (
+        <>
+        <NutrientsPage
+          nutrients={userData.userApiData.nutrients}
+          path="nutrients-page"
+        />
+        </>
+      ) : (
+        <IncompletePage text={"questionnaire"} path="nutrients-page" />
+    );)
+  }
 
   return (
     <>
