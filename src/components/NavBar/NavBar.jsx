@@ -7,7 +7,7 @@ import { Link } from "@reach/router";
 
 const mainLinks = [
   { name: "Dashboard", path: "../dashboard" },
-  { name: "Diet plan", path: "../nutrients-page" },
+  { name: "Diet plan", path: "../diet-breakdown" },
   { name: "Health", path: "../nutrients-page" },
   { name: "Nutrient breakdown", path: "../priorities-page" },
   { name: "Recipes", path: "../nutrients-page" },

@@ -3,15 +3,29 @@ import styles from "./RegisterDNA.module.scss";
 import InputField from "../../components/InputField";
 import Button from "../../components/Button";
 import DNAimage from "../../assets/misc/barcode.jpg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { firestore } from "../../firebase";
 import ModalBox from "../../components/ModalBox";
 import { navigate } from "@reach/router";
 
 const RegisterDNA = props => {
-  const { user, userData } = props;
+  const { user } = props;
   const [userBarcode, updateUserBarcode] = useState("");
   const [modalShown, toggleModal] = useState(false);
+  const [userData, setUserData] = useState(null);
+
+  const fetchUserData = () => {
+    if (user) {
+      firestore
+        .collection("users")
+        .doc(user.uid)
+        .get()
+        .then(doc => {
+          setUserData(doc.data());
+        })
+        .catch(err => console.log(err));
+    }
+  };
 
   const addToDb = () => {
     firestore
@@ -28,6 +42,11 @@ const RegisterDNA = props => {
         console.log(err);
       });
   };
+
+  useEffect(() => {
+    fetchUserData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
 
   let modalJSX = modalShown ? { display: "unset" } : null;
 
@@ -58,6 +77,7 @@ const RegisterDNA = props => {
           title="Success"
           message="You have successfully registered your DNA sample"
           handleClick={() => navigate("priorities-page")}
+          buttonTxt="Dashboard"
         />
       </div>
     </section>

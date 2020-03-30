@@ -1,12 +1,10 @@
 @import "../../variables.scss";
 
 .navBarFlex {
-  border: 2px solid red;
   display: flex;
   justify-content: space-between;
 
   .nutrientsFlex {
-    border: 2px solid purple;
     width: 100%;
     min-height: 100vh;
 

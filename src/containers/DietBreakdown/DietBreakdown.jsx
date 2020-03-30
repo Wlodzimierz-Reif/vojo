@@ -8,13 +8,16 @@ import SingleBreakdown from "../../components/SingleBreakdown";
 import bean from "../../assets/characters/bean-1.svg";
 import strawberry from "../../assets/characters/strawberry-1.svg";
 import peanut from "../../assets/characters/peanut-1.svg";
-import NavBar from "../../components/NavBar"
+import NavBar from "../../components/NavBar";
 
 const DietBreakdown = props => {
-  const { brief, signOut } = props;
+  const { userApiData, signOut } = props;
+  console.log(userApiData);
 
-  const shortBrief =
-    brief.length < 300 ? brief : brief.substring(0, 200) + "...";
+  const text =
+    userApiData["personalised-recommendations"]["weight-management-actions"][0];
+
+  const shortBrief = text.length < 300 ? text : text.substring(0, 200) + "...";
 
   return (
     <section className={styles.navBarFlex}>
@@ -57,7 +60,7 @@ const DietBreakdown = props => {
           </section>
         </section>
       </div>
-    </>
+    </section>
   );
 };
 

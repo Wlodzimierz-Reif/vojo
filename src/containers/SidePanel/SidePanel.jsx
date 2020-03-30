@@ -9,7 +9,6 @@ const SidePanel = props => {
     <>
       <section className={styles.sidePanelContainer}>
         <div className={styles.sidePanel}>
-          {/* <img src={topWave} className={styles.topWave} alt="" /> */}
           <p
             className={styles.closeButton}
             onClick={event => handleClick(event.target.value)}
@@ -17,7 +16,6 @@ const SidePanel = props => {
             Close
           </p>
           <NutrientsInfo displayStyle={displayStyle} nutrient={nutrient} />
-          {/* <img src={bottomWave} className={styles.bottomWave} alt="" /> */}
         </div>
       </section>
     </>
