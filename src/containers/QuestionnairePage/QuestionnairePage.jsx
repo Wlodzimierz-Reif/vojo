@@ -43,7 +43,7 @@ import MockData from "../../data/index.json";
 import ProgressBar from "../../components/ProgressBar";
 
 const QuestionnairePage = props => {
-  const { user, userData } = props;
+  const { user, userData, fetchData } = props;
 
   const [formValues, setFormValues] = useState({});
 
@@ -61,6 +61,7 @@ const QuestionnairePage = props => {
         userApiData: apiData,
         priorityActions: MockData["user-dashboard"].priorities
       })
+      .then(fetchData)
       .then(navigate("/confirmation-page"))
       .catch(err => toggleShowError(err));
   };
@@ -82,8 +83,8 @@ const QuestionnairePage = props => {
     fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
       .then(response => response.json())
       .then(data => {
-        addToDb(data);
-      })
+        addToDb(data)
+      } )
       .catch(error => toggleShowError(error));
     console.log(dataToPost);
   };
@@ -276,6 +277,7 @@ const QuestionnairePage = props => {
           showError={showError}
           path="page-thirty-four"
           addToDb={submitAnswers}
+        
         />
 
         <NotFound default />
