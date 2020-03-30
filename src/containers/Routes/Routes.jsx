@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import styles from "./Routes.module.scss";
 import PrivateRoutes from "../PrivateRoutes";
 import { Router, Redirect } from "@reach/router";
 import NutrientsPage from "../NutrientsPage";
@@ -12,6 +11,7 @@ import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
 import ConfirmationPage from "../ConfirmationPage";
 import LandingPage from "../LandingPage";
+import IncompletePage from "../IncompletePage";
 import { firestore } from "../../firebase";
 
 const Routes = props => {
@@ -36,13 +36,18 @@ const Routes = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
-  const nutrientsJSX =
-    userData && userData.userApiData ? (
-      <NutrientsPage
-        nutrients={userData.userApiData.nutrients}
-        path="nutrients-page"
-      />
-    ) : null;
+  const nutrientsJSX = () => {
+    return userData && userData.userApiData ? (
+      <>
+        <NutrientsPage
+          nutrients={userData.userApiData.nutrients}
+          path="nutrients-page"
+        />
+      </>
+    ) : (
+      <IncompletePage text={"questionnaire"} path="nutrients-page" />
+    );
+  };
 
   const dietBreakdownJSX =
     userData && userData.userApiData ? (
@@ -63,9 +68,14 @@ const Routes = props => {
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />
           <EverydayFoods path="everyday-foods" />
-          <QuestionnairePage path="questionnaire-page/*" user={user} />
-          {nutrientsJSX}
+          {nutrientsJSX()}
           {dietBreakdownJSX}
+          <IncompletePage path="incomplete-page" text={"questionnaire"} />
+          <QuestionnairePage
+            path="questionnaire-page/*"
+            user={user}
+            userData={userData}
+          />
           <ConfirmationPage path="confirmation-page" />
         </PrivateRoutes>
         <NotFound default />
