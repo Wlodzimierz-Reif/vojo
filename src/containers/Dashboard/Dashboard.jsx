@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Dashboard.module.scss";
 import NavBar from "../../components/NavBar";
-import data from "../../data/index.json";
+// import data from "../../data/index.json";
 import arrow from "../../assets/graphic-devices/white-arrow-1.svg";
 import Button from "../../components/Button";
 import broccoli from "../../assets/characters/broccoli-2.svg";
@@ -15,10 +15,10 @@ import banana from "../../assets/characters/banana-1.svg";
 import PriorityBox from "../../components/PriorityBox";
 
 const Dashboard = props => {
-  // const {userData} = props;
+  const { userData } = props;
 
   const printPriorities = () => {
-    const prioritiesData = data["user-dashboard"].priorities.map(
+    const prioritiesData = userData["user-dashboard"].priorities.map(
       (prio, index) => (
         <div className={styles.prioBox}>
           <PriorityBox
@@ -38,24 +38,26 @@ const Dashboard = props => {
   const goToFoods = () => {
     return (
       <ul>
-        <li>Name: {data["user-dashboard"]["diet-type"].name}</li>
+        <li>Name: {userData["user-dashboard"]["diet-type"].name}</li>
         <li>
           Plant milk:{" "}
-          {capitaliseInitial(data["user-dashboard"]["diet-type"]["plant-milk"])}
+          {capitaliseInitial(
+            userData["user-dashboard"]["diet-type"]["plant-milk"]
+          )}
         </li>
         <li>
-          Oil: {capitaliseInitial(data["user-dashboard"]["diet-type"].oil)}
+          Oil: {capitaliseInitial(userData["user-dashboard"]["diet-type"].oil)}
         </li>
         <li>
           Guilty pleasure:{" "}
           {capitaliseInitial(
-            data["user-dashboard"]["diet-type"]["guilty-pleasure"]
+            userData["user-dashboard"]["diet-type"]["guilty-pleasure"]
           )}
         </li>
         <li>
           Go-to-breakfast:{" "}
           {capitaliseInitial(
-            data["user-dashboard"]["diet-type"]["go-to-breakfast"]
+            userData["user-dashboard"]["diet-type"]["go-to-breakfast"]
           )}
         </li>
       </ul>
@@ -63,7 +65,7 @@ const Dashboard = props => {
   };
 
   const printSupplements = () => {
-    const supplementsData = data["user-dashboard"].vitamins.map(
+    const supplementsData = userData["user-dashboard"].vitamins.map(
       (vits, index) => (
         <li>
           {`${capitaliseInitial(vits.name)}: ${vits["intake-action"]}.`}
@@ -82,15 +84,15 @@ const Dashboard = props => {
         <div className={styles.mainPage}>
           <section>
             <div className={styles.topCont}>
-              <h2>Hey {data["user-dashboard"]["first-name"]}</h2>
+              <h2>Hey {userData["user-dashboard"]["first-name"]}</h2>
               <div className={styles.healthScore}>
                 <p>Your vegan health score: </p>
                 <h2>
-                  {data["user-dashboard"]["vegan-health-score"]}
+                  {userData["user-dashboard"]["vegan-health-score"]}
                   <span>%</span>
                 </h2>
                 <span>
-                  {data["user-dashboard"]["vegan-health-score-message"]}
+                  {userData["user-dashboard"]["vegan-health-score-message"]}
                 </span>
               </div>
             </div>
@@ -106,7 +108,7 @@ const Dashboard = props => {
               <div>
                 <div className={`${styles.mojoBox} ${styles.dietType}`}>
                   <p>Your vegan diet type:</p>
-                  <h4>{data["user-dashboard"]["diet-type"].name}</h4>
+                  <h4>{userData["user-dashboard"]["diet-type"].name}</h4>
                   <img src={broccoli} alt="" />
                   <Button btnText={"View my diet plan"} />
                 </div>

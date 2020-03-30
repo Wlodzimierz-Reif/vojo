@@ -219,21 +219,28 @@
       width: 100%;
       margin-right: $base-spacing * 2;
 
-      .fruitPeople {
-        img {
-          height: 60px;
-          width: 70px;
-        }
+      section {
+        .topCont {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          .fruitPeople {
+            img {
+              height: 60px;
+              width: 70px;
+            }
 
-        .beetRoot {
-          height: 110px;
-          width: 90px;
-        }
+            .beetRoot {
+              height: 110px;
+              width: 90px;
+            }
 
-        .banana {
-          margin-left: $base-spacing;
-          height: 50px;
-          width: 110px;
+            .banana {
+              margin-left: $base-spacing;
+              height: 50px;
+              width: 110px;
+            }
+          }
         }
       }
     }

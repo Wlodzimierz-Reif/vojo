@@ -68,9 +68,9 @@ const Routes = props => {
           signInWithRedirect={signIn}
           user={user}
         />
-        <DashboardNotPaid path="dashboard-notpaid" />
-        <Dashboard path="dashboard" />
         <PrivateRoutes path="/">
+          <DashboardNotPaid path="dashboard-notpaid" />
+          <Dashboard userData={userData} path="dashboard" />
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />
