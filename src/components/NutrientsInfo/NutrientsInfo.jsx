@@ -25,8 +25,6 @@ const NutrientsInfo = props => {
     <>
       <section className={`${styles.nutrientInfo} ${styles[displayStyle]}`}>
         <h2>{nutrient.name}</h2>
-        <p>{nutrient["requirement-action"]}</p>
-        <p>{nutrient["requirement-recommendation"]}</p>
         <div className={styles.sliderContainer}>
           <div className={styles.slider}>
             <DisplaySlider sliderColor={"redToGreen"} value={value} />
@@ -40,11 +38,9 @@ const NutrientsInfo = props => {
             {nutrient["intake-recommendation"]}
           </span>
         </p>
-
+        <p>{nutrient["requirement-action"]}</p>
+        <p>{nutrient["requirement-recommendation"]}</p>
         <p>{nutrient["intake-action"]}</p>
-        {/* <List listItems={nutrient.list} /> */}
-        {/* <h3>{nutrient.subheading}</h3>
-        <p>{nutrient.moreInformation}</p> */}
       </section>
     </>
   );
