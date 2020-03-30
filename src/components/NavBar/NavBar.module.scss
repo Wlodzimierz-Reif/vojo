@@ -75,11 +75,13 @@ p {
     .burgerMenuIcon {
       background-image: url("../../assets/graphic-devices/blue-burger-menu.svg");
       background-size: contain;
+      cursor: pointer;
     }
 
     .burgerMenuCross {
       background-image: url("../../assets/graphic-devices/blue-cross.svg");
       background-size: contain;
+      cursor: pointer;
     }
   }
 
@@ -117,6 +119,10 @@ p {
     padding-bottom: $base-spacing * 2;
     opacity: 1;
     transition: 1s;
+
+    &.display {
+      display: none;
+    }
 
     button {
       padding: 0 10px;

@@ -32,6 +32,7 @@ const currentPage = "Dashboard";
 const NavBar = props => {
   const { signOut } = props;
   const [navVisibility, toggleOpen] = useState(false);
+  const [linkVisibility, displayLinks] = useState(false);
 
   let switchBurgerIcon =
     navVisibility === true ? styles.burgerMenuCross : styles.burgerMenuIcon;
@@ -48,16 +49,30 @@ const NavBar = props => {
 
   let toggleNav = navVisibility === true ? navOpen : navClosed;
 
-  const display = navVisibility ? "" : styles.display;
+  const display = linkVisibility ? "" : styles.display;
 
-  window.onresize = () =>
+  window.onresize = () => {
     window.innerWidth >= 768 ? toggleOpen(true) : toggleOpen(false);
+    window.innerWidth >= 768 ? displayLinks(true) : displayLinks(false);
+  };
 
   useEffect(() => {
     if (window.innerWidth >= 768) {
       toggleOpen(true);
+      displayLinks(true);
     }
   }, []);
+
+  const linksMap = () => {
+    setTimeout(() => {
+      displayLinks(!linkVisibility);
+    }, 300);
+  };
+
+  const handleClick = () => {
+    toggleOpen(!navVisibility);
+    linksMap();
+  };
 
   return (
     <>
@@ -68,7 +83,7 @@ const NavBar = props => {
             <img src={logos} alt="Logo" className={styles.navBarLogo}></img>
             <p style={toggleNav.showCurrentPage}>{currentPage}</p>
             <button
-              onClick={() => toggleOpen(!navVisibility)}
+              onClick={handleClick}
               className={`${styles.burgerMenu} ${switchBurgerIcon}`}
             ></button>
           </div>

@@ -60,7 +60,7 @@ const Routes = props => {
         <DashboardNotPaid path="dashboard-notpaid" />
         <Dashboard path="dashboard" />
         <PrivateRoutes path="/">
-        <PrioritiesPage path="priorities-page" signOut={signOut} />
+          <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} userData={userData} />
           <EverydayFoods path="everyday-foods" />
@@ -70,7 +70,11 @@ const Routes = props => {
             userData={userData}
           />
           {nutrientsJSX}
-          <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
+          <DietBreakdown
+            brief={"ysfadud"}
+            path="diet-breakdown"
+            signOut={signOut}
+          />
           <ConfirmationPage path="confirmation-page" />
         </PrivateRoutes>
         <NotFound default />

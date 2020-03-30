@@ -8,15 +8,17 @@ import SingleBreakdown from "../../components/SingleBreakdown";
 import bean from "../../assets/characters/bean-1.svg";
 import strawberry from "../../assets/characters/strawberry-1.svg";
 import peanut from "../../assets/characters/peanut-1.svg";
+import NavBar from "../../components/NavBar"
 
 const DietBreakdown = props => {
-  const { brief } = props;
+  const { brief, signOut } = props;
 
   const shortBrief =
     brief.length < 300 ? brief : brief.substring(0, 200) + "...";
 
   return (
-    <>
+    <section className={styles.navBarFlex}>
+      <NavBar signout={signOut} />
       <div className={styles.secInfo}>
         <section className={styles.information}>
           <h2 className={styles.title}>Your diet breakdown</h2>
