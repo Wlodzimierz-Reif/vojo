@@ -11,6 +11,11 @@ const UnderConstructionPage = () => {
     <>
       <section className={styles.container}>
         <div className={styles.box}>
+          <img
+            className={styles.techSupport}
+            src={technicalSupport}
+            alt="technical support graphic element"
+          />
           <h1>Oops... Page under construction...</h1>
           <h2>Coming soon...</h2>
           <div className={styles.btn}>
@@ -21,11 +26,6 @@ const UnderConstructionPage = () => {
         </div>
         <img className={styles.leftImg} src={strawBerry} alt="Strawberry" />
         <img className={styles.rightImg} src={butternut} alt="Butternut" />
-        <img
-          className={styles.techSupport}
-          src={technicalSupport}
-          alt="technical support graphic element"
-        />
       </section>
     </>
   );
