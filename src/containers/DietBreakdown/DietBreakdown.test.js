@@ -1,9 +1,10 @@
 import React from "react";
-import DietBreakdown from "./DietBreakdown";
 import { render } from "@testing-library/react";
+import mockData from "../../data";
+import DietBreakdown from "./DietBreakdown";
 
 describe("DietBreakdown tests", () => {
   it("should render", () => {
-    expect(render(<DietBreakdown brief={"hello"} />)).toBeTruthy();
+    expect(render(<DietBreakdown userApiData={mockData} />)).toBeTruthy();
   });
 });
