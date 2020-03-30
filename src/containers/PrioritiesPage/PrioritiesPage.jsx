@@ -24,6 +24,8 @@ const PrioritiesPage = props => {
           <br></br>
           <Link to="/register-dna">Register DNA</Link>
           <br></br>
+          <Link to="/diet-breakdown">Diet Breakdown</Link>
+          <br></br>
           <Link to="/incomplete-page">Incomplete Page</Link>
         </p>
         <h2>Priorities</h2>

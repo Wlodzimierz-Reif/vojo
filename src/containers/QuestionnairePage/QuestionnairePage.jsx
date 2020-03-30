@@ -43,13 +43,24 @@ import MockData from "../../data/index.json";
 import ProgressBar from "../../components/ProgressBar";
 
 const QuestionnairePage = props => {
-  const { user, userData, fetchData } = props;
-
+  const { user } = props;
   const [formValues, setFormValues] = useState({});
-
   const [isShown, toggleShown] = useState(false);
-
   const [showError, toggleShowError] = useState(false);
+  const [userData, setUserData] = useState(null);
+
+  const fetchUserData = () => {
+    if (user) {
+      firestore
+        .collection("users")
+        .doc(user.uid)
+        .get()
+        .then(doc => {
+          setUserData(doc.data());
+        })
+        .catch(err => console.log(err));
+    }
+  };
 
   const addToDb = apiData => {
     firestore
@@ -61,7 +72,6 @@ const QuestionnairePage = props => {
         userApiData: apiData,
         priorityActions: MockData["user-dashboard"].priorities
       })
-      .then(fetchData)
       .then(navigate("/confirmation-page"))
       .catch(err => toggleShowError(err));
   };
@@ -83,13 +93,16 @@ const QuestionnairePage = props => {
     fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
       .then(response => response.json())
       .then(data => {
-        addToDb(data)
-      } )
+        addToDb(data);
+      })
       .catch(error => toggleShowError(error));
-    console.log(dataToPost);
   };
 
-  useEffect(() => window.scrollTo(0, 0));
+  useEffect(() => {
+    fetchUserData();
+    window.scrollTo(0, 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   let counter = 0;
   for (const property in formValues) {
@@ -277,7 +290,6 @@ const QuestionnairePage = props => {
           showError={showError}
           path="page-thirty-four"
           addToDb={submitAnswers}
-        
         />
 
         <NotFound default />

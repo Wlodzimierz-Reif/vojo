@@ -50,6 +50,13 @@ const Routes = props => {
     );
   };
 
+  const dietBreakdownJSX =
+    userData && userData.userApiData ? (
+      <DietBreakdown userApiData={userData.userApiData} path="diet-breakdown" />
+    ) : (
+      <IncompletePage text={"questionnaire"} path="diet-breakdown" />
+    );
+
   return (
     <>
       <Router>
@@ -62,17 +69,16 @@ const Routes = props => {
         <PrivateRoutes path="/">
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
-          <RegisterDNA path="register-dna" user={user} userData={userData} />
+          <RegisterDNA path="register-dna" user={user} />
           <EverydayFoods path="everyday-foods" />
+          {nutrientsJSX()}
+          {dietBreakdownJSX}
           <IncompletePage path="incomplete-page" text={"questionnaire"} />
           <QuestionnairePage
             path="questionnaire-page/*"
             user={user}
             userData={userData}
-            fetchData={() => fetchUserData()}
           />
-          {nutrientsJSX()}
-          <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
           <ConfirmationPage path="confirmation-page" />
           <UnderConstructionPage path="under-construction-page" />
         </PrivateRoutes>
