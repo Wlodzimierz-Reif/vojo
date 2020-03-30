@@ -57,7 +57,7 @@ html {
     border-radius: 10px;
     padding: $base-spacing * 3;
     background-color: rgba(235, 200, 149, 0.25);
-    box-shadow: 2px 2px 10px black;
+    // box-shadow: 2px 2px 10px black;
 
     h1 {
       font-size: calc(32px + (72 - 32) * ((100vw - 440px) / (1920 - 440)));
