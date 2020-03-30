@@ -88,7 +88,6 @@ const Routes = props => {
             userData={userData}
           />
           {everydayFoodsJSX}
-
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
           <ConfirmationPage path="confirmation-page" />
         </PrivateRoutes>
