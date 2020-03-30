@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import styles from "./Routes.module.scss";
 import PrivateRoutes from "../PrivateRoutes";
 import { Router, Redirect } from "@reach/router";
 import NutrientsPage from "../NutrientsPage";
@@ -18,7 +17,6 @@ import { firestore } from "../../firebase";
 const Routes = props => {
   const { signIn, signOut, user } = props;
   const [userData, setUserData] = useState(null);
-  // const [data, reloadData] = useState(true);
 
   const fetchUserData = () => {
     if (user) {
