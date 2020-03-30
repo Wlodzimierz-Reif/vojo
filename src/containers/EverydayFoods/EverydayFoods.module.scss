@@ -23,16 +23,18 @@
   .listImage {
     height: 80vh;
     padding: 50px 0 0 75px;
-  }
+    .dietContainer {
+      width: 70%;
+    }
 
-  .dietContainer {
-    width: 70%;
-  }
-
-  img {
-    display: unset;
-    margin: auto;
-    height: 70%;
+    img {
+      display: flex;
+      width: 150px;
+      height: 300px;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
   }
 }
 
@@ -42,13 +44,23 @@
     padding: 50px 0 0 75px;
     display: flex;
     .dietContainer {
-      width: 50%;
+      width: 70%;
       .title {
         color: $secondary-color;
         font-weight: 600;
         margin: $base-spacing * 2 0 $base-spacing * 6 0;
         font-size: 28px;
       }
+    }
+
+    img {
+      position: unset;
+      margin: auto;
+      width: 270px;
+      height: 550px;
+      bottom: 0;
+      right: 0;
+      position: absolute;
     }
   }
 }
