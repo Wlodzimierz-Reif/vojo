@@ -5,7 +5,7 @@ import { render } from "@testing-library/react";
 const testObj = {
   priorityBoxNum: 1,
   priorityBoxHeading: "hello",
-  priorityBoxLink: "https://github.com/",
+  priorityBoxLink: "/under-construction-page",
   priorityBoxLinkText: "hello"
 };
 
