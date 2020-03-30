@@ -52,7 +52,9 @@ const Routes = props => {
   const dietBreakdownJSX =
     userData && userData.userApiData ? (
       <DietBreakdown userApiData={userData.userApiData} path="diet-breakdown" />
-    ) : null;
+    ) : (
+      <IncompletePage text={"questionnaire"} path="diet-breakdown" />
+    );
 
   return (
     <>
