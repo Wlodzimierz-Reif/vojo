@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { navigate } from "@reach/router";
-import Footer from "../../components/Footer";
+// import Footer from "../../components/Footer";
 import firebase from "../../firebase";
 
 const PrivateRoutes = props => {
@@ -17,7 +17,7 @@ const PrivateRoutes = props => {
   return (
     <>
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
