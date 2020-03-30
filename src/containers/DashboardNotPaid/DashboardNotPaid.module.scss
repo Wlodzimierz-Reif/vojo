@@ -35,11 +35,10 @@
       }
     }
 
-    // .stepTwo,
-    // .stepThree {
-    //   opacity: 0.5;
-    //   background-color: black;
-    // }
+    .stepTwo,
+    .stepThree {
+      opacity: 0.5;
+    }
 
     .nextSteps {
       background-color: $vojo-cream;
@@ -90,6 +89,8 @@
     justify-content: space-between;
 
     .mainPage {
+      margin-right: $base-spacing;
+
       .fruitPeople {
         img {
           height: 60px;

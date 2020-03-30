@@ -2,41 +2,77 @@ import React from "react";
 import styles from "./Dashboard.module.scss";
 import NavBar from "../../components/NavBar";
 import data from "../../data/index.json";
+import arrow from "../../assets/graphic-devices/white-arrow-1.svg";
 import Button from "../../components/Button";
 import broccoli from "../../assets/characters/broccoli-2.svg";
 import blueberry from "../../assets/characters/blueberry-1.svg";
 import blueberryTwo from "../../assets/characters/blueberry-2.svg";
 import beetroot from "../../assets/characters/beetroot-1.svg";
+import beetrootTwo from "../../assets/characters/beetroot-2.svg";
 import apple from "../../assets/characters/apple-1.svg";
 import butternut from "../../assets/characters/butternut-1.svg";
 import banana from "../../assets/characters/banana-1.svg";
 import PriorityBox from "../../components/PriorityBox";
-import { render } from "react-dom";
 
 const Dashboard = props => {
   // const {userData} = props;
 
-  const priorities = data["user-dashboard"].priorities;
+  const printPriorities = () => {
+    const prioritiesData = data["user-dashboard"].priorities.map(
+      (prio, index) => (
+        <div className={styles.prioBox}>
+          <PriorityBox
+            prioNum={index + 1}
+            prioHead={prio.action}
+            prioText={prio.description}
+          />
+        </div>
+      )
+    );
+    return prioritiesData;
+  };
 
-  // let prioritiesData = [];
+  const capitaliseInitial = input =>
+    input.replace(/^\w/, char => char.toUpperCase());
 
-  // const printPriorities = () => {
-  //   // render() {
-  //   // for (
-  //   //   let prioNum = 0;
-  //   //   prioNum < data["user-dashboard"].priorities.length;
-  //   //   prioNum++
-  //   // ) {
-  //     // <PriorityBox />);
-  //     // const prioritiesArray = data["user-dashboard"].priorities.map(prio => [
-  //     //   prioNum + 1,
-  //     //   prio.name,
-  //     //   prio.action
-  //     // ]);
-  //     // prioritiesData
-  //   }
-  // }
-  // };
+  const goToFoods = () => {
+    return (
+      <ul>
+        <li>Name: {data["user-dashboard"]["diet-type"].name}</li>
+        <li>
+          Plant milk:{" "}
+          {capitaliseInitial(data["user-dashboard"]["diet-type"]["plant-milk"])}
+        </li>
+        <li>
+          Oil: {capitaliseInitial(data["user-dashboard"]["diet-type"].oil)}
+        </li>
+        <li>
+          Guilty pleasure:{" "}
+          {capitaliseInitial(
+            data["user-dashboard"]["diet-type"]["guilty-pleasure"]
+          )}
+        </li>
+        <li>
+          Go-to-breakfast:{" "}
+          {capitaliseInitial(
+            data["user-dashboard"]["diet-type"]["go-to-breakfast"]
+          )}
+        </li>
+      </ul>
+    );
+  };
+
+  const printSupplements = () => {
+    const supplementsData = data["user-dashboard"].vitamins.map(
+      (vits, index) => (
+        <li>
+          {`${capitaliseInitial(vits.name)}: ${vits["intake-action"]}.`}
+          <p>{vits["intake-recommendation"]}</p>
+        </li>
+      )
+    );
+    return supplementsData;
+  };
 
   return (
     <>
@@ -45,46 +81,26 @@ const Dashboard = props => {
         <NavBar />
         <div className={styles.mainPage}>
           <section>
-            <h2>Hey {data["user-dashboard"]["first-name"]}</h2>
-            <div className={styles.healthScore}>
-              <p>Your vegan health score: </p>
-              <h2>
-                {data["user-dashboard"]["vegan-health-score"]}
-                <span>%</span>
-              </h2>
-              <span>
-                {data["user-dashboard"]["vegan-health-score-message"]}
-              </span>
+            <div className={styles.topCont}>
+              <h2>Hey {data["user-dashboard"]["first-name"]}</h2>
+              <div className={styles.healthScore}>
+                <p>Your vegan health score: </p>
+                <h2>
+                  {data["user-dashboard"]["vegan-health-score"]}
+                  <span>%</span>
+                </h2>
+                <span>
+                  {data["user-dashboard"]["vegan-health-score-message"]}
+                </span>
+              </div>
             </div>
-            <div className={styles.planOfAction}>
-              <h3>Your plan of action</h3>
-              <img src={blueberryTwo} alt="" />
-            </div>
-            <div className={styles.prioBox}>
-              {/* {printPriorities()} */}
-              <PriorityBox
-                className={styles.prioBox}
-                prioNum={1}
-                prioHead={priorities[0].action}
-                prioText={priorities[0].description}
-              />
-            </div>
-            <div className={styles.prioBox}>
-              <PriorityBox
-                className={styles.prioBox}
-                prioNum={2}
-                prioHead={priorities[1].action}
-                prioText={priorities[1].description}
-              />
-            </div>
-            <div className={styles.prioBox}>
-              <PriorityBox
-                className={styles.prioBox}
-                prioNum={3}
-                prioHead={priorities[2].action}
-                prioText={priorities[2].description}
-              />
-            </div>
+            <section>
+              <div className={styles.planOfAction}>
+                <h3>Your plan of action</h3>
+                <img src={blueberryTwo} alt="" />
+              </div>
+              {printPriorities()}
+            </section>
             <div className={styles.dietPlan}>
               <h3>Unlock your mealtime mojo</h3>
               <div>
@@ -96,15 +112,46 @@ const Dashboard = props => {
                 </div>
                 <div className={styles.mojoBox}>
                   <h5>Your supplement plan (get yours now)</h5>
-                  <ol>
-                    <li>{data["user-dashboard"]["diet-type"].name}</li>
-                    <li></li>
-                    <li></li>
-                  </ol>
+                  <ol>{printSupplements()}</ol>
+                  <Button btnText={"Get yours now"} />
                 </div>
-                <div className={styles.mojoBox}></div>
+                <div className={styles.mojoBox}>
+                  <h5>Your go-to foods</h5>
+                  {goToFoods()}
+                  <Button btnText={"Get yours now"} />
+                </div>
               </div>
             </div>
+            <section>
+              <div className={styles.whereToNext}>
+                <h3>Where to next?</h3>
+                <img src={beetrootTwo} alt="Beetroot person" />
+              </div>
+              <div className={styles.whereNextBox}>
+                <h5>Your Nutrient Breakdown</h5>
+                <div className={styles.whereToArrow}>
+                  <img src={arrow} alt="Arrow right" />
+                </div>
+              </div>
+              <div className={styles.whereNextBox}>
+                <h5>Manage Your Weight</h5>
+                <div className={styles.whereToArrow}>
+                  <img src={arrow} alt="Arrow right" />
+                </div>
+              </div>
+              <div className={styles.whereNextBox}>
+                <h5>Boost Your Mood</h5>
+                <div className={styles.whereToArrow}>
+                  <img src={arrow} alt="Arrow right" />
+                </div>
+              </div>
+              <div className={styles.whereNextBox}>
+                <h5>Your Bone Analysis</h5>
+                <div className={styles.whereToArrow}>
+                  <img src={arrow} alt="Arrow right" />
+                </div>
+              </div>
+            </section>
             <div className={styles.fruitPeople}>
               <img src={blueberry} alt="blueberry person" />
               <img

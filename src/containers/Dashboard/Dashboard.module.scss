@@ -2,7 +2,6 @@
 
 .entirePage {
   @include flex-column;
-  // width: 100%;
 
   .mainPage {
     // margin-top: $base-spacing * 9;
@@ -12,35 +11,44 @@
     section {
       width: 100%;
 
-      .healthScore {
-        margin-top: $base-spacing * 4;
-        background-color: $sucessful;
-        border-radius: $base-spacing;
-        padding: $base-spacing * 2;
-        margin-bottom: $base-spacing * 2;
-        @include flex-row;
-        align-items: center;
-        justify-content: space-between;
-        color: white;
+      h3 {
+        color: $vojo-orange;
+        font-size: 22px;
+        padding: $base-spacing 0;
+      }
 
-        p {
-          // text-decoration: underline;
-          width: 33%;
-          // margin-bottom: $base-spacing;
-          // display: inline-block;
-        }
+      .topCont {
+        @include flex-column;
+        .healthScore {
+          margin-top: $base-spacing * 4;
+          background-color: $sucessful;
+          border-radius: $base-spacing;
+          padding: $base-spacing * 2;
+          margin-bottom: $base-spacing * 2;
+          @include flex-row;
+          align-items: center;
+          justify-content: space-between;
+          color: white;
 
-        h2 {
-          // display: inline-block;
-          font-size: 42px;
-          span {
-            font-size: 42px;
+          p {
+            // text-decoration: underline;
+            width: 33%;
+            // margin-bottom: $base-spacing;
+            // display: inline-block;
           }
-        }
 
-        span {
-          font-size: 13px;
-          font-weight: bold;
+          h2 {
+            // display: inline-block;
+            font-size: 42px;
+            span {
+              font-size: 42px;
+            }
+          }
+
+          span {
+            font-size: 13px;
+            font-weight: bold;
+          }
         }
       }
 
@@ -48,12 +56,6 @@
         @include flex-row;
         align-items: flex-end;
         justify-content: space-between;
-
-        h3 {
-          color: $vojo-orange;
-          font-size: 22px;
-          padding: $base-spacing 0;
-        }
 
         img {
           position: relative;
@@ -65,12 +67,8 @@
 
       .dietPlan {
         h3 {
-          color: $vojo-orange;
-          font-size: 22px;
           margin-top: $base-spacing * 3;
-          padding: $base-spacing 0;
         }
-
         div {
           .mojoBox {
             // @include flex-column;
@@ -79,8 +77,21 @@
             padding: $base-spacing * 2;
             margin-bottom: $base-spacing * 2;
 
-            li {
-              list-style-position: inside;
+            button {
+              margin-top: $base-spacing * 2;
+            }
+
+            ol,
+            ul {
+              margin-left: $base-spacing * 2;
+              li {
+                // list-style-position: inside;
+                padding-top: $base-spacing * 2;
+                p {
+                  padding-top: $base-spacing / 2;
+                  font-size: 13px;
+                }
+              }
             }
 
             p {
@@ -94,7 +105,7 @@
             text-align: center;
             img {
               width: 110px;
-              margin-bottom: $base-spacing * 3;
+              margin-bottom: $base-spacing;
             }
             p {
               margin-bottom: $base-spacing;
@@ -102,6 +113,49 @@
             h4 {
               font-size: 28px;
               margin-bottom: $base-spacing * 5;
+            }
+          }
+        }
+      }
+
+      .whereToNext {
+        @include flex-row;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        img {
+          position: relative;
+          z-index: 1;
+          width: 70px;
+          top: 8px;
+        }
+      }
+
+      .whereNextBox {
+        width: 100%;
+        height: 100px;
+        background-color: $primary-color;
+        padding: $base-spacing * 2;
+        color: white;
+        border-radius: $base-spacing;
+        margin-bottom: $base-spacing * 2;
+
+        .whereToArrow {
+          @include flex-row;
+          justify-content: flex-end;
+          align-items: flex-end;
+          height: 100%;
+          padding-right: $base-spacing * 2;
+
+          img {
+            transform: rotate(90deg);
+            width: 13px;
+            // position: relative;
+            // left: 92%;
+            // top: 90%;
+            :hover {
+              border: black 2px solid;
+              cursor: pointer;
             }
           }
         }
@@ -139,12 +193,32 @@
   }
 }
 
+@media only screen and (min-width: 375px) {
+  .entirePage {
+    .mainPage {
+      section {
+        .topCont {
+          .healthScore {
+            p,
+            span {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .entirePage {
     flex-direction: row;
     // justify-content: space-between;
 
     .mainPage {
+      width: 100%;
+      margin-right: $base-spacing * 2;
+
       .fruitPeople {
         img {
           height: 60px;
@@ -160,6 +234,23 @@
           margin-left: $base-spacing;
           height: 50px;
           width: 110px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .entirePage {
+    .mainPage {
+      section {
+        .topCont {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          .healthScore {
+            width: 630px;
+          }
         }
       }
     }

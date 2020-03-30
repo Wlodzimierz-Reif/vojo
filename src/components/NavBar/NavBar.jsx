@@ -18,8 +18,6 @@ const getLinks = link => {
   return <p> {link.name} </p>;
 };
 
-console.log(data["user-dashboard"]);
-
 const currentPage = "Dashboard";
 
 const NavBar = props => {
