@@ -44,18 +44,30 @@ import ProgressBar from "../../components/ProgressBar";
 
 const QuestionnairePage = props => {
   const { user } = props;
-
   const [formValues, setFormValues] = useState({});
-
   const [isShown, toggleShown] = useState(false);
-
   const [showError, toggleShowError] = useState(false);
+  const [userData, setUserData] = useState(null);
+
+  const fetchUserData = () => {
+    if (user) {
+      firestore
+        .collection("users")
+        .doc(user.uid)
+        .get()
+        .then(doc => {
+          setUserData(doc.data());
+        })
+        .catch(err => console.log(err));
+    }
+  };
 
   const addToDb = apiData => {
     firestore
       .collection("users")
       .doc(user.uid)
-      .update({
+      .set({
+        ...userData,
         questionnaireAnswers: formValues,
         userApiData: apiData,
         priorityActions: MockData["user-dashboard"].priorities
@@ -77,16 +89,20 @@ const QuestionnairePage = props => {
       method: "POST",
       body: JSON.stringify(dataToPost)
     };
+
     fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
       .then(response => response.json())
       .then(data => {
         addToDb(data);
       })
       .catch(error => toggleShowError(error));
-    console.log(dataToPost);
   };
 
-  useEffect(() => window.scrollTo(0, 0));
+  useEffect(() => {
+    fetchUserData();
+    window.scrollTo(0, 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   let counter = 0;
   for (const property in formValues) {
