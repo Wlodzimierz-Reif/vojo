@@ -7,7 +7,6 @@ const PaymentDetails = () => {
   return (
     <>
       <div className={styles.container}>
-        <NavBar />
         <div className={styles.header}>
           <h5>Payment Details</h5>
         </div>

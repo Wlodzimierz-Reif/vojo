@@ -6,10 +6,11 @@ import data from "../../data/index.json";
 import { Link } from "@reach/router";
 
 const mainLinks = [
-  { name: "Dashboard", path: "../dashboard" },
+  { name: "Dashboard", path: "../nutrients-page" },
   { name: "Diet plan", path: "../diet-breakdown" },
   { name: "Health", path: "../nutrients-page" },
-  { name: "Nutrient breakdown", path: "../priorities-page" },
+  { name: "Priorities", path: "../priorities-page" },
+  { name: "Nutrient breakdown", path: "../nutrients-page" },
   { name: "Recipes", path: "../nutrients-page" },
   { name: "Genetics", path: "../nutrients-page" },
   { name: "Profile", path: "../nutrients-page" }
