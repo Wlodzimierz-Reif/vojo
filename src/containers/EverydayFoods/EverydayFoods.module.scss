@@ -1,8 +1,9 @@
 @import "../../variables.scss";
 
 .listImage {
+  min-height: 100vh;
   width: 100vw;
-
+  background-color: $primary-background;
   word-wrap: break-word;
 
   .dietContainer {
@@ -10,25 +11,37 @@
       color: $secondary-color;
       font-weight: 600;
       font-size: 25px;
+      margin-bottom: $base-spacing * 4;
     }
+  }
+  img {
+    display: none;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .listImage {
-    height: 100vh;
+    height: 80vh;
+    padding: 50px 0 0 75px;
+  }
+
+  .dietContainer {
+    width: 70%;
+  }
+
+  img {
+    display: unset;
+    margin: auto;
+    height: 70%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .listImage {
-    border: solid black 2px;
     width: 100%;
     padding: 50px 0 0 75px;
-    background-color: $primary-background;
     display: flex;
     .dietContainer {
-      border: solid red 2px;
       width: 50%;
       .title {
         color: $secondary-color;
