@@ -43,13 +43,24 @@ import MockData from "../../data/index.json";
 import ProgressBar from "../../components/ProgressBar";
 
 const QuestionnairePage = props => {
-  const { user, userData } = props;
-
+  const { user } = props;
   const [formValues, setFormValues] = useState({});
-
   const [isShown, toggleShown] = useState(false);
-
   const [showError, toggleShowError] = useState(false);
+  const [userData, setUserData] = useState(null);
+
+  const fetchUserData = () => {
+    if (user) {
+      firestore
+        .collection("users")
+        .doc(user.uid)
+        .get()
+        .then(doc => {
+          setUserData(doc.data());
+        })
+        .catch(err => console.log(err));
+    }
+  };
 
   const addToDb = apiData => {
     firestore
@@ -85,10 +96,13 @@ const QuestionnairePage = props => {
         addToDb(data);
       })
       .catch(error => toggleShowError(error));
-    console.log(dataToPost);
   };
 
-  useEffect(() => window.scrollTo(0, 0));
+  useEffect(() => {
+    fetchUserData();
+    window.scrollTo(0, 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   let counter = 0;
   for (const property in formValues) {
