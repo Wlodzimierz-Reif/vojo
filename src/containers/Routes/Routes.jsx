@@ -39,19 +39,17 @@ const Routes = props => {
   }, [user]);
 
   const nutrientsJSX = () => {
-  return(
-    fetchUserData();
-      userData && userData.userApiData ? (
-        <>
+    return userData && userData.userApiData ? (
+      <>
         <NutrientsPage
           nutrients={userData.userApiData.nutrients}
           path="nutrients-page"
         />
-        </>
-      ) : (
-        <IncompletePage text={"questionnaire"} path="nutrients-page" />
-    );)
-  }
+      </>
+    ) : (
+      <IncompletePage text={"questionnaire"} path="nutrients-page" />
+    );
+  };
 
   return (
     <>
@@ -72,9 +70,9 @@ const Routes = props => {
             path="questionnaire-page/*"
             user={user}
             userData={userData}
-            // refreshNutrients={() => reloadData(!data)}
+            fetchData={() => fetchUserData()}
           />
-          {nutrientsJSX}
+          {nutrientsJSX()}
           <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
           <ConfirmationPage path="confirmation-page" />
         </PrivateRoutes>
