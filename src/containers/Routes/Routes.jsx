@@ -11,11 +11,8 @@ import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
 import ConfirmationPage from "../ConfirmationPage";
 import LandingPage from "../LandingPage";
-<<<<<<< HEAD
 import UnderConstructionPage from "../UnderConstructionPage";
-=======
 import IncompletePage from "../IncompletePage";
->>>>>>> c1d2a89dce2e0d26934613db0678e76339e0eb72
 import { firestore } from "../../firebase";
 
 const Routes = props => {
