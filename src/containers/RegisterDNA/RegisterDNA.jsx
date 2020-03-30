@@ -58,6 +58,7 @@ const RegisterDNA = props => {
           title="Success"
           message="You have successfully registered your DNA sample"
           handleClick={() => navigate("priorities-page")}
+          buttonTxt="Dashboard"
         />
       </div>
     </section>
