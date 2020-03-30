@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./UnderConstructionPage.module.scss";
-import strawBerry from "../../assets/characters/strawberry-1.svg";
-import butternut from "../../assets/characters/butternut-1.svg";
-import technicalSupport from "../../assets/other-sgvs/technical-support.svg";
+import Strawberry from "../../assets/characters/strawberry-1.svg";
+import Butternut from "../../assets/characters/butternut-1.svg";
+import TechnicalSupport from "../../assets/other-sgvs/technical-support.svg";
 import PayButton from "../../components/PayButton/PayButton";
 import { Link } from "@reach/router";
 
@@ -13,7 +13,7 @@ const UnderConstructionPage = () => {
         <div className={styles.box}>
           <img
             className={styles.techSupport}
-            src={technicalSupport}
+            src={TechnicalSupport}
             alt="technical support graphic element"
           />
           <h1>Oops... Page under construction...</h1>
@@ -24,8 +24,8 @@ const UnderConstructionPage = () => {
             </Link>
           </div>
         </div>
-        <img className={styles.leftImg} src={strawBerry} alt="Strawberry" />
-        <img className={styles.rightImg} src={butternut} alt="Butternut" />
+        <img className={styles.leftImg} src={Strawberry} alt="Strawberry" />
+        <img className={styles.rightImg} src={Butternut} alt="Butternut" />
       </section>
     </>
   );
