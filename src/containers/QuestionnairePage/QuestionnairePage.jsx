@@ -101,6 +101,7 @@ const QuestionnairePage = props => {
   useEffect(() => {
     fetchUserData();
     window.scrollTo(0, 0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let counter = 0;
