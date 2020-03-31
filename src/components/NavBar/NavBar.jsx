@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from "./NavBar.module.scss";
-<<<<<<< HEAD
-import logos from "../../assets/logos/tofu-logo.png";
-=======
 import logos from "../../assets/logos/black-logo.png";
 import Button from "../Button";
 import { Link } from "@reach/router";
@@ -19,7 +16,6 @@ const mainLinks = [
   { name: "Genetics", path: "../under-construction-page" },
   { name: "Profile", path: "../under-construction-page" }
 ];
->>>>>>> be889ce6912f17afdb2bc7ecddb21f5860d7c7fc
 
 const getLinks = link => {
   return (

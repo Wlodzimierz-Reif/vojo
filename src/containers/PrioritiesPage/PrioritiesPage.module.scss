@@ -1,75 +1,9 @@
 @import "../../variables.scss";
 
 .navBarFlex {
-  // border: 2px solid red;
   display: flex;
   justify-content: space-between;
 
-<<<<<<< HEAD
-    div {
-      height: $base-spacing * 4;
-      width: $base-spacing * 20;
-      @include flex-row;
-      justify-content: flex-end;
-      align-items: center;
-
-      p {
-        color: $primary-color;
-      }
-
-      .arrow {
-        height: $base-spacing * 4;
-        width: $base-spacing * 4;
-        margin-left: $base-spacing;
-        transform: rotate(90deg);
-      }
-    }
-  }
-
-  h2 {
-    color: black;
-    text-align: center;
-    font-size: $heading-2-size;
-    padding-bottom: 5vh;
-  }
-
-  .noSampleBox {
-    h3 {
-      font-size: $base-spacing * 3;
-      padding-bottom: $base-spacing;
-    }
-    margin: 5vh 0;
-  }
-
-  .hideNoSampleBox {
-    display: none;
-  }
-
-  .priorityBoxesSection {
-    @include flex-column;
-    justify-content: space-between;
-    width: 100%;
-    height: 100vh;
-    margin-top: 12vh;
-
-    .priorityCardContainer {
-      width: 100%;
-      height: 100%;
-      margin-bottom: $base-spacing * 2;
-    }
-  }
-
-  .vegPerson {
-    width: 20vh;
-    height: 20vh;
-    margin: 0 auto;
-    margin-top: 4vh;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-=======
->>>>>>> be889ce6912f17afdb2bc7ecddb21f5860d7c7fc
   .prioritiesPage {
     font-style: inherit;
     padding: 6vh;
