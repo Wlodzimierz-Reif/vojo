@@ -2,7 +2,6 @@ import React from "react";
 import { navigate } from "@reach/router";
 import styles from "./DashboardNotPaid.module.scss";
 import NavBar from "../../components/NavBar";
-import data from "../../data/index.json";
 import Button from "../../components/Button";
 import blueberry from "../../assets/characters/blueberry-1.svg";
 import beetroot from "../../assets/characters/beetroot-1.svg";
@@ -11,12 +10,7 @@ import butternut from "../../assets/characters/butternut-1.svg";
 import banana from "../../assets/characters/banana-1.svg";
 
 const DashboardNotPaid = props => {
-  // const {} = props;
-
-  const navigateToNext = () => {
-    navigate("/payment-page");
-  };
-
+  const { userData } = props;
   return (
     <>
       <section className={styles.entirePage}>
@@ -24,8 +18,8 @@ const DashboardNotPaid = props => {
         <div className={styles.mainPage}>
           <section>
             <h2>
-              Hey {data["user-dashboard"]["first-name"]}, get to know your inner
-              vegan
+              Hey {userData.userApiData["user-dashboard"]["first-name"]}, get to
+              know your inner vegan
             </h2>
             <div className={styles.toDoNext}>
               <h3>What you need to do next</h3>
@@ -75,7 +69,6 @@ const DashboardNotPaid = props => {
                   />
                 </div>
               </div>
-
               <div className={styles.fruitPeople}>
                 <img src={blueberry} alt="blueberry person" />
                 <img

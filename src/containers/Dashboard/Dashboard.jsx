@@ -208,17 +208,6 @@ const Dashboard = props => {
                 </div>
               </section>
             </section>
-            <div className={styles.fruitPeople}>
-              <img src={blueberry} alt="blueberry person" />
-              <img
-                className={styles.beetRoot}
-                src={beetroot}
-                alt="blueberry person"
-              />
-              <img src={apple} alt="blueberry person" />
-              <img src={butternut} alt="blueberry person" />
-              <img className={styles.banana} src={banana} alt="banana person" />
-            </div>
           </section>
         </div>
       </section>

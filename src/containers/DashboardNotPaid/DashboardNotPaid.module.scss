@@ -89,7 +89,7 @@
     justify-content: space-between;
 
     .mainPage {
-      margin-right: $base-spacing;
+      margin: 0 $base-spacing $base-spacing * 2 $base-spacing;
 
       .fruitPeople {
         img {

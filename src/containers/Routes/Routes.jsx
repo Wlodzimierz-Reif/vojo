@@ -46,7 +46,17 @@ const Routes = props => {
         <Dashboard userData={userData} path="dashboard" />
       </>
     ) : (
-      <IncompletePage text={"questionnaire"} path="nutrients-page" />
+      <IncompletePage text={"questionnaire"} path="dashboard" />
+    );
+  };
+
+  const dashboardNotPaidJSX = () => {
+    return userData && userData.userApiData ? (
+      <>
+        <DashboardNotPaid userData={userData} path="dashboard-notpaid" />
+      </>
+    ) : (
+      <IncompletePage text={"questionnaire"} path="dashboard-notpaid" />
     );
   };
 
@@ -92,7 +102,7 @@ const Routes = props => {
         />
         <PrivateRoutes path="/">
           {dashboardJSX()}
-          <DashboardNotPaid path="dashboard-notpaid" />
+          {dashboardNotPaidJSX()}
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />

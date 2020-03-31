@@ -4,7 +4,6 @@
   @include flex-column;
 
   .mainPage {
-    // margin-top: $base-spacing * 9;
     @include flex-column;
     align-items: center;
     padding: $base-spacing * 2 0;
@@ -47,7 +46,6 @@
             }
 
             h2 {
-              // display: i%;
               font-size: 48px;
             }
 
@@ -58,6 +56,7 @@
               font-weight: bold;
             }
           }
+
           .improveHealthScore {
             margin: $base-spacing 0 0 0;
             background-color: white;
@@ -67,6 +66,7 @@
             height: $base-spacing * 6;
             @include flex-column;
             justify-content: center;
+
             &:hover {
               cursor: pointer;
             }
@@ -91,6 +91,7 @@
         h3 {
           margin-top: $base-spacing * 3;
         }
+
         div {
           .mojoBox {
             border-radius: $base-spacing;
@@ -100,6 +101,7 @@
 
             button {
               margin-top: $base-spacing * 2;
+
               &:hover {
                 cursor: pointer;
               }
@@ -108,9 +110,10 @@
             ol,
             ul {
               margin-left: $base-spacing * 2;
+
               li {
-                // list-style-position: inside;
                 padding-top: $base-spacing * 2;
+
                 p {
                   padding-top: $base-spacing / 2;
                   font-size: 13px;
@@ -120,20 +123,23 @@
 
             p {
               font-weight: normal;
-
               padding: 0;
             }
           }
+
           .dietType {
             align-items: center;
             text-align: center;
+
             img {
               width: 110px;
               margin-bottom: $base-spacing;
             }
+
             p {
               margin-bottom: $base-spacing;
             }
+
             h4 {
               font-size: 28px;
               margin-bottom: $base-spacing * 5;
@@ -174,7 +180,6 @@
             padding-right: $base-spacing * 2;
 
             img {
-              // position: relative;
               transform: rotate(90deg);
               width: 13px;
 
@@ -183,31 +188,6 @@
               }
             }
           }
-        }
-      }
-
-      .fruitPeople {
-        @include flex-row;
-        justify-content: center;
-        align-items: flex-end;
-        margin-top: $base-spacing * 3;
-        height: 100%;
-        max-width: 100%;
-
-        img {
-          height: 40px;
-          width: 50px;
-        }
-
-        .beetRoot {
-          height: 90px;
-          width: 70px;
-        }
-
-        .banana {
-          margin-left: $base-spacing;
-          height: 40px;
-          width: 80px;
         }
       }
 
@@ -240,7 +220,6 @@
 @media only screen and (min-width: 768px) {
   .entirePage {
     flex-direction: row;
-    // justify-content: space-between;
 
     .mainPage {
       width: 100%;
@@ -271,27 +250,10 @@
           }
         }
 
-        .fruitPeople {
-          img {
-            height: 60px;
-            width: 70px;
-          }
-
-          .beetRoot {
-            height: 110px;
-            width: 90px;
-          }
-
-          .banana {
-            margin-left: $base-spacing;
-            height: 50px;
-            width: 110px;
-          }
-        }
-
         .prioBoxes {
           @include flex-row;
           justify-content: space-between;
+
           .prioBox {
             width: 30%;
           }
@@ -301,12 +263,9 @@
           .whereToContainer {
             @include flex-row;
             justify-content: space-between;
+
             .whereNextBox {
               width: 23%;
-              // margin: $base-spacing;
-              .whereToArrow {
-                // padding-bottom: $base-spacing * 2;
-              }
             }
           }
         }
@@ -332,15 +291,19 @@
           .dietPlanBoxes {
             @include flex-row;
             justify-content: space-between;
+
             .mojoBox {
               width: 30%;
               @include flex-column;
               justify-content: space-between;
+
               .dietPlanLink {
                 width: 100%;
-                :hover {
+
+                &:hover {
                   cursor: pointer;
                 }
+
                 button {
                   width: 100%;
                 }
