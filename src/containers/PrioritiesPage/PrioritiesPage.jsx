@@ -15,9 +15,10 @@ const PrioritiesPage = props => {
   const setSampleBoxVisibility = isPromptShown ? styles.hideNoSampleBox : "";
 
   return (
-    <>
-      <NavBar links={[""]} signOut={signOut} />
+    <section className={styles.navBarFlex}>
+      <NavBar signOut={signOut} />
       <section className={styles.prioritiesPage}>
+<<<<<<< HEAD
         <p>
           <Link to="/questionnaire-page">Questionnaire Page</Link>
           <br></br>
@@ -27,6 +28,9 @@ const PrioritiesPage = props => {
           <br></br>
           <Link to="/incomplete-page">Incomplete Page</Link>
         </p>
+=======
+
+>>>>>>> be889ce6912f17afdb2bc7ecddb21f5860d7c7fc
         <h2>Priorities</h2>
         <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
           <NoSampleBox closeBox={() => togglePromptShown(!isPromptShown)} />
@@ -80,7 +84,7 @@ const PrioritiesPage = props => {
           <img src={Image} alt="Vegetable person" />
         </div>
       </section>
-    </>
+    </section>
   );
 };
 

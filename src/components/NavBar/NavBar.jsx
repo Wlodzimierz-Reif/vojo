@@ -1,24 +1,138 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./NavBar.module.scss";
+<<<<<<< HEAD
 import logos from "../../assets/logos/tofu-logo.png";
+=======
+import logos from "../../assets/logos/black-logo.png";
+import Button from "../Button";
+import { Link } from "@reach/router";
+import TermsOfServicePdf from "../../assets/privacy-docs/terms-of-service.pdf";
+import TermsOfUsePdf from "../../assets/privacy-docs/terms-of-use.pdf";
+
+const mainLinks = [
+  { name: "Dashboard", path: "../under-construction-page" },
+  { name: "Diet plan", path: "../diet-breakdown" },
+  { name: "Health", path: "../under-construction-page" },
+  { name: "Priorities", path: "../priorities-page" },
+  { name: "Nutrient breakdown", path: "../nutrients-page" },
+  { name: "Recipes", path: "../under-construction-page" },
+  { name: "Genetics", path: "../under-construction-page" },
+  { name: "Profile", path: "../under-construction-page" }
+];
+>>>>>>> be889ce6912f17afdb2bc7ecddb21f5860d7c7fc
 
 const getLinks = link => {
-  return <p> {link} </p>;
+  return (
+    <>
+      <Link to={link.path} className={styles.link}>
+        <p>{link.name}</p>
+      </Link>
+    </>
+  );
 };
 
+const currentPage = "Dashboard";
+
 const NavBar = props => {
-  const { links, signOut } = props;
+  const { signOut } = props;
+  const [navVisibility, toggleOpen] = useState(false);
+  const [linkVisibility, displayLinks] = useState(false);
+
+  let switchBurgerIcon =
+    navVisibility === true ? styles.burgerMenuCross : styles.burgerMenuIcon;
+
+  const navOpen = {
+    height: { height: "calc(100vh - 32px)" },
+    showCurrentPage: { display: "none" }
+  };
+
+  const navClosed = {
+    height: { height: "56px", borderBottom: "solid 2px $primary-background" },
+    hide: { opacity: "0", transition: "0.2s" }
+  };
+
+  let toggleNav = navVisibility === true ? navOpen : navClosed;
+
+  const display = linkVisibility ? "" : styles.display;
+
+  window.onresize = () => {
+    window.innerWidth >= 768 ? toggleOpen(true) : toggleOpen(false);
+    window.innerWidth >= 768 ? displayLinks(true) : displayLinks(false);
+  };
+
+  useEffect(() => {
+    if (window.innerWidth >= 768) {
+      toggleOpen(true);
+      displayLinks(true);
+    }
+  }, []);
+
+  const linksMap = () => {
+    setTimeout(() => {
+      displayLinks(!linkVisibility);
+    }, 300);
+  };
+
+  const handleClick = () => {
+    toggleOpen(!navVisibility);
+    linksMap();
+  };
 
   return (
-    <section className={styles.navBar}>
-      <img src={logos} alt="Logo" className={styles.navBarLogo} />
-      <section className={styles.links}>
-        {links.map(getLinks)}
-        <p className={styles.logOut} onClick={signOut}>
-          Log out
-        </p>
-      </section>
-    </section>
+    <>
+      <div className={styles.navMargin}></div>
+      <div className={`${styles.navBar} `} style={toggleNav.height}>
+        <section className={styles.navTop}>
+          <div className={styles.logoBurgerFlex}>
+            <img src={logos} alt="Logo" className={styles.navBarLogo}></img>
+            <p style={toggleNav.showCurrentPage}>{currentPage}</p>
+            <button
+              onClick={handleClick}
+              className={`${styles.burgerMenu} ${switchBurgerIcon}`}
+            ></button>
+          </div>
+          <div className={`${styles.links} ${display}`} style={toggleNav.hide}>
+            <p className={styles.navLine}></p>
+            {mainLinks.map(getLinks)}
+            <p className={styles.link} onClick={signOut}>
+              Log Out
+            </p>
+            <p className={styles.navLine}></p>
+          </div>
+        </section>
+        <section
+          className={`${styles.navBottom} ${display}`}
+          style={toggleNav.hide}
+        >
+          <p className={styles.link}>
+            <Link to="../under-construction-page">Ask a question</Link>
+          </p>
+          <p className={styles.link}>
+            <a
+              href={TermsOfServicePdf}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              T&Cs
+            </a>
+          </p>
+          <p className={styles.link}>
+            <a href={TermsOfUsePdf} target="_blank" rel="noopener noreferrer">
+              Legal stuff
+            </a>
+          </p>
+          <div className={styles.btn}>
+            <a
+              href="https://www.facebook.com/groups/vojomembers/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button btnText={"Join us on Facebook"} />
+            </a>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 
