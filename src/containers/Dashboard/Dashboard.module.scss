@@ -39,6 +39,7 @@
 
           h2 {
             // display: inline-block;
+            width: 33%;
             font-size: 42px;
             span {
               font-size: 42px;
@@ -46,6 +47,7 @@
           }
 
           span {
+            width: 33%;
             font-size: 13px;
             font-weight: bold;
           }
@@ -241,6 +243,13 @@
               width: 110px;
             }
           }
+        }
+        .prioBoxes {
+          @include flex-row;
+          border: black solid 2px;
+        }
+        .dietPlan {
+          flex-direction: row;
         }
       }
     }

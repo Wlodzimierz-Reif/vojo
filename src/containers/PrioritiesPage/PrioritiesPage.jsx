@@ -27,6 +27,8 @@ const PrioritiesPage = props => {
           <Link to="/diet-breakdown">Diet Breakdown</Link>
           <br></br>
           <Link to="/incomplete-page">Incomplete Page</Link>
+          <br></br>
+          <Link to="/dashboard">Dashboard</Link>
         </p>
         <h2>Priorities</h2>
         <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>

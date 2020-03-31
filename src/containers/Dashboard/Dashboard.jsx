@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Dashboard.module.scss";
 import NavBar from "../../components/NavBar";
-// import data from "../../data/index.json";
+import data from "../../data/index.json";
 import arrow from "../../assets/graphic-devices/white-arrow-1.svg";
 import Button from "../../components/Button";
 import broccoli from "../../assets/characters/broccoli-2.svg";
@@ -16,19 +16,18 @@ import PriorityBox from "../../components/PriorityBox";
 
 const Dashboard = props => {
   const { userData } = props;
+  console.log(userData);
 
   const printPriorities = () => {
-    const prioritiesData = userData["user-dashboard"].priorities.map(
-      (prio, index) => (
-        <div className={styles.prioBox}>
-          <PriorityBox
-            prioNum={index + 1}
-            prioHead={prio.action}
-            prioText={prio.description}
-          />
-        </div>
-      )
-    );
+    const prioritiesData = userData.priorityActions.map((prio, index) => (
+      <div className={styles.prioBox}>
+        <PriorityBox
+          prioNum={index + 1}
+          prioHead={prio.action}
+          prioText={prio.description}
+        />
+      </div>
+    ));
     return prioritiesData;
   };
 
@@ -38,26 +37,35 @@ const Dashboard = props => {
   const goToFoods = () => {
     return (
       <ul>
-        <li>Name: {userData["user-dashboard"]["diet-type"].name}</li>
+        <li>
+          Name: {userData.userApiData["user-dashboard"]["diet-type"].name}
+        </li>
         <li>
           Plant milk:{" "}
           {capitaliseInitial(
-            userData["user-dashboard"]["diet-type"]["plant-milk"]
+            userData.userApiData["user-dashboard"]["diet-type"]["plant-milk"]
           )}
         </li>
         <li>
-          Oil: {capitaliseInitial(userData["user-dashboard"]["diet-type"].oil)}
+          Oil:{" "}
+          {capitaliseInitial(
+            userData.userApiData["user-dashboard"]["diet-type"].oil
+          )}
         </li>
         <li>
           Guilty pleasure:{" "}
           {capitaliseInitial(
-            userData["user-dashboard"]["diet-type"]["guilty-pleasure"]
+            userData.userApiData["user-dashboard"]["diet-type"][
+              "guilty-pleasure"
+            ]
           )}
         </li>
         <li>
           Go-to-breakfast:{" "}
           {capitaliseInitial(
-            userData["user-dashboard"]["diet-type"]["go-to-breakfast"]
+            userData.userApiData["user-dashboard"]["diet-type"][
+              "go-to-breakfast"
+            ]
           )}
         </li>
       </ul>
@@ -65,7 +73,7 @@ const Dashboard = props => {
   };
 
   const printSupplements = () => {
-    const supplementsData = userData["user-dashboard"].vitamins.map(
+    const supplementsData = data["user-dashboard"].vitamins.map(
       (vits, index) => (
         <li>
           {`${capitaliseInitial(vits.name)}: ${vits["intake-action"]}.`}
@@ -84,15 +92,21 @@ const Dashboard = props => {
         <div className={styles.mainPage}>
           <section>
             <div className={styles.topCont}>
-              <h2>Hey {userData["user-dashboard"]["first-name"]}</h2>
+              <h2>
+                Hey {userData.userApiData["user-dashboard"]["first-name"]}
+              </h2>
               <div className={styles.healthScore}>
                 <p>Your vegan health score: </p>
                 <h2>
-                  {userData["user-dashboard"]["vegan-health-score"]}
-                  <span>%</span>
+                  {userData.userApiData["user-dashboard"]["vegan-health-score"]}
+                  %
                 </h2>
                 <span>
-                  {userData["user-dashboard"]["vegan-health-score-message"]}
+                  {
+                    userData.userApiData["user-dashboard"][
+                      "vegan-health-score-message"
+                    ]
+                  }
                 </span>
               </div>
             </div>
@@ -101,14 +115,16 @@ const Dashboard = props => {
                 <h3>Your plan of action</h3>
                 <img src={blueberryTwo} alt="" />
               </div>
-              {printPriorities()}
+              <div className={styles.prioBoxes}>{printPriorities()}</div>
             </section>
             <div className={styles.dietPlan}>
               <h3>Unlock your mealtime mojo</h3>
               <div>
                 <div className={`${styles.mojoBox} ${styles.dietType}`}>
                   <p>Your vegan diet type:</p>
-                  <h4>{userData["user-dashboard"]["diet-type"].name}</h4>
+                  <h4>
+                    {userData.userApiData["user-dashboard"]["diet-type"].name}
+                  </h4>
                   <img src={broccoli} alt="" />
                   <Button btnText={"View my diet plan"} />
                 </div>

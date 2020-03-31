@@ -36,6 +36,7 @@ const NavBar = props => {
     height: { height: "56px", borderBottom: "solid 2px $primary-background" },
     hide: { opacity: "0", transition: "0.2s" }
   };
+  // make classes and make media query - on desktop transition none
 
   let toggleNav = navVisibility === true ? navOpen : navClosed;
 
