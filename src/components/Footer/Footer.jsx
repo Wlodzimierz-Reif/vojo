@@ -3,6 +3,7 @@ import styles from "./Footer.module.scss";
 import PrivacyPdf from "../../assets/privacy-docs/privacy-statement.pdf";
 import TermsOfServicePdf from "../../assets/privacy-docs/terms-of-service.pdf";
 import TermsOfUsePdf from "../../assets/privacy-docs/terms-of-use.pdf";
+import { Link } from "@reach/router";
 
 const Footer = () => {
   return (
@@ -20,16 +21,26 @@ const Footer = () => {
             </a>
           </p>
         </div>
-        <div>
+        <div className={styles.footerSe}>
           <h3>YOUR PROFILE</h3>
-          <p>Your Diet Type</p>
-          <p>Your Genetics</p>
-          <p>Your Nutrient Breakdown</p>
-          <p>Your Answers</p>
+          <Link to="/under-construction-page">
+            <p>Your Diet Type</p>
+          </Link>
+          <Link to="/under-construction-page">
+            <p>Your Genetics</p>
+          </Link>
+          <Link to="/under-construction-page">
+            <p>Your Nutrient Breakdown</p>
+          </Link>
+          <Link to="/under-construction-page">
+            <p>Your Answers</p>
+          </Link>
         </div>
         <div>
           <h3>SETTINGS</h3>
-          <p>Settings</p>
+          <Link to="/under-construction-page">
+            <p>Settings</p>
+          </Link>
         </div>
         <div>
           <h3>LEGAL</h3>
@@ -52,7 +63,9 @@ const Footer = () => {
               Terms of Use
             </a>
           </p>
-          <p>Ask a question</p>
+          <Link to="/under-construction-page">
+            <p>Ask a question</p>
+          </Link>
         </div>
       </section>
     </>

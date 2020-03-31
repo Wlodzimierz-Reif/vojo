@@ -4,16 +4,18 @@ import logos from "../../assets/logos/black-logo.png";
 import Button from "../Button";
 import data from "../../data/index.json";
 import { Link } from "@reach/router";
+import TermsOfServicePdf from "../../assets/privacy-docs/terms-of-service.pdf";
+import TermsOfUsePdf from "../../assets/privacy-docs/terms-of-use.pdf";
 
 const mainLinks = [
-  { name: "Dashboard", path: "../nutrients-page" },
+  { name: "Dashboard", path: "../under-construction-page" },
   { name: "Diet plan", path: "../diet-breakdown" },
-  { name: "Health", path: "../nutrients-page" },
+  { name: "Health", path: "../under-construction-page" },
   { name: "Priorities", path: "../priorities-page" },
   { name: "Nutrient breakdown", path: "../nutrients-page" },
-  { name: "Recipes", path: "../nutrients-page" },
-  { name: "Genetics", path: "../nutrients-page" },
-  { name: "Profile", path: "../nutrients-page" }
+  { name: "Recipes", path: "../under-construction-page" },
+  { name: "Genetics", path: "../under-construction-page" },
+  { name: "Profile", path: "../under-construction-page" }
 ];
 
 const getLinks = link => {
@@ -101,11 +103,29 @@ const NavBar = props => {
           className={`${styles.navBottom} ${display}`}
           style={toggleNav.hide}
         >
-          <p className={styles.link}>Ask a question</p>
-          <p className={styles.link}>T&Cs</p>
-          <p className={styles.link}>Legal stuff</p>
+          <p className={styles.link}><Link to="../under-construction-page">Ask a question</Link></p>
+          <p className={styles.link}>
+            <a
+              href={TermsOfServicePdf}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              T&Cs
+            </a>
+          </p>
+          <p className={styles.link}>
+            <a href={TermsOfUsePdf} target="_blank" rel="noopener noreferrer">
+              Legal stuff
+            </a>
+          </p>
           <div className={styles.btn}>
-            <Button btnText={"Join us on Facebook"} />
+            <a
+              href="https://www.facebook.com/groups/vojomembers/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button btnText={"Join us on Facebook"} />
+            </a>
           </div>
         </section>
       </div>

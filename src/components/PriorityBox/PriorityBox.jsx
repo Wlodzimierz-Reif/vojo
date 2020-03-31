@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./PriorityBox.module.scss";
 import CheckBox from "../CheckBox";
+import { Link } from "@reach/router";
 
 const PriorityBox = props => {
   const { prioNum, prioHead, prioText } = props;
@@ -31,6 +32,8 @@ const PriorityBox = props => {
         </div>
         <p>I've done this!</p>
       </div>
+      <h4>priorityBoxHeading</h4>
+      <Link to="priorityBoxLink">priorityBoxLinkText</Link>
     </div>
   );
 };

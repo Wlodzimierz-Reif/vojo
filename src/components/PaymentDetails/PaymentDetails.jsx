@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./PaymentDetails.module.scss";
 import InputField from "../InputField/InputField";
-import NavBar from "../NavBar";
 
 const PaymentDetails = () => {
   return (

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "./NutrientsPage.module.scss";
 import InfoCard from "../../components/InfoCard";
-import logo from "../../assets/logos/primary-logo.png";
+// import logo from "../../assets/logos/primary-logo.png";
 import SidePanel from "../SidePanel";
 import NavBar from "../../components/NavBar";
-import { Link } from "@reach/router";
+// import { Link } from "@reach/router";
 
 const NutrientsPage = props => {
   const { nutrients, user, signOut } = props;

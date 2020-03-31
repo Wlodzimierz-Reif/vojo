@@ -7,13 +7,13 @@ import QuestionnairePage from "../QuestionnairePage";
 import PrioritiesPage from "../PrioritiesPage";
 // import DashboardNotPaid from "../../containers/DashboardNotPaid";
 // import Dashboard from "../../containers/Dashboard";
-import Footer from "../../components/Footer";
+// import Footer from "../../components/Footer";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import RegisterDNA from "../RegisterDNA";
-import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
 import ConfirmationPage from "../ConfirmationPage";
 import LandingPage from "../LandingPage";
+import UnderConstructionPage from "../UnderConstructionPage";
 import IncompletePage from "../IncompletePage";
 import { firestore } from "../../firebase";
 
@@ -75,7 +75,6 @@ const Routes = props => {
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />
-          <EverydayFoods path="everyday-foods" />
           {nutrientsJSX()}
           {dietBreakdownJSX}
           <IncompletePage path="incomplete-page" text={"questionnaire"} />
@@ -85,6 +84,7 @@ const Routes = props => {
             userData={userData}
           />
           <ConfirmationPage path="confirmation-page" />
+          <UnderConstructionPage path="under-construction-page" />
         </PrivateRoutes>
         <NotFound default />
       </Router>
