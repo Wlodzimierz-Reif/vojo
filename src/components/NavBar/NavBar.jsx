@@ -28,8 +28,6 @@ const getLinks = link => {
   );
 };
 
-console.log(data["user-dashboard"]);
-
 const currentPage = "Dashboard";
 
 const NavBar = props => {
@@ -103,7 +101,9 @@ const NavBar = props => {
           className={`${styles.navBottom} ${display}`}
           style={toggleNav.hide}
         >
-          <p className={styles.link}><Link to="../under-construction-page">Ask a question</Link></p>
+          <p className={styles.link}>
+            <Link to="../under-construction-page">Ask a question</Link>
+          </p>
           <p className={styles.link}>
             <a
               href={TermsOfServicePdf}
