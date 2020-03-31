@@ -37,6 +37,16 @@ const Routes = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
+  const everydayFoodsJSX =
+    userData && userData.userApiData ? (
+      <EverydayFoods
+        everydayFoods={userData.userApiData["food-stuffs"]}
+        path="everyday-foods"
+      />
+    ) : (
+      <IncompletePage text={"questionnaire"} path="everyday-foods" />
+    );
+
   const nutrientsJSX = () => {
     return userData && userData.userApiData ? (
       <>
@@ -70,7 +80,6 @@ const Routes = props => {
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />
-          <EverydayFoods path="everyday-foods" />
           {nutrientsJSX()}
           {dietBreakdownJSX}
           <IncompletePage path="incomplete-page" text={"questionnaire"} />
@@ -79,6 +88,7 @@ const Routes = props => {
             user={user}
             userData={userData}
           />
+          {everydayFoodsJSX}
           <ConfirmationPage path="confirmation-page" />
           <UnderConstructionPage path="under-construction-page" />
         </PrivateRoutes>
