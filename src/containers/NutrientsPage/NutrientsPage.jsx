@@ -7,7 +7,6 @@ import { Link } from "@reach/router";
 
 const NutrientsPage = props => {
   const { nutrients, user } = props;
-  //add user to props when login saves through navigation
 
   const [high, updateHigh] = useState([]);
   const [raised, updateRaised] = useState([]);

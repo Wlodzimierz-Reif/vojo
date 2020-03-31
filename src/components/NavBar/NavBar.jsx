@@ -2,17 +2,6 @@ import React from "react";
 import styles from "./NavBar.module.scss";
 import logos from "../../assets/logos/tofu-logo.png";
 
-// TO BE HANDED IN AS PROPS (SEE MATE AND DENNIS!!! )
-// const exampleLinks = [
-//   "Priorities",
-//   "Nutrients",
-//   "Diet",
-//   "Health",
-//   "Genetics",
-//   "Answers",
-//   "Settings"
-// ];
-
 const getLinks = link => {
   return <p> {link} </p>;
 };

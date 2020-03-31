@@ -201,6 +201,7 @@ html {
           list-style-type: none;
         }
       }
+
       a {
         text-decoration: none;
         font-weight: bold;
@@ -239,10 +240,11 @@ html {
     }
   }
 
-  @media only screen and (max-width: 764px) {
+  @media only screen and (max-width: 768px) {
     .marginTop {
       margin-top: $base-spacing * 3;
     }
+
     .navBar {
       height: 60px;
       align-items: unset;

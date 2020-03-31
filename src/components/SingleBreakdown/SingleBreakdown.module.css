@@ -20,11 +20,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: auto;
   width: 80%;
   height: 40%;
@@ -56,15 +56,17 @@
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     width: 100%;
     height: 30%;
   }
+
   .breakdownBox1 .imgs .primary {
     height: 100%;
     width: 100%;
   }
+
   .breakdownBox1 .vegBrief {
     height: 20%;
     text-align: center;
@@ -77,17 +79,19 @@
     margin: 18.4px 12px;
     height: 80%;
   }
+
   .breakdownBox1 .imgs {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     width: 100%;
     height: 40%;
   }
+
   .breakdownBox1 .imgs .primary {
     height: 100%;
     width: 100%;

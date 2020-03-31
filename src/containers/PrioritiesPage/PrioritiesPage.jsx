@@ -18,7 +18,6 @@ const PrioritiesPage = props => {
     <>
       <NavBar links={[""]} signOut={signOut} />
       <section className={styles.prioritiesPage}>
-        {/* the paragraph bellow can be removed after the demo or after we have another way to link the questionnaire page to the dashboard. - Lucian -*/}
         <p>
           <Link to="/questionnaire-page">Questionnaire Page</Link>
           <br></br>
