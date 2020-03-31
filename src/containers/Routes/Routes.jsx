@@ -44,7 +44,7 @@ const Routes = props => {
         path="everyday-foods"
       />
     ) : (
-      <EverydayFoods everydayFoods={[]} path="everyday-foods" />
+      <IncompletePage text={"questionnaire"} path="everyday-foods" />
     );
 
   const nutrientsJSX = () => {
@@ -89,7 +89,6 @@ const Routes = props => {
             userData={userData}
           />
           {everydayFoodsJSX}
-          <DietBreakdown brief={"ysfadud"} path="diet-breakdown" />
           <ConfirmationPage path="confirmation-page" />
           <UnderConstructionPage path="under-construction-page" />
         </PrivateRoutes>
