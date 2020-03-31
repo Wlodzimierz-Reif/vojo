@@ -2,27 +2,37 @@ import React, { useState, useEffect } from "react";
 import styles from "./NavBar.module.scss";
 import logos from "../../assets/logos/black-logo.png";
 import Button from "../Button";
-import data from "../../data/index.json";
+import { Link } from "@reach/router";
+import TermsOfServicePdf from "../../assets/privacy-docs/terms-of-service.pdf";
+import TermsOfUsePdf from "../../assets/privacy-docs/terms-of-use.pdf";
 
 const mainLinks = [
-  { name: "Dashboard" },
-  { name: "Diet plan" },
-  { name: "Health" },
-  { name: "Nutrient breakdown" },
-  { name: "Recipes" },
-  { name: "Genetics" },
-  { name: "Profile" }
+  { name: "Dashboard", path: "../under-construction-page" },
+  { name: "Diet plan", path: "../diet-breakdown" },
+  { name: "Health", path: "../under-construction-page" },
+  { name: "Priorities", path: "../priorities-page" },
+  { name: "Nutrient breakdown", path: "../nutrients-page" },
+  { name: "Recipes", path: "../under-construction-page" },
+  { name: "Genetics", path: "../under-construction-page" },
+  { name: "Profile", path: "../under-construction-page" }
 ];
 
 const getLinks = link => {
-  return <p> {link.name} </p>;
+  return (
+    <>
+      <Link to={link.path} className={styles.link}>
+        <p>{link.name}</p>
+      </Link>
+    </>
+  );
 };
 
 const currentPage = "Dashboard";
 
 const NavBar = props => {
-  // const { currentPage } = props;
+  const { signOut } = props;
   const [navVisibility, toggleOpen] = useState(false);
+  const [linkVisibility, displayLinks] = useState(false);
 
   let switchBurgerIcon =
     navVisibility === true ? styles.burgerMenuCross : styles.burgerMenuIcon;
@@ -33,21 +43,37 @@ const NavBar = props => {
   };
 
   const navClosed = {
-    height: { height: "56px", borderBottom: "solid 2px $primary-background" }
-    // hide: { opacity: "0", transition: "0.2s" }
+    height: { height: "56px", borderBottom: "solid 2px $primary-background" },
+    hide: { opacity: "0", transition: "0.2s" }
   };
   // make classes and make media query - on desktop transition none
 
   let toggleNav = navVisibility === true ? navOpen : navClosed;
 
-  window.onresize = () =>
+  const display = linkVisibility ? "" : styles.display;
+
+  window.onresize = () => {
     window.innerWidth >= 768 ? toggleOpen(true) : toggleOpen(false);
+    window.innerWidth >= 768 ? displayLinks(true) : displayLinks(false);
+  };
 
   useEffect(() => {
     if (window.innerWidth >= 768) {
       toggleOpen(true);
+      displayLinks(true);
     }
   }, []);
+
+  const linksMap = () => {
+    setTimeout(() => {
+      displayLinks(!linkVisibility);
+    }, 300);
+  };
+
+  const handleClick = () => {
+    toggleOpen(!navVisibility);
+    linksMap();
+  };
 
   return (
     <>
@@ -58,21 +84,49 @@ const NavBar = props => {
             <img src={logos} alt="Logo" className={styles.navBarLogo}></img>
             <p style={toggleNav.showCurrentPage}>{currentPage}</p>
             <button
-              onClick={() => toggleOpen(!navVisibility)}
+              onClick={handleClick}
               className={`${styles.burgerMenu} ${switchBurgerIcon}`}
             ></button>
           </div>
-          <div className={styles.links} style={toggleNav.hide}>
+          <div className={`${styles.links} ${display}`} style={toggleNav.hide}>
             <p className={styles.navLine}></p>
             {mainLinks.map(getLinks)}
+            <p className={styles.link} onClick={signOut}>
+              Log Out
+            </p>
             <p className={styles.navLine}></p>
           </div>
         </section>
-        <section className={styles.navBottom} style={toggleNav.hide}>
-          <p>Ask a question</p>
-          <p>T&Cs</p>
-          <p>Legal stuff</p>
-          <Button btnText={"Join us on Facebook"} />
+        <section
+          className={`${styles.navBottom} ${display}`}
+          style={toggleNav.hide}
+        >
+          <p className={styles.link}>
+            <Link to="../under-construction-page">Ask a question</Link>
+          </p>
+          <p className={styles.link}>
+            <a
+              href={TermsOfServicePdf}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              T&Cs
+            </a>
+          </p>
+          <p className={styles.link}>
+            <a href={TermsOfUsePdf} target="_blank" rel="noopener noreferrer">
+              Legal stuff
+            </a>
+          </p>
+          <div className={styles.btn}>
+            <a
+              href="https://www.facebook.com/groups/vojomembers/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button btnText={"Join us on Facebook"} />
+            </a>
+          </div>
         </section>
       </div>
     </>

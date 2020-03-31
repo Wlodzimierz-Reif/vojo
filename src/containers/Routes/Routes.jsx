@@ -7,12 +7,12 @@ import QuestionnairePage from "../QuestionnairePage";
 import PrioritiesPage from "../PrioritiesPage";
 import DashboardNotPaid from "../../containers/DashboardNotPaid";
 import Dashboard from "../../containers/Dashboard";
-import Footer from "../../components/Footer";
+// import Footer from "../../components/Footer";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import RegisterDNA from "../RegisterDNA";
-import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
 import ConfirmationPage from "../ConfirmationPage";
+import EverydayFoods from "../EverydayFoods";
 import LandingPage from "../LandingPage";
 import UnderConstructionPage from "../UnderConstructionPage";
 import IncompletePage from "../IncompletePage";
@@ -66,6 +66,7 @@ const Routes = props => {
         <NutrientsPage
           nutrients={userData.userApiData.nutrients}
           path="nutrients-page"
+          signOut={signOut}
         />
       </>
     ) : (
@@ -89,7 +90,6 @@ const Routes = props => {
           signInWithRedirect={signIn}
           user={user}
         />
-
         <PrivateRoutes path="/">
           {dashboardJSX()}
           <DashboardNotPaid path="dashboard-notpaid" />

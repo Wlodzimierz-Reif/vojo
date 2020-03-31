@@ -1,13 +1,11 @@
 import React from "react";
 import styles from "./PaymentDetails.module.scss";
 import InputField from "../InputField/InputField";
-import NavBar from "../NavBar";
 
 const PaymentDetails = () => {
   return (
     <>
       <div className={styles.container}>
-        <NavBar />
         <div className={styles.header}>
           <h5>Payment Details</h5>
         </div>

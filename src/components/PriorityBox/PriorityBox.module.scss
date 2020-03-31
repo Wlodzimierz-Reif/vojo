@@ -18,7 +18,7 @@
   }
 
   h4 {
-    margin: 16px 0 0px;
+    margin: 16px 0 8px;
   }
 
   .prioNum {
@@ -49,6 +49,7 @@
     display: flex;
     // justify-content: flex-start;
     align-items: center;
+    margin-top: $base-spacing * 2;
 
     div {
       width: 40px;

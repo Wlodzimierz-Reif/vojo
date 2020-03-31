@@ -1,9 +1,25 @@
 @import "../../variables.scss";
 
 p {
-  padding: $base-spacing * 0.75 0;
+  // padding: $base-spacing * 0.75 0;
   font-size: 13px;
   font-weight: bold;
+}
+
+.link {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.btn {
+  :hover {
+    cursor: pointer;
+  }
+}
+
+a {
+  color: black;
 }
 
 .navMargin {
@@ -13,7 +29,7 @@ p {
   width: 100vw;
   top: 0;
   left: 0;
-  padding: 16px;
+  // padding: 16px;
   background-color: $primary-background;
 }
 
@@ -63,23 +79,29 @@ p {
     .burgerMenuIcon {
       background-image: url("../../assets/graphic-devices/blue-burger-menu.svg");
       background-size: contain;
+      cursor: pointer;
     }
 
     .burgerMenuCross {
       background-image: url("../../assets/graphic-devices/blue-cross.svg");
       background-size: contain;
+      cursor: pointer;
     }
   }
 
   .links {
     @include flex-column;
     color: #3c3934;
-    height: 100%;
+    height: 55vh;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    opacity: 1;
     transition: 1s;
+    z-index: 0;
+
+    &.display {
+      display: none;
+    }
 
     .navLine {
       width: $base-spacing * 8;
@@ -92,11 +114,19 @@ p {
   }
 
   .navBottom {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     text-align: center;
     text-decoration: underline;
     padding-bottom: $base-spacing * 2;
     opacity: 1;
     transition: 1s;
+
+    &.display {
+      display: none;
+    }
 
     button {
       padding: 0 10px;
@@ -117,14 +147,12 @@ p {
     min-width: 186px;
     width: 186px;
     position: unset;
-    margin-right: $base-spacing * 2;
+    // margin-right: $base-spacing * 2;
     // display: none;
   }
 
   .navBar {
-    height: {
-      height: "calc(100vh - 32px)";
-    }
+    height: "calc(100vh - 32px)";
     position: fixed;
     display: flex;
     flex-direction: column;

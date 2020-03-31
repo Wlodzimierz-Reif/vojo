@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 import styles from "./Dashboard.module.scss";
 import NavBar from "../../components/NavBar";
 import data from "../../data/index.json";
@@ -84,6 +85,14 @@ const Dashboard = props => {
     return supplementsData;
   };
 
+  const printArrow = () => {
+    return (
+      <div className={styles.whereToArrow}>
+        <img src={arrow} alt="Arrow right" />
+      </div>
+    );
+  };
+
   return (
     <>
       <section className={styles.entirePage}>
@@ -114,9 +123,14 @@ const Dashboard = props => {
                     }
                   </span>
                 </div>
-                <p className={styles.improveHealthScore}>
-                  How can i improve this?
-                </p>
+                <Link
+                  to={"../under-construction-page"}
+                  style={{ textDecoration: "none" }}
+                >
+                  <p className={styles.improveHealthScore}>
+                    How can i improve this?
+                  </p>
+                </Link>
               </div>
             </div>
             <section>
@@ -137,21 +151,36 @@ const Dashboard = props => {
                     </h4>
                   </div>
                   <img src={broccoli} alt="" />
-                  <Button btnText={"View my diet plan"} />
+                  <Link
+                    to={"../diet-breakdown"}
+                    className={styles.dietPlanLink}
+                  >
+                    <Button btnText={"View my diet plan"} />
+                  </Link>
                 </div>
                 <div className={styles.mojoBox}>
                   <div>
                     <h5>Your supplement plan (get yours now)</h5>
                     <ol>{printSupplements()}</ol>
                   </div>
-                  <Button btnText={"Get yours now"} />
+                  <Link
+                    to={"../under-construction-page"}
+                    className={styles.dietPlanLink}
+                  >
+                    <Button btnText={"Get yours now"} />
+                  </Link>
                 </div>
                 <div className={styles.mojoBox}>
                   <div>
                     <h5>Your go-to foods</h5>
                     {goToFoods()}
                   </div>
-                  <Button btnText={"Get yours now"} />
+                  <Link
+                    to={"../under-construction-page"}
+                    className={styles.dietPlanLink}
+                  >
+                    <Button btnText={"Get yours now"} />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -163,27 +192,19 @@ const Dashboard = props => {
               <section className={styles.whereToContainer}>
                 <div className={styles.whereNextBox}>
                   <h5>Your Nutrient Breakdown</h5>
-                  <div className={styles.whereToArrow}>
-                    <img src={arrow} alt="Arrow right" />
-                  </div>
+                  <Link to={"../nutrient-breakdown"}>{printArrow()}</Link>
                 </div>
                 <div className={styles.whereNextBox}>
                   <h5>Manage Your Weight</h5>
-                  <div className={styles.whereToArrow}>
-                    <img src={arrow} alt="Arrow right" />
-                  </div>
+                  <Link to={"../under-construction-page"}>{printArrow()}</Link>
                 </div>
                 <div className={styles.whereNextBox}>
                   <h5>Boost Your Mood</h5>
-                  <div className={styles.whereToArrow}>
-                    <img src={arrow} alt="Arrow right" />
-                  </div>
+                  <Link to={"../under-construction-page"}>{printArrow()}</Link>
                 </div>
                 <div className={styles.whereNextBox}>
                   <h5>Your Bone Analysis</h5>
-                  <div className={styles.whereToArrow}>
-                    <img src={arrow} alt="Arrow right" />
-                  </div>
+                  <Link to={"../under-construction-page"}>{printArrow()}</Link>
                 </div>
               </section>
             </section>
