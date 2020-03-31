@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./NavBar.module.scss";
 import logos from "../../assets/logos/black-logo.png";
 import Button from "../Button";
-import data from "../../data/index.json";
 import { Link } from "@reach/router";
 import TermsOfServicePdf from "../../assets/privacy-docs/terms-of-service.pdf";
 import TermsOfUsePdf from "../../assets/privacy-docs/terms-of-use.pdf";
