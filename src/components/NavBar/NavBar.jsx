@@ -33,8 +33,8 @@ const NavBar = props => {
   };
 
   const navClosed = {
-    height: { height: "56px", borderBottom: "solid 2px $primary-background" },
-    hide: { opacity: "0", transition: "0.2s" }
+    height: { height: "56px", borderBottom: "solid 2px $primary-background" }
+    // hide: { opacity: "0", transition: "0.2s" }
   };
   // make classes and make media query - on desktop transition none
 

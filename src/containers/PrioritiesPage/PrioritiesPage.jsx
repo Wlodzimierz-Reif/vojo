@@ -56,7 +56,7 @@ const PrioritiesPage = props => {
               priorityBoxNum={"1"}
               priorityBoxHeading={"Food"}
               priorityBoxText={"The box's text"}
-              priorityBoxLink={"unset-link"}
+              priorityBoxLink={"/under-construction-page"}
               priorityBoxLinkText={"The text for the link"}
             />
           </div>
@@ -65,7 +65,7 @@ const PrioritiesPage = props => {
               priorityBoxNum={"2"}
               priorityBoxHeading={"Food"}
               priorityBoxText={"The box's text"}
-              priorityBoxLink={"unset-link"}
+              priorityBoxLink={"/under-construction-page"}
               priorityBoxLinkText={"The text for the link"}
             />
           </div>
@@ -74,7 +74,7 @@ const PrioritiesPage = props => {
               priorityBoxNum={"3"}
               priorityBoxHeading={"Food"}
               priorityBoxText={"The box's text"}
-              priorityBoxLink={"unset-link"}
+              priorityBoxLink={"/under-construction-page"}
               priorityBoxLinkText={"The text for the link"}
             />
           </div>

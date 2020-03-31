@@ -14,6 +14,7 @@ import EverydayFoods from "../EverydayFoods";
 import DietBreakdown from "../DietBreakdown";
 import ConfirmationPage from "../ConfirmationPage";
 import LandingPage from "../LandingPage";
+import UnderConstructionPage from "../UnderConstructionPage";
 import IncompletePage from "../IncompletePage";
 import { firestore } from "../../firebase";
 
@@ -38,6 +39,26 @@ const Routes = props => {
     fetchUserData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
+
+  const dashboardJSX = () => {
+    return userData && userData.userApiData ? (
+      <>
+        <Dashboard userData={userData} path="dashboard" />
+      </>
+    ) : (
+      <IncompletePage text={"questionnaire"} path="nutrients-page" />
+    );
+  };
+
+  const everydayFoodsJSX =
+    userData && userData.userApiData ? (
+      <EverydayFoods
+        everydayFoods={userData.userApiData["food-stuffs"]}
+        path="everyday-foods"
+      />
+    ) : (
+      <IncompletePage text={"questionnaire"} path="everyday-foods" />
+    );
 
   const nutrientsJSX = () => {
     return userData && userData.userApiData ? (
@@ -68,14 +89,13 @@ const Routes = props => {
           signInWithRedirect={signIn}
           user={user}
         />
-        <Dashboard userData={userData} path="dashboard" />
 
         <PrivateRoutes path="/">
+          {dashboardJSX()}
           <DashboardNotPaid path="dashboard-notpaid" />
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />
-          <EverydayFoods path="everyday-foods" />
           {nutrientsJSX()}
           {dietBreakdownJSX}
           <IncompletePage path="incomplete-page" text={"questionnaire"} />
@@ -84,7 +104,9 @@ const Routes = props => {
             user={user}
             userData={userData}
           />
+          {everydayFoodsJSX}
           <ConfirmationPage path="confirmation-page" />
+          <UnderConstructionPage path="under-construction-page" />
         </PrivateRoutes>
         <NotFound default />
       </Router>

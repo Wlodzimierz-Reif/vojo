@@ -96,18 +96,27 @@ const Dashboard = props => {
                 Hey {userData.userApiData["user-dashboard"]["first-name"]}
               </h2>
               <div className={styles.healthScore}>
-                <p>Your vegan health score: </p>
-                <h2>
-                  {userData.userApiData["user-dashboard"]["vegan-health-score"]}
-                  %
-                </h2>
-                <span>
-                  {
-                    userData.userApiData["user-dashboard"][
-                      "vegan-health-score-message"
-                    ]
-                  }
-                </span>
+                <div className={styles.healthScoreData}>
+                  <p>Your vegan health score: </p>
+                  <h2>
+                    {
+                      userData.userApiData["user-dashboard"][
+                        "vegan-health-score"
+                      ]
+                    }
+                    %
+                  </h2>
+                  <span>
+                    {
+                      userData.userApiData["user-dashboard"][
+                        "vegan-health-score-message"
+                      ]
+                    }
+                  </span>
+                </div>
+                <p className={styles.improveHealthScore}>
+                  How can i improve this?
+                </p>
               </div>
             </div>
             <section>
@@ -119,56 +128,64 @@ const Dashboard = props => {
             </section>
             <div className={styles.dietPlan}>
               <h3>Unlock your mealtime mojo</h3>
-              <div>
+              <div className={styles.dietPlanBoxes}>
                 <div className={`${styles.mojoBox} ${styles.dietType}`}>
-                  <p>Your vegan diet type:</p>
-                  <h4>
-                    {userData.userApiData["user-dashboard"]["diet-type"].name}
-                  </h4>
+                  <div>
+                    <p>Your vegan diet type:</p>
+                    <h4>
+                      {userData.userApiData["user-dashboard"]["diet-type"].name}
+                    </h4>
+                  </div>
                   <img src={broccoli} alt="" />
                   <Button btnText={"View my diet plan"} />
                 </div>
                 <div className={styles.mojoBox}>
-                  <h5>Your supplement plan (get yours now)</h5>
-                  <ol>{printSupplements()}</ol>
+                  <div>
+                    <h5>Your supplement plan (get yours now)</h5>
+                    <ol>{printSupplements()}</ol>
+                  </div>
                   <Button btnText={"Get yours now"} />
                 </div>
                 <div className={styles.mojoBox}>
-                  <h5>Your go-to foods</h5>
-                  {goToFoods()}
+                  <div>
+                    <h5>Your go-to foods</h5>
+                    {goToFoods()}
+                  </div>
                   <Button btnText={"Get yours now"} />
                 </div>
               </div>
             </div>
-            <section>
+            <section className={styles.whereToSection}>
               <div className={styles.whereToNext}>
                 <h3>Where to next?</h3>
                 <img src={beetrootTwo} alt="Beetroot person" />
               </div>
-              <div className={styles.whereNextBox}>
-                <h5>Your Nutrient Breakdown</h5>
-                <div className={styles.whereToArrow}>
-                  <img src={arrow} alt="Arrow right" />
+              <section className={styles.whereToContainer}>
+                <div className={styles.whereNextBox}>
+                  <h5>Your Nutrient Breakdown</h5>
+                  <div className={styles.whereToArrow}>
+                    <img src={arrow} alt="Arrow right" />
+                  </div>
                 </div>
-              </div>
-              <div className={styles.whereNextBox}>
-                <h5>Manage Your Weight</h5>
-                <div className={styles.whereToArrow}>
-                  <img src={arrow} alt="Arrow right" />
+                <div className={styles.whereNextBox}>
+                  <h5>Manage Your Weight</h5>
+                  <div className={styles.whereToArrow}>
+                    <img src={arrow} alt="Arrow right" />
+                  </div>
                 </div>
-              </div>
-              <div className={styles.whereNextBox}>
-                <h5>Boost Your Mood</h5>
-                <div className={styles.whereToArrow}>
-                  <img src={arrow} alt="Arrow right" />
+                <div className={styles.whereNextBox}>
+                  <h5>Boost Your Mood</h5>
+                  <div className={styles.whereToArrow}>
+                    <img src={arrow} alt="Arrow right" />
+                  </div>
                 </div>
-              </div>
-              <div className={styles.whereNextBox}>
-                <h5>Your Bone Analysis</h5>
-                <div className={styles.whereToArrow}>
-                  <img src={arrow} alt="Arrow right" />
+                <div className={styles.whereNextBox}>
+                  <h5>Your Bone Analysis</h5>
+                  <div className={styles.whereToArrow}>
+                    <img src={arrow} alt="Arrow right" />
+                  </div>
                 </div>
-              </div>
+              </section>
             </section>
             <div className={styles.fruitPeople}>
               <img src={blueberry} alt="blueberry person" />
