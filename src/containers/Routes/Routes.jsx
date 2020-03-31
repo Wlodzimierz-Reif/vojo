@@ -12,6 +12,7 @@ import PaymentPage from "../PaymentPage/PaymentPage";
 import RegisterDNA from "../RegisterDNA";
 import DietBreakdown from "../DietBreakdown";
 import ConfirmationPage from "../ConfirmationPage";
+import EverydayFoods from "../EverydayFoods";
 import LandingPage from "../LandingPage";
 import UnderConstructionPage from "../UnderConstructionPage";
 import IncompletePage from "../IncompletePage";
@@ -38,6 +39,16 @@ const Routes = props => {
     fetchUserData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
+
+  const everydayFoodsJSX =
+    userData && userData.userApiData ? (
+      <EverydayFoods
+        everydayFoods={userData.userApiData["food-stuffs"]}
+        path="everyday-foods"
+      />
+    ) : (
+      <IncompletePage text={"questionnaire"} path="everyday-foods" />
+    );
 
   const nutrientsJSX = () => {
     return userData && userData.userApiData ? (
@@ -83,6 +94,7 @@ const Routes = props => {
             user={user}
             userData={userData}
           />
+          {everydayFoodsJSX}
           <ConfirmationPage path="confirmation-page" />
           <UnderConstructionPage path="under-construction-page" />
         </PrivateRoutes>
