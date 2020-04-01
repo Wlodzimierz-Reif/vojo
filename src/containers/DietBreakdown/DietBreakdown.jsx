@@ -12,7 +12,6 @@ import NavBar from "../../components/NavBar";
 
 const DietBreakdown = props => {
   const { userApiData, signOut } = props;
-  console.log(userApiData);
 
   const text =
     userApiData["personalised-recommendations"]["weight-management-actions"][0];
