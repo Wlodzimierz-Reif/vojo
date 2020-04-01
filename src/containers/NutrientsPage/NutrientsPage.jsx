@@ -67,13 +67,13 @@ const NutrientsPage = props => {
       <section className={styles.nutrientsFlex}>
         <section className={styles.showPanel}>{insertJsx}</section>
         <section className={styles.nutrientPage}>
-          {/* <div className={styles.topContainer}>
-          <img src={logo} alt="vojo logo" />
-          <Link to="../priorities-page">
-            <p>menu</p>
-          </Link>
-        </div> */}
-          <h1>Nutrients</h1>
+          <div className={styles.topContainer}>
+            {/* <img src={logo} alt="vojo logo" /> */}
+            {/* <Link to="../priorities-page">
+              <p>menu</p>
+            </Link> */}
+            <h1>Nutrients</h1>
+          </div>
           <div className={styles.infoCardHolder}>
             {mapFunction(high)}
             {mapFunction(slightlyRaised)}
