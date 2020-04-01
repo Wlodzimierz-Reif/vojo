@@ -6,10 +6,9 @@ import bean from "../../assets/characters/bean-2.svg";
 
 const DietType = props => {
   const { regionText, dietText } = props;
-  
+
   return (
     <>
-      {/* <h2>Diet</h2> */}
       <section className={styles.dietType}>
         <div className={styles.dietTextBox}>
           <h2 className={styles.header}>Your diet type: </h2>

@@ -8,7 +8,7 @@ const InfoList = props => {
     <>
       <section className={styles.infoList}>
         <h4>
-          <span className={styles.blackText}>{infoHeaderBlack}</span>
+          <span className={styles.blackText}>{infoHeaderBlack}: </span>
           <span className={styles.purpleText}>{infoHeaderPurple}</span>
         </h4>
         <p>{foodList}</p>

@@ -66,6 +66,7 @@
     .questionPerson {
       display: unset;
     }
+
     .box {
       .arrows {
         position: static;
@@ -78,6 +79,7 @@
         left: 60px;
         top: calc(50vh - 30px);
       }
+
       .rightArrow {
         position: absolute;
         transform: rotate(90deg);

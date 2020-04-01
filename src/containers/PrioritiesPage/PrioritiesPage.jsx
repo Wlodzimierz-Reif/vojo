@@ -15,19 +15,9 @@ const PrioritiesPage = props => {
   const setSampleBoxVisibility = isPromptShown ? styles.hideNoSampleBox : "";
 
   return (
-    <>
-      <NavBar links={[""]} signOut={signOut} />
+    <section className={styles.navBarFlex}>
+      <NavBar signOut={signOut} />
       <section className={styles.prioritiesPage}>
-        {/* the paragraph bellow can be removed after the demo or after we have another way to link the questionnaire page to the dashboard. - Lucian -*/}
-        <p>
-          <Link to="/questionnaire-page">Questionnaire Page</Link>
-          <br></br>
-          <Link to="/register-dna">Register DNA</Link>
-          <br></br>
-          <Link to="/diet-breakdown">Diet Breakdown</Link>
-          <br></br>
-          <Link to="/incomplete-page">Incomplete Page</Link>
-        </p>
         <h2>Priorities</h2>
         <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
           <NoSampleBox closeBox={() => togglePromptShown(!isPromptShown)} />
@@ -80,7 +70,7 @@ const PrioritiesPage = props => {
           <img src={Image} alt="Vegetable person" />
         </div>
       </section>
-    </>
+    </section>
   );
 };
 

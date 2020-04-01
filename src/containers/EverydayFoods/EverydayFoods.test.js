@@ -4,6 +4,6 @@ import { render } from "@testing-library/react";
 
 describe("EverydayFoods tests", () => {
   it("should render", () => {
-    expect(render(<EverydayFoods />)).toBeTruthy();
+    expect(render(<EverydayFoods everydayFoods={[]} />)).toBeTruthy();
   });
 });
