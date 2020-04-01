@@ -7,7 +7,6 @@ import { Link } from "@reach/router";
 
 const NutrientsPage = props => {
   const { nutrients, user } = props;
-  //add user to props when login saves through navigation
 
   const [high, updateHigh] = useState([]);
   const [raised, updateRaised] = useState([]);
@@ -48,16 +47,19 @@ const NutrientsPage = props => {
   };
 
   const mapFunction = array => {
-    return array.map(item => (
-      <InfoCard
-        nutrient={item}
-        displayPanel={(nutrient, displayStyle) => {
-          updateNutrient(nutrient);
-          updateColor(displayStyle);
-          updateDisplay(!isPanelDisplayed);
-        }}
-      />
-    ));
+    return array.map(item => {
+      return (
+        <InfoCard
+          key={item.name}
+          nutrient={item}
+          displayPanel={(nutrient, displayStyle) => {
+            updateNutrient(nutrient);
+            updateColor(displayStyle);
+            updateDisplay(!isPanelDisplayed);
+          }}
+        />
+      );
+    });
   };
 
   return (

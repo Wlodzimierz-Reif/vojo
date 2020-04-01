@@ -38,7 +38,6 @@ const PrioritiesPage = props => {
             <Link to="../nutrients-page" className={styles.link}>
               <div>
                 <p>Your nutrients</p>
-
                 <img src={Arrow} alt="Right arrow" className={styles.arrow} />
               </div>
             </Link>

@@ -11,7 +11,6 @@ import peanut from "../../assets/characters/peanut-1.svg";
 
 const DietBreakdown = props => {
   const { userApiData } = props;
-  console.log(userApiData);
 
   const text =
     userApiData["personalised-recommendations"]["weight-management-actions"][0];
