@@ -111,7 +111,7 @@ const LandingPage = props => {
       <section className={styles.howItWorks} id="howItWorks">
         <div className={styles.howItWorksTitles}>
           <h2>How does it work?</h2>
-          <p>All it takes is these fice easy-peasy steps.</p>
+          <p>All it takes is these five easy-peasy steps.</p>
         </div>
         <span className={styles.imageList}>
           <div>
@@ -178,17 +178,19 @@ const LandingPage = props => {
             handleClick={signInWithRedirect}
           />
         </div>
-        <a className={styles.marginTop} href="/landing-page">
-          Let's try a free trial
+        <a className={styles.marginTop} href="/under-construction-page">
+          Let's start a free trial
         </a>
       </section>
       <footer>
-        <img src={tofuLogo} alt="Vojo Logo" />
+        <a href="/landing-page">
+        <img src={tofuLogo} alt="Vojo Logo"/>
+        </a>
         <div className={styles.navLinks}>
-          <a href="/landing-page">About us</a>
-          <a href="/landing-page">Take a free trial</a>
-          <a href="/landing-page">Q&A</a>
-          <a href="/landing-page">Contact us</a>
+          <a href="/under-construction-page">About us</a>
+          <a href="/under-construction-page">Start a free trial</a>
+          <a href="/under-construction-page">Q&A</a>
+          <a href="/under-construction-page">Contact us</a>
         </div>
       </footer>
     </div>
