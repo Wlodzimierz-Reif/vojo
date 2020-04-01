@@ -2,9 +2,7 @@ import React from "react";
 import Dashboard from "./Dashboard";
 
 describe("Dashboard tests", () => {
-  let component;
-
-  beforeEach(() => {
-    component =
-  })
+  it("should render", () => {
+    expect(render(<Dashboard />)).toBeTruthy();
+  });
 });

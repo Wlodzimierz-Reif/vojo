@@ -6,13 +6,8 @@ import data from "../../data/index.json";
 import arrow from "../../assets/graphic-devices/white-arrow-1.svg";
 import Button from "../../components/Button";
 import broccoli from "../../assets/characters/broccoli-2.svg";
-import blueberry from "../../assets/characters/blueberry-1.svg";
 import blueberryTwo from "../../assets/characters/blueberry-2.svg";
-import beetroot from "../../assets/characters/beetroot-1.svg";
 import beetrootTwo from "../../assets/characters/beetroot-2.svg";
-import apple from "../../assets/characters/apple-1.svg";
-import butternut from "../../assets/characters/butternut-1.svg";
-import banana from "../../assets/characters/banana-1.svg";
 import PriorityBox from "../../components/PriorityBox";
 
 const Dashboard = props => {
@@ -96,7 +91,6 @@ const Dashboard = props => {
   return (
     <>
       <section className={styles.entirePage}>
-        {/* <div className={styles.stickyTop}></div> */}
         <NavBar />
         <div className={styles.mainPage}>
           <section>
