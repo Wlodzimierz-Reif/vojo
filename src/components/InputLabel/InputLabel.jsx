@@ -6,7 +6,7 @@ const InputLabel = props => {
   const labelType = props.isPrimary ? styles.primary : styles.secondary;
 
   return (
-    <label className={`${styles.label} ${labelType}`} for={labelName}>
+    <label className={`${styles.label} ${labelType}`} htmlFor={labelName}>
       {labelName}
     </label>
   );

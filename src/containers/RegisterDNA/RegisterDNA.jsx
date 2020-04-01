@@ -9,7 +9,7 @@ import ModalBox from "../../components/ModalBox";
 import { navigate } from "@reach/router";
 
 const RegisterDNA = props => {
-  const { user } = props;
+  const { user, routesFetch } = props;
   const [userBarcode, updateUserBarcode] = useState("");
   const [modalShown, toggleModal] = useState(false);
   const [userData, setUserData] = useState(null);
@@ -36,6 +36,7 @@ const RegisterDNA = props => {
         geneticGuid: userBarcode
       })
       .then(() => {
+        routesFetch();
         displayConfirmation();
       })
       .catch(err => {

@@ -46,16 +46,19 @@ const NutrientsPage = props => {
   };
 
   const mapFunction = array => {
-    return array.map(item => (
-      <InfoCard
-        nutrient={item}
-        displayPanel={(nutrient, displayStyle) => {
-          updateNutrient(nutrient);
-          updateColor(displayStyle);
-          updateDisplay(!isPanelDisplayed);
-        }}
-      />
-    ));
+    return array.map(item => {
+      return (
+        <InfoCard
+          key={item.name}
+          nutrient={item}
+          displayPanel={(nutrient, displayStyle) => {
+            updateNutrient(nutrient);
+            updateColor(displayStyle);
+            updateDisplay(!isPanelDisplayed);
+          }}
+        />
+      );
+    });
   };
 
   return (

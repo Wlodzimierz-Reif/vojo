@@ -13,7 +13,7 @@ const RadioButton = props => {
         onInput={event => selectRadio(event.target.value)}
         defaultChecked={startChecked}
       />
-      <label for={name}>{text}</label>
+      <label htmlFor={name}>{text}</label>
     </section>
   );
 };

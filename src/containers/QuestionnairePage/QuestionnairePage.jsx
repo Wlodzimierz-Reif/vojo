@@ -43,7 +43,7 @@ import MockData from "../../data/index.json";
 import ProgressBar from "../../components/ProgressBar";
 
 const QuestionnairePage = props => {
-  const { user } = props;
+  const { user, routesFetch } = props;
   const [formValues, setFormValues] = useState({});
   const [isShown, toggleShown] = useState(false);
   const [showError, toggleShowError] = useState(false);
@@ -72,7 +72,7 @@ const QuestionnairePage = props => {
         userApiData: apiData,
         priorityActions: MockData["user-dashboard"].priorities
       })
-      .then(navigate("/confirmation-page"))
+      .then(routesFetch(), navigate("/confirmation-page"))
       .catch(err => toggleShowError(err));
   };
 
