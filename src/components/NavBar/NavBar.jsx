@@ -7,7 +7,7 @@ import TermsOfServicePdf from "../../assets/privacy-docs/terms-of-service.pdf";
 import TermsOfUsePdf from "../../assets/privacy-docs/terms-of-use.pdf";
 
 const mainLinks = [
-  { name: "Dashboard", path: "../under-construction-page" },
+  { name: "Dashboard", path: "../dashboard" },
   { name: "Diet plan", path: "../diet-breakdown" },
   { name: "Health", path: "../under-construction-page" },
   { name: "Priorities", path: "../priorities-page" },
@@ -19,11 +19,9 @@ const mainLinks = [
 
 const getLinks = link => {
   return (
-    <>
-      <Link to={link.path} className={styles.link}>
-        <p>{link.name}</p>
-      </Link>
-    </>
+    <Link key={link.name} to={link.path} className={styles.link}>
+      <p>{link.name}</p>
+    </Link>
   );
 };
 
@@ -46,7 +44,6 @@ const NavBar = props => {
     height: { height: "56px", borderBottom: "solid 2px $primary-background" },
     hide: { opacity: "0", transition: "0.2s" }
   };
-  // make classes and make media query - on desktop transition none
 
   let toggleNav = navVisibility === true ? navOpen : navClosed;
 

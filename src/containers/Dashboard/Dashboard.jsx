@@ -12,11 +12,10 @@ import PriorityBox from "../../components/PriorityBox";
 
 const Dashboard = props => {
   const { userData } = props;
-  console.log(userData);
 
   const printPriorities = () => {
     const prioritiesData = userData.priorityActions.map((prio, index) => (
-      <div className={styles.prioBox}>
+      <div key={prio.name} className={styles.prioBox}>
         <PriorityBox
           prioNum={index + 1}
           prioHead={prio.action}
@@ -71,7 +70,7 @@ const Dashboard = props => {
   const printSupplements = () => {
     const supplementsData = data["user-dashboard"].vitamins.map(
       (vits, index) => (
-        <li>
+        <li key={vits.name}>
           {`${capitaliseInitial(vits.name)}: ${vits["intake-action"]}.`}
           <p>{vits["intake-recommendation"]}</p>
         </li>
@@ -89,123 +88,112 @@ const Dashboard = props => {
   };
 
   return (
-    <>
-      <section className={styles.entirePage}>
-        <NavBar />
-        <div className={styles.mainPage}>
+    <section className={styles.entirePage}>
+      <NavBar />
+      <div className={styles.mainPage}>
+        <section>
+          <div className={styles.topCont}>
+            <h2>Hey {userData.userApiData["user-dashboard"]["first-name"]}</h2>
+            <div className={styles.healthScore}>
+              <div className={styles.healthScoreData}>
+                <p>Your vegan health score: </p>
+                <h2>
+                  {userData.userApiData["user-dashboard"]["vegan-health-score"]}
+                  %
+                </h2>
+                <span>
+                  {
+                    userData.userApiData["user-dashboard"][
+                      "vegan-health-score-message"
+                    ]
+                  }
+                </span>
+              </div>
+              <Link
+                to={"../under-construction-page"}
+                style={{ textDecoration: "none" }}
+              >
+                <p className={styles.improveHealthScore}>
+                  How can i improve this?
+                </p>
+              </Link>
+            </div>
+          </div>
           <section>
-            <div className={styles.topCont}>
-              <h2>
-                Hey {userData.userApiData["user-dashboard"]["first-name"]}
-              </h2>
-              <div className={styles.healthScore}>
-                <div className={styles.healthScoreData}>
-                  <p>Your vegan health score: </p>
-                  <h2>
-                    {
-                      userData.userApiData["user-dashboard"][
-                        "vegan-health-score"
-                      ]
-                    }
-                    %
-                  </h2>
-                  <span>
-                    {
-                      userData.userApiData["user-dashboard"][
-                        "vegan-health-score-message"
-                      ]
-                    }
-                  </span>
+            <div className={styles.planOfAction}>
+              <h3>Your plan of action</h3>
+              <img src={blueberryTwo} alt="blueberryTwo" />
+            </div>
+            <div className={styles.prioBoxes}>{printPriorities()}</div>
+          </section>
+          <div className={styles.dietPlan}>
+            <h3>Unlock your mealtime mojo</h3>
+            <div className={styles.dietPlanBoxes}>
+              <div className={`${styles.mojoBox} ${styles.dietType}`}>
+                <div>
+                  <p>Your vegan diet type:</p>
+                  <h4>
+                    {userData.userApiData["user-dashboard"]["diet-type"].name}
+                  </h4>
+                </div>
+                <img src={broccoli} alt="broccoli" />
+                <Link to={"../diet-breakdown"} className={styles.dietPlanLink}>
+                  <Button btnText={"View my diet plan"} />
+                </Link>
+              </div>
+              <div className={styles.mojoBox}>
+                <div>
+                  <h5>Your supplement plan (get yours now)</h5>
+                  <ol>{printSupplements()}</ol>
                 </div>
                 <Link
                   to={"../under-construction-page"}
-                  style={{ textDecoration: "none" }}
+                  className={styles.dietPlanLink}
                 >
-                  <p className={styles.improveHealthScore}>
-                    How can i improve this?
-                  </p>
+                  <Button btnText={"Get yours now"} />
+                </Link>
+              </div>
+              <div className={styles.mojoBox}>
+                <div>
+                  <h5>Your go-to foods</h5>
+                  {goToFoods()}
+                </div>
+                <Link
+                  to={"../under-construction-page"}
+                  className={styles.dietPlanLink}
+                >
+                  <Button btnText={"Get yours now"} />
                 </Link>
               </div>
             </div>
-            <section>
-              <div className={styles.planOfAction}>
-                <h3>Your plan of action</h3>
-                <img src={blueberryTwo} alt="" />
-              </div>
-              <div className={styles.prioBoxes}>{printPriorities()}</div>
-            </section>
-            <div className={styles.dietPlan}>
-              <h3>Unlock your mealtime mojo</h3>
-              <div className={styles.dietPlanBoxes}>
-                <div className={`${styles.mojoBox} ${styles.dietType}`}>
-                  <div>
-                    <p>Your vegan diet type:</p>
-                    <h4>
-                      {userData.userApiData["user-dashboard"]["diet-type"].name}
-                    </h4>
-                  </div>
-                  <img src={broccoli} alt="" />
-                  <Link
-                    to={"../diet-breakdown"}
-                    className={styles.dietPlanLink}
-                  >
-                    <Button btnText={"View my diet plan"} />
-                  </Link>
-                </div>
-                <div className={styles.mojoBox}>
-                  <div>
-                    <h5>Your supplement plan (get yours now)</h5>
-                    <ol>{printSupplements()}</ol>
-                  </div>
-                  <Link
-                    to={"../under-construction-page"}
-                    className={styles.dietPlanLink}
-                  >
-                    <Button btnText={"Get yours now"} />
-                  </Link>
-                </div>
-                <div className={styles.mojoBox}>
-                  <div>
-                    <h5>Your go-to foods</h5>
-                    {goToFoods()}
-                  </div>
-                  <Link
-                    to={"../under-construction-page"}
-                    className={styles.dietPlanLink}
-                  >
-                    <Button btnText={"Get yours now"} />
-                  </Link>
-                </div>
-              </div>
+          </div>
+          <section className={styles.whereToSection}>
+            <div className={styles.whereToNext}>
+              <h3>Where to next?</h3>
+              <img src={beetrootTwo} alt="Beetroot person" />
             </div>
-            <section className={styles.whereToSection}>
-              <div className={styles.whereToNext}>
-                <h3>Where to next?</h3>
-                <img src={beetrootTwo} alt="Beetroot person" />
+            <section className={styles.whereToContainer}>
+              <div className={styles.whereNextBox}>
+                <h5>Your Nutrient Breakdown</h5>
+                <Link to={"../nutrient-breakdown"}>{printArrow()}</Link>
               </div>
-              <section className={styles.whereToContainer}>
-                <div className={styles.whereNextBox}>
-                  <h5>Your Nutrient Breakdown</h5>
-                  <Link to={"../nutrient-breakdown"}>{printArrow()}</Link>
-                </div>
-                <div className={styles.whereNextBox}>
-                  <h5>Manage Your Weight</h5>
-                  <Link to={"../under-construction-page"}>{printArrow()}</Link>
-                </div>
-                <div className={styles.whereNextBox}>
-                  <h5>Boost Your Mood</h5>
-                  <Link to={"../under-construction-page"}>{printArrow()}</Link>
-                </div>
-                <div className={styles.whereNextBox}>
-                  <h5>Your Bone Analysis</h5>
-                  <Link to={"../under-construction-page"}>{printArrow()}</Link>
-                </div>
-              </section>
+              <div className={styles.whereNextBox}>
+                <h5>Manage Your Weight</h5>
+                <Link to={"../under-construction-page"}>{printArrow()}</Link>
+              </div>
+              <div className={styles.whereNextBox}>
+                <h5>Boost Your Mood</h5>
+                <Link to={"../under-construction-page"}>{printArrow()}</Link>
+              </div>
+              <div className={styles.whereNextBox}>
+                <h5>Your Bone Analysis</h5>
+                <Link to={"../under-construction-page"}>{printArrow()}</Link>
+              </div>
             </section>
           </section>
-        </div>
-      </section>
-    </>
+        </section>
+      </div>
+    </section>
   );
 };
 
