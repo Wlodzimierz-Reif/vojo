@@ -18,11 +18,13 @@ const PriorityBox = props => {
 
   return (
     <div className={styles.priorityBoxCont}>
-      <div className={styles.prioNum}>
-        <p>{prioNum}</p>
+      <div>
+        <div className={styles.prioNum}>
+          <p>{prioNum}</p>
+        </div>
+        <h4>{prioHead}</h4>
+        <p>{prioText}</p>
       </div>
-      <h4>{prioHead}</h4>
-      <p>{prioText}</p>
       <div className={styles.checkBox}>
         <div>
           <CheckBox

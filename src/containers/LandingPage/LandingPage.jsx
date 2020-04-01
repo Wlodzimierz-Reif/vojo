@@ -24,7 +24,7 @@ const LandingPage = props => {
 
   useEffect(() => {
     if (user) {
-      navigate("/priorities-page");
+      navigate("/dashboard");
     }
   }, [user]);
 
@@ -33,7 +33,7 @@ const LandingPage = props => {
   const display = isOpen ? "" : styles.display;
 
   const burgerImg = () => (isOpen ? burgerCross : burgerMenu);
-  
+
   return (
     <div className={styles.landingPage}>
       <header className={`${styles.navBar} ${navStyles}`}>

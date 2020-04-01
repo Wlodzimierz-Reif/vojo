@@ -154,9 +154,13 @@ a {
     flex-direction: column;
     align-items: center;
     width: 170px;
+    transition: 0s;
     .logoBurgerFlex {
       justify-content: center;
       padding-bottom: $base-spacing * 4;
+    }
+    .links {
+      transition: 0s;
     }
   }
 
