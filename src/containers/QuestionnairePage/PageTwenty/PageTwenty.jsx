@@ -66,9 +66,9 @@ const PageTwenty = props => {
             selectRadio={input => setFormValues({ ...formValues, oil: input })}
           />
           <RadioButton
-            text="Cocunut"
+            text="Coconut"
             name="oil"
-            value="Cocunut"
+            value="Coconut"
             startChecked={false}
             selectRadio={input => setFormValues({ ...formValues, oil: input })}
           />
