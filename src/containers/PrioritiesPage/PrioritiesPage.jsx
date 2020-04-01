@@ -8,11 +8,27 @@ import Arrow from "../../assets/graphic-devices/primary-col-arrow-1.svg";
 import { Link } from "@reach/router";
 
 const PrioritiesPage = props => {
-  const { haveSample, signOut } = props;
+  const { haveSample, signOut, userData } = props;
 
   const [isPromptShown, togglePromptShown] = useState(haveSample);
 
   const setSampleBoxVisibility = isPromptShown ? styles.hideNoSampleBox : "";
+
+  const printPriorities = () => {
+    if (userData) {
+      const prioritiesData = userData.priorityActions.map((prio, index) => (
+        <div className={styles.priorityCardContainer}>
+          <PriorityBox
+            prioNum={index + 1}
+            prioHead={prio.action}
+            prioText={prio.description}
+          />
+        </div>
+      ));
+      return prioritiesData;
+    }
+    return null;
+  };
 
   return (
     <section className={styles.navBarFlex}>
@@ -38,7 +54,8 @@ const PrioritiesPage = props => {
           nutrient intake and improve your health!
         </p>
         <section className={styles.priorityBoxesSection}>
-          <div className={styles.priorityCardContainer}>
+          {printPriorities()}
+          {/* <div className={styles.priorityCardContainer}>
             <PriorityBox
               prioNum={"1"}
               prioHead={"Food"}
@@ -61,7 +78,7 @@ const PrioritiesPage = props => {
               prioText={"The box's text"}
               prioLinkText={"The text for the link"}
             />
-          </div>
+          </div> */}
         </section>
         <div className={styles.vegPerson}>
           <img src={Image} alt="Vegetable person" />
