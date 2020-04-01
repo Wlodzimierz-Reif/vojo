@@ -69,7 +69,11 @@ const Routes = props => {
         <PrivateRoutes path="/">
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
-          <RegisterDNA path="register-dna" user={user} />
+          <RegisterDNA
+            path="register-dna"
+            user={user}
+            routesFetch={fetchUserData}
+          />
           <EverydayFoods path="everyday-foods" />
           {nutrientsJSX()}
           {dietBreakdownJSX}
@@ -77,7 +81,7 @@ const Routes = props => {
           <QuestionnairePage
             path="questionnaire-page/*"
             user={user}
-            userData={userData}
+            routesFetch={fetchUserData}
           />
           <ConfirmationPage path="confirmation-page" />
           <UnderConstructionPage path="under-construction-page" />
