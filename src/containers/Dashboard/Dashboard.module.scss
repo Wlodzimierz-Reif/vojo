@@ -2,6 +2,7 @@
 
 .entirePage {
   @include flex-column;
+  padding: $base-spacing * 2;
 
   .mainPage {
     @include flex-column;

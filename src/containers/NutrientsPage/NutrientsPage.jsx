@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styles from "./NutrientsPage.module.scss";
 import InfoCard from "../../components/InfoCard";
-// import logo from "../../assets/logos/primary-logo.png";
 import SidePanel from "../SidePanel";
 import NavBar from "../../components/NavBar";
-// import { Link } from "@reach/router";
 
 const NutrientsPage = props => {
   const { nutrients, user, signOut } = props;
-  //add user to props when login saves through navigation
 
   const [high, updateHigh] = useState([]);
   const [raised, updateRaised] = useState([]);
@@ -67,12 +64,6 @@ const NutrientsPage = props => {
       <section className={styles.nutrientsFlex}>
         <section className={styles.showPanel}>{insertJsx}</section>
         <section className={styles.nutrientPage}>
-          {/* <div className={styles.topContainer}>
-          <img src={logo} alt="vojo logo" />
-          <Link to="../priorities-page">
-            <p>menu</p>
-          </Link>
-        </div> */}
           <h1>Nutrients</h1>
           <div className={styles.infoCardHolder}>
             {mapFunction(high)}

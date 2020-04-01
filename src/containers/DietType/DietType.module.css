@@ -4,11 +4,11 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   width: 100vw;
   height: 300vh;
   margin: auto;
@@ -42,15 +42,17 @@
   .dietType {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     height: 60vh;
     margin: 25vh auto;
   }
+
   .dietType .dietTextBox {
     width: 30%;
     margin: 0 8px;
   }
+
   .dietType .vegbox {
     height: 100%;
     width: 30%;

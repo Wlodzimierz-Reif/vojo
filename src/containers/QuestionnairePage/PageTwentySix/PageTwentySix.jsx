@@ -13,6 +13,7 @@ const PageTwentySix = props => {
   const updateMasterValues = () => {
     changeMaster({ ...masterValues, ...formValues });
   };
+
   return (
     <div className={styles.page}>
       <div className={styles.box}>
@@ -75,7 +76,6 @@ const PageTwentySix = props => {
           />
         </section>
       </div>
-
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
   );

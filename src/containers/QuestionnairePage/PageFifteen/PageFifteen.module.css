@@ -7,11 +7,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
+  -ms-flex-align: left;
+  align-items: left;
 }
 
 .page .box {
@@ -40,7 +40,7 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -59,14 +59,14 @@
 
 .leftArrow {
   -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
+  transform: rotate(270deg);
   width: 60px;
   height: 60px;
 }
 
 .rightArrow {
   -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
   width: 60px;
   height: 60px;
 }
@@ -74,27 +74,31 @@
 @media only screen and (min-width: 764px) {
   .page {
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
+
   .page .questionPerson {
     display: unset;
   }
+
   .page .box .arrows {
     position: static;
     border-bottom: none;
   }
+
   .page .box .leftArrow {
     position: absolute;
     -webkit-transform: rotate(270deg);
-            transform: rotate(270deg);
+    transform: rotate(270deg);
     left: 60px;
     top: calc(50vh - 30px);
   }
+
   .page .box .rightArrow {
     position: absolute;
     -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    transform: rotate(90deg);
     right: 60px;
     top: calc(50vh - 30px);
   }

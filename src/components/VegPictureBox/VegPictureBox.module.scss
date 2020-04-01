@@ -32,6 +32,7 @@
     text-align: center;
   }
 }
+
 @media only screen and (min-width: 768px) {
   .card {
     .vegChar {
@@ -40,17 +41,9 @@
       position: relative;
       margin: 0 auto;
     }
-        p {
-          font-size: $base-spacing * 1.5;
-        }
-  }
-}
 
-@media only screen and (min-width: 1024px) {
-  //   .vegChar {
-  //     height: 80%;
-  //     width: 100%;
-  //     position: relative;
-  //     margin: 0 auto;
-  // }
+    p {
+      font-size: $base-spacing * 1.5;
+    }
+  }
 }

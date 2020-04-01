@@ -150,7 +150,6 @@ const PageTwo = props => {
           />
         </section>
       </div>
-
       <img className={styles.questionPerson} src={Image} alt="Veg" />
     </div>
   );
