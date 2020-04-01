@@ -1,10 +1,6 @@
 .inputField {
   font-family: inherit;
-<<<<<<< HEAD
-  border: 2px solid #202020;
-=======
-  border: 2px solid #CC9A63;
->>>>>>> 68ee5e6618d4bce0b9c31a43f4662260f0c9a371
+  border: 2px solid #cc9a63;
   border-radius: 5px;
   outline: none;
   width: 100%;

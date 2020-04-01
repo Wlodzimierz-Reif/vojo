@@ -27,22 +27,26 @@
 .secondary {
   border: 1px #e94842 solid;
   background-color: #f9d1cf99;
-  color: #3A1210;
+  color: #3a1210;
 }
 
 @media only screen and (min-width: 768px) {
   .card {
     height: 90%;
   }
+
   .card h3 {
     margin-bottom: 8px;
   }
+
   .card .vegChar {
     height: 40%;
   }
+
   .card .vegChar img {
     height: 90%;
   }
+
   .card p {
     height: 25%;
     padding-top: 0;

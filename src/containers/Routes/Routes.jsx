@@ -5,8 +5,8 @@ import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
 import QuestionnairePage from "../QuestionnairePage";
 import PrioritiesPage from "../PrioritiesPage";
-// import DashboardNotPaid from "../../containers/DashboardNotPaid";
-// import Dashboard from "../../containers/Dashboard";
+import DashboardNotPaid from "../../containers/DashboardNotPaid";
+import Dashboard from "../../containers/Dashboard";
 // import Footer from "../../components/Footer";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import RegisterDNA from "../RegisterDNA";
@@ -39,6 +39,26 @@ const Routes = props => {
     fetchUserData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
+
+  const dashboardJSX = () => {
+    return userData && userData.userApiData ? (
+      <>
+        <Dashboard userData={userData} path="dashboard" />
+      </>
+    ) : (
+      <IncompletePage text={"questionnaire"} path="dashboard" />
+    );
+  };
+
+  const dashboardNotPaidJSX = () => {
+    return userData && userData.userApiData ? (
+      <>
+        <DashboardNotPaid userData={userData} path="dashboard-notpaid" />
+      </>
+    ) : (
+      <IncompletePage text={"questionnaire"} path="dashboard-notpaid" />
+    );
+  };
 
   const everydayFoodsJSX =
     userData && userData.userApiData ? (
@@ -80,9 +100,9 @@ const Routes = props => {
           signInWithRedirect={signIn}
           user={user}
         />
-        {/* <DashboardNotPaid path="dashboard-notpaid" /> */}
-        {/* <Dashboard path="dashboard" /> */}
         <PrivateRoutes path="/">
+          {dashboardJSX()}
+          {dashboardNotPaidJSX()}
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
           <RegisterDNA path="register-dna" user={user} />
@@ -96,8 +116,8 @@ const Routes = props => {
           />
           {everydayFoodsJSX}
           <ConfirmationPage path="confirmation-page" />
-          <UnderConstructionPage path="under-construction-page" />
         </PrivateRoutes>
+          <UnderConstructionPage path="under-construction-page" />
         <NotFound default />
       </Router>
     </>

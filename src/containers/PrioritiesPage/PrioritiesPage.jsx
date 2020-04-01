@@ -18,7 +18,6 @@ const PrioritiesPage = props => {
     <section className={styles.navBarFlex}>
       <NavBar signOut={signOut} />
       <section className={styles.prioritiesPage}>
-
         <h2>Priorities</h2>
         <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
           <NoSampleBox closeBox={() => togglePromptShown(!isPromptShown)} />
@@ -42,29 +41,26 @@ const PrioritiesPage = props => {
         <section className={styles.priorityBoxesSection}>
           <div className={styles.priorityCardContainer}>
             <PriorityBox
-              priorityBoxNum={"1"}
-              priorityBoxHeading={"Food"}
-              priorityBoxText={"The box's text"}
-              priorityBoxLink={"/under-construction-page"}
-              priorityBoxLinkText={"The text for the link"}
+              prioNum={"1"}
+              prioHead={"Food"}
+              prioText={"The box's text"}
+              prioLinkText={"The text for the link"}
             />
           </div>
           <div className={styles.priorityCardContainer}>
             <PriorityBox
-              priorityBoxNum={"2"}
-              priorityBoxHeading={"Food"}
-              priorityBoxText={"The box's text"}
-              priorityBoxLink={"/under-construction-page"}
-              priorityBoxLinkText={"The text for the link"}
+              prioNum={"2"}
+              prioHead={"Food"}
+              prioText={"The box's text"}
+              prioLinkText={"The text for the link"}
             />
           </div>
           <div className={styles.priorityCardContainer}>
             <PriorityBox
-              priorityBoxNum={"3"}
-              priorityBoxHeading={"Food"}
-              priorityBoxText={"The box's text"}
-              priorityBoxLink={"/under-construction-page"}
-              priorityBoxLinkText={"The text for the link"}
+              prioNum={"3"}
+              prioHead={"Food"}
+              prioText={"The box's text"}
+              prioLinkText={"The text for the link"}
             />
           </div>
         </section>

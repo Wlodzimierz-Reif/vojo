@@ -4,7 +4,7 @@ import CheckBox from "../CheckBox";
 import { Link } from "@reach/router";
 
 const PriorityBox = props => {
-  const { prioNum, prioHead, prioText } = props;
+  const { prioNum, prioHead, prioText, prioLinkText } = props;
 
   const [value, setValue] = useState(false);
 
@@ -18,11 +18,13 @@ const PriorityBox = props => {
 
   return (
     <div className={styles.priorityBoxCont}>
-      <div className={styles.prioNum}>
-        <p>{prioNum}</p>
+      <div>
+        <div className={styles.prioNum}>
+          <p>{prioNum}</p>
+        </div>
+        <h4>{prioHead}</h4>
+        <p>{prioText}</p>
       </div>
-      <h4>{prioHead}</h4>
-      <p>{prioText}</p>
       <div className={styles.checkBox}>
         <div>
           <CheckBox
@@ -33,7 +35,9 @@ const PriorityBox = props => {
         <p>I've done this!</p>
       </div>
       <h4>priorityBoxHeading</h4>
-      <Link to="priorityBoxLink">priorityBoxLinkText</Link>
+      <div className={styles.prioLink}>
+        <Link to="/under-construction-page">{prioLinkText}</Link>
+      </div>
     </div>
   );
 };
