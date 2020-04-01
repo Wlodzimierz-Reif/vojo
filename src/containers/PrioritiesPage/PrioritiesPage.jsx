@@ -18,7 +18,6 @@ const PrioritiesPage = props => {
     <section className={styles.navBarFlex}>
       <NavBar signOut={signOut} />
       <section className={styles.prioritiesPage}>
-
         <h2>Priorities</h2>
         <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
           <NoSampleBox closeBox={() => togglePromptShown(!isPromptShown)} />

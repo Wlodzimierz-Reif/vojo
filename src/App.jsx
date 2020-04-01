@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.module.scss";
 import Routes from "./containers/Routes";
-// import Routes from "../src/containers/Routes";
 import { useState, useEffect } from "react";
 import firebase, { provider } from "./firebase";
 import { redirectTo } from "@reach/router";

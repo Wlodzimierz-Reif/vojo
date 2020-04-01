@@ -1,7 +1,6 @@
 @import "../../variables.scss";
 
 p {
-  // padding: $base-spacing * 0.75 0;
   font-size: 13px;
   font-weight: bold;
 }
@@ -29,7 +28,6 @@ a {
   width: 100vw;
   top: 0;
   left: 0;
-  // padding: 16px;
   background-color: $primary-background;
 }
 
@@ -147,8 +145,6 @@ a {
     min-width: 186px;
     width: 186px;
     position: unset;
-    // margin-right: $base-spacing * 2;
-    // display: none;
   }
 
   .navBar {

@@ -5,9 +5,6 @@ import NutrientsPage from "../NutrientsPage";
 import NotFound from "../NotFound";
 import QuestionnairePage from "../QuestionnairePage";
 import PrioritiesPage from "../PrioritiesPage";
-// import DashboardNotPaid from "../../containers/DashboardNotPaid";
-// import Dashboard from "../../containers/Dashboard";
-// import Footer from "../../components/Footer";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import RegisterDNA from "../RegisterDNA";
 import DietBreakdown from "../DietBreakdown";
@@ -80,8 +77,6 @@ const Routes = props => {
           signInWithRedirect={signIn}
           user={user}
         />
-        {/* <DashboardNotPaid path="dashboard-notpaid" /> */}
-        {/* <Dashboard path="dashboard" /> */}
         <PrivateRoutes path="/">
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />

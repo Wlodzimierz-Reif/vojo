@@ -120,6 +120,7 @@
     height: 100%;
     background-color: #f2e4d0;
   }
+
   .prioritiesPage .yourNutrients {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -136,10 +137,12 @@
     align-items: center;
     margin-top: 2vh;
   }
+
   .prioritiesPage .yourNutrients h3 {
     font-size: 24px;
     margin-bottom: 8px;
   }
+
   .prioritiesPage .yourNutrients div {
     height: 32px;
     width: 160px;
@@ -157,9 +160,11 @@
     -ms-flex-align: center;
     align-items: center;
   }
+
   .prioritiesPage .yourNutrients div p {
     color: #b44370;
   }
+
   .prioritiesPage .yourNutrients div .arrow {
     height: 32px;
     width: 32px;
@@ -167,22 +172,27 @@
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
   }
+
   .prioritiesPage h2 {
     color: black;
     text-align: center;
     font-size: 48px;
     padding-bottom: 5vh;
   }
+
   .prioritiesPage .noSampleBox {
     margin: 5vh 0;
   }
+
   .prioritiesPage .noSampleBox h3 {
     font-size: 24px;
     padding-bottom: 8px;
   }
+
   .prioritiesPage .hideNoSampleBox {
     display: none;
   }
+
   .prioritiesPage .priorityBoxesSection {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -199,10 +209,12 @@
     min-height: 200px;
     margin-top: 12vh;
   }
+
   .prioritiesPage .priorityBoxesSection .priorityCardContainer {
     width: 30%;
     height: 100%;
   }
+
   .prioritiesPage .vegPerson {
     width: 20vh;
     height: 20vh;
