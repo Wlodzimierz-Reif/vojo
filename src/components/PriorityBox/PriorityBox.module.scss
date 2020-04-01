@@ -13,6 +13,12 @@
   justify-content: space-between;
   align-items: left;
 
+  div {
+    p {
+      margin-bottom: $base-spacing * 2;
+    }
+  }
+
   a {
     color: $sucessful;
   }
@@ -48,11 +54,14 @@
   .checkBox {
     display: flex;
     align-items: center;
-    margin-top: $base-spacing * 2;
+    margin-top: auto;
 
     div {
       width: 40px;
       height: 20px;
+    }
+    p {
+      margin-bottom: 0;
     }
   }
 
