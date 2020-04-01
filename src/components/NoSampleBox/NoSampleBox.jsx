@@ -12,8 +12,8 @@ const NoSampleBox = props => {
           <p onClick={closeBox}>Close</p>
         </div>
         <p>
-          You can still use the application but some functionality won't be
-          available
+          You can still use the application but some of the functionality won't
+          be available
         </p>
       </section>
     </>

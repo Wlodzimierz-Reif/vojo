@@ -96,8 +96,8 @@ const Routes = props => {
           />
           {everydayFoodsJSX}
           <ConfirmationPage path="confirmation-page" />
-          <UnderConstructionPage path="under-construction-page" />
         </PrivateRoutes>
+          <UnderConstructionPage path="under-construction-page" />
         <NotFound default />
       </Router>
     </>
