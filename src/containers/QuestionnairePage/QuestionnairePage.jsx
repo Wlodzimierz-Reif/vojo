@@ -79,13 +79,13 @@ const QuestionnairePage = props => {
   const submitAnswers = () => {
     toggleShown(!isShown);
 
-    const dataToPost = {
-      geneticGuid: "12345-6789",
-      reportType: "full",
-      answers: formValues
-    };
-
     // API fetch removed for demo purposes as API returns data in different format
+
+    // const dataToPost = {
+    //   geneticGuid: "12345-6789",
+    //   reportType: "full",
+    //   answers: formValues
+    // };
 
     // const requestOptions = {
     //   method: "POST",
