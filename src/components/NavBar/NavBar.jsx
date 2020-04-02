@@ -6,16 +6,6 @@ import { Link } from "@reach/router";
 import TermsOfServicePdf from "../../assets/privacy-docs/terms-of-service.pdf";
 import TermsOfUsePdf from "../../assets/privacy-docs/terms-of-use.pdf";
 
-const getLinks = link => {
-  return (
-    <Link key={link.name} to={link.path} className={styles.link}>
-      <p>{link.name}</p>
-    </Link>
-  );
-};
-
-const currentPage = "Dashboard";
-
 const NavBar = props => {
   const { signOut } = props;
   const [navVisibility, toggleOpen] = useState(false);
