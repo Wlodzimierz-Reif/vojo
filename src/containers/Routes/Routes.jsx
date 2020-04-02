@@ -19,7 +19,7 @@ import IncompletePage from "../IncompletePage";
 import { firestore } from "../../firebase";
 
 const Routes = props => {
-  const { signIn, signOut, user } = props;
+  const { signIn, signOut, user, haveSample } = props;
   const [userData, setUserData] = useState(null);
 
   const fetchUserData = () => {
@@ -84,6 +84,39 @@ const Routes = props => {
     );
   };
 
+  const prioritiesPageJsx = () => {
+    if (userData && userData.geneticGuid) {
+      return (
+        <>
+          <PrioritiesPage
+            userData={userData}
+            haveSample={haveSample}
+            path="priorities-page"
+            signOut={signOut}
+            geneticGuid={userData.geneticGuid}
+          />
+        </>
+      );
+    } else if (userData && !userData.geneticGuid) {
+      return <IncompletePage text={"register-dna"} path="priorities-page" />;
+    } else {
+      return <IncompletePage text={"questionnaire"} path="priorities-page" />;
+    }
+  };
+
+  //   return userData && userData.geneticGuid ? (
+  //     <>
+  //       <PrioritiesPage
+  //         prioritiesPage={userData.geneticGuid}
+  //         path="priorities-page"
+  //         // signOut={signOut}
+  //       />
+  //     </>
+  //   ) : (
+  //     <IncompletePage text={"questionnaire"} path="priorities-page" />
+  //   );
+  // };
+
   const dietBreakdownJSX =
     userData && userData.userApiData ? (
       <DietBreakdown userApiData={userData.userApiData} path="diet-breakdown" />
@@ -102,11 +135,13 @@ const Routes = props => {
         />
         <PrivateRoutes path="/">
           {dashboardJSX()}
+
           {dashboardNotPaidJSX()}
-          <PrioritiesPage path="priorities-page" signOut={signOut} />
+          {prioritiesPageJsx()}
+          {/* <PrioritiesPage path="priorities-page" signOut={signOut} /> */}
           <PaymentPage path="payment-page" />
           <RegisterDNA
-            path="register-dna"
+            path="register-dna-page"
             user={user}
             routesFetch={fetchUserData}
           />
@@ -121,7 +156,7 @@ const Routes = props => {
           {everydayFoodsJSX}
           <ConfirmationPage path="confirmation-page" />
         </PrivateRoutes>
-          <UnderConstructionPage path="under-construction-page" />
+        <UnderConstructionPage path="under-construction-page" />
         <NotFound default />
       </Router>
     </>

@@ -8,36 +8,40 @@ import Arrow from "../../assets/graphic-devices/primary-col-arrow-1.svg";
 import { Link } from "@reach/router";
 
 const PrioritiesPage = props => {
-  const { haveSample, signOut, userData } = props;
+  const { haveSample, signOut, userData, geneticGuid } = props;
 
   const [isPromptShown, togglePromptShown] = useState(haveSample);
 
   const setSampleBoxVisibility = isPromptShown ? styles.hideNoSampleBox : "";
 
   const printPriorities = () => {
-    if (userData) {
-      const prioritiesData = userData.priorityActions.map((prio, index) => (
-        <div className={styles.priorityCardContainer}>
-          <PriorityBox
-            prioNum={index + 1}
-            prioHead={prio.action}
-            prioText={prio.description}
-          />
-        </div>
-      ));
-      return prioritiesData;
-    }
-    return null;
+    // if (userData) {
+    const prioritiesData = userData.priorityActions.map((prio, index) => (
+      <div className={styles.priorityCardContainer}>
+        <PriorityBox
+          prioNum={index + 1}
+          prioHead={prio.action}
+          prioText={prio.description}
+        />
+      </div>
+    ));
+    return prioritiesData;
   };
+  // return null
+
+  const sampleBoxJsx =
+    userData && userData.geneticGuid ? (
+      <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
+        <NoSampleBox closeBox={() => togglePromptShown(!isPromptShown)} />
+      </div>
+    ) : null;
 
   return (
     <section className={styles.navBarFlex}>
       <NavBar signOut={signOut} />
       <section className={styles.prioritiesPage}>
         <h2>Priorities</h2>
-        <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
-          <NoSampleBox closeBox={() => togglePromptShown(!isPromptShown)} />
-        </div>
+        {sampleBoxJsx}
         <div>
           <div className={styles.yourNutrients}>
             <h3>Get Some Nutrients!</h3>
