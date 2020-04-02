@@ -90,12 +90,16 @@ const QuestionnairePage = props => {
       body: JSON.stringify(dataToPost)
     };
 
-    fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
-      .then(response => response.json())
-      .then(data => {
-        addToDb(data);
-      })
-      .catch(error => toggleShowError(error));
+    addToDb(MockData);
+
+    // API fetch removed for demo purposes as API returns data in different format
+
+    // fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     addToDb(data);
+    //   })
+    //   .catch(error => toggleShowError(error));
   };
 
   useEffect(() => {
