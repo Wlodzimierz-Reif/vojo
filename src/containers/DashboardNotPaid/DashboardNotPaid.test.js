@@ -4,6 +4,9 @@ import DashboardNotPaid from "./DashboardNotPaid";
 import { shallow } from "enzyme";
 
 const testFile = {
+  questionnaireAnswers: {
+    firstName: "Test"
+  },
   priorityActions: [
     {
       action: "Eat at least 2 portions of leafy greens every day",
