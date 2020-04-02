@@ -43,7 +43,7 @@ const Routes = props => {
   const dashboardJSX = () => {
     return userData && userData.userApiData ? (
       <>
-        <Dashboard userData={userData} path="dashboard" />
+        <Dashboard userData={userData} path="dashboard" signOut={signOut} />
       </>
     ) : (
       <IncompletePage text={"questionnaire"} path="dashboard" />
@@ -53,7 +53,11 @@ const Routes = props => {
   const dashboardNotPaidJSX = () => {
     return userData && userData.userApiData ? (
       <>
-        <DashboardNotPaid userData={userData} path="dashboard-notpaid" />
+        <DashboardNotPaid
+          userData={userData}
+          path="dashboard-notpaid"
+          signOut={signOut}
+        />
       </>
     ) : (
       <IncompletePage text={"questionnaire"} path="dashboard-notpaid" />
@@ -86,7 +90,11 @@ const Routes = props => {
 
   const dietBreakdownJSX =
     userData && userData.userApiData ? (
-      <DietBreakdown userApiData={userData.userApiData} path="diet-breakdown" />
+      <DietBreakdown
+        userApiData={userData.userApiData}
+        path="diet-breakdown"
+        signOut={signOut}
+      />
     ) : (
       <IncompletePage text={"questionnaire"} path="diet-breakdown" />
     );
