@@ -8,6 +8,7 @@
     font-style: inherit;
     width: 100%;
     height: 100%;
+    padding: $base-spacing * 2;
     background-color: $primary-background;
 
     .yourNutrients {
@@ -49,7 +50,7 @@
     h2 {
       text-align: center;
       font-size: $base-spacing * 6;
-      padding-top: $base-spacing * 2;
+      padding-top: $base-spacing;
     }
 
     .noSampleBox {
@@ -89,10 +90,10 @@
   @media only screen and (min-width: 1024px) {
     .prioritiesPage {
       font-style: inherit;
-      padding: 6vh;
       width: 100%;
       height: 100%;
       background-color: $primary-background;
+      padding: $base-spacing * 4;
 
       .yourNutrients {
         @include flex-row;
@@ -128,6 +129,7 @@
       h2 {
         text-align: left;
         font-size: $heading-2-size;
+        padding-top: $base-spacing;
         padding-bottom: 5vh;
       }
 
