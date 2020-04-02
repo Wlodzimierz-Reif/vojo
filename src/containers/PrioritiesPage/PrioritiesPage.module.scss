@@ -6,7 +6,6 @@
 
   .prioritiesPage {
     font-style: inherit;
-    padding: $base-spacing * 2;
     width: 100%;
     height: 100%;
     background-color: $primary-background;
@@ -127,8 +126,7 @@
       }
 
       h2 {
-        color: black;
-        text-align: center;
+        text-align: left;
         font-size: $heading-2-size;
         padding-bottom: 5vh;
       }

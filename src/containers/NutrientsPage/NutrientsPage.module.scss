@@ -24,7 +24,7 @@ body {
       height: 100%;
 
       .mainHeading {
-        margin-top: $base-spacing * 4;
+        padding: $base-spacing * 2 0;
         position: relative;
         font-size: $base-spacing * 6;
         text-align: center;
@@ -40,26 +40,35 @@ body {
       background: none;
     }
   }
+}
 
-  @media screen and (min-width: 768px) {
-    .nutrientPage {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      .infoCardHolder {
-        padding: $base-spacing 0;
-        flex-direction: row;
-        align-items: flex-start;
-        display: flex;
-      }
-
-      .topContainer {
-        height: 50px;
+@media screen and (min-width: 768px) {
+  .navBarFlex {
+    .nutrientsFlex {
+      .nutrientPage {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        top: 0;
+        justify-content: center;
+
+        .infoCardHolder {
+          padding: $base-spacing 0;
+          flex-direction: row;
+          align-items: flex-start;
+          display: flex;
+        }
+
+        .topContainer {
+          height: 50px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          top: 0;
+        }
+
+        .mainHeading {
+          padding-bottom: 5vh;
+          text-align: left;
+        }
       }
     }
   }

@@ -32,7 +32,7 @@
 
       .title {
         font-size: $base-spacing * 6;
-        padding: $base-spacing * 4 0 $base-spacing * 4 0;
+        padding: $base-spacing * 2 0 $base-spacing * 4 0;
         width: 100%;
         text-align: center;
       }
@@ -88,6 +88,10 @@
       .information {
         height: 60vh;
         margin: 0 $base-spacing;
+
+        .title {
+          padding: 0;
+        }
 
         .breakdowns {
           display: flex;
