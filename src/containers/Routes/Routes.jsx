@@ -36,6 +36,7 @@ const Routes = props => {
 
   useEffect(() => {
     fetchUserData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   const dashboardJSX = () => {
@@ -136,6 +137,7 @@ const Routes = props => {
             path="register-dna-page"
             user={user}
             routesFetch={fetchUserData}
+            signOut={signOut}
           />
           {nutrientsJSX()}
           {dietBreakdownJSX}
