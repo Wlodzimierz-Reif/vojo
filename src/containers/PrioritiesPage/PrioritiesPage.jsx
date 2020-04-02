@@ -16,7 +16,7 @@ const PrioritiesPage = props => {
 
   const printPriorities = () => {
     const prioritiesData = userData.priorityActions.map((prio, index) => (
-      <div className={styles.priorityCardContainer}>
+      <div key={prio.action} className={styles.priorityCardContainer}>
         <PriorityBox
           prioNum={index + 1}
           prioHead={prio.action}
@@ -57,30 +57,6 @@ const PrioritiesPage = props => {
         </p>
         <section className={styles.priorityBoxesSection}>
           {printPriorities()}
-          {/* <div className={styles.priorityCardContainer}>
-            <PriorityBox
-              prioNum={"1"}
-              prioHead={"Food"}
-              prioText={"The box's text"}
-              prioLinkText={"The text for the link"}
-            />
-          </div>
-          <div className={styles.priorityCardContainer}>
-            <PriorityBox
-              prioNum={"2"}
-              prioHead={"Food"}
-              prioText={"The box's text"}
-              prioLinkText={"The text for the link"}
-            />
-          </div>
-          <div className={styles.priorityCardContainer}>
-            <PriorityBox
-              prioNum={"3"}
-              prioHead={"Food"}
-              prioText={"The box's text"}
-              prioLinkText={"The text for the link"}
-            />
-          </div> */}
         </section>
         <div className={styles.vegPerson}>
           <img src={Image} alt="Vegetable person" />

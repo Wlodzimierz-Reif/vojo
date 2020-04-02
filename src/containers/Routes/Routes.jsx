@@ -7,7 +7,6 @@ import QuestionnairePage from "../QuestionnairePage";
 import PrioritiesPage from "../PrioritiesPage";
 import DashboardNotPaid from "../../containers/DashboardNotPaid";
 import Dashboard from "../../containers/Dashboard";
-// import Footer from "../../components/Footer";
 import PaymentPage from "../PaymentPage/PaymentPage";
 import RegisterDNA from "../RegisterDNA";
 import DietBreakdown from "../DietBreakdown";
@@ -37,7 +36,6 @@ const Routes = props => {
 
   useEffect(() => {
     fetchUserData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   const dashboardJSX = () => {
@@ -108,19 +106,6 @@ const Routes = props => {
     }
   };
 
-  //   return userData && userData.geneticGuid ? (
-  //     <>
-  //       <PrioritiesPage
-  //         prioritiesPage={userData.geneticGuid}
-  //         path="priorities-page"
-  //         // signOut={signOut}
-  //       />
-  //     </>
-  //   ) : (
-  //     <IncompletePage text={"questionnaire"} path="priorities-page" />
-  //   );
-  // };
-
   const dietBreakdownJSX =
     userData && userData.userApiData ? (
       <DietBreakdown
@@ -146,7 +131,6 @@ const Routes = props => {
 
           {dashboardNotPaidJSX()}
           {prioritiesPageJsx()}
-          {/* <PrioritiesPage path="priorities-page" signOut={signOut} /> */}
           <PaymentPage path="payment-page" />
           <RegisterDNA
             path="register-dna-page"
