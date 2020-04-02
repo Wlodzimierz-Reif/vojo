@@ -175,7 +175,7 @@ const Dashboard = props => {
             <section className={styles.whereToContainer}>
               <div className={styles.whereNextBox}>
                 <h5>Your Nutrient Breakdown</h5>
-                <Link to={"../nutrient-breakdown"}>{printArrow()}</Link>
+                <Link to={"../nutrients-page"}>{printArrow()}</Link>
               </div>
               <div className={styles.whereNextBox}>
                 <h5>Manage Your Weight</h5>
