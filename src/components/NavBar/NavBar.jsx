@@ -6,20 +6,6 @@ import { Link } from "@reach/router";
 import TermsOfServicePdf from "../../assets/privacy-docs/terms-of-service.pdf";
 import TermsOfUsePdf from "../../assets/privacy-docs/terms-of-use.pdf";
 
-const mainLinks = [
-  { name: "Dashboard", path: "../dashboard" },
-  { name: "DNA Submission", path: "../register-dna" },
-  { name: "Questionnaire", path: "../questionnaire-page/page-one" },
-  { name: "Genetics", path: "../under-construction-page" },
-  { name: "Diet plan", path: "../diet-breakdown" },
-  { name: "Health", path: "../under-construction-page" },
-  { name: "Priorities", path: "../priorities-page" },
-  { name: "Nutrients", path: "../nutrients-page" },
-  { name: "Recipes", path: "../under-construction-page" },
-  { name: "Genetics", path: "../under-construction-page" },
-  { name: "Profile", path: "../under-construction-page" }
-];
-
 const getLinks = link => {
   return (
     <Link key={link.name} to={link.path} className={styles.link}>
@@ -37,11 +23,14 @@ const NavBar = props => {
   const [pageName, setPageName] = useState("");
 
   const mainLinks = [
-    { name: "Dashboard", path: "../under-construction-page" },
+    { name: "Dashboard", path: "../dashboard" },
+    { name: "DNA Submission", path: "../register-dna" },
+    { name: "Questionnaire", path: "../questionnaire-page/page-one" },
+    { name: "Genetics", path: "../under-construction-page" },
     { name: "Diet plan", path: "../diet-breakdown" },
     { name: "Health", path: "../under-construction-page" },
     { name: "Priorities", path: "../priorities-page" },
-    { name: "Nutrient breakdown", path: "../nutrients-page" },
+    { name: "Nutrients", path: "../nutrients-page" },
     { name: "Recipes", path: "../under-construction-page" },
     { name: "Genetics", path: "../under-construction-page" },
     { name: "Profile", path: "../under-construction-page" }
