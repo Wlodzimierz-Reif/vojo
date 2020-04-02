@@ -27,6 +27,11 @@
       margin: 0 auto;
       max-width: 320px;
     }
+    .button {
+      :hover {
+        cursor: pointer;
+      }
+    }
 
     input::placeholder {
       text-align: center;
