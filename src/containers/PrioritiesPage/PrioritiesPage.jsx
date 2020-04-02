@@ -15,7 +15,6 @@ const PrioritiesPage = props => {
   const setSampleBoxVisibility = isPromptShown ? styles.hideNoSampleBox : "";
 
   const printPriorities = () => {
-    // if (userData) {
     const prioritiesData = userData.priorityActions.map((prio, index) => (
       <div className={styles.priorityCardContainer}>
         <PriorityBox
@@ -27,7 +26,6 @@ const PrioritiesPage = props => {
     ));
     return prioritiesData;
   };
-  // return null
 
   const sampleBoxJsx =
     userData && userData.geneticGuid ? (
