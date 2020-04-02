@@ -25,7 +25,8 @@ body {
 
       .topContainer {
         height: 100px;
-        h1 {
+
+        h2 {
           margin-top: $base-spacing * 4;
           top: 50px;
           left: 500px;
@@ -68,7 +69,7 @@ body {
           top: 0;
         }
 
-        h1 {
+        h2 {
           position: fixed;
           margin: 0 0 $base-spacing * 5 0;
         }

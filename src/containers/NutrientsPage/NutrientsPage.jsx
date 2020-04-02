@@ -64,7 +64,7 @@ const NutrientsPage = props => {
       <section className={styles.nutrientsFlex}>
         <section className={styles.showPanel}>{insertJsx}</section>
         <section className={styles.nutrientPage}>
-          <h1>Nutrients</h1>
+          <h2>Nutrients</h2>
           <div className={styles.infoCardHolder}>
             {mapFunction(high)}
             {mapFunction(slightlyRaised)}
