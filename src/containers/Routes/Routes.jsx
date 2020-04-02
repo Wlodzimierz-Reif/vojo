@@ -109,6 +109,7 @@ const Routes = props => {
             path="register-dna"
             user={user}
             routesFetch={fetchUserData}
+            signOut={signOut}
           />
           {nutrientsJSX()}
           {dietBreakdownJSX}
@@ -121,7 +122,7 @@ const Routes = props => {
           {everydayFoodsJSX}
           <ConfirmationPage path="confirmation-page" />
         </PrivateRoutes>
-          <UnderConstructionPage path="under-construction-page" />
+        <UnderConstructionPage path="under-construction-page" />
         <NotFound default />
       </Router>
     </>
