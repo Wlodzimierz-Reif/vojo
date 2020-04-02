@@ -14,7 +14,7 @@ const NavBar = props => {
 
   const mainLinks = [
     { name: "Dashboard", path: "../dashboard" },
-    { name: "DNA Submission", path: "../register-dna" },
+    { name: "DNA Submission", path: "../register-dna-page" },
     { name: "Questionnaire", path: "../questionnaire-page/page-one" },
     { name: "Genetics", path: "../under-construction-page" },
     { name: "Diet plan", path: "../diet-breakdown" },
