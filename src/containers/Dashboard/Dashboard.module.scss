@@ -23,6 +23,7 @@
 
         h2 {
           font-size: $base-spacing * 6;
+          text-align: center;
         }
 
         .healthScore {
@@ -51,7 +52,6 @@
             }
 
             span {
-              // width: 33%;
               text-align: center;
               font-size: 13px;
               font-weight: bold;

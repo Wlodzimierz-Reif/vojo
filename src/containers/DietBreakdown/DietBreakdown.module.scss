@@ -31,11 +31,10 @@
       }
 
       .title {
+        font-size: $base-spacing * 6;
+        padding: $base-spacing * 4 0 $base-spacing * 4 0;
         width: 100%;
-        color: $secondary-color;
-        height: 2%;
         text-align: center;
-        margin: $base-spacing 0;
       }
     }
   }
