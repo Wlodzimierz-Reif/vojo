@@ -34,7 +34,6 @@ const PriorityBox = props => {
         </div>
         <p>I've done this!</p>
       </div>
-      <h4>priorityBoxHeading</h4>
       <div className={styles.prioLink}>
         <Link to="/under-construction-page">{prioLinkText}</Link>
       </div>

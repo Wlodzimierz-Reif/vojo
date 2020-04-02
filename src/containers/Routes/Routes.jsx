@@ -117,6 +117,7 @@ const Routes = props => {
             path="register-dna"
             user={user}
             routesFetch={fetchUserData}
+            signOut={signOut}
           />
           {nutrientsJSX()}
           {dietBreakdownJSX}
