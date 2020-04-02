@@ -3,6 +3,9 @@ import Dashboard from "./Dashboard";
 import { render } from "enzyme";
 
 const testFile = {
+  questionnaireAnswers: {
+    firstName: "Test"
+  },
   priorityActions: [
     {
       action: "Eat at least 2 portions of leafy greens every day",
