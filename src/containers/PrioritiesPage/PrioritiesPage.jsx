@@ -8,7 +8,7 @@ import Arrow from "../../assets/graphic-devices/primary-col-arrow-1.svg";
 import { Link } from "@reach/router";
 
 const PrioritiesPage = props => {
-  const { haveSample, signOut, userData, geneticGuid } = props;
+  const { haveSample, signOut, userData } = props;
 
   const [isPromptShown, togglePromptShown] = useState(haveSample);
 

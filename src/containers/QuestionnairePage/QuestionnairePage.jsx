@@ -79,23 +79,27 @@ const QuestionnairePage = props => {
   const submitAnswers = () => {
     toggleShown(!isShown);
 
-    const dataToPost = {
-      geneticGuid: "12345-6789",
-      reportType: "full",
-      answers: formValues
-    };
+    // API fetch removed for demo purposes as API returns data in different format
 
-    const requestOptions = {
-      method: "POST",
-      body: JSON.stringify(dataToPost)
-    };
+    // const dataToPost = {
+    //   geneticGuid: "12345-6789",
+    //   reportType: "full",
+    //   answers: formValues
+    // };
 
-    fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
-      .then(response => response.json())
-      .then(data => {
-        addToDb(data);
-      })
-      .catch(error => toggleShowError(error));
+    // const requestOptions = {
+    //   method: "POST",
+    //   body: JSON.stringify(dataToPost)
+    // };
+
+    addToDb(MockData);
+
+    // fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     addToDb(data);
+    //   })
+    //   .catch(error => toggleShowError(error));
   };
 
   useEffect(() => {

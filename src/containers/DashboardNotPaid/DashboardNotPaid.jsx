@@ -10,16 +10,20 @@ import butternut from "../../assets/characters/butternut-1.svg";
 import banana from "../../assets/characters/banana-1.svg";
 
 const DashboardNotPaid = props => {
-  const { userData } = props;
+  const { userData, signOut } = props;
+
+  const spaceJSX = userData.questionnaireAnswers.firstName ? " " : "";
+
   return (
     <>
       <section className={styles.entirePage}>
-        <NavBar />
+        <NavBar signOut={signOut} />
         <div className={styles.mainPage}>
           <section>
             <h2>
-              Hey {userData.userApiData["user-dashboard"]["first-name"]}, get to
-              know your inner vegan
+              Hey{spaceJSX}
+              {userData.questionnaireAnswers.firstName}, get to know your inner
+              vegan
             </h2>
             <div className={styles.toDoNext}>
               <h3>What you need to do next</h3>
