@@ -42,7 +42,6 @@ a {
   justify-content: space-between;
   width: calc(100vw - 32px);
   transition: 0.5s;
-
   .navTop {
     width: 100%;
   }
@@ -112,7 +111,7 @@ a {
   }
 
   .navBottom {
-    height: 25vh;
+    // height: 25vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -132,7 +131,7 @@ a {
     }
 
     * {
-      margin: $base-spacing 0;
+      margin: $base-spacing / 2 0;
       font-weight: normal;
       font-size: 13px;
     }
