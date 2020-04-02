@@ -85,14 +85,14 @@ const QuestionnairePage = props => {
       answers: formValues
     };
 
-    const requestOptions = {
-      method: "POST",
-      body: JSON.stringify(dataToPost)
-    };
+    // API fetch removed for demo purposes as API returns data in different format
+
+    // const requestOptions = {
+    //   method: "POST",
+    //   body: JSON.stringify(dataToPost)
+    // };
 
     addToDb(MockData);
-
-    // API fetch removed for demo purposes as API returns data in different format
 
     // fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
     //   .then(response => response.json())
