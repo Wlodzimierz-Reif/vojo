@@ -31,11 +31,14 @@ const NavBar = props => {
     };
 
     return (
-      <>
-        <Link getProps={isActive} to={link.path} className={styles.link}>
-          <p>{link.name}</p>
-        </Link>
-      </>
+      <Link
+        key={link.name}
+        getProps={isActive}
+        to={link.path}
+        className={styles.link}
+      >
+        <p>{link.name}</p>
+      </Link>
     );
   };
 
