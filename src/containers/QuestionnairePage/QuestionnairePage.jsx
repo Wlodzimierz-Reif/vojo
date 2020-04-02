@@ -87,9 +87,6 @@ const QuestionnairePage = props => {
     //   answers: formValues
     // };
 
-<<<<<<< HEAD
-    addToDb(MockData);
-=======
     // const requestOptions = {
     //   method: "POST",
     //   body: JSON.stringify(dataToPost)
@@ -97,7 +94,6 @@ const QuestionnairePage = props => {
 
     addToDb(MockData);
 
->>>>>>> 3670dc4dc35a5c6d4158500258cb393c2dcac7d5
     // fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
     //   .then(response => response.json())
     //   .then(data => {
