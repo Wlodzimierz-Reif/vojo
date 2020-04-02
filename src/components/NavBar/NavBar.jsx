@@ -9,7 +9,7 @@ import TermsOfUsePdf from "../../assets/privacy-docs/terms-of-use.pdf";
 const mainLinks = [
   { name: "Dashboard", path: "../dashboard" },
   { name: "DNA Submission", path: "../register-dna" },
-  { name: "Questionnaire", path: "../questionnaire-page/*" },
+  { name: "Questionnaire", path: "../questionnaire-page/page-one" },
   { name: "Genetics", path: "../under-construction-page" },
   { name: "Diet plan", path: "../diet-breakdown" },
   { name: "Health", path: "../under-construction-page" },
