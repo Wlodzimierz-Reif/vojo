@@ -13,7 +13,7 @@ const NavBar = props => {
   const [pageName, setPageName] = useState("");
 
   const mainLinks = [
-    { name: "Dashboard", path: "../under-construction-page" },
+    { name: "Dashboard", path: "../dashboard" },
     { name: "Diet plan", path: "../diet-breakdown" },
     { name: "Health", path: "../under-construction-page" },
     { name: "Priorities", path: "../priorities-page" },
