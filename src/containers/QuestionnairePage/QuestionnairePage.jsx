@@ -79,18 +79,25 @@ const QuestionnairePage = props => {
   const submitAnswers = () => {
     toggleShown(!isShown);
 
-    const dataToPost = {
-      geneticGuid: "12345-6789",
-      reportType: "full",
-      answers: formValues
-    };
+    // API fetch removed for demo purposes as API returns data in different format
 
-    const requestOptions = {
-      method: "POST",
-      body: JSON.stringify(dataToPost)
-    };
+    // const dataToPost = {
+    //   geneticGuid: "12345-6789",
+    //   reportType: "full",
+    //   answers: formValues
+    // };
+
+<<<<<<< HEAD
+    addToDb(MockData);
+=======
+    // const requestOptions = {
+    //   method: "POST",
+    //   body: JSON.stringify(dataToPost)
+    // };
 
     addToDb(MockData);
+
+>>>>>>> 3670dc4dc35a5c6d4158500258cb393c2dcac7d5
     // fetch("https://api.codetechs.co.uk/pbhl/report", requestOptions)
     //   .then(response => response.json())
     //   .then(data => {

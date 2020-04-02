@@ -11,7 +11,7 @@ import beetrootTwo from "../../assets/characters/beetroot-2.svg";
 import PriorityBox from "../../components/PriorityBox";
 
 const Dashboard = props => {
-  const { userData } = props;
+  const { userData, signOut } = props;
 
   const printPriorities = () => {
     const prioritiesData = userData.priorityActions.map((prio, index) => (
@@ -89,11 +89,11 @@ const Dashboard = props => {
 
   return (
     <section className={styles.entirePage}>
-      <NavBar />
+      <NavBar signOut={signOut} />
       <div className={styles.mainPage}>
         <section>
           <div className={styles.topCont}>
-            <h2>Hey {userData.userApiData["user-dashboard"]["first-name"]}</h2>
+            <h2>Hey {userData.questionnaireAnswers.firstName}</h2>
             <div className={styles.healthScore}>
               <div className={styles.healthScoreData}>
                 <p>Your vegan health score: </p>
@@ -114,7 +114,7 @@ const Dashboard = props => {
                 style={{ textDecoration: "none" }}
               >
                 <p className={styles.improveHealthScore}>
-                  How can i improve this?
+                  How can I improve this?
                 </p>
               </Link>
             </div>
