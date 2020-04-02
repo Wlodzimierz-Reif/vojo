@@ -46,16 +46,19 @@ const NutrientsPage = props => {
   };
 
   const mapFunction = array => {
-    return array.map(item => (
-      <InfoCard
-        nutrient={item}
-        displayPanel={(nutrient, displayStyle) => {
-          updateNutrient(nutrient);
-          updateColor(displayStyle);
-          updateDisplay(!isPanelDisplayed);
-        }}
-      />
-    ));
+    return array.map(item => {
+      return (
+        <InfoCard
+          key={item.name}
+          nutrient={item}
+          displayPanel={(nutrient, displayStyle) => {
+            updateNutrient(nutrient);
+            updateColor(displayStyle);
+            updateDisplay(!isPanelDisplayed);
+          }}
+        />
+      );
+    });
   };
 
   return (
@@ -64,7 +67,8 @@ const NutrientsPage = props => {
       <section className={styles.nutrientsFlex}>
         <section className={styles.showPanel}>{insertJsx}</section>
         <section className={styles.nutrientPage}>
-          <h2>Nutrients</h2>
+
+          <h4>Nutrients</h4>
           <div className={styles.infoCardHolder}>
             {mapFunction(high)}
             {mapFunction(slightlyRaised)}

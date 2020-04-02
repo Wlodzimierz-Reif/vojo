@@ -23,19 +23,19 @@ body {
       position: relative;
       height: 100%;
 
-      .topContainer {
-        height: 100px;
+      // .topContainer {
+      //   height: 100px;
 
-        h2 {
-          margin-top: $base-spacing * 4;
-          top: 50px;
-          left: 500px;
-          // position: fixed;
-          color: $secondary-color;
-          font-size: 2em;
-          text-align: center;
-          z-index: 1;
-        }
+      h4 {
+        margin-top: $base-spacing * 4;
+        top: 50px;
+        left: 500px;
+        // position: fixed;
+        color: $secondary-color;
+        font-size: 2em;
+        text-align: center;
+        z-index: 1;
+        // }
       }
 
       .infoCardHolder {
@@ -69,7 +69,7 @@ body {
           top: 0;
         }
 
-        h2 {
+        h4 {
           position: fixed;
           margin: 0 0 $base-spacing * 5 0;
         }

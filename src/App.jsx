@@ -3,7 +3,6 @@ import "./App.module.scss";
 import Routes from "./containers/Routes";
 import { useState, useEffect } from "react";
 import firebase, { provider } from "./firebase";
-import { redirectTo } from "@reach/router";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -17,7 +16,6 @@ const App = () => {
       if (user) {
         setUser(user);
       } else {
-        redirectTo("/landing-page");
         setUser(null);
       }
     });

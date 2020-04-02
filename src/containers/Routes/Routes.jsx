@@ -105,14 +105,18 @@ const Routes = props => {
           {dashboardNotPaidJSX()}
           <PrioritiesPage path="priorities-page" signOut={signOut} />
           <PaymentPage path="payment-page" />
-          <RegisterDNA path="register-dna" user={user} />
+          <RegisterDNA
+            path="register-dna"
+            user={user}
+            routesFetch={fetchUserData}
+          />
           {nutrientsJSX()}
           {dietBreakdownJSX}
           <IncompletePage path="incomplete-page" text={"questionnaire"} />
           <QuestionnairePage
             path="questionnaire-page/*"
             user={user}
-            userData={userData}
+            routesFetch={fetchUserData}
           />
           {everydayFoodsJSX}
           <ConfirmationPage path="confirmation-page" />
