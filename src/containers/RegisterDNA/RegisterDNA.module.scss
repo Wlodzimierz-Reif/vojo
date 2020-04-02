@@ -13,7 +13,6 @@
     h2 {
       font-size: $base-spacing * 6;
       padding: $base-spacing * 3;
-      // margin-top: $base-spacing * 2;
     }
 
     .dnaForm {
@@ -42,6 +41,12 @@
         input::placeholder {
           text-align: center;
           font-size: 1em;
+        }
+
+        .button {
+          :hover {
+            cursor: pointer;
+          }
         }
 
         .modal {
