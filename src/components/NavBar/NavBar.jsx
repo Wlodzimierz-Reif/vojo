@@ -6,31 +6,38 @@ import { Link } from "@reach/router";
 import TermsOfServicePdf from "../../assets/privacy-docs/terms-of-service.pdf";
 import TermsOfUsePdf from "../../assets/privacy-docs/terms-of-use.pdf";
 
-const mainLinks = [
-  { name: "Dashboard", path: "../dashboard" },
-  { name: "Diet plan", path: "../diet-breakdown" },
-  { name: "Health", path: "../under-construction-page" },
-  { name: "Priorities", path: "../priorities-page" },
-  { name: "Nutrient breakdown", path: "../nutrients-page" },
-  { name: "Recipes", path: "../under-construction-page" },
-  { name: "Genetics", path: "../under-construction-page" },
-  { name: "Profile", path: "../under-construction-page" }
-];
-
-const getLinks = link => {
-  return (
-    <Link key={link.name} to={link.path} className={styles.link}>
-      <p>{link.name}</p>
-    </Link>
-  );
-};
-
-const currentPage = "Dashboard";
-
 const NavBar = props => {
   const { signOut } = props;
   const [navVisibility, toggleOpen] = useState(false);
   const [linkVisibility, displayLinks] = useState(false);
+  const [pageName, setPageName] = useState("");
+
+  const mainLinks = [
+    { name: "Dashboard", path: "../under-construction-page" },
+    { name: "Diet plan", path: "../diet-breakdown" },
+    { name: "Health", path: "../under-construction-page" },
+    { name: "Priorities", path: "../priorities-page" },
+    { name: "Nutrient breakdown", path: "../nutrients-page" },
+    { name: "Recipes", path: "../under-construction-page" },
+    { name: "Genetics", path: "../under-construction-page" },
+    { name: "Profile", path: "../under-construction-page" }
+  ];
+
+  const getLinks = link => {
+    const isActive = ({ isCurrent }) => {
+      if (isCurrent) {
+        setPageName(link.name);
+      }
+    };
+
+    return (
+      <>
+        <Link getProps={isActive} to={link.path} className={styles.link}>
+          <p>{link.name}</p>
+        </Link>
+      </>
+    );
+  };
 
   let switchBurgerIcon =
     navVisibility === true ? styles.burgerMenuCross : styles.burgerMenuIcon;
@@ -79,7 +86,7 @@ const NavBar = props => {
         <section className={styles.navTop}>
           <div className={styles.logoBurgerFlex}>
             <img src={logos} alt="Logo" className={styles.navBarLogo}></img>
-            <p style={toggleNav.showCurrentPage}>{currentPage}</p>
+            <p style={toggleNav.showCurrentPage}>{pageName}</p>
             <button
               onClick={handleClick}
               className={`${styles.burgerMenu} ${switchBurgerIcon}`}
