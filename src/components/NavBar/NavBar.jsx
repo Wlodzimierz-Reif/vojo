@@ -22,7 +22,6 @@ const NavBar = props => {
     { name: "Priorities", path: "../priorities-page" },
     { name: "Nutrients", path: "../nutrients-page" },
     { name: "Recipes", path: "../under-construction-page" },
-    { name: "Genetics", path: "../under-construction-page" },
     { name: "Profile", path: "../under-construction-page" }
   ];
 
