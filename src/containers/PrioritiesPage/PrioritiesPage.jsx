@@ -8,20 +8,38 @@ import Arrow from "../../assets/graphic-devices/primary-col-arrow-1.svg";
 import { Link } from "@reach/router";
 
 const PrioritiesPage = props => {
-  const { haveSample, signOut } = props;
+  const { haveSample, signOut, userData } = props;
 
   const [isPromptShown, togglePromptShown] = useState(haveSample);
 
   const setSampleBoxVisibility = isPromptShown ? styles.hideNoSampleBox : "";
+
+  const printPriorities = () => {
+    const prioritiesData = userData.priorityActions.map((prio, index) => (
+      <div key={prio.action} className={styles.priorityCardContainer}>
+        <PriorityBox
+          prioNum={index + 1}
+          prioHead={prio.action}
+          prioText={prio.description}
+        />
+      </div>
+    ));
+    return prioritiesData;
+  };
+
+  const sampleBoxJsx =
+    userData && userData.geneticGuid ? (
+      <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
+        <NoSampleBox closeBox={() => togglePromptShown(!isPromptShown)} />
+      </div>
+    ) : null;
 
   return (
     <section className={styles.navBarFlex}>
       <NavBar signOut={signOut} />
       <section className={styles.prioritiesPage}>
         <h2>Priorities</h2>
-        <div className={`${styles.noSampleBox} ${setSampleBoxVisibility}`}>
-          <NoSampleBox closeBox={() => togglePromptShown(!isPromptShown)} />
-        </div>
+        {sampleBoxJsx}
         <div>
           <div className={styles.yourNutrients}>
             <h3>Get Some Nutrients!</h3>
@@ -38,30 +56,7 @@ const PrioritiesPage = props => {
           nutrient intake and improve your health!
         </p>
         <section className={styles.priorityBoxesSection}>
-          <div className={styles.priorityCardContainer}>
-            <PriorityBox
-              prioNum={"1"}
-              prioHead={"Food"}
-              prioText={"The box's text"}
-              prioLinkText={"The text for the link"}
-            />
-          </div>
-          <div className={styles.priorityCardContainer}>
-            <PriorityBox
-              prioNum={"2"}
-              prioHead={"Food"}
-              prioText={"The box's text"}
-              prioLinkText={"The text for the link"}
-            />
-          </div>
-          <div className={styles.priorityCardContainer}>
-            <PriorityBox
-              prioNum={"3"}
-              prioHead={"Food"}
-              prioText={"The box's text"}
-              prioLinkText={"The text for the link"}
-            />
-          </div>
+          {printPriorities()}
         </section>
         <div className={styles.vegPerson}>
           <img src={Image} alt="Vegetable person" />
