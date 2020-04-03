@@ -20,10 +20,10 @@ const DietBreakdown = props => {
 
   return (
     <section className={styles.navBarFlex}>
-      <NavBar signOut={signOut} />
+      <NavBar signout={signOut} />
       <div className={styles.secInfo}>
+        <h2 className={styles.title}>Your diet breakdown</h2>
         <section className={styles.information}>
-          <h2 className={styles.title}>Your diet breakdown</h2>
           <section className={styles.breakdowns}>
             <div className={styles.singleBreakdown}>
               <DietBreakdownBox

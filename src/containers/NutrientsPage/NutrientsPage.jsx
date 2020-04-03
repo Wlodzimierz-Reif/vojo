@@ -65,10 +65,9 @@ const NutrientsPage = props => {
     <section className={styles.navBarFlex}>
       <NavBar signOut={signOut} />
       <section className={styles.nutrientsFlex}>
+        <h2 className={styles.mainHeading}>Nutrients</h2>
         <section className={styles.showPanel}>{insertJsx}</section>
         <section className={styles.nutrientPage}>
-
-          <h4>Nutrients</h4>
           <div className={styles.infoCardHolder}>
             {mapFunction(high)}
             {mapFunction(slightlyRaised)}

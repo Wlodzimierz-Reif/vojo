@@ -7,7 +7,6 @@
   .mainPage {
     @include flex-column;
     align-items: center;
-    padding: $base-spacing * 2 0;
 
     section {
       width: 100%;
@@ -23,6 +22,8 @@
 
         h2 {
           font-size: $base-spacing * 6;
+          text-align: center;
+          padding-top: $base-spacing;
         }
 
         .healthScore {
@@ -51,7 +52,6 @@
             }
 
             span {
-              // width: 33%;
               text-align: center;
               font-size: 13px;
               font-weight: bold;
@@ -286,6 +286,7 @@
 
           .healthScore {
             width: 600px;
+            margin: 0;
           }
         }
         .dietPlan {

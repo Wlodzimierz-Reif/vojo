@@ -5,60 +5,92 @@
   justify-content: space-between;
 
   .dnaRegister {
-    & * {
-      padding: 10px 20px;
-    }
-
     background-color: $primary-background;
-    padding-top: 8vh;
     width: 100%;
     height: 100%;
     text-align: center;
 
-    img,
-    p {
-      width: 90%;
-      margin: 0 auto;
+    h2 {
+      font-size: $base-spacing * 6;
+      padding: $base-spacing * 3;
     }
 
-    .input,
-    .button {
-      width: 90%;
-      margin: 0 auto;
-      max-width: 320px;
-    }
-    .button {
-      :hover {
-        cursor: pointer;
+    .dnaForm {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      div {
+        & * {
+          padding: $base-spacing 20px;
+        }
+
+        img,
+        p {
+          width: 90%;
+          margin: 0 auto;
+        }
+
+        .input,
+        .button {
+          width: 90%;
+          margin: 0 auto;
+          max-width: 320px;
+        }
+
+        .button {
+          :hover {
+            cursor: pointer;
+          }
+        }
+
+        input::placeholder {
+          text-align: center;
+          font-size: 1em;
+        }
+
+        .modal {
+          padding: 0;
+          margin: 0;
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 100;
+        }
       }
-    }
-
-    input::placeholder {
-      text-align: center;
-      font-size: 1em;
-    }
-
-    .modal {
-      padding: 0;
-      margin: 0;
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 100;
     }
   }
 
   @media only screen and (min-width: 768px) {
     .dnaRegister {
-      img,
-      .input,
-      .button {
-        width: 50%;
-      }
+      .dnaForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-      img {
-        min-width: 600px;
+        img,
+        .input,
+        .button {
+          width: 50%;
+        }
+
+        img {
+          min-width: 600px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .navBarFlex {
+    .dnaRegister {
+      h2 {
+        text-align: left;
+        padding-top: $base-spacing * 5;
+        padding-bottom: 5vh;
       }
     }
   }

@@ -6,9 +6,9 @@
 
   .prioritiesPage {
     font-style: inherit;
-    padding: 6vh;
     width: 100%;
     height: 100%;
+    padding: $base-spacing * 2;
     background-color: $primary-background;
 
     .yourNutrients {
@@ -48,10 +48,9 @@
     }
 
     h2 {
-      color: black;
       text-align: center;
-      font-size: $heading-2-size;
-      padding-bottom: 5vh;
+      font-size: $base-spacing * 6;
+      padding-top: $base-spacing;
     }
 
     .noSampleBox {
@@ -84,20 +83,17 @@
       width: 20vh;
       height: 20vh;
       margin: 0 auto;
-      margin-top: 4vh;
+      margin-top: $base-spacing * 10;
     }
-  }
-
-  @media only screen and (min-width: 768px) {
   }
 
   @media only screen and (min-width: 1024px) {
     .prioritiesPage {
       font-style: inherit;
-      padding: 6vh;
       width: 100%;
       height: 100%;
       background-color: $primary-background;
+      padding: $base-spacing * 4;
 
       .yourNutrients {
         @include flex-row;
@@ -131,9 +127,9 @@
       }
 
       h2 {
-        color: black;
-        text-align: center;
+        text-align: left;
         font-size: $heading-2-size;
+        padding-top: $base-spacing;
         padding-bottom: 5vh;
       }
 

@@ -6,7 +6,14 @@
 
   .nutrientsFlex {
     width: 100%;
-    min-height: 100vh;
+
+    .mainHeading {
+      padding: $base-spacing * 3 0;
+      position: relative;
+      font-size: $base-spacing * 6;
+      text-align: center;
+      z-index: 1;
+    }
 
     .showPanel {
       position: fixed;
@@ -17,33 +24,21 @@
     .nutrientPage {
       min-width: 100%;
       position: relative;
-      height: 100%;
-
-      // .topContainer {
-      //   height: 100px;
-
-      h4 {
-        margin-top: $base-spacing * 4;
-        top: 50px;
-        left: 500px;
-        // position: fixed;
-        color: $secondary-color;
-        font-size: 2em;
-        text-align: center;
-        z-index: 1;
-        // }
-      }
-
-      .infoCardHolder {
-        padding: 0;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        background: none;
-      }
     }
 
-    @media screen and (min-width: 768px) {
+    .infoCardHolder {
+      padding: 0;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      background: none;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navBarFlex {
+    .nutrientsFlex {
       .nutrientPage {
         display: flex;
         flex-direction: column;
@@ -61,14 +56,26 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          // position: fixed;
           top: 0;
         }
 
-        h4 {
-          position: fixed;
-          margin: 0 0 $base-spacing * 5 0;
+        .mainHeading {
+          padding-bottom: 5vh;
+          text-align: left;
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navBarFlex {
+    padding: $base-spacing $base-spacing * 3;
+    .nutrientsFlex {
+      .mainHeading {
+        padding-top: $base-spacing * 4;
+        padding-bottom: 5vh;
+        text-align: left;
       }
     }
   }
