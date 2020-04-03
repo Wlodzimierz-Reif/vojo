@@ -38,15 +38,15 @@
           max-width: 320px;
         }
 
-        input::placeholder {
-          text-align: center;
-          font-size: 1em;
-        }
-
         .button {
           :hover {
             cursor: pointer;
           }
+        }
+
+        input::placeholder {
+          text-align: center;
+          font-size: 1em;
         }
 
         .modal {
