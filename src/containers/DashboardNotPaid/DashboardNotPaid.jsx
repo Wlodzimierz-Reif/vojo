@@ -9,7 +9,7 @@ import apple from "../../assets/characters/apple-1.svg";
 import butternut from "../../assets/characters/butternut-1.svg";
 import banana from "../../assets/characters/banana-1.svg";
 
-const DashboardNotPaid = props => {
+const DashboardNotPaid = (props) => {
   const { userData, signOut } = props;
 
   const spaceJSX = userData.questionnaireAnswers.firstName ? " " : "";
@@ -57,7 +57,7 @@ const DashboardNotPaid = props => {
                     lifestyle questionnaire.
                   </p>
                   <Button
-                    handleClick={() => navigate("/questionnaire-page/*")}
+                    handleClick={() => navigate("/questionnaire-page/page-one")}
                     btnText={"Take questionnaire"}
                   />
                 </div>
@@ -68,7 +68,7 @@ const DashboardNotPaid = props => {
                     lifestyle questionnaire.
                   </p>
                   <Button
-                    handleClick={() => navigate("/register-dna")}
+                    handleClick={() => navigate("/register-dna-page")}
                     btnText={"Take test"}
                   />
                 </div>
